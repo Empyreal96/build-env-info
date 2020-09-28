@@ -1,4 +1,15 @@
 # build-env-info
-I have/am going through the NT5 src and pulling the /? Output on all that I can find!
+I am not one to try compile the source properly..
 
-I am hoping this will be useful to people because there are alot of different flags, variables and switches with a variety of tools included.
+But I did decide to try and document all the 'help' dialogue
+and information from the scripts, executables, and other bits.
+
+This won't be help to most, but to those messing around with the source:
+
+Hopefully this comes handy, and I will try document all I can.. 
+will take time though :)
+
+so far: 
+        /tools (root files in tools)
+              /postbuildscripts
+              /x86
