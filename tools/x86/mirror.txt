@@ -1,0 +1,14 @@
+Microsoft (R) Pseudo Localization Tools Version 1.0.0.36.
+Copyright (C) Microsoft Corp. 2001. All Rights reserved.
+
+Utility to set mirroring properties in a rsrc.exe token file.
+
+Usage:
+     mirror.exe RsrcTokenFile yes|no LogFile
+
+     - The yes|no argument will specify whether the tool needs to add
+       2 LTR markers to the File Description version resource
+     - The output will be a token file with the name RsrcTokenFile.mir
+
+Example:
+     mirror.exe notepad.exe.rsrc yes log.txt

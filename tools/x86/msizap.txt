@@ -1,0 +1,20 @@
+MSIZAP - Zaps (almost) all traces of Windows Installer data from your machine.
+Copyright (C) 1999 Microsoft Corporation.  All rights reserved.
+
+Usage: msizap *FRP?A! [product code]
+
+       * = remove all Windows Installer folders and regkeys;
+           adjust shared DLL counts; stop Windows Installer service
+       F = remove all Windows Installer folders
+       U = remove %USERPROFILE%\msi, AppData\Microsoft\Installer folder
+       R = remove all Windows Installer regkeys
+       P = remove In-Progress key
+       N = remove Windows Installer products from Uninstall key
+       V = stop Windows Installer service
+       T = remove all info for given product code
+       A = for any specified removal, just change ACLs to Admin Full Control
+       ? = verbose help
+       ! = force 'yes' response to any prompt
+
+CAUTION: Products installed by the Windows Installer may fail to
+         function after using msizap

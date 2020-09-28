@@ -1,0 +1,4 @@
+inf2db Import an INF file into a Jet4 Database
+
+inf2db [drive:][path]template.mdb [drive:][path]filename.inf[drive:][path]destin
+ation_database.mdb

@@ -1,0 +1,6 @@
+Pbuild [-d <datafile>] [-l <language>]
+
+ -d datafile  Use <datafile> instead of pbuild.dat
+
+This program processes a pbuild.dat file and issues the appropriate commands
+in a multithreaded manner to run all or some of the postbuild process.

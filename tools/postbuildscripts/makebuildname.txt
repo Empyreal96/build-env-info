@@ -1,0 +1,4 @@
+makebuildname [-l <language>]
+
+Create the file %_NTPostBLD%\build_logs\buildname.txt for use by other
+postbuild scripts.

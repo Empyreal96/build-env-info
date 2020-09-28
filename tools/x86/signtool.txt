@@ -1,0 +1,8 @@
+Usage: signtool <command> [options]
+
+        Valid commands:
+                sign       --  Sign files using Authenticode.
+                timestamp  --  Timestamp existing Authenticode-signed files.
+                verify     --  Verify signatures using Authenticode.
+
+For help on a specific command, enter "signtool <command> /?"

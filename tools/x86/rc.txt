@@ -1,0 +1,21 @@
+
+
+Microsoft (R) Windows (R) Resource Compiler, Version 5.1.2264.1 - Build 2264
+Copyright (C) Microsoft Corp. 1985-1998. All rights reserved.
+
+Usage:  rc [options] .RC input file
+Switches:
+   /r    Emit .RES file (optional)
+   /v    Verbose (print progress messages)
+   /d    Define a symbol
+   /u	 Undefine a symbol
+   /fo   Rename .RES file
+   /l    Default language ID in hex
+   /i    Add a path for INCLUDE searches
+   /x    Ignore INCLUDE environment variable
+   /c	 Define a code page used by NLS conversion
+   /w	 Warn on Invalid codepage in .rc (default is an error)
+   /y	 Don't warn if there are duplicate control ID's
+   /n    Append null's to all strings in the string tables.
+Flags may be either upper or lower case
+

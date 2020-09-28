@@ -1,0 +1,4 @@
+Usage of fixrevtool.exe:
+	 /v <vbl name> </n build number>
+	    /v         vbl name such as lab01, lab05.
+	    /n         main build number for the vbl reverse integration

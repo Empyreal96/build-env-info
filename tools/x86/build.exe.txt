@@ -1,0 +1,65 @@
+BUILD: Version 4.22.3614
+
+Usage: BUILD [-?] display this message
+        [-#] force _objects.mac to be regenerated
+        [-0] pass 0 generation only, no compile, no link
+        [-2] same as old -Z (only do a 2 pass build - no pass 0)
+        [-3] same as -Z
+        [-a] allows synchronized blocks and drains during link pass
+        [-b] displays full error message text (doesn't truncate)
+        [-B [baseline]] Checks the build failures against a baseline
+                If there is no baseline,terminates the build on the first error
+        [-c] deletes all object files
+        [-C] deletes all .lib files only
+        [-D] check dependencies before building (on by default if BUILD_PRODUCT
+!= NT)
+        [-e] generates build.log, build.wrn & build.err files
+        [-E] always keep the log/wrn/err files (use with -z)
+        [-f] force rescan of all source and include files
+        [-F] when displaying errors/warnings to stdout, print the full path
+        [-g] Display warnings/errors/summary in color
+        [-G] enables target specific dirs files iff one target
+        [-i] ignore extraneous dependency warning messages
+        [-I] do not display thread index if multiprocessor build
+        [-k] keep (don't delete) out-of-date targets
+        [-l] link only, no compiles
+        [-L] compile only, no link phase
+        [-m] run build in the idle priority class
+        [-M [n]] Multiprocessor build (for MP machines)
+        [-n] No SYNCHRONIZE_BLOCK and SYNCHRONIZE_DRAIN directives
+        [-o] display out-of-date files
+        [-O] generate obj\_objects.mac file for current directory
+        [-p] pause' before compile and link phases
+        [-P] Print elapsed time after every directory
+        [-q] query only, don't run NMAKE
+        [-r dirPath] restarts clean build at specified directory path
+        [-s] display status line at top of display
+        [-S] display status line with include file line counts
+        [-t] display the first level of the dependency tree
+        [-T] display the complete dependency tree
+        [-$] display the complete dependency tree hierarchically
+        [-u] display unused BUILD_OPTIONS
+        [-v] enable include file version checking
+        [-w] show warnings on screen
+        [-y] show files scanned
+        [-z] no dependency checking or scanning of source files -
+                one pass compile/link
+        [-Z] no dependency checking or scanning of source files -
+                three passes
+        [-why] list reasons for building targets
+
+        [-386] build targets for 32-bit Intel
+        [-x86] Same as -i386
+        [-ia64] build targets for IA64
+        [-amd64] build targets for AMD64
+        [-arm] build targets for ARM
+
+        [-x filename] exclude include file from dependency checks
+        [-j filename] use 'filename' as the name for log files
+        [-jpath pathname] use 'pathname' as the path for log files instead of ".
+"
+        [-nmake arg] argument to pass to NMAKE
+        [-clean] equivalent to '-nmake clean'
+        Non-switch parameters specify additional source directories
+        * builds all optional source directories
+BUILD: Done

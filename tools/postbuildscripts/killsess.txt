@@ -1,0 +1,7 @@
+
+Usage: killsess.cmd <Build name>
+
+For instance, killsess.cmd 2213.x86fre.main.000314-1935 will kill all open
+file connections which have the string 2213.x86fre.main.000314-1935
+in the "Path" field of a call to net file.
+

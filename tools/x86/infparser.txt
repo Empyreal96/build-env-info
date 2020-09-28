@@ -1,0 +1,18 @@
+Create filecontents_CORE.wxm, filecontents_PRO.wxm and filecontents_SRV.wxm
+Usage: infparser /b:[32|64] /l:<lang> /f:[p|s|a|d] /s:<dir> /o:<file> /v
+   where
+     /b means the binary.
+         32: i386
+         64: ia64
+     /l means the language flag.
+         <lang>: is the target language
+     /f means the flavor.
+         p: Professional
+         s: Server
+         a: Advanced Server
+         d: Data Center
+     /s means the location of the binairy data.
+         <dir>: Fully qualified path
+     /o means the xml file contents of specific flavor.
+         <file>: Fully qualified path
+     /v means the verbose mode [optional].

@@ -1,0 +1,2 @@
+Usage: bin2c <src file> <src file len> <region offset>
+       <region length> <dst file> <var name>

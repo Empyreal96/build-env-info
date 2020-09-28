@@ -1,0 +1,3 @@
+SCP_WPAFiles
+
+Obfuscates WPA code on system binaries (x86 only)

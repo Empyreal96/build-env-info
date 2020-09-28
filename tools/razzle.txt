@@ -1,0 +1,41 @@
+Razzle.cmd must be run from clean cmd window
+
+Usage: razzle <arguments>
+
+where <arguments> can be one or more of:
+        verbose - Enable verbose execution of this script
+        ntttest - Build NT test sources
+          Win64 - Build for Win64 target
+                   if on x86 and amd64 defined, build for amd64
+                   if on x86 and amd64 undefined build for ia64
+       PocketPC - Build for ARM PocketPC target
+      Emulation - Build PocketPC emulation target
+           free - Build free bits (default is to build checked)
+      chkkernel - Checked kernel/hal/ntdll (use with 'free')
+         no_opt - disable compiler optimizations
+      mui_magic - generate language neutral build
+    no_binaries - disable creation of the binaries<sepchar><arch><buildtype> dir.
+   binaries_dir - must specify <basepath> immediately after this switch.
+                   Use specified path as binplace dir instead of default.
+                   Default value is "binaries".
+        sepchar - overrides default separator character "." placed between
+                   the binaries_dir and the arch.  Default value is "."
+                   Useful for putting binaries under a common parent
+                   directory using '\' (don't specify the quotes).
+           temp - must specify <temp_dir> immediately after this switch.
+                   Use specified path as TEMP and TMP values.
+                   Default value is set by the system.
+       no_title - don't set the default window title bar.
+   no_certcheck - don't ensure the testroot certificate is installed.
+   no_sdrefresh - don't update sd.exe (for script use only)
+restricted_path - set path to the same restricted path that build uses
+                   (for debugging "why can't build find my tool" problems)
+  officialbuild - Build as one of the official build machines for this branch.
+                   The machine and build type must be identified in
+                    D:\xpsp1\tools\BuildMachines.txt.
+           exec - Optionally execute the remaining command line.
+                   If specified, this must be the last razzle parameter
+                   specified.  The remaining command line parameters are
+                   then passed to command prompt as is.
+         Enigma - Will turn on CSP signing and CSP signature checks in advapi
+      VaultSign - Will require that CSP's are vault signed with the Microsoft key

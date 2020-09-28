@@ -1,0 +1,1 @@
+syntax: mapmsg [-p] [-a appendfile] <system name> <basename> <inputfile>

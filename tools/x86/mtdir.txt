@@ -1,0 +1,9 @@
+mtdir.exe: Looking for empty SubDirectories
+
+A directory is treated as empty if it has no file or directory in it.  In any
+case, a directory is not empty if it has file.
+Available switches are:
+    /d:    directory is also listed empty if it only has SubDirectory in it
+    /e:    acutally perform deletions of empty directories
+    /v:    Verbose
+    /?:    prints this message

@@ -1,0 +1,11 @@
+DMPOBJ reads the contents of a specific section from
+an OBJ image and emits its contents as a c-compatible
+UCHAR array.
+
+Usage: DMPOBJ <source> <secnam> <varnam>
+where: <source> is the full path of the .obj file
+
+       <secnam> is the name of the section to emit
+                Use ENTIRE_FILE to dump the whole thing
+
+       <varnam> is the name to assign to the array

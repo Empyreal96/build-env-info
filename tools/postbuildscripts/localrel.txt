@@ -1,0 +1,21 @@
+
+Move the build from %_ntpostbld% to the release share locally.
+
+Usage:
+    localrel.cmd: -l:<language> [-b:<BuildName>] [-p]
+
+    -l Language. 
+       Default is "usa".
+
+    -b Build Name.
+       Default is defined in %_ntpostbld%\build_logs\buildname.txt.
+	
+    -p Powerless.
+       Display key variables only.
+
+    -? Display Usage.
+
+Example:
+     localrel.cmd -b:2415.x86fre.main.001222-1745 -p
+     localrel.cmd -l:ger  
+

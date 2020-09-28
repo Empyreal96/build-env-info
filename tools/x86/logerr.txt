@@ -1,0 +1,2 @@
+Usage:  logerr "<command line>"
+Ex:     logerr "xcopy /vf c:\tmp\myfile.txt ."

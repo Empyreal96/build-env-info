@@ -1,0 +1,17 @@
+
+Usage: PECOMP [Options] ExeFile1 ExeFile2
+
+	Options:
+
+		/OnlyPE                (indicate error if files are not PE)
+		/PeIgnoreAllResources  (versus layout-independent comparison)
+		/PeIgnoreLocalization  (compare resource structure, not data)
+		/ShowDiffs             (verbose mode displays each difference)
+		/Silent                (only set return code for batch mode)
+
+	Return codes:
+
+		     zero: identical or equivalent files
+		 non-zero: number of differences between files
+		999999999: error occurred, comparison not performed
+

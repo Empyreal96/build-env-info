@@ -1,0 +1,3 @@
+Adminpak.cmd [-l <language>]
+
+Make CAB files for Adminpak distribution (adminpak.msi)

@@ -1,0 +1,21 @@
+
+USAGE: cabinc.exe [-t #] [-p #] [-q #] [-s] <cabinet_file> <file1> <file2> <file3> --
+  EX: cabinc.exe driver.cab ntoskrnl.exe 1394bus.sys
+
+	-t: Number of compression/decompression threads running
+	    concurrently [Default = 3]
+	-p: Pages of memory (64k chunks) to be used for copies [Default = 8]
+	-q: Pages of memory (64k chunks) given to each worker thread for 
+	    reading/writing files [Default = 7]
+	-s: Specify which cabinet entry to replace
+	    (Defaults to using the file-name)
+	    When using this switch the format is:
+	    <entry_name1> <file_name1> <entry_name2> <file_name2> ---
+	    EXAMPLE:
+	    cabinc.exe -s driver.cab 1394bus.sys d:\bin.new\1394.sys
+	    * This will put the file called d:\bin.new\1394.sys into
+	      the cabinet position for 1394bus.sys,  This means that
+	      if you were to extract 1394bus.sys out of the new cabinet,
+	      you would get the image d:\bin.new\1394.sys with the
+	      filename 1394bus.sys.
+

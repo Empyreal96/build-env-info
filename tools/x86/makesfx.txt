@@ -1,0 +1,6 @@
+
+MAKESFX 1.12 Cabinet Self-Extraction Utility
+Copyright (C) Microsoft, 1997-2000
+For Microsoft Internal Use Only
+
+Usage:  MAKESFX foo.cab [foo.exe] [/Run] [/Stub sfxstub.exe] [/NonSysFree nnnn]

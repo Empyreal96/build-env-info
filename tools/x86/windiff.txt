@@ -1,0 +1,16 @@
+Usage:
+
+	windiff [options] path1 [path2]
+
+Options:
+
+-D	Compare one directory only.
+-F[flags] savefile	Save composite file to 'savefile'.  The 'flags' may consist of one or more of I (identical), L (left), R (right), F (moved leFt), G (moved riGht), S (Similar left), A (similiAr right), X (exit after saving list).
+(e.g. -FLF saves list of Left or moved-leFt lines).
+-I file	Reads list of files to compare, from the specified input file.  Each line can contain one or two filenames, space delimited (with quoting, if filenames contain spaces).  If a line contains only one filename, the file is compared to itself.
+-N name	NET SEND notification to 'name' at end of comparison.
+-O	Outline view (no automatic expansion).
+-P	Perverse comparison: breaks lines on punctuation.
+-S[flags] savefile	Save list of files to 'savefile'.  The 'flags' may consist of one or more of S (same), L (left), R (right), D (different), X (exit after saving list).
+(e.g. -SLD saves list of Left or Different files).
+-T	Compare whole subtree.

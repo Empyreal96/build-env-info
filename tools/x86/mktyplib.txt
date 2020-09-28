@@ -1,0 +1,23 @@
+Microsoft (R) Type Library Generator  Version 2.20.4501
+Copyright (c) Microsoft Corp. 1993-1995.  All rights reserved.
+
+Usage: MKTYPLIB <options> [inputfile]
+Valid options are:
+/help or /?	 Displays usage.
+/tlb <filename>	 Specifies type library output filename.  Defaults to input name
+		 with extension replaced by ".tlb".
+/h [filename]	 Specifies .H file output filename.
+/<system>	 Specifies kind of type library to make (win16, win32, mac, mips, alpha, ppc or ppc32).
+		 Defaults to win32.
+/align <#>	 Override default alignment setting.
+/o filename	 Redirects output from screen to specified file.
+/nologo		 Don't display the copyright banner.
+/w0		 Disable warnings.
+/nocpp		 Don't spawn the C pre-processor.
+/cpp_cmd <path>	 Specifies path for C pre-processor.
+		 Defaults to CL.EXE.
+/cpp_opt "<opt>" Specifies options for C pre-processor.  Defaults to:
+		 "/C /E /D__MKTYPLIB__".
+/Ddefine[=value] Defines value for C pre-processor.
+/I includepath	 Specifies path for include files.
+

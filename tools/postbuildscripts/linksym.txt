@@ -1,0 +1,4 @@
+linksym.cmd -n buildNumber -p platform -b branch -l language
+
+example
+   linksym  -n 2403 -p x86fre -b beta1 -l usa

@@ -1,0 +1,10 @@
+
+chkarch <-p:archtype>
+
+-p:archtype  perform query for build platform and type "archtype"
+             e.g. ia64chk or amd64fre
+
+chkarch will check if the specified archtype is archived for this branch.
+if so, it will set the exit code to zero. if not, it will set the
+exit code to non-zero.
+

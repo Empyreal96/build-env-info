@@ -1,0 +1,27 @@
+Usage: postbuild.cmd [-f -s -r -l lang][-?]
+-l:lang   run for given language (see \codes.txt)
+-full     run in forced non-incremental mode, i.e. run everything
+          from scratch
+-safe     run in incremental mode with extra sanity checks, e.g.
+          force rebase and bind to run
+-r        run incremental aggregation. 
+          Applicable to international builds only.
+-?        Displays usage
+
+postbuild.cmd is the general process to take a binaries tree and generate a
+bootable image from it. it is incremental in the sense that it will
+not run more than is needed on a second pass, and it is configurably
+multithreaded. the user has two non-command line options for setting
+preferences for compression and multithreading:
+
+   HORSE_POWER   if this env var is set, the maximum number of threads
+                 spawned by postbuild.cmd will be HORSE_POWER multiplied
+                 by NUMBER_OF_PROCESSORS. default is HORSE_POWER=2
+   PB_COMP       if this env var is set to TRUE, compressed bootable
+                 images will be generated regardless of the machine
+                 postbuild.cmd is running on. if this env var is set to FALSE,
+                 uncompressed images will be generated. the default is
+                 to generate compressed images on quad-proc machines
+                 or higher.
+
+note that postbuild.cmd must be run from an NT razzle window with echo defined and existing.

@@ -1,0 +1,19 @@
+usage: qgrep.exe [-?BELOXlnzvxy][-e string][-f file][-i file][strings][files]
+-? - print this message
+-B - match pattern if at beginning of line
+-E - match pattern if at end of line
+-L - treat search strings literally (fgrep)
+-O - print seek offset before each matching line
+-X - treat search strings as regular expressions (grep)
+-l - print only file name if file contains match
+-n - print line number before each matching line
+-z - print matching lines in MSC error message format
+-v - print only lines not containing a match
+-x - print lines that match exactly (-BE)
+-y - treat upper and lower case as equivalent
+-e - treat next argument literally as a search string
+-f - read search strings from file named by next argument (- = stdin)
+-i - read file list from file named by next argument (- = stdin)
+White space separates search strings unless the argument is prefixed
+with -e, e.g., 'qgrep "all out" x.y' means find either "all" or
+"out" in x.y, while 'qgrep -e "all out" x.y' means find "all out".

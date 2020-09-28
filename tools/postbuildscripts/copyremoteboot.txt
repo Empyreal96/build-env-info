@@ -1,0 +1,3 @@
+copyremoteboot [-l <language>]
+
+Copies x86 remote boot client files to 64 bit servers

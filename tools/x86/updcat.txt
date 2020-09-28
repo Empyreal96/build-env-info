@@ -1,0 +1,10 @@
+command line: updcat.exe /? 
+Usage: updcat <Catalog File> [-a <FileName>]
+Usage: updcat <Catalog File> [-d <Hash>]
+Usage: updcat <Catalog File> [-r <Hash> <FileName>]
+Usage: updcat <Catalog File> [-attr <FileName> <Name> <Value>]
+       -a,       add the file by hash to the catalog
+       -d,       delete the hash from the catalog
+       -r,       replace the hash in the catalog with the hash of the file
+       -attr,    add an ASCII attribute to a file's catalog entry
+       -SpAttr:, replace the current (or add new) SpAttr in the catalog

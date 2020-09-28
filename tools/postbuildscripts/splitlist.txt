@@ -1,0 +1,6 @@
+Splits lists into a number of lists equal to number or processors
+Argumnent is input list. Output list is C:\DOCUME~1\EMPYRE~1\LOCALS~1\Temp\filename.#
+Usage: splitlist.cmd -s srcfile [-l lang][-?]
+-s source path and filename
+-l lang 2-3 letter language identifier
+-?      Displays usage

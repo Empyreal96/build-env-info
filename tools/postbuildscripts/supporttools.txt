@@ -1,0 +1,3 @@
+Usage: supporttools.cmd [-l lang][-?]
+-l lang 2-3 letter language identifier
+-?      Displays usage

@@ -1,0 +1,1 @@
+deletesym -l:<lang>

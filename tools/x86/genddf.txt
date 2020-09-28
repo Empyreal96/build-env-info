@@ -1,0 +1,1 @@
+Usage: genddf foo.cab d:\sp3files [/run update.exe]

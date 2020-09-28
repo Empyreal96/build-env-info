@@ -1,0 +1,23 @@
+Microsoft (R) Pseudo Localization Tools Version 1.0.0.36.
+Copyright (C) Microsoft Corp. 2001. All Rights reserved.
+
+LC-file scan utility.
+
+LCSCAN -p|-l|-t|-m|-x|-n|-a|-c|s|-z|-e [-r] FileName                        
+     -p returns all placeholders                                            
+     -l returns all locks                                                   
+     -t returns all Adaptation                                              
+     -m returns all maps                                                    
+     -x returns all maxlength                                               
+     -n returns all norules                                                 
+     -a returns all instructions (not including strings with comments only) 
+     -c returns all comments                                                
+     -s lists placeholders and map instructions containing spaces           
+     -z removes the comment section from the lc-file                        
+     -e returns the filename if the lc file is empty                        
+     -r work recursively                                                     
+                                                                            
+LCSCAN -d|-u ReportFile                                                     
+     -d deletes entries listed in ReportFile from lc-files                  
+     -u updates comments listed in ReportFile from lc-files                 
+     ReportFile is a tab-separated report file created with lcscan          

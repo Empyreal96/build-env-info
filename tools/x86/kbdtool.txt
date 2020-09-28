@@ -1,0 +1,8 @@
+
+KbdTool v3.11 - convert keyboard text file to C file
+
+Usage: KbdTool [-v] [-k] file
+        [-?] display this message
+        [-v] verbose diagnostics/warnings
+        [-k] builds kbd layout for embedding in the kernel
+

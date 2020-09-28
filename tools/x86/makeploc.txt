@@ -1,0 +1,12 @@
+Pseudo localize utility                                       
+                                                              
+Usage: makeploc PlocMode FileName [lc-file]                   
+                                                              
+ PlocMode:                                                    
+     ploc:   to create binaries to be tested in a pseudo build
+     usploc: to create binaries to be tested in a US build    
+     mirror: to create mirrored binaries                      
+ FileName: file to pseudo localize                            
+ lc-file:  private loc info file                              
+                                                              
+ For more information, see http://globalsys/pseudoloc or e-mail ntpsloc

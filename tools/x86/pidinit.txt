@@ -1,0 +1,6 @@
+pidinit -d <flags> -g <outputname> -m <mpccode> -s[smro] -z -h -?
+writes a signature to <outputname> based on <flags>
+-s (SiteType) s (select) m (msdn) r (retail) o (oem)
+-z (decode)
+-m <mpccode> : mpccode is a 5 digit number
+-h or -? this message

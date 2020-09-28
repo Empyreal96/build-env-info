@@ -1,0 +1,3 @@
+mqexchng [-l <language>]
+
+Creates mqexchng.exe (self extracting executable)

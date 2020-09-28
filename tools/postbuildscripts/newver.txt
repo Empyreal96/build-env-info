@@ -1,0 +1,3 @@
+Run this before starting an incremental IDX build.
+It updates the build date.
+

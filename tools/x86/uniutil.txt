@@ -1,0 +1,29 @@
+Unicode File Utility
+
+uniutil [-a] [-i] [-v] [-z] [-c:codepage] [-h:number] [-m:printf format] [drive:][path]filename1 [drive:][path]filename2
+
+[-a] paramter -- converting ansi to unicode file:
+   -a           required parameter for this functionality
+   -c:codepage  specifies the codepage to use (optional,defaults to 1252 (usa ascii))
+   filename1    ansi filename that should be converted
+   filename2    unicode filename that result will be saved to
+
+[-i] parameter -- is specified file unicode:
+   -i           required paramter for this functionality
+   filename1    filename to check if unicode.  if unicode ERRORLEVEL=2, if not unicode ERRORLEVEL=1.
+[-z] parameter -- removing trailing control-z from end of unicode file:
+   -z           required paramter for this functionality
+   filename1    unicode filename that should have control-z removed from
+   filename2    unicode filename that result will be saved to
+
+[-h] parameter -- displaying version:
+   -h:decimalnum required paramter for this functionality, input decimal number, get hex back.
+[-m] parameter -- printf format for -h function:
+   -m:%x required paramter for this functionality.. eg:%x,0x%x,x%08lx,x8%07lx
+[-v] parameter -- displaying version:
+   -v           required paramter for this functionality, sets ERRORLEVEL=version num of this binary.
+
+Examples:
+uniutil -a -c:1252 c:\MyGroup\MyFileAnsi.txt c:\MyGroup\MyFileUnicode.txt
+uniutil -i c:\MyGroup\MyFileUnicode.txt
+uniutil -z c:\MyGroup\MyFileUnicode.txt c:\MyGroup\MyFileUnicode.txt

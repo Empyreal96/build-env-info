@@ -1,0 +1,7 @@
+migwiz.cmd [-l <language>]
+
+This is for the Files and Settings Transfer Wizard (aka Migration
+Wizard, or migwiz). It runs iexpress to generate a self-extracting
+CAB and install into support	ools.
+This will also copy shfolder.dll into valueadd\msft\usmt for
+distribution with the command line tool.

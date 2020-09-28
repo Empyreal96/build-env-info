@@ -1,0 +1,300 @@
+
+#############################################################################################
+
+sdv
+A GUI front-end to some Source Depot commands. 
+
+#############################################################################################
+Sections:
+
+-Command line syntax 
+-sdv changes 
+-sdv describe 
+-sdv filelog 
+-sdv opened 
+-Shortcuts 
+-Troubleshooting 
+-sdv branch syntax 
+-sdv special powers 
+-Limitations 
+-Appendix 
+-Windows NT branch model 
+
+
+#############################################################################################
+
+Command line syntax
+
+#############################################################################################
+
+sdv [ options ] command [ arg ... ]
+
+Some options are common to all sdv commands. Note that all common options begin with a double-dash and they come before the command name. 
+
+--s "sdoptions" 
+Pass sdoptions directly to sd. See "sd help usage" for details on sd options. If you need to pass quotation marks to sd, use double quotation marks. 
+
+Examples: 
+
+sdv --s "-p server:4001"
+sdv --s "-P ""my password"""
+
+Note: sdv does not parse these options. It passes them blindly to sd. The intent of this flag is to allow you to provide access/authentication information. Passing an option that alters sd's behavior in a more substantial way (such as the -V option) will result in sdv getting extremely confused. 
+
+--# 
+Enables computation of "code churn" statistics. If enabled, reports will include churn information in the form "deleted/added". For example, a churn value of "5/3" means that five lines were deleted and three lines were added. Requires sd 1.5. 
+
+Note: Computing churn is expensive, so it's off by default. 
+
+
+
+#############################################################################################
+
+sdv changes
+
+#############################################################################################
+
+sdv [ options ] changes [-i] [-m [skip,]count] [-u userid] [ pattern ... ]
+
+Display the results of an "sd changes" command. 
+
+options 
+Common sdv options are supported. 
+
+-i 
+Has the same effect as the "sd changes -i" option. 
+
+-mskip,count 
+Has the same effect as the "sd changes -m" option. If no "-m" flag is provided, sdv defaults to "-m50". 
+
+-u userid 
+Has the same effect as the "sd changes -u" option. Requires sd 1.6; is emulated on previous versions of sd. 
+
+pattern 
+Zero or more patterns. 
+
+sdv supports the same patterns as sd, with the following differences: 
+
+The default pattern is "*" (all files in current directory) rather than "all files in the depot". To query against all files in the depot, use 
+
+    sdv changes ""
+
+to force a null query string to be passed to sd. 
+
+sdv branch syntax is supported. 
+
+To view the details of a particular changelist, double-click it. This will open a changelist view. 
+
+Hovering over a change number displays the full change description as an infotip. 
+
+The "Comment" field is the first line of the checkin description. So make it a good one! 
+
+To see what else you can do, right-click a change number or browse the menus. 
+
+
+#############################################################################################
+
+sdv describe
+
+#############################################################################################
+
+sdv [ options ] describe changeno [ pattern ... ]
+
+Display the results of an "sd describe" command. 
+
+options 
+Common sdv options are supported. 
+
+changeno 
+The change list to display. 
+
+pattern ... 
+Optional list of patterns for files that should be moved to the top of the file list. This is provided for scripting; you are not expected to pass patterns manually. 
+
+From the changelist description, you can double-click the first line (the one that begins "Change 1234") to view the entire changelist in windiff. Alternatively, you can double-click a specific file to view the diff for only that file. 
+
+You can type Ctrl+C (or for old-timers, Ctrl+Insert) to copy a line from the changelist view to the clipboard. If you copy a line from the file list, then the full depot specification and the revision number are copied. All other lines are copied verbatim. 
+
+If churn is enabled, each text file that was edited will have the churn values appended. 
+
+Files which match the pattern (or which are connected to files matching the pattern via a chain of branch integrations) are placed at the top of the file list. Note: Assumes Windows NT branch model. 
+
+If the describe window was opened from another sdv window, the donor sdv window will set a pattern that causes the files it thinks you are interested in to go to the top of the file list. 
+
+If churn is enabled, then files with a churn of (0/0) are dropped to the bottom of the list, since they are rarely interesting. 
+
+To see what else you can do, right-click a line of the changelist description or browse the menus. 
+
+
+#############################################################################################
+
+sdv filelog
+
+#############################################################################################
+
+sdv [ options ] filelog [-# revision] [-m [skip,]count] file[revRange]
+
+Display the results of an "sd filelog" command. 
+
+options 
+Common sdv options are supported. 
+
+-# revision 
+Optional revision number to autoselect in the results window. If no "-m" flag is provided, sdv autoselects the most recent revision. This is provided for scripting; you are not expected to specify an autoselect revision when running sdv manually. 
+
+-mskip,count 
+Has the same effect as the "sd filelog -m" option. If no "-m" flag is provided, sdv shows all revisions. 
+
+file[revRange] 
+The file whose log is to be viewed, optionally restricted with a revision range. sdv branch syntax is supported for this parameter. Wildcards are not permitted here; you can view the filelog for only one file at a time. 
+
+From the filelog, you can double-click a specific revision to view the diff for that change. 
+
+If churn is enabled, each text file that was edited will have the churn values appended. 
+
+To see what else you can do, right-click a line of the filelog or browse the menus. 
+
+
+#############################################################################################
+
+sdv opened
+
+#############################################################################################
+
+sdv [ options ] opened [ -u domain\user ] [ file ... ]
+
+Display the opened files on the client, grouped by changelist. 
+
+options 
+Common sdv options are supported. 
+
+-u domain\user 
+Optional user whose opened files on the client are to be viewed. Default is the current user. 
+
+file ... 
+Optional list of files to display. Default is to show all opened files. 
+
+To see what you can do, right-click a line of the list or browse the menus. 
+
+
+#############################################################################################
+
+Shortcuts
+
+#############################################################################################
+
+If the command line to sdv does not match one of the pattern described above, then sdv attempts to guess which command you are trying to execute. 
+
+You type  Implied command  Equivalent to 
+sdv 1234  describe  sdv describe 1234 
+sdv file  filelog  sdv filelog file 
+sdv pattern*.c*  changes  sdv changes pattern*.c* 
+sdv -i .../pattern  changes  sdv changes -i .../pattern 
+sdv  changes  sdv changes 
+
+Note that these heuristics are not robust. For example, if you have a file called "1234", then "sdv 1234" will be interpreted as "sdv describe 1234" and not "sdv filelog 1234". Or if you have a file called "changes", then "sdv changes" will be interpreted as "sdv changes" with no arguments rather than as "sdv filelog changes". 
+
+To avoid these problems, just give the command explicitly instead of relying on a shortcut. 
+
+
+#############################################################################################
+
+Troubleshooting
+
+#############################################################################################
+
+If you get an error from windiff saying that it doesn't support depot paths on the command line, then you need a newer version of windiff. 
+sdv branch syntax
+sdv supports an enhancement to the standard sd file specifications to allow easy navigation of branches. Note: Assumes your depot follows the Windows NT branch model. 
+
+If you prefix a pattern with a branch name and a colon, the file is reinterpreted to come from the specified branch rather than from the current directory. If the branch name begins with a slash, then the branch name is a private branch. Otherwise, it is a top-level (official) branch. 
+
+(Branch names must be at least two characters long to prevent the branch syntax from being misinterpreted as a drive letter.) 
+
+The following examples assume that the current directory corresponds to //depot/exp/sdv. 
+
+Pattern  Expands to 
+sdv.h  //depot/exp/sdv/sdv.h 
+main:sdv.h  //depot/main/sdv/sdv.h 
+/office:sdv.h  //depot/private/office/sdv/sdv.h 
+  
+...  //depot/exp/sdv/... 
+main:...  //depot/main/sdv/... 
+/office:...  //depot/private/office/sdv/... 
+  
+../bbpack/*.cmd  //depot/exp/bbpack/*.cmd 
+main:../bbpack/*.cmd  //depot/main/bbpack/*.cmd 
+/office:../bbpack/*.cmd  //depot/private/office/bbpack/*.cmd 
+
+
+#############################################################################################
+
+sdv special powers
+
+#############################################################################################
+
+sdv was bitten by a radioactive spider and has as a consequence been imbued with special powers that sometimes come in handy. 
+
+Net use'd to another enlistment
+sdv detects that the current directly belongs to somebody else's enlistment and fiddles the parameters that it sends to sd so the "right" thing happens. Normally, sd bails with an error message like 
+Path 'Z:\' is not under client's root 'C:\src'.
+
+Gauntlet
+sdv has special knowledge of the Gauntlet checkin process and displays Gauntlet checkins as if they had been checked in by the submitting developer (rather than by the Gauntlet machine). 
+
+proxy checkins
+sdv recognizes the following patterns at the start of a checkin description and treats them as proxy checkins. 
+
+123456 (developer) comment
+123456 [developer] comment
+(developer) comment
+[developer] comment
+
+RAID bugs
+sdv sniffs around the checkin comment looking for things which might be bug numbers. When it finds one, it will offer to view the RAID bug as a web page. By default, the bug is interpreted as a bug in the Windows NT database. You can override this by setting the SDVRAID environment variable. Its value is a command line to execute, with a "#" where the bug number should go. (Typically a program with arguments or an URL.) 
+
+For example, you might use 
+
+set SDVRAID=http://www.imdb.com/Title?#
+
+to cause bugs to link to random movies from the Internet Movie Database. (Well, except that if your database has more bugs than the IMDb has movies, you'll end up with a bunch of broken links, but this was just a joke suggestion anyway.) 
+Limitations
+The branch resolver will get confused if you try to apply it to something that doesn't have a branch name. For example, if you type 
+
+main://depot/.../i386/...
+
+then you deserve what you get. 
+
+The branch resolver and the code that tries to figure out borrowed enlistments can get faked out by complicated client views which move directories around or edit filenames. 
+
+The code that tries to figure out borrowed enlistments will fail if your client root is set to the null string. If you are perverse enough to do this, then you deserve what you get. 
+
+Only the first bug number found is auto-linked by the bug number sniffer. For the others, you will have to type the bug number into Raid manually. This will teach you not to batch fixes for multiple bugs into a single changelist. 
+
+If multiple integrations to a file are submitted as a single change, only one of them will be displayed in the "filelog" list. Fortunately, very few people do this, but if you are one of those people, consider yourself warned. This is arguably a bug, but fixing it is tricky so I'm going to wait and see if anybody complains. 
+
+
+#############################################################################################
+
+Appendix
+Windows NT branch model
+
+#############################################################################################
+//depot/branchname/... are official, or "top-level" branches. The main branch is called "main". 
+
+//depot/private/branchname/... are private branches. 
+
+The file hierarchies under each branch are identical. In other words, the branch specifications are always of the form 
+
+    //depot/donor/aaaa/...      //depot/recipient/aaaa/...
+    //depot/donor/bbbb/cccc/... //depot/recipient/bbbb/cccc/...
+
+where "donor" and "recipient" are either a top-level branch name or a private branch name in the form "private/name". 
+These rules make it relatively easy to track the relationships between files because you can determine whether two files are connected via branch integrations just by looking at their full depot paths: 
+
+//depot/W/aaa/bbb/ccc/ddd
+//depot/X/aaa/bbb/ccc/ddd
+//depot/private/Y/aaa/bbb/ccc/ddd
+//depot/private/Z/aaa/bbb/ccc/ddd
+
+are all related to each other by chains of integrations. 

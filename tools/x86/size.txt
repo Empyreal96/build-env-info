@@ -1,0 +1,18 @@
+PURPOSE: Fills in the correct sizes for files in the BOM.
+
+PARAMETERS:
+
+[LogFile] - Path to append a log of actions and errors.
+[InBom] - Path of BOM which lists files whose sizes are to be updated.
+[SourceId] - Specifies the category of files whose sizes are updated.
+[SourcePath] - Path of the files in <SourceId>.
+[Compressed] - 'C' compressed, 'N' uncompressed, 'B' update both, 'F' random, 'Z' fixed.
+
+If [SourceId] begins with a #, then certain entries in the BOM
+are to be filtered out based on the values following the #.
+#A-FR means to exclude all files marked with A-FR in the group field.
+#A+FR means to exclude all files not marked with A-FR in the group field.
+#A-* means to exclude all files marked with A- in the group field.
+
+If [SourceId] is NTFLOP, LMFLOP, NTCD, or LMCD no sizes are updated and
+the only the entries in the BOM relating to the specified product are output.

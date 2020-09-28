@@ -1,0 +1,3 @@
+Usage: CHMODE [/RN] {[-+][hsar]}+ {filespec}+
+    /R - Recurse to subdirectories
+    /N - Non-directory files only

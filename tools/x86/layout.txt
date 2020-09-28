@@ -1,0 +1,15 @@
+PURPOSE: Assigns files to disks and generates a layout file.
+
+PARAMETERS:
+
+[LogFile] - Path to append a log of actions and errors.
+[InBom] - Path of BOM for which a layout is to be made.
+[OutLayout] - Path of new layout.
+[Product] - Product to lay out.
+            NTFLOP = Windows NT on floppy
+            LMFLOP = Lan Manager on floppy
+            NTCD = Windows NT on CD
+            LMCD = Lan Manager on CD
+            SDK = Software Development Kit
+[FloppySize] - Size in bytes of the second disk.
+

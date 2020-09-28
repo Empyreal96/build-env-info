@@ -1,0 +1,3 @@
+NTBackupOnPersonal.cmd [-l <language>]
+
+Make CAB files for ntbackup distribution (ntbackup.msi)

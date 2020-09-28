@@ -1,0 +1,207 @@
+Rep  -  a fast, file-oriented search and replace program.
+
+Usage:  rep <arguments>
+
+	where the <arguments> specify find and replacement strings, files to
+	process, and other options, as described below.
+
+
+FIND AND REPLACEMENT STRINGS
+
+  -find:<string>
+	Searches for the specified string.
+
+  @find:<filename>
+	Searches for the string in the specified file.
+
+  -findtag:<description>
+	Searches for tags matching the specified description (see below).
+
+  @findtag:<filename>
+	Searches for tags matching the description in the specified file.
+
+  -replace:[<string>]
+	Replacement string. Each find string must be followed by at least
+	one replacement string, but an "empty" replacement string (with
+	nothing after the colon) is allowed.
+
+  @replace:<filename>
+	Name of a file containing the replacement string.
+
+  Note: All searches are case-sensitive unless -i is specified.
+
+
+MULTIPLE FIND AND REPLACEMENT STRINGS
+
+If the arguments includes multiple find strings, rep simultaneously replaces
+all the find strings. If more than one find string matches at the same point
+in the file, rep replaces the longest match.
+
+If a find string has multiple replacement strings, rep replaces the first
+match with the first replacement string and subsequent matches with subsequent
+strings. The following command replaces the first quotation mark with &ldquo;,
+the second with &rdquo;, the third with &ldquo; again, and so on:
+
+	rep -find:"\"" -replace:"&ldquo;" -replace:"&rdquo;" *.htm
+
+
+ALTERNATIVE SYNTAX
+
+The -find: and -replace: prefixes may be omitted for the first find and
+replacement strings. For example, the following commands are equivalent:
+
+	rep -find:"find this" -replace:"replace with this" *.htm
+	rep "find this" "replace with this" *.htm
+
+Similarly, @find:<filename> and @replace:<filename> may be abbreviated as
+@<filename> for the first find and replacement strings. Thus, the following
+commands are equivalent:
+
+	rep @find:find.txt @replace:replace.txt *.htm
+	rep @find.txt @replace.txt *.htm
+
+
+FINDING TAGS
+
+The -findtag and @findtag arguments replace XML or HTML tags that match a
+specified description. The description has the form:
+
+	description: <tagname>[.<attlist>]
+	attlist:     <attdesc>[,<attlist>]
+	attdesc:     <attname>[=<attval>]
+
+In other words, the description as a whole consists of a tag name
+optionally followed by a period and an attribute list. (The tag name
+may be omitted, in which case the description matches any tag name.)
+
+The optional attribute list consists of one or more attribute descriptions
+separated by commas. Each attribute description consists of an attribute
+name optionally followed by an equal sign and a value. (The attribute name
+may be an empty string, in which case the attribute description matches any
+attribute name.)
+
+The description as a whole matches a given tag if the tag name matches
+and all of the attribute descriptions match. Some examples follow:
+
+	-findtag:body
+		Matches any "body" tag.
+
+	-findtag:meta.name
+		Metches a "meta" tag if it has a "name" attribute.
+
+	-findtag:meta.name=MS-HKWD
+		Matches a "meta" tag if it has a "name" attribute with
+		the value "MS-HKWD".
+
+
+REPLACING TAGS
+
+If a matching tag is found, rep replaces the entire tag (everything from
+the '<' through the '>') with the specified replacement string. If the
+replacement string contains any of the placeholder variables listed below,
+rep substitutes the appropriate values:
+
+	$$        a literal dollar sign
+	$0        the entire matching tag
+	$1        the matching tag's name
+	$2        all attributes (including leading/trailing spaces)
+	$attr.0   the entire "attr" attribute (name, equal sign, and value)
+	$attr.1   the name of the "attr" attribute, if any
+	$attr.2   the equal sign in the "attr" attribute, if any
+	$attr.3   the value of the "attr" attribute, if any
+
+For example, the following command finds any "body" tag (regardless of what
+attributes it has) and replaces it with a body tag that has no attributes:
+
+	rep -i -findtag:"body" -replace:"<BODY>" *.htm
+
+The following command finds any tag named "meta" and replaces it with a tag
+that has the same attributes but is named "FRED":
+
+	rep -i -findtag:"meta" -replace:"<FRED$2>" *.htm
+
+
+FILES TO PROCESS
+
+  -r[:<dir>]
+	Subsequent <filespec> arguments are evaluated recursively, beginning
+	with the current directory or the directory specified by :<dir>. In
+	other words, matching files in subdirectories are processed.
+
+  <filespec>
+	Filename or simple pattern specifying the file or files to process.
+	Multiple <filespec> arguments may be specified. Files specified this
+	way are always modified in place.
+
+	Note: A <filespec> argument must come after the find and replacement
+	strings, otherwise it is interpreted as a find or replacement string.
+	(See alternative syntax noted above.)
+
+  @files:<filename>
+	Name of a text file containing a list of files to process. Each line
+	of the text file has the general form:
+
+		<filename> [ '>' <filename> ] [ ';' <comment> ]
+
+	The first filename specifies the input file. The file is modified in
+	place unless the line contains an '>' followed by an output filename.
+	Whitespace characters (denoted as S) are ignored.
+
+
+OTHER ARGUMENTS
+
+  @cmd:<filename>
+	Name of a text file containing arguments, one per line. An unquoted
+	semicolon (';') comments out the remainder of a line. Rep processes a
+	line by removing any comment, removing leading and trailing spaces
+	and tabs, processing quotation marks and escape sequences, and then
+	processing the argument as if it were on the command line.
+
+	Note: You need not enclose spaces in quotation marks, as you would on
+	the command line.
+
+  -noundo
+	Does not save undo information (faster).
+
+  -v
+	Verbose.
+
+  -i
+	Ignore case; subsequent find/findtag strings are case insensitive.
+
+  -w
+	Match whole words only.
+
+  -e
+	Continue even if errors occur.
+
+  -x
+	Transacted mode (slower).
+
+  Note: Single-letter switches can be combined (rep -viw ...).
+
+
+QUOTATION MARKS AND ESCAPE SEQUENCES
+
+  All or part of an argument may be enclosed in single or double quotation
+  marks. If so, the quotation marks themselves are removed. However, the text
+  in quotes may include spaces and/or the following escape sequences:
+
+	\/ \@ \' \" \? \\ \a \b \f \n \r \t \v \0
+	\xNN (hexadecimal number) \NNN (octal number)
+
+  Backslashes not in quotation marks are interpreted literally.
+
+
+SPECIAL COMMANDS
+
+ rep -undo
+	Undo the last replacement command. The undo command must be executed
+	in the same directory as the previous replacement command.
+
+ rep -changes
+	List files changed by last rep command
+
+ rep -errs
+	List exit codes that can be returned by rep.
+

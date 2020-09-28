@@ -1,0 +1,19 @@
+Microsoft (R) Windows NT (TM) Version 3.5 KILL
+Copyright (C) 1994-1998 Microsoft Corp. All rights reserved
+
+usage: KILL [options] <<pid> | <pattern>>*
+
+           [options]:
+               -f     Force process kill
+
+           <pid>
+              This is the process id for the task
+               to be killed.  Use TLIST to get a
+               valid pid
+
+           <pattern>
+              The pattern can be a complete task
+              name or a regular expression pattern
+              to use as a match.  Kill matches the
+              supplied pattern against the task names
+              and the window titles.

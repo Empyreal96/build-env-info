@@ -1,0 +1,4 @@
+inetsrv [-l <language>]
+
+Calls _NTPOSTBLDinetsrvmakecab.cmd which will copy files into place 
+for IIS setup to work.

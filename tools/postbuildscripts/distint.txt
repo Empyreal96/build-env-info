@@ -1,0 +1,15 @@
+distint.cmd <-b:branch> [-t:timestamp] [-a] [-n]
+
+   -b:branch       perform integration for given branch
+   -t:timestamp    integrate to given timestamp
+   -a              automatically resolve using -at
+   -n              do nothing, only show what would be done
+
+This will perform a parallel integration of the given lab name
+which must be of the form Lab01_n. The timestamp, if given
+must be of the form @2000/07/12:22:00:00.
+
+Using the -a flag will additionally perform a resolve -at and 
+then a resolve -n.
+
+(distint) Finished.

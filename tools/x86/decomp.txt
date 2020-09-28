@@ -1,0 +1,11 @@
+DCOMP -llog [-x .ext ...] [-m#] [-d] [-bbom] Source Dest
+
+  -x .ext        Exclude files with extension .ext.
+  -m             Force use of # threads.
+  -v             Verbose.
+  -llog          Log filename, dcomp.log default.
+  -binfPath      your setup\inf\win4\inf path.
+  -f infname     Excludes files listed in inf.
+  Source         Source file specification.  Wildcards may be used.
+  Destination    Specifies directory where renamed compressed files
+                 will be placed.

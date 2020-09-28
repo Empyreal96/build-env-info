@@ -1,0 +1,1 @@
+BCDazzle [-s server_configuration] [-m macros_configuration]

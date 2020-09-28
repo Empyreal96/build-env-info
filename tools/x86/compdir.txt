@@ -1,0 +1,33 @@
+Usage: compdir [/abcdefghiklnoprstuvwz$] [/m {wildcard specs}] [/x {wildcard specs}] Path1 Path2
+    /a     checks for attribute difference
+    /b     checks for binary difference
+    /c     prints out script to make
+           directory2 look like directory1
+    /d     do not perform or denote deletions
+    /e     execution of tree duplication
+    /f     only update files that already exist
+    /g     ignore slm files, i.e slm.ini, slm.dif
+    /h     don't copy attributes
+    /i     ignore rebase and resource differences
+    /k     break links if copying files (NT only)
+    /l     use links instead of copies  (NT only)
+    /m[:f] marks start of match list. f is a
+           match file
+    /n     create second path if it doesn't exist
+    /o     print files that are the same
+    /p{A}  only compare files with attribute A
+           where A is any combination of ahsr & -
+    /r     do not recurse into subdirectories
+    /s     checks for size difference
+    /t[:#] checks for time-date difference;
+           takes margin-of-error parameter
+           in number of seconds.
+    /u     uses multiple threads (Win32 only)
+    /v     prints verbose output
+    /w     preserves case - not just lower case
+    /x[:f] marks start of exclude list. f is an
+           exclude file
+    /z     forces copy or link without checking
+           criteria
+    /$     create SIS links if possible
+    /?     prints this message

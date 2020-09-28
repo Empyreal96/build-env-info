@@ -1,0 +1,2 @@
+	USAGE:
+	stampinf -f filename [-s section] [-d xx/yy/zzzz] [-v w.x.y.z]

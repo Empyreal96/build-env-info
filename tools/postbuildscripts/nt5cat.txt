@@ -1,0 +1,3 @@
+nt5cat.cmd [-l <language>]
+
+Creates the nt5.cat system catalog

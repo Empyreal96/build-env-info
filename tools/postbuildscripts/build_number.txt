@@ -1,0 +1,7 @@
+build_number.cmd [-m] [-l <language>]
+
+Prints the build number of the current set of binaries.
+
+-m   major portion of the build number only
+
+Reads from %_NTPostBld%\build_logs\BuildName.txt

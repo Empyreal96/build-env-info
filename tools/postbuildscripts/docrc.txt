@@ -1,0 +1,5 @@
+
+docrc.cmd - calls ntcrcgen.pl to create crc files of the shares
+
+Usage:  DOCRC build#
+

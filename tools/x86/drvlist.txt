@@ -1,0 +1,11 @@
+Usage:  DRVLIST [/S] [/I] [/F CertClassInfPath] [/A arch] [/V ver] SourcePath
+
+Options:
+
+/I Include INFs in the list
+/S Skip class-/co-installers; build list strictly from INFs
+/F Filter based on list of class GUIDs in [DriverSigningClasses]
+   section of specified INF
+/A Architecture to build for, eg '/A 6' (IA64). Assumes /S
+/V Version to build for, eg '/V 0501' (5.1). Assumes /S
+/? or /H Display brief usage message

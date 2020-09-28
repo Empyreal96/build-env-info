@@ -1,0 +1,2 @@
+Usage: mergetok.exe USA_Unicode_Token File PLOC_UNICODE_Token_file Path_of_Merged_file
+Merge USA and PLOC Unicode token files

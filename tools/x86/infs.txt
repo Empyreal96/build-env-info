@@ -1,0 +1,8 @@
+PURPOSE: Creates INF file lists.
+
+PARAMETERS:
+
+[LogFile] - Path to append a log of actions and errors.
+[InLayout] - Path of Layout file from which INFs are generated.
+[Target Dir] - Directory where i386, mips, and alpha dirs are for lists.
+

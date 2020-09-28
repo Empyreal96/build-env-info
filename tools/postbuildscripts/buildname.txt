@@ -1,0 +1,16 @@
+buildname [-name <build name>] <build_* [build_* ...]>
+
+buildname will call functions from the BuildName.pm module. The option 
+-name paramater allows the caller to pass a build name to the specified 
+functions to override the default of reading the name from 
+_NTPostBlduild_logsuildname.txt.
+
+At least one BuildName function must be given on the command line. The
+complete list of functions available is documented in BuildName.pm
+
+Example:
+
+'buildname build_number build_branch' might return: '2420 main'
+
+'buildname -name 2422.x86fre.lab02_n.010201-1120 build_date' would 
+return: '010201-1120'

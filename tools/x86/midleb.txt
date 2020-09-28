@@ -1,0 +1,1 @@
+Usage : midleb <output file or - > <translation-file-name> <prefix>

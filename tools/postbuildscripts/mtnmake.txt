@@ -1,0 +1,19 @@
+mtnmake.cmd - Multi-Taskly NMake makefile with process<total><id>
+====================================================================
+Syntax:
+	mtnmake.cmd [SYSGEN] <numprocess>
+
+Argument : 
+SYSGEN     : by default it will define sysgen.err and sysgen.log for 
+             it's standard input / output file
+
+numprocess : number of session you want to run at the same time.
+
+Example:
+1. run nmake at 4 sessions
+=> $0 4
+2. run nmake for sysgen with 8 sessions
+=> $0 SYSGEN 8
+
+Parameter:
+	numrpcess : number of process 

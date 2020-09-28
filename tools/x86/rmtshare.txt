@@ -1,0 +1,22 @@
+The syntax of this command is:
+
+
+RMTSHARE  \\server
+          \\server\sharename
+          \\server\sharename=drive:path [/USERS:number | /UNLIMITED]
+                               [/REMARK:"text"]
+                               [/GRANT [user[:perm][ /GRANT user[:perm]]]]
+                               [/REMOVE user]
+          \\server\sharename [/USERS:number | /UNLIMITED]
+                               [/REMARK:"text"]
+                               [/GRANT [user[:perm][ /GRANT user[:perm]]]]
+                               [/REMOVE user]
+          \\server\sharename /DELETE
+
+NOTE: if a sharename or path contains spaces, it should be enclosed
+          in quotes:
+            \\server\"with space"="c:\with space"
+
+      perm can be Read, Change, or Full Control
+
+EXAMPLE: RMTSHARE \Computer1\Share1 /GRANT Yourdomain\You:Read

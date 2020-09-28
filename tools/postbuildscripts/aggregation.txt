@@ -1,0 +1,7 @@
+aggregation [-l <language>]
+
+Perform aggregation step according to the selected language.
+
+USA: Perform no aggregation steps.
+PSU: Perform the pseudo localization steps.
+All other langs: Perform localization steps.

@@ -1,0 +1,11 @@
+Microsoft UUID Generator v1.00 Copyright (C) Microsoft Corp. 1981-1999
+
+usage: uuidgen [-xisconvh?]
+	x - Generate sequential (V1) UUIDs
+	i - Output UUID in an IDL interface template
+	s - Output UUID as an initialized C struct
+	c - Output UUID in upper case
+	o<filename> - redirect output to a file, specified immediately after o
+	n<number> - Number of UUIDs to generate, specified immediately after n
+	v - display version information about uuidgen
+	h,? - Display command option summary

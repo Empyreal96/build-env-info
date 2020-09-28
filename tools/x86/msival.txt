@@ -1,0 +1,10 @@
+USAGE:
+ msival.exe {database}
+ msival.exe {database} -OFF
+NOTE:
+ For validation to proceed. . .
+	Tables required:
+	 _Validation (always)
+	 _InstallValidate (unless -OFF)
+	 _Required (unless -OFF)
+	 _Sequence (unless -OFF)

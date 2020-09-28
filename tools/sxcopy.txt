@@ -1,0 +1,11 @@
+
+Safe xcopy wrapper that logs and retries on error
+
+Usage: sxcopy.cmd <xcopy switches> <xcopy source> <xcopy destination> [file]
+   ex: sxcopy.cmd /rf foo %tmp%\
+   ex: sxcopy.cmd /v  foo %tmp%\foo.orig file
+
+       file    Key word to denote that <xcopy destination> is a filename
+               as opposed to a directory name.  
+               Prepends "echo f |" to the xcopy command
+

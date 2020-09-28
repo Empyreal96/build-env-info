@@ -1,0 +1,17 @@
+Merge 3 inf files.  Usage:
+xdosnet.exe  <input file1> <filter file> <diskid> <output file> <platform extens
+ion> <optional output exclude file> <optional input exclusion inf>
+
+  <input file1> - original inf file (i.e. layout.inf)
+  <filter file> - contains a list of entries to be excluded
+                  from the final output file
+  <disk id>     - output disk id (i.e. 1 or 2)
+  <output file> - output inf (i.e. dosnet.inf)
+  <platform extension>
+  <output exclude file> - optional output file containing files that were filter
+ed
+  <input exclusion inf> - optional input inf containing files that should never
+be filtered
+  <temp file> - optional file to be used to write boot file list into (IA64 temp
+orary workaround)
+

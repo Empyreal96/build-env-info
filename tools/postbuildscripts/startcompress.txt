@@ -1,0 +1,3 @@
+startcompress <PreComp|PostComp|EndComp> [-l <language>]
+
+Starts parallel compression

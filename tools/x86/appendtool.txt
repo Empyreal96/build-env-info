@@ -1,0 +1,7 @@
+<-file <output>> [-verbose] [-bufferstdin] [-atomicperitem] <[-] [file [...]]>
+
+-bufferstdin     Buffer all of stdin (-) before writing
+-atomicperitem   Lock the file per item, not per run
+-file <name>     What file should be written out to
+-verbose         Up the verbosity of debug spew (if any)
+-                Read from stdin into the output file.

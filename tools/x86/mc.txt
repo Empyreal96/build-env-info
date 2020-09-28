@@ -1,0 +1,33 @@
+Microsoft (R) Message Compiler  Version 1.12.2505
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+usage: MC [-?aAcdnosuUvw] [-m maxmsglen] [-h dirspec] [-e extension] [-r dirspec] [-x dbgFileSpec] filename.mc
+       -? - displays this message
+       -a - input file is ANSI (default).
+       -A - messages in .BIN file should be ANSI.
+       -b - .BIN filename should have .mc filename_ included for uniqueness.
+       -c - sets the Customer bit in all the message Ids.
+       -d - FACILTY and SEVERITY values in header file in decimal.
+            Sets message values in header to decimal initially.
+       -e extension - Specify the extension for the header file.
+                      From 1 - 3 chars.
+       -h pathspec - gives the path of where to create the C include file
+                     Default is .\
+       -m maxmsglen - generate a warning if the size of any message exceeds
+                      maxmsglen characters.
+       -n - terminates all strings with null's in the message tables.
+       -o - generate OLE2 header file (use HRESULT definition instead of
+            status code definition)
+       -r pathspec - gives the path of where to create the RC include file
+                     and the binary message resource files it includes.
+                     Default is .\
+       -s - insert symbolic name as first line of each message.
+       -u - input file is Unicode.
+       -U - messages in .BIN file should be Unicode (default).
+       -v - gives verbose output.
+       -w - warns if message text contains non-OS/2 compatible inserts.
+       -x pathspec - gives the path of where to create the .dbg C include
+                        file that maps message Ids to their symbolic name.
+       filename.mc - gives the names of a message text file
+                     to compile.
+       Generated files have the Archive bit cleared.

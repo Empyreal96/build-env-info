@@ -1,0 +1,3 @@
+indexsym [-l <language>]
+
+Begins symbol indexing of symbols found under the binaries tree.

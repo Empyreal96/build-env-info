@@ -1,0 +1,6 @@
+CPLocation [-l <language>]
+
+Writes the file build_logsCPLocation.txt with the location of the 
+x86 partner build. If OFFICIAL_BUILD_MACHINE is set will loop waiting
+for a matching build number. Otherwise, just wait for any x86 build
+of the same debug type.

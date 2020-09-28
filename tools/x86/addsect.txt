@@ -1,0 +1,10 @@
+Usage:
+    ADDSECT [options] /I:input /O:output /D:data
+Options:
+    /O:output     Specify output file.
+    /I:input      Specify input file.
+    /D:data       Specify data file.
+    /S:section    Symbol (defaults to .ramfs).
+    /H or /?      Display this help screen.
+Summary:
+    Adds a new section to a PE binary.

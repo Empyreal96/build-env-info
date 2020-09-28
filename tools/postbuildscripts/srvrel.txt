@@ -1,0 +1,26 @@
+
+Propagate builds to release servers.
+
+Usage:
+    srvrel.cmd: -l:<language> [-b:<BuildName>] [-p]
+
+    -l Language. 
+       Default is "usa".
+
+    -b Build Name.
+       Default is defined in 
+       <ReleaseShare>\<buildName>\build_logs\buildname.txt for language usa.
+       <ReleaseShare>\<lang>\<buildName>\build_logs\buildname.txt for language none usa.
+	
+    -r Alternate source server other than build machine.
+       Replace build machine if this is defined.
+
+    -p Powerless.
+       Display key variables only.
+
+    -? Display Usage.
+
+Example:
+     srvrel.cmd -b:2415.x86fre.main.001222-1745
+     srvrel.cmd -l:ger -p  
+

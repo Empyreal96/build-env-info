@@ -1,0 +1,1 @@
+genxx: [-i386|-alpha|-axp64|-ia64|-vdm|-amd64|<objpath>] [-s<h|inc>] [-o<outputpath>]

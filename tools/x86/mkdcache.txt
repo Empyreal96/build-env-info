@@ -1,0 +1,25 @@
+Builds a DRM Secure Audio Path cache file.
+
+MKDCACHE DRMListFile DriverPath OutCacheFile AllowTestCert
+         SkipMissingFiles [InCacheFile]
+
+MKDCACHE DRMList.txt .\Drivers.bin dcache.bin FALSE
+         TRUE dcache.bin.xpgold
+
+  DRMListFile     : File containing list of records in the form
+                    <DriverName:DRMLevel>.
+  DriverPath      : Directory to search for drivers listed in DRMListFile.
+  OutCacheFile    : Output file (always clobbered).
+  AllowTestCert   : TRUE|FALSE - flag drivers as signed by the test cert in
+                    OutCacheFile. If TRUE, both test-cert and real-cert
+                    entries are added to OutCacheFile.
+  SkipMissingFiles: TRUE|FALSE - If FALSE, shows an error when a file
+                    in DRMListFile cannot be found in DriverPath.  If TRUE,
+                    those errors are suppressed.
+  InCacheFile     : [optional] If specified, the hashes of drivers in
+                    DRMListFile will be appended to the contents of
+                    InCacheFile.  This must be a valid cache file.
+                    If not specified, the value of InCacheFile defaults to
+                    %System32%\dcache.bin.  If that file does not exist,
+                    OutCacheFile will only contain the new hash entries.
+                    Note: InCacheFile cannot be the same as OutCacheFile

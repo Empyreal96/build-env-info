@@ -1,0 +1,24 @@
+
+A wrapper starting release processes which are srvrel, miscrel and startsymcopy.
+
+Usage:
+    release.cmd: -l:<language> [-b:<BuildName>] [-p]
+
+    -l Language. 
+       Default is "usa".
+
+    -b Build Name.
+       Default is defined in 
+       <ReleaseShare>\<buildName>\build_logs\buildname.txt for language usa.
+       <ReleaseShare>\<lang>\<buildName>\build_logs\buildname.txt for language none usa.
+   
+    -o Executing options of release processes.
+       Use ',' to separate options.
+       Default to all options when undefined.
+
+    -? Display Usage.
+
+Example:
+     release.cmd -l:ger -b:2415.x86fre.main.001222-1745 -p
+     release.cmd -o:srvrel,miscrel
+

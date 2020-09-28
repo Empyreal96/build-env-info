@@ -1,0 +1,3 @@
+smashem [-l <language>]
+
+Smash locks on certain binaries

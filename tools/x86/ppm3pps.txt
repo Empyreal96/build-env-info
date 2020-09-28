@@ -1,0 +1,5 @@
+Usage:
+    ppm2pps.exe -d -n -x <ppm file> <pps output file>
+        -d set debug flag
+        -n dumps only named structs/enums/unions
+        -x creates ppswind.h for size/offset checking

@@ -1,0 +1,26 @@
+Usage:  INFSCAN [/B <textfile>] [/C <output>] [/D] [/E <output>] [/F <filter>] [/G] [/I] {/N <infname>} {/O <dir>} [/P] [Q <output>] [/R] [/S <output>] [/T <count>] [/V <version>] [/W <textfile>] [/X <textfile>] [/Y] [/Z] [SourcePath]
+
+Options:
+
+/B <textfile> (build special) Filter /E based on a list of "unchanged" files
+              variation /B1 - based on copied files only
+              variation /B2 - based on INF files only
+/C <output>   Create INF filter/report based on errors
+/D            Determine non-driver installation sections
+/E <output>   Create a DeviceToInf filter INF
+/F <filter>   Filter based on INF: FilterInfPath
+/G            Generate Pnfs first (see also /Z)
+/I            Ignore errors (for when generating file list)
+/N <infname>  Specify single INF name (/N may be used multiple times)
+/O <dir>      Specify an override directory (/O may be used multiple times and parsed in order)
+/P            Pedantic mode (show potential problems too)
+/Q <output>   Source+Target copied files list (filtered by layout.inf) see also /S
+/R            Trace (list all INF's)
+/S <output>   Source copied files list (filtered by layout.inf) see also /Q
+/T <count>    Specify number of threads to use
+/V <version>  Version (eg NTx86.5.1)
+/W <textfile> List of files to include (alternative to /N)
+/X <textfile> List of files to exclude (same format as /W) overrides later includes
+/Y            Don't check per-inf [SourceDisksFiles*]
+/Z            Generate Pnfs and quit (see also /G)
+/? or /H Display brief usage message

@@ -1,0 +1,30 @@
+Usage:
+
+    sd [ options ] command [ arg ... ]
+    sd set [ -s -S service ] [ var[="value"] ]
+    sd resolve3 [ -a<flag> -d<flag> ] base theirs yours merged
+
+    Options:
+	-? -h		print this message
+	-s		debug mode
+	-v level	debug modes
+	-V		print client version
+	-x file		read args from file ("file" can be "-" for stdin)
+	-Y		output summary of warnings and errors
+			(use -Y to force the summary, or -Y- to disable)
+
+	-c client	set client name
+	-d dir		set current directory for relative paths
+	-H host		set host name
+	-M maxresults	set maxresults (to value smaller than user's default)
+	-p port		set server port
+	-P password	set user's password
+	-u user		set username
+
+    sd set:
+	-s		get/set variables in HKLM (normally HKCU)
+	-S service	get/set variables for the named service
+
+    sd resolve3:
+	see 'sd help resolve' for explanation of the -a<flag> and -d<flag>.
+

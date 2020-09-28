@@ -1,0 +1,51 @@
+
+Microsoft Application Compatibility Database Compiler  v2.05.04a
+Copyright (C) Microsoft Corp 2000-2002.  All rights reserved.
+
+    Usage:
+
+        ShimDBC [mode] [command switches] [input file] [output file]
+
+    Modes:
+
+        Fix                Compiles a Fix database (e.g., sysmain.sdb).
+
+        AppHelp            Compiles an AppHelp database (e.g., apphelp.sdb).
+
+        MSI                Compiles an MSI database (e.g., msimain.sdb).
+
+        Driver             Compiles a Driver database (e.g., drvmain.sdb).
+
+    Command switches:
+
+        -a <file path>     Specifies the reference XML for the AppHelp database
+                           This is usually the fix database (AppHelp mode only)
+
+        -h                 Creates HTMLHelp files in the output file's directory
+                           used to create .CHM files. (AppHelp mode only)
+
+        -f <file path>     Include FILE binaries in database <file path> is
+                           directory to grab binaries from. (Fix mode only)
+
+        -k <keyword>       Specifies a <HISTORY> keyword to filter on.
+
+        -m                 Writes out Migration support files
+
+        -ov <version>      Specifies what OS version to compile for.
+
+        -op <platform>     Specifies what OS platform to compile for.
+
+        -l <language>      Specifies the language to compile for.
+
+        -q                 Quiet mode.
+
+        -r[s]              Creates Win2k-style registry files for use in
+                           migration or Win2k update packages. If -rs is used,
+                           then shimming stubs are added. (Fix mode only)
+
+        -s                 Strict compile, additional checking is performed.
+
+        -v[s]              Verbose statistics. -vs indicates summary form.
+
+        -x <file path>     Use the makefile specified.
+

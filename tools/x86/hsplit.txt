@@ -1,0 +1,23 @@
+HSPLIT: Header Split Utility. Version 2.1
+Usage: hsplit [options] <-o PublicFile InternalFile> [-i] File1 [-i] File2...
+	[-4] Generate chicago/nashville headers
+	[-bt2 BeginStr EndStr] Replace begin_internal/end_internal - Obsolete
+	[-btb BeginStr EndStr] Replace begin_both/end_both tags - Obsolete
+	[-c TagMarker] Replace tag marker. default ";"
+	[-e] Generate NT sur headers
+	[[-i] file1 file2 ..] Input files - Required
+	[-lt2 str] Replace internal tag - Obsolete
+	[-ltb str] Replace both tag - Obsolete
+	[-n] Generate NT headers - default
+	[-x[a] ExtractHeader ExtractTag] Extract files and tags files
+	[-o PublicHeader InternalHeader] Output files - Required
+	[-p] Generate NT surplus headers
+	[-s] Process internal and both tags only
+	[-ta tag1 tag2 ..] Include lines using these tags
+	[-ti tag1 tag2 ..] Ignore these tags
+	[-ts tag1 tag2 ..] Skip lines using these tags
+	[-u] Skip unknown tags. Default: ignore
+	[-v] Version number. Default: LATEST_WIN32_WINNT_VERSION
+
+Tags Format:
+	<TagMarker>[begin/end][_public/internal][[_tag1][_tag2]...][_if_(str)_version | _version]

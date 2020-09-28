@@ -1,0 +1,17 @@
+Usage: SetReg [options] {[<Choice #> <Value>]...}
+Options: 
+  -q    No display of key values after request is completed
+
+Choices: 
+  Trust the Test Root........................... 1 
+  Use expiration date on certificates........... 2 
+  Check the revocation list..................... 3 
+  Offline revocation server OK (Individual)..... 4 
+  Offline revocation server OK (Commercial)..... 5 
+  Java offline revocation server OK (Individual) 6 
+  Java offline revocation server OK (Commercial) 7 
+  Invalidate version 1 signed objects........... 8 
+  Check the revocation list on Time Stamp Signer 9 
+  Only trust items found in the Trust DB........ 10 
+Value:  TRUE | FALSE 
+

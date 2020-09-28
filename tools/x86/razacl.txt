@@ -1,0 +1,9 @@
+-? unrecognized
+razacl.exe - usage
+	/background:value
+	/sddlfile:value
+	/shares
+	/source
+	/createsddl
+	/root:value
+	/force

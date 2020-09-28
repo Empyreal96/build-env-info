@@ -1,0 +1,3 @@
+layout [-l <language>]
+
+Updates layout.inf for each sku with the sizes of the binaries

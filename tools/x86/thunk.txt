@@ -1,0 +1,18 @@
+Microsoft (R) Thunk Compiler Version 1.8  Dec 14 1994 14:53:05
+Copyright (c) Microsoft Corp 1988-19120. All rights reserved.
+
+
+Thunk compiler usage
+thunk [{-|/}options] infile[.ext]
+
+where options include:
+        ?               Display this help screen
+        h               Display this help screen
+        o <name>        Override default output filename
+        p<n>            Change 16-bit structure alignment (default = 2)
+        P<n>            Change 32-bit structure alignment (default = 4)
+        t <name>        Override default stem name
+
+        Nx <name>       Name segment or class where x is
+                C32     32-bit code segment name
+                C16     16-bit code segment name

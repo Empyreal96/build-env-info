@@ -1,0 +1,3 @@
+SDCOMP - emulate subset of scomp for use with Source Depot.
+Syntax:  SDCOMP -n filespec
+  Works backward, getting the last n diffs to filespec.

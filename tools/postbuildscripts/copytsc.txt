@@ -1,0 +1,6 @@
+CopyWow64.cmd generates a list of files
+on a 64 bit machine to copy and copies
+them from the appropriate 32 bit machine
+Usage: copytsc.cmd [-l lang][-?]
+-l lang 2-3 letter language identifier
+-?      Displays usage

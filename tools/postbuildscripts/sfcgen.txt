@@ -1,0 +1,3 @@
+sfcgen [-l <language>]
+
+Builds sfcfiles.dll for each sku using the current infs

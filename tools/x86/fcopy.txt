@@ -1,0 +1,47 @@
+
+FCOPY Diskette Mastering Utility Version 1.55s
+Copyright (C) Microsoft, 1993-1996.  All rights reserved.
+For Microsoft internal use only.
+
+
+fcopy [options] [@response] [[-s] source[=rename] ...] destination
+
+  Options:  -l -g -t -a -b -w -e -z -d -f -m -v -3 -5 -8
+
+  Multiple sources can be specified (order preserved, alphabetically sorted
+  within wildcard specifiers).  Destination may be floppy drive (A:, B:), or
+  the name of a floppy image file to create.  A response file (@filename) can
+  be used to specify options rather than lengthy command line.  Environment
+  variables are expanded in the response file same as command line.  Rename
+  specifier can be full or partial target path and/or filename.
+
+  Common options:
+
+    -l  volume label (e.g. -l DISK1)
+    -g  create zero-length tagfile in root directory (e.g. -g DISK1)
+    -t  time stamp for all files month/day/year/hour/minute/second
+          (no spaces, e.g. -t 12/31/91,15:01:00)
+    -a  copy file attributes vs. ignoring hidden files/directories
+    -b  boot sector specifier, can be filename or one of hardcoded:
+          "DOS" (MS-DOS 5.0, default), "NT31SETUP", "NT35SETUP",
+          or "NT35NEC98SETUP"
+    -w  (DMF only) mark target as writable versus write-protected
+    -s  include subdirectories for next source specifier
+    -e  include empty subdirectories as well (for all sources)
+    -x  specify a subdirectory on the target for subsequent files
+          (e.g. put subsequent files in i386 directory: -x i386)
+
+  Options when destination is a physical floppy disk:
+    -z  zero-fill unused sectors vs. only writing necessary sectors
+    -d  double-write mode writes each sector twice
+    -f  format target disk prior to writing data (standard format)
+    -m  format target 3.5" HD floppy with 1.7MB DMF format
+    -v  verify (read and compare) destination after writing
+
+  Options when destination is a floppy image file:
+    -3  specify target is 3.5" HD 1.44MB floppy (default)
+    -5  specify target is 5.25" HD 1.2MB floppy
+    -8  specify target is 3.5" HD 1.7MB DMF floppy
+
+  For Microsoft internal use only -- DMF is proprietary and protected.
+

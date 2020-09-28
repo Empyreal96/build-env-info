@@ -1,0 +1,2 @@
+Usage: prodfilt.exe [-u (unicode IO)] [-s (strip comments)] <input file> <output
+ file> +<prodtag>

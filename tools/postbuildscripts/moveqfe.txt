@@ -1,0 +1,6 @@
+
+moveqfe.cmd [-n:BugID] [-b:binary name]
+
+this script will copy a binary and it's symbol to \\2kbldx2\QFEPickup
+under a path with the bug number and archtype in the path.
+

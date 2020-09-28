@@ -1,0 +1,52 @@
+
+Usage:
+symstore add [/r] [/p] [/l] /f File /s Store /t Product [/v Version]
+             [/c Comment]
+
+symstore add [/r] [/p] [/l] /g Share /f File /x IndexFile [/a]
+
+symstore add /y IndexFile /g Share /s Store [/p] /t Product [/v Version]
+             [/c Comment]
+
+symstore del /i ID /s Store
+
+    /f File         Network path of files or directories to add.
+
+    /g Share        This is the server and share where the symbol files were
+                    originally stored.  When used with /f, Share should be
+                    identical to the beginning of the File specifier.  When
+                    used with the /y, Share should be the location of the
+                    original symbol files, not the index file.  This allows
+                    you to later change this portion of the file path in case
+                    you move the symbol files to a different server and share.
+
+    /i ID           Transaction ID string.
+
+    /l              Allows the file to be in a local directory rather than a
+                    network path. (This option is only used with the /p option.)
+
+    /p              Causes SymStore to store a pointer to the file, rather than
+                    the file itself.
+
+    /r              Add files or directories recursively.
+
+    /s Store        Root directory for the symbol store.
+
+    /t Product      Name of the product.
+
+    /v Version      Version of the product.
+
+    /c Comment      Comment for the transaction.
+
+    /x IndexFile    Causes SymStore not to store the actual symbol files in the
+                    symbol store.  Instead, information is stored which will
+                    allow the files to be added later.
+
+    /y IndexFile    This reads the data from a file created with /x.
+
+    /a              Causes SymStore to append new indexing information
+                    to an existing index file. (This option is only used with
+                    /x option.)
+
+
+

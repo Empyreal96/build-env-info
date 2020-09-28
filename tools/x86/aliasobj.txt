@@ -1,0 +1,1 @@
+usage: ALIASOBJ from-name to-name output-filename

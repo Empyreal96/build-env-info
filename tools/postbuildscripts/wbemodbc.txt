@@ -1,0 +1,4 @@
+WBEMODBC.cmd [-l <language>]
+contact: ShBrown or wcimomd
+
+Make WBEMODBC.msi (WMI ODBC Adapter install for ValueAdd)

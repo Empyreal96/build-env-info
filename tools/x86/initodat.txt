@@ -1,0 +1,20 @@
+
+
+IniToDat
+    Convert Perf????.ini to Perf????.dat file
+
+Usage: initodat codepage inifile [datfile]
+   ex: initodat 932 perfc011.ini obj\i386\perfc011.dat
+
+   codepage  code page in decimal for the target language perf????.dat.
+             Required when the system default code page of the machine
+             generating a data file differs from that of the target language.
+
+   inifile   The name of the initialization file that contains
+             the counter name definitions or explain text for a specific
+             language.
+
+   datfile   Optional output file name.  By default, initodat will write
+             the data file to the same directory and base file name as the
+             .ini file using the .dat extension.
+

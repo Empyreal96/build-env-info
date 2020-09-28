@@ -1,0 +1,6 @@
+CryptoAPI Internal CSP MACing Utility
+maccsp <option> <filename>
+    options
+        m     MAC with no sig resource
+        s     MAC with sig resource
+        ?     Show this message

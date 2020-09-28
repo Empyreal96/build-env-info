@@ -1,0 +1,3 @@
+mp2up [-l <language>]
+
+Makes mp2up.cat for the contents of the Uniproc directory

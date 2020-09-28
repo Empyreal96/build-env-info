@@ -1,0 +1,11 @@
+Gidl 1.1
+
+Usage: gidl <input file>* /xml [/o<outputdir>] [/d<newvar>=<val>]*
+
+<input file> - *.gidl used as gidl interface, *.gh used as helper
+               *.dict as dictionary
+/xml         - create xml files for each class
+/o<outputdir>- set the output dir. Relative or absolute
+/d<newvar>=<val> - create a custom var to appear in the template file
+/Iinclude_path<dir> - add to include search path
+/cs          - generate C# compatible syntax

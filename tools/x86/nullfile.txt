@@ -1,0 +1,11 @@
+Usage: nullfile [-a] [-s] [-q] [-z] [-l <byte_limit>]
+                [-x <file_name>] [<path to recurse>]
+Ex:     nullfile \\intblds2\e\builds\usa\1811
+        a: Override default check for files with all attributes set (+AHSR).
+        s: Override default recursive behavior.
+        q: Don't provide any output (returns 1 for files found).
+        z: Override default printout of zero-length files.
+        l: Maximum number of bytes to search before assuming NULL.
+        x: Specify a file containing a list of files/directories
+           to ignore while scanning a directory tree.
+If <path to recurse> is not specified, then current directory is used

@@ -1,0 +1,4 @@
+MkTabCab.cmd [-l <language>]
+
+This sript creates TabletPC.cab.  This cabinet contains files which
+are only installed on Windows XP TabletPC edition.

@@ -1,0 +1,15 @@
+
+Usage: buildx <arguments>
+
+where <arguments> can be one or more of:
+Major Options (only one can be used):
+    retail - Build free build      (obj)
+     debug - Build checked build   (objd)
+   profile - Build profile build   (objp)
+     meter - Build meter build     (objm)
+Modifiers:
+    no_opt - Turn off compiler optimizations
+     Win64 - Build for 64 bit
+     AMD64 - Build AMD64
+
+All unknown options are passed on to build.exe.

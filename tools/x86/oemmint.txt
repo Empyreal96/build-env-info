@@ -1,0 +1,6 @@
+Usage: oemmint.exe /s:src-dir /d:dest-dir /m:opt-dir [/e:extra-file] [/v]
+src-dir    : root of the installation CD
+dest-dir   : destination folder to which files should be copied
+opt-dir    : optional folder from which to pick up files
+extra-file : Extra.inf, which contains a list of extra files to be included
+/v         : verbose (detailed) mode

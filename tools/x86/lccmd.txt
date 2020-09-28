@@ -1,0 +1,44 @@
+Microsoft (R) Pseudo Localization Tools Version 1.0.0.36 (Registered Ver. 036)
+Copyright (C) Microsoft Corp. 2001. All Rights reserved.
+
+Pseudo localization generator utility.
+
+LCCMD [OPTIONS] -g InputFile [OutputFile]
+  -g                     Generate pseudo localized binaries
+      InputFile          Input File
+      OutputFile         Output File
+
+LCCMD [OPTIONS] -t InputFile [OutputTokenFile]
+  -t                     Extract token to output file
+      OutputTokenFile    Output token file. By default, InputFile.tok
+                         There are alternative tokenization options -t0 till -t4
+OPTIONS:
+  -i  {PID SID}|LangID   Input language, Primary- and Sub-Lang IDs, dec/hex
+  -o  {PID SID}|LangID   Output language, Primary- and Sub-Lang IDs, dec/hex
+  -a  RuleFile           LC-file containing constraints
+  -l  ReplacementTable   Replacement table used for pseudo localization
+  -k  ReplacementMethod  Replacement method used for pseudo localization
+  -m  MappingTable       Mapping table
+  -x  CFG                PLP XML configuration file
+  -s  POpt               Parser options name
+  -e  ParserID           Parser ID
+  -w                     Display the status of the operation
+
+LCCMD [-l] [-k] [-v]
+  -l                     Display the list of replacement tables
+  -k                     Display the list of replacement methods
+  -v                     Display the list of system variables
+
+LCCMD [-i {PID SID}|LangID] [-d LogFile] -c RuleFile InputFile
+  -i  {PID SID}|LangID   Input language, Primary- and Sub-Lang IDs, dec/hex
+  -d  LogFile            Log file containing differences
+  -c                     Check consistency between Rule file and Input file
+      RuleFile           LC-file whose content needs to be validated
+      InputFile          File against which the LC-file needs to be validated
+
+LCCMD -r [regfile]
+  -r  regfile            Register all parsers into system
+
+LCCMD [-h|?]
+  -h|?                   Display help message
+

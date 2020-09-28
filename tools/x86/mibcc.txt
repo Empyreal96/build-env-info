@@ -1,0 +1,11 @@
+usage: mibcc [-?] [-e] [-l] [-n] [-o] [-t] -[w] [files...]
+   MibCC compiles the specified SNMP MIB files.
+      -?        usage.
+      -eX       stop after X Errors. (default = 10)
+      -l        do not print Logo.
+      -n        print each Node as it is added.
+      -o[file]  output file name. (no file by default)
+      -t        print the mib Tree when finished.
+      -wX       set Warning level.
+                0=silent; 1=errors only; 2=warnings only; 3=both
+                (default = 0)

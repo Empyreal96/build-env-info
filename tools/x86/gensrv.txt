@@ -1,0 +1,6 @@
+GENSRV: System Service Dispatch Table Generator. Version 1.3
+Usage: gensrv [-d targetdir] [-e targetext] [-f defdata] [-B] [-P] [-C] [-R] [-a altoutputdir] [-s stubdir] [services.tab directory]
+-B Use braces
+-P Generate profile stubs data
+-C Spew dispatch count
+-R Generate ConvertToGui error return table

@@ -1,0 +1,25 @@
+Usage: timebuild.pl
+          [-]
+          [-START=[[YY]MMDD-]HH[:]MM[(a|p)]    - specify a time to start the commands (start => revision time to use)
+          [-START=+[HH[:]MM]]                  - specify a delay before starting commands
+          [-RESUME]                            - start-up again after the build step
+          [-QFE=NNNNNN]                        - package a QFE instead of a service pack
+          [-STOPAFTERBUILD]                    - stop commands right after the build step
+          [-NOSYNC]                            - do not sync/resolve
+          [-NOSCORCH]                          - do not run scorch
+          [-NOCLEANBUILD]                      - don't use -c with build
+          [-NOPOSTBUILD]                       - skip the postbuild step
+          [-NOCOOKIE]                          - ignore synchronization against concurrent timebuilds
+          [-PRS]                               - PRS sign the result during packaging
+          [-COVERBUILD]                        - produce one build with coverage-enabled files
+          [-RELEASE]                           - release the build (automatic on build machines)
+          [-REVISION=<sdrevision>]             - SD file revision to use (@yyyy/mm/dd:hh:ss or #rev -- see sd help revisions)
+          [commandfile | - ]                   - instead of built-in commands use file or stdin
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+Usage: symbolcd.cmd [-l lang][-c] [-?]
+-l lang 2-3 letter language identifier
+-c clean build
+-?      Displays usage

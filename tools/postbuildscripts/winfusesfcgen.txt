@@ -1,0 +1,34 @@
+
+D:\xpsp1\tools\postbuildscripts>REM  ------------------------------------------------------------------ 
+
+D:\xpsp1\tools\postbuildscripts>REM
+
+D:\xpsp1\tools\postbuildscripts>REM  WinfuseSFCGen.cmd 
+
+D:\xpsp1\tools\postbuildscripts>REM     Generates catalogs for signed assemblies, updates manifest file 
+
+D:\xpsp1\tools\postbuildscripts>REM     member hashes, and validates that everything was built properly. 
+
+D:\xpsp1\tools\postbuildscripts>REM
+
+D:\xpsp1\tools\postbuildscripts>REM  Copyright (c) Microsoft Corporation. All rights reserved. 
+
+D:\xpsp1\tools\postbuildscripts>REM
+
+D:\xpsp1\tools\postbuildscripts>REM  ------------------------------------------------------------------ 
+
+D:\xpsp1\tools\postbuildscripts>if defined _CPCMAGIC goto CPCBegin 
+
+D:\xpsp1\tools\postbuildscripts>perl -x "D:\xpsp1\tools\postbuildscripts\winfusesfcgen.cmd" /? 
+WinFuseSFCGen [-?] [-hashes:yes] [-cdfs:yes] [-verbose:yes]
+
+Twiddles Side-by-side assemblies to create .cdf files, add SHA hashes of member files,
+and any other last-second junk that has to happen to make SxS work right.
+
+   -?       this message
+   -hashes  injects hashes into manifests
+   -cdfs    sets the CDF logging depot
+   -verbose turns on verbose operation
+
+
+D:\xpsp1\tools\postbuildscripts>goto :EOF 

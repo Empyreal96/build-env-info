@@ -1,0 +1,3 @@
+nt5infcat.cmd [-l <language>]
+
+Creates the nt5inf.cat system catalogs for each sku

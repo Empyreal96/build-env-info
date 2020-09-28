@@ -1,0 +1,10 @@
+argc = 2
+PURPOSE: Finds product file sizes for LAYOUT.INF
+
+PARAMETERS:
+
+[LogFile]   - Path to append a log of actions and errors.
+[LocalInf]  - Local location of the layout.inf.
+[LocalPath] - Local flat directory containing product files.
+[x86Path]   - x86 flat directory containing product files.
+

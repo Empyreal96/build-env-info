@@ -1,0 +1,30 @@
+Microsoft (R) Windows NT (TM) Version 5.1 TLIST
+Copyright (C) Microsoft Corp. 1981-2000
+
+usage: TLIST <<-m <pattern>> | <-t> | <pid> | <pattern> | <-p <processname>>>
+           [options]:
+           -t
+              Print Task Tree
+
+           <pid>
+              List module information for this task.
+
+           <pattern>
+              The pattern can be a complete task
+              name or a regular expression pattern
+              to use as a match.  Tlist matches the
+              supplied pattern against the task names
+              and the window titles.
+
+           -m <pattern>
+              Lists all tasks that have DLL modules loaded
+              in them that match the given pattern name
+
+           -s
+              Show services active in each process.
+
+           -p <processname>
+              Returns the PID of the process specified or -1
+              if the specified process doesn't exist.  If there
+              are multiple instances of the process running only
+              the instance with the first PID value is returned.

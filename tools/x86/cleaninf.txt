@@ -1,0 +1,16 @@
+cleaninf.exe  Version 0.4
+
+Cleans up an inf, html, or script file for public distribution or for packing
+into a resource.  Without any options, this removes all comments.  This
+tool recognizes .inf, .htm, .hta, .js and .htc files by default.
+
+Syntax:  cleaninf [-w] [-inf | -htm | -js | -htc] sourceFile destFile
+
+          -w     Strip whitespace
+
+         These flags are mutually exclusive, and will treat the file
+         accordingly, regardless of extension:
+          -inf   Treat file as a .inf file
+          -htm   Treat file as a .htm file
+          -js    Treat file as a .js file
+          -htc   Treat file as a .htc file

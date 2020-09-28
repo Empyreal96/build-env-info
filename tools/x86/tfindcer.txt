@@ -1,0 +1,32 @@
+command line: tfindcer.exe 
+missing store filename
+Usage: tfindcer [options] <StoreName> [<Name String>]
+Options are:
+  -h                    - This message
+  -D<digest>            - Find cert matching Digest (Hash)
+  -S                    - Find cert matching Subject
+  -I                    - Find cert matching Issuer
+  -U<ObjectID>          - Find cert matching Usage Identifiers
+  -F<number>            - Find Flags
+  -f<filename>          - Get matching Name from cert file
+  -o<ObjectID>          - Object Identifier (1.2.3.4)
+  -t<ValueType>         - Attribute value type (printableString - 4)
+  -a[<attributeString>] - Attribute value match
+  -A[<attributeString>] - Attribute value match (test unicode)
+  -C                    - Case Insensitive Attribute value match
+  -e<number>            - Cert encoding type
+  -s                    - Open the "StoreName" System store
+  -p<filename>          - Put encoded cert to file
+  -d                    - Delete cert
+  -7[<SaveFilename>]    - PKCS# 7 formated save for delete
+  -b                    - Brief
+  -v                    - Verbose
+  -c                    - Verify checks enabled
+  -q                    - Quiet. Don't display certs
+  -xDelete              - Delete CrossCertDistPoint property
+  -x<number>            - CrossCertDistPoint sync delta seconds
+  -x<Url>               - CrossCertDistPoint Url
+  -X<Url>               - CrossCertDistPoint Alternate Url
+
+Default: find all certs in the store
+Failed

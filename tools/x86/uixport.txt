@@ -1,0 +1,20 @@
+uixport.exe version 00.01.01
+use: uixport.exe [options]
+
+Valid options are:
+    -i:input_file  = source file
+    -o:output_file = destination file
+    -h:header_file = header to prepend before symbols
+    -s             = strip first leading underscore from symbols
+    -n             = do not strip __stdcall decoration @nn
+    -x:excl_file   = name of file containing excluded symbols
+    -ppc           = input is PowerPC symbol dump
+    -ia64          = input is IA-64 symbol dump
+    -?             = show this help
+
+Defaults are:
+    input_file  = stdin
+    output_file = stdout
+    header_file = none
+    don't strip first leading underscore from symbol
+    input is not PowerPC symbol dump

@@ -1,0 +1,7 @@
+
+ w95ipp.cmd: called by bldrules-capable script (like newver or congeal).
+
+     You must specify one of these options on the command-line:
+           [prerebase] [congeal] [newver] [cabgen] [POSTCOMPRESS]
+
+

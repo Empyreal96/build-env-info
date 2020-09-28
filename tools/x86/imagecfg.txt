@@ -1,0 +1,23 @@
+usage: IMAGECFG [switches] image-names...
+              [-?] display this message
+              [-a Process Affinity mask value in hex]
+              [-b BuildNumber]
+              [-c Win32 GetVersionEx Service Pack return value in hex]
+              [-d decommit thresholds]
+              [-g bitsToClear bitsToSet]
+              [-h 1|0 (Enable/Disable Terminal Server Compatible bit)
+              [-k StackReserve[.StackCommit]
+              [-l enable large (>2GB) addresses
+              [-m maximum allocation size]
+              [-n bind no longer allowed on this image
+              [-o default critical section timeout
+              [-p process heap flags]
+              [-q only print config info if changed
+              [-r run with restricted working set]
+              [-s path to symbol files]
+              [-t VirtualAlloc threshold]
+              [-u Marks image as uniprocessor only]
+              [-v MajorVersion.MinorVersion]
+              [-w Win32 GetVersion return value in hex]
+              [-x Mark image as Net - Run From Swapfile
+              [-y Mark image as Removable - Run From Swapfile

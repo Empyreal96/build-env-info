@@ -1,0 +1,7 @@
+iexpress
+
+Options: [/N [/Q] [/M]] <SED filename [/O:overide SEDfilename,OverideSectionName]
+
+/N: Build package now (SED filename must be specified)
+/Q: Quiet mode whem using /N
+/M: Use minimized windows when using /N

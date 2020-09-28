@@ -1,0 +1,4 @@
+winnt32msi
+
+Generate the winnt32.msi for different SKUs
+

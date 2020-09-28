@@ -1,0 +1,11 @@
+Stub File Generation Utility. Version: 1.1
+usage: listmung <symbol_list_file> <template>
+ Converts the elements in the list file into an output file
+ where the template dictates the format.  The following strings
+ are substituted apropriately:
+ %FOR_ALL%
+ %FOR_ALL_UPPER%
+ %FOR_ALL_BUT_LAST%
+ %FOR_LAST%
+ %INDEX%
+ output is to stdout.

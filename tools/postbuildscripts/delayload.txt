@@ -1,0 +1,3 @@
+delayload [-l <language>]
+
+Verify that delayloaded imports all have failure handlers

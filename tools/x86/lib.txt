@@ -1,0 +1,24 @@
+Microsoft (R) Library Manager Version 7.00.9210
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+usage: LIB [options] [files]
+
+   options:
+
+      /DEF[:filename]
+      /EXPORT:symbol
+      /EXTRACT:membername
+      /INCLUDE:symbol
+      /LIBPATH:dir
+      /LIST[:filename]
+      /MACHINE:{AM33|ARM|IA64|M32R|MIPS|MIPS16|MIPSFPU|MIPSFPU16|MIPSR41XX|
+                PPC|PPCFP|SH3|SH3DSP|SH4|SH5|THUMB|TRICORE|X86}
+      /NAME:filename
+      /NODEFAULTLIB[:library]
+      /NOLOGO
+      /OUT:filename
+      /REMOVE:membername
+      /SUBSYSTEM:{CONSOLE|EFI_APPLICATION|EFI_BOOT_SERVICE_DRIVER|
+                  EFI_RUNTIME_DRIVER|NATIVE|POSIX|WINDOWS|
+                  WINDOWSCE}[,#[.##]]
+      /VERBOSE

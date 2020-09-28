@@ -1,0 +1,56 @@
+
+NOTE:  This usage is subject to change in the next release.
+
+Usage:  symchk [options] [/l] <file> /s <sympath> 
+
+        symchk /m <ProcessId> /s <sympath>
+
+        symchk /n <ExeName> /s <sympath>
+
+
+    <file>           Name of file(s) or directory to check.
+                     Can include wildcards.
+
+    /l <file>       File that contains a list of files to check with one file
+                    per line
+
+    /m <ProcessId>  Check symbols for a process id
+
+    /n <ExeName>    Check symbols for a loaded exe.
+
+    /s <sympath>    Symbol path delimited by ;'s.  Checks <sympath>
+                    and <sympath>\<ext> for each string in the path, 
+                    where <ext> is the extension of the executable.
+
+                    Symbol server paths are allowed.  See debugger documentation
+                    for more details.  To retrieve symbols during symbol checking 
+                    use the downstream store feature of symbol server.
+
+    Options:        
+
+    /b              Don't complain if there is no CodeView data
+
+    /e <list>       File containing a list of files to not check symbols for.
+                    This file can have one name per line. Comment lines begin
+                    with a ; . 
+
+    /f              Don't send symbol checking PASS/FAIL totals to the output
+
+    /o              Verify that PDB files have some type information
+
+    /p              Check that private information is removed from PDBs.
+
+    /r              Recurse into subdirectories of the <file> argument.
+
+    /t              Fails if the image points to a dbg file or if the image
+                    contains data that can be stripped into a DBG file.
+
+    /u              Fail if image points to a dbg file. Don't fail if image
+                    contains data that can be split into a dbg file.
+
+                    Default is the opposite:  fail if image contains data
+                    that can be split into a dbg file and don't fail if image
+                    points to a dbg file.
+
+    /v              Give verbose information
+

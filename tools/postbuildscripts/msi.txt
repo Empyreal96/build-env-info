@@ -1,0 +1,3 @@
+msi [-l <language>]
+
+build InstMsi.exe
