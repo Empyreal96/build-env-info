@@ -1,0 +1,13 @@
+# (c) 2001 Microsoft Corporation. All rights reserved.
+#
+# Purpose: This script validates if all depots have a mapping 
+#          consistent with the root depot in a particular drive
+#          enlistment. This tool should be run from the root of the 
+#          enlistment drive of interest and is. Currently it is
+#	   invoked as part of razzle with an optional argument i.e.:
+#	   razzle.cmd checkdepots
+#
+#
+# Version: <1.00> 03/22/2001 : VishnuP
+
+usage: perl.exe checkdepots.pl

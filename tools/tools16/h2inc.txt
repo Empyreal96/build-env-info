@@ -1,0 +1,2 @@
+Usage: h2inc [-?] [-c] [-d] [-f] [-g] [-m] [-t] [-w] [-s symfile.h] infile.h [-o
+ outfile.inc]

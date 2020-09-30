@@ -1,0 +1,88 @@
+IA-64 Assembler, v5.0 Version 1.00.0212
+Copyright (C) 1985-2000 Intel Corporation. All rights reserved.
+
+
+IAS Options:
+------------
+
+File handling:
+ -F <OMF>        Specify object file format.
+                 Valid <OMF> argument's values are [ELF32|ELF64|COFF32|COFF32_PLUS].
+
+ -o <fname>      set object file name.
+
+ -I <dir>        Adds <dir> to include files search path.
+
+
+Errors/warnings handling:
+ -e <fname>      Direct error messages to file <fname>.
+
+ -E <max_num>    ias will terminate after encountering <max_num> assembly errors
+.
+
+ -N w32          Suppress warnings on -Milp32 overflows.
+
+
+ -W <warning_level>   Control the level of warning messages produced by ias
+                      valid <warning level> values are [0|1|2|3|4|x]
+                      0 - do not display warnings
+                      1 - display severe warnings
+                      2 - display less severe warnings
+                      3 - (default) display less severe warnings than with 2
+                      4 - display all warnings
+                      x - treat all warnings as errors
+
+
+Compilation model:
+ -M <ilp_model>  Specify the pointer (address) sizes.
+                 Integer and long sizes have no effect.
+                 ilp32             assume 32-bit pointers.
+                 ilp64, lp64, p64 assume 64-bit pointers(default).
+
+ -M <endianess>  Specify byte order for data allocation statements.
+                 Valid <endianess> argument's values are [be|le]
+                 be      set least-significant byte (LSB) order (default).
+                 le      set most-significant byte  (MSB) order.
+
+ UNIX ABI options  (for ELF64 only):
+ -M rfp       Reduced floating point model
+ -M const_gp  Single GP model
+ -M no_plabel No GP and no function descriptors (plabels) are used
+
+ -p 32           backward compatibility only.
+
+ -d debug         Create debug information for executable code
+
+
+
+
+Miscellaneous:
+ -h, -H          Print this help information (ignore all other arguments).
+
+ -V              Print signon message (default).
+
+ -N pi           Reject privileged instructions.
+
+ -N so           Suppress signon message.
+
+ -N us           Allow union of sign and unsign range.
+
+ -N close_fcalls  Do not resolve global function calls
+
+ -Q y            Add iAS signon message to .comment section
+
+ -v              Print versions information for all libraries.
+
+ -a indirect=<br_target>  Assume unannotated indirect branches behavior
+                          according to <br_target>:
+                          exit:   branch out from the current context (default)
+                          labels: all labels in context may be branch targets
+
+
+Extensions:
+ -X explicit     Report error for dependency violations appearing in the input file
+ -X vral         Enable Virtual Registers ALlocation mode
+ -X unwind       Build information for stack unwinding
+
+ -S nops            Print nops statistics
+

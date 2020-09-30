@@ -1,0 +1,27 @@
+Microsoft (R) C/C++ Optimizing Compiler Version 8.00c
+Copyright (c) Microsoft Corp 1984-1993. All rights reserved.
+
+                          C COMPILER OPTIONS
+
+                            -MEMORY MODEL-
+/AS small model (default)               /AC compact model
+/AM medium model                        /AL large model
+/AH huge model                          /AT tiny model (.COM files)
+/A<string> (custom memory model)
+                            -OPTIMIZATION-
+/O enable optimization (same as /Ot)    /O1 minimize space
+/O2 maximize speed                      /Oa assume no aliasing
+/Ob<n> inline expansion (default n=0)   /Oc local common subexpression opt.
+/Od disable optimization (default)      /Oe enable registers allocation
+/Of[-] toggle p-code quoting            /Og global common subexpression opt.
+/Oi enable intrinsic functions          /Ol enable loop optimizations
+/On disable "unsafe" optimizations      /Oo[-] toggle post code-gen. opt.
+/Op[-] improve floating-pt consistency  /Oq enable maximum p-code optimization
+/Or gen. common exit code (CodeView)    /Os favor code size
+/Ot favor code speed                    /Ov[-] toggle p-code frame sorting
+/OV<n> control inlining by func. size   /Ow assume cross-function aliasing
+/Ox maximum opts. (/Ob1cegilnot /Gs)    /Oz enable "unsafe" optimizations
+                          -CODE GENERATION-
+/G0 8086 instructions (default)         /G1  186 instructions
+/G2  286 instructions                   /G3  386 instructions
+  (press <return> to continue)

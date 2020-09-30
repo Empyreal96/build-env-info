@@ -1,0 +1,1 @@
+Usage : stripz src_file trgt_file

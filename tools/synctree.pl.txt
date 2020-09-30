@@ -1,0 +1,57 @@
+#----------------------------------------------------------------//
+# Script: synctree.pl
+#
+# (c) 2000 Microsoft Corporation. All rights reserved.
+#
+# Purpose: This script is a wrapper for intlbld.mak
+#          It provides error checking, loging and usage.
+#
+# Version: <1.00> 09/13/2000 : Suemiao Rossognol
+#----------------------------------------------------------------//
+
+
+A wrapper for "sd operations" used to perform sd commands on source tree
+and loc tree. 
+
+
+Usage:
+    synctree.pl [-l:<lang>] [-t:<timestamp>][-b:<toolbranch>][-i|-y][-p]
+
+    -l Language. Default is "usa".
+       If "usa", sync the source projects under SDXROOT.
+       If "intl", sync the international build source projects. 
+       Otherwise, sync the localization projects of the given language.
+
+    -t Timestamp used for sync'ing the SD files.
+  
+    -b Tool branch.
+       Default is "intlred".
+
+    -i Perform Integration or Reverse integration but No sync.
+    -y Perform sync but no integration.
+       Default execution on both sync and integration instructions.
+
+    -p Powerless.
+
+    /? Displays usage.
+
+Examples:
+    synctree.pl -l:intl -t:2000/10/01:18:00 -b:ntbintl -i
+        Integrate the ntbintl tools from main at the given timestamp.
+
+    synctree.pl -l:intl -t:2000/10/01:18:00 -y
+        Sync the source tree at the given timestamp.
+
+    synctree.pl -l:intl -t:2000/10/01:18:00
+        Integrate the intlred tools from main.
+	Sync the source tree at the given timestamp.
+
+    synctree.pl -l:ger -i
+	Reverse integrate the German localization projects at the current time.
+
+    synctree.pl -l:ger -t:2000/09/09:12:34 -y
+        Sync the localization projects at the given timestamp.
+
+    synctree.pl -l:ger 
+        Sync and reverse integrate the German localization projects at the current time.
+

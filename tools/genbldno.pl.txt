@@ -1,0 +1,12 @@
+#
+# genbldno.pl
+#
+# Arguments: none
+#
+# Purpose: generate a file called __bldnum__ and binplace to the source tree.
+#          the contents of this file will be a reference to the master build
+#          build number as specified by %SDXROOT%\published\sdk\inc\ntverp.h
+#          in the form "BUILDNUMBER=2257\n"
+#
+# Returns: 0 if success, non-zero otherwise
+#

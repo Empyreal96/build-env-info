@@ -1,0 +1,12 @@
+
+#   Usage = whocheckedin #days branch [branch...]
+#
+#     This script generates a list of everyone who submitted a change to the specified 
+#     branches.
+#
+
+
+
+USAGE: whocheckedin.pl #days [branch [branch...]]
+   #days       how many days the report should be for.
+   branch      branches to search. if no branches are specified, use all VBLs

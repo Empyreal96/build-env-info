@@ -1,0 +1,8 @@
+#####################################################
+# Compares the non-[Strings] portion of file1 and file2
+#
+# Requires two(2) arguments
+#####################################################
+
+
+Usage: Compare file1 file2

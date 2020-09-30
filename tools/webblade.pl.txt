@@ -1,0 +1,20 @@
+#----------------------------------------------------------------#
+# Script: webbblade.pl
+#
+# (c) 2001 Microsoft Corporation. All rights reserved.
+#
+# Purpose: This script has the effect of updating the hash array 
+#	   WebBladeDisallowedHashes in webbladehashesp.h with the hash 
+#	   value for the exe specified as an argument. 
+#	   webbladehashesp.h should be writable (opened for edit).
+#	   usage: perl	webbpade.pl 
+#			<g:\nt\base\win32\client\webbladehashesp.h> 
+#			<c:\disallow\candidate1.exe>... 
+#			<c:\disallow\candidaten.exe> 
+#
+#
+# Version: <1.00> 06/04/2001 : VishnuP
+#----------------------------------------------------------------#
+
+
+usage: perl webbblade.pl <webbladehashesp.h> <candidate1.exe> <candidate2.exe> ...

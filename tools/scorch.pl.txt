@@ -1,0 +1,16 @@
+#
+# Usage = scorch.pl [-fake] [-arch=<archname> [-alt=<altdir>] [-save[=<savedirpath>]] -scorch=<newntdir>
+#
+# Function: Starting from the specified directory (ignoring <savedirpath>)
+#   0) Verify that the current directory is the same as <newntdir>.
+#   1) Use SD to build a list of opened files.
+#   2) Build a list of unopened files not marked readonly.
+#   3) Optionally copy notreadonly files to <savedirpath> preserving hierarchy
+#       (ignoring files in $(O) directories).
+#   4) Abort on any error copying the files.
+#   5) Delete all notreadonly files.
+#
+# Example:
+#    cd /D %SDXROOT%
+#    scorch.pl -scorch=%SDXROOT%
+#

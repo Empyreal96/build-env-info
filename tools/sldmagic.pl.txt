@@ -1,0 +1,13 @@
+#####################################################
+# SLDMagic
+#
+# file1 is the non-strings portion of an .inf file (from WINDIFF)
+# file2 is the strings portion of a .inf file
+# outfile is the output file
+#
+# cleans these up and catenates them together IFF file1 is not empty
+#
+# Requires three(3) arguments
+#####################################################
+
+Usage: SLDMagic: file1 file2 outfile

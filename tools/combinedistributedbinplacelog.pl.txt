@@ -1,0 +1,15 @@
+# FileName: CombineDistributeBinplaceLogs.pl
+#
+#
+# Usage: CombineDistributeBinplaceLogs.pl [-nttree=nttreedir] 
+#
+# Function: The distributed build process produces a unique binplace_%COMPUTERNAME%.log file
+#           for each machine involved in the build.
+#           This script combines them into a unified binplace.log file
+#           translating the path information to coorespond to the local
+#           enlistment.
+#
+#           If there are no files named binplace_*,log then this script exits silently.
+#
+# Author:   jporkka  03/24/2000
+#

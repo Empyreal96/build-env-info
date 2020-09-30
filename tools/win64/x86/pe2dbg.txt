@@ -1,0 +1,20 @@
+PE2DBG / IA-64 Firmware SDK beta version 0.2
+Copyright (C) 1985-1997 Intel Corporation.  All rights reserved.
+
+
+=======================================================================
+PE2DBG (IA-64 Firmware Tool):
+
+      conversion: EXE_file.EXE (PE/COFF format) -> DBG_file.DBG (PE DBG format)
+
+          syntax: PE2DBG <EXE_file.EXE> <DBG_file.DBG> [-SPLIT:<SEC_Name>:<BEFORE_SPLIT.DBG>]
+
+           input: <EXE_file>     - PE/COFF executable (ex. SAL_B.EXE)
+
+          output: <DBG_file.DBG>     - .DBG symbol file containing all the symbols
+ optional output: <BEFORE_SPLIT.DBG> - .DBG symbol file containing symbols up to <SEC_Name>
+
+          switch: [-SPLIT:<SEC_Name>:<BEFORE_SPLIT.DBG>] -
+                     split at section <SEC_Name>, <BEFORE_SPLIT.DBG> is as defined above
+=========================================================================
+

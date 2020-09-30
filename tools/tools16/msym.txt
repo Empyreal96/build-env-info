@@ -1,0 +1,7 @@
+
+MAP File To SYM Converter Version 2.9
+(C) Copyright Nu-Mega Technologies 1989, All rights reserved.
+
+
+Usage: MSYM file_name
+

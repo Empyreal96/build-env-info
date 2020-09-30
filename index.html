@@ -101,7 +101,7 @@ font-style: italic
 	<a href="http://github.com/empyreal96">here</a>&nbsp;&nbsp;&nbsp;&nbsp; 
 	Progress will be slow, but I will do my best!<br><br>Some Scripts or 
 	Binaries may be duplicated across folders, and reflected here.. This is 
-	expected.</p>
+	expected as some batch scripts use perl scripts</p>
 </div><div id="leftnav">
 
 <table border="0" cellspacing="0" cellpadding="3" summary="anchor table" class="generic centered">
@@ -109,7 +109,10 @@ font-style: italic
 <tr><td><a href="#IDtools">tools</a></td></tr>
 <tr class="row2"><td><a href="#IDtools-postbuildscripts-">tools\postbuildscripts</a></td></tr>
 <tr><td><a href="#IDtools-sp-">tools\sp</a></td></tr>
-<tr class="row2"><td><a href="#IDtools-x86-">tools\x86</a></td></tr>
+<tr class="row2"><td><a href="#IDtools-tools16-">tools\tools16</a></td></tr>
+<tr><td><a href="#IDtools-win64-x86-">tools\win64\x86</a></td></tr>
+<tr class="row2"><td><a href="#IDtools-win64-x86-amd64-">tools\win64\x86\amd64</a></td></tr>
+<tr><td><a href="#IDtools-x86-">tools\x86</a></td></tr>
 </table>
 <br>
 </div>
@@ -117,10 +120,15 @@ font-style: italic
 
 <table border="0" cellspacing="0" cellpadding="3" summary="file table" class="file-table centered">
 <tr><td colspan="8" class="anchor" ><a id="IDtools"></a>tools</td></tr>
-<tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 7&nbsp;&nbsp;&nbsp;&nbsp;Size: 8&nbsp;K</center></td></tr>
+<tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 28&nbsp;&nbsp;&nbsp;&nbsp;Size: 23&nbsp;K</center></td></tr>
 <tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
-<tr><td><a href="tools/buildx.txt">buildx</a></td><td align="right">0&nbsp;K</td><td><a href="tools/razzle.txt">razzle</a></td><td align="right">2&nbsp;K</td><td><a href="tools/sdx.txt">sdx</a></td><td align="right">2&nbsp;K</td><td><a href="tools/timebuild.pl.txt">timebuild.pl</a></td><td align="right">1&nbsp;K</td></tr>
-<tr class="row2"><td><a href="tools/postbuild.txt">postbuild</a></td><td align="right">1&nbsp;K</td><td><a href="tools/sdcomp.txt">sdcomp</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sxcopy.txt">sxcopy</a></td><td align="right">0&nbsp;K</td><td></td><td></td></tr>
+<tr><td><a href="tools/buildx.txt">buildx</a></td><td align="right">0&nbsp;K</td><td><a href="tools/genbldno.pl.txt">genbldno.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sdcomp.txt">sdcomp</a></td><td align="right">0&nbsp;K</td><td><a href="tools/srcwatch.pl.txt">srcwatch.pl</a></td><td align="right">0&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/changelab.pl.txt">changelab.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/intlbld.pl.txt">intlbld.pl</a></td><td align="right">1&nbsp;K</td><td><a href="tools/sdx.pl.txt">sdx.pl</a></td><td align="right">1&nbsp;K</td><td><a href="tools/sxcopy.txt">sxcopy</a></td><td align="right">0&nbsp;K</td></tr>
+<tr><td><a href="tools/changestofiles.pl.txt">changestofiles.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/populatefromvbl.pl.txt">populatefromvbl.pl</a></td><td align="right">1&nbsp;K</td><td><a href="tools/sdx.txt">sdx</a></td><td align="right">2&nbsp;K</td><td><a href="tools/synctree.pl.txt">synctree.pl</a></td><td align="right">1&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/checkdepots.pl.txt">checkdepots.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/postbuild.txt">postbuild</a></td><td align="right">1&nbsp;K</td><td><a href="tools/sendbuildstats.pl.txt">sendbuildstats.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/timebuild.pl.txt">timebuild.pl</a></td><td align="right">1&nbsp;K</td></tr>
+<tr><td><a href="tools/combinedistributedbinplacelog.pl.txt">combinedistributedbinplacelog.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/publish.pl.txt">publish.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sendbuildstatslab7.pl.txt">sendbuildstatslab7.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/updtnum.pl.txt">updtnum.pl</a></td><td align="right">0&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/copylang.pl.txt">copylang.pl</a></td><td align="right">1&nbsp;K</td><td><a href="tools/razzle.txt">razzle</a></td><td align="right">2&nbsp;K</td><td><a href="tools/sldcompare.pl.txt">sldcompare.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/webblade.pl.txt">webblade.pl</a></td><td align="right">0&nbsp;K</td></tr>
+<tr><td><a href="tools/genbasemac.pl.txt">genbasemac.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/scorch.pl.txt">scorch.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sldmagic.pl.txt">sldmagic.pl</a></td><td align="right">0&nbsp;K</td><td><a href="tools/whocheckedin.pl.txt">whocheckedin.pl</a></td><td align="right">0&nbsp;K</td></tr>
 <tr><td colspan="8" class="anchor"><a id="IDtools-postbuildscripts-"></a>tools\postbuildscripts</td></tr>
 <tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 83&nbsp;&nbsp;&nbsp;&nbsp;Size: 31&nbsp;K</center></td></tr>
 <tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
@@ -164,6 +172,23 @@ font-style: italic
 <tr class="row2"><td><a href="tools/sp/filter.txt">filter</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/mktabcab.txt">mktabcab</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/spcab.txt">spcab</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/winnt32msi.txt">winnt32msi</a></td><td align="right">0&nbsp;K</td></tr>
 <tr><td><a href="tools/sp/findinfdata.txt">findinfdata</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/movebuild.txt">movebuild</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/spupd.txt">spupd</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/wmmkdcache.txt">wmmkdcache</a></td><td align="right">0&nbsp;K</td></tr>
 <tr class="row2"><td><a href="tools/sp/helpsupportservices.txt">helpsupportservices</a></td><td align="right">0&nbsp;K</td><td><a href="tools/sp/movecd2.txt">movecd2</a></td><td align="right">0&nbsp;K</td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="8" class="anchor"><a id="IDtools-tools16-"></a>tools\tools16</td></tr>
+<tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 24&nbsp;&nbsp;&nbsp;&nbsp;Size: 12&nbsp;K</center></td></tr>
+<tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
+<tr><td><a href="tools/tools16/bind16.txt">bind16</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/gensig.txt">gensig</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/masm.txt">masm</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/rclater.txt">rclater</a></td><td align="right">0&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/tools16/cl.txt">cl</a></td><td align="right">1&nbsp;K</td><td><a href="tools/tools16/h2inc.txt">h2inc</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/mkpublic.txt">mkpublic</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/reloc.txt">reloc</a></td><td align="right">0&nbsp;K</td></tr>
+<tr><td><a href="tools/tools16/cl16.txt">cl16</a></td><td align="right">1&nbsp;K</td><td><a href="tools/tools16/lib.txt">lib</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/msym.txt">msym</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/split.txt">split</a></td><td align="right">0&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/tools16/cvpack16.txt">cvpack16</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/lib16.txt">lib16</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/nosrvbld.txt">nosrvbld</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/stripdd.txt">stripdd</a></td><td align="right">0&nbsp;K</td></tr>
+<tr><td><a href="tools/tools16/exehdr.txt">exehdr</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/link.txt">link</a></td><td align="right">1&nbsp;K</td><td><a href="tools/tools16/rc.txt">rc</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/stripz.txt">stripz</a></td><td align="right">0&nbsp;K</td></tr>
+<tr class="row2"><td><a href="tools/tools16/fixexe.txt">fixexe</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/link16.txt">link16</a></td><td align="right">1&nbsp;K</td><td><a href="tools/tools16/rc16.txt">rc16</a></td><td align="right">0&nbsp;K</td><td><a href="tools/tools16/vcpack.txt">vcpack</a></td><td align="right">0&nbsp;K</td></tr>
+<tr><td colspan="8" class="anchor"><a id="IDtools-win64-x86-"></a>tools\win64\x86</td></tr>
+<tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 3&nbsp;&nbsp;&nbsp;&nbsp;Size: 8&nbsp;K</center></td></tr>
+<tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
+<tr><td><a href="tools/win64/x86/cl.txt">cl</a></td><td align="right">4&nbsp;K</td><td><a href="tools/win64/x86/ias.txt">ias</a></td><td align="right">2&nbsp;K</td><td><a href="tools/win64/x86/pe2dbg.txt">pe2dbg</a></td><td align="right">0&nbsp;K</td><td></td><td></td></tr>
+<tr><td colspan="8" class="anchor"><a id="IDtools-win64-x86-amd64-"></a>tools\win64\x86\amd64</td></tr>
+<tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 4&nbsp;&nbsp;&nbsp;&nbsp;Size: 8&nbsp;K</center></td></tr>
+<tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
+<tr><td><a href="tools/win64/x86/amd64/cl.txt">cl</a></td><td align="right">3&nbsp;K</td><td><a href="tools/win64/x86/amd64/lib.txt">lib</a></td><td align="right">0&nbsp;K</td><td><a href="tools/win64/x86/amd64/link.txt">link</a></td><td align="right">1&nbsp;K</td><td><a href="tools/win64/x86/amd64/ml64.txt">ml64</a></td><td align="right">1&nbsp;K</td></tr>
 <tr><td colspan="8" class="anchor"><a id="IDtools-x86-"></a>tools\x86</td></tr>
 <tr><td colspan="8" style="background: #badcd9; color: #595959"><center>Files: 176&nbsp;&nbsp;&nbsp;&nbsp;Size: 159&nbsp;K</center></td></tr>
 <tr><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th><th><b>File</b></th><th><b>Size</b></th></tr>
@@ -214,7 +239,7 @@ font-style: italic
 </table>
 </div>
 <div id="footer">
-September 30, 2020&nbsp;&nbsp;1:46 pm
+September 30, 2020&nbsp;&nbsp;10:55 pm
 </div>
 </div>
 

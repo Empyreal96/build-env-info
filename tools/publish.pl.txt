@@ -1,0 +1,18 @@
+# Function: Given a file, publish it to the requested locations.
+#
+# Usage: publish.pl <logfile> <publishspec>
+#    where: <logfile> is the name of the log file to be generated
+#           <publishspec> is of the form:
+#                  {<filename>=<location>;<location>}{...}
+#
+#           <filename> is a single filename to publish.
+#           <location> is where to publish the file.  Multiple locations
+#                          are delimited with semicolon
+#
+#    or  publish <logfile> -f <specfile>
+#    where: <logfile> is the name of the logfile to be generated
+#           <specfile> contains one or more <publishspec> entries
+#
+# Example:
+#    publish.pl publish.log {kernel32.lib=\public\sdk\lib\amd64\kernel32.lib;\mypub\_kernel32.lib}
+#

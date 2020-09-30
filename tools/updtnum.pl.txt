@@ -1,0 +1,8 @@
+
+updtnum.pl
+
+   updtnum.pl takes no arguments, and will examine the file
+   %_NTBINDIR%\__blddate__. It will increment the daily build
+   number, or if a new day has arrived, update the day and
+   reset the daily build number to zero.
+

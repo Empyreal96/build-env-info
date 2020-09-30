@@ -1,0 +1,12 @@
+
+Usage: SendBuildStats [-v] [-o | -t] -s | -w | -fb[:build.err] | -fpb[-m msg]
+
+ -?              help
+ -v              verbose
+ -o              send only to suspect list
+ -t              put suspect list on To: line, DL on CC:
+ -s              build success
+ -w              send out warning
+ -fb[:fname]     build failed, fname is the build.err file
+ -fpb[:fname]    post build faild, fname is the postbuild.err file
+ -m msg          rest of line is a message to include in the mail

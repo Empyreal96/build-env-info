@@ -1,0 +1,13 @@
+ChangesToFiles.pl [options] changesfile
+options:
+  [-verbose]
+  [-descriptions]
+  [-integrates]
+  [-branches]
+  [-deletes]
+  [-publics]
+  [-all]
+  [-project depotname]
+
+# Function: Takes build.changes and runs sd describe on each change to get the file list.
+#           Specifiying a project limits the output to just that project

@@ -1,0 +1,39 @@
+SDX 1.03 USAGE
+--------------
+SDX command [command-args] [SD-args] [filespec] [-? -g]
+
+Use SDX to work with Source Depot commands across one or more depots from
+a single client enlistment.
+
+You must set %SDXROOT% to the full path of your enlistment root, ie D:\NT,
+C:\SRC, etc. before using SDX.
+
+
+GENERAL OPTIONS
+---------------
+These command-line arguments are available:
+
+    [command-args]      arguments specific to the SDX command
+    [SD-args]           arguments for the underlying SoureDepot command
+    [filespec]          SD wildcards to restrict the scope of command
+    -?                  usage
+    -g [file]           log output to file, where [file] is a fully
+                        qualified path
+
+
+GETTING STARTED
+---------------
+Set SDXROOT=D:\NT (or whatever your enlistment root directory is), then:
+
+To enlist in projects, run 'sdx enlist'.
+
+To defect from one or more projects, run 'sdx defect'.
+
+To repair your enlistment, run 'sdx repair'.
+
+To see other SDX commands, run 'sdx commands'.
+
+
+Email SDX to report bugs in this script.
+
+Source Depot documentation is available at http://sourcedepot.

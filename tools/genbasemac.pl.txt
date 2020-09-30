@@ -1,0 +1,12 @@
+#
+# genbasemac.pl
+#
+# Arguments:
+#     genbasemac objdir, modulename, coffbase.txt path
+#
+# Purpose:
+#     generates a base.mac to specify the coffbase of a module for use with
+#          managed code (e.g. CS compiler)
+#
+# Returns: 0 if success, non-zero otherwise
+#

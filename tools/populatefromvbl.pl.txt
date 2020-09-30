@@ -1,0 +1,31 @@
+# Have any changes to this file reviewed by DavePr, BryanT, or WadeLa
+# before checking in.
+# Any changes need to verified in all standard build/rebuild scenarios.
+#
+# Usage = PopulateFromVBL.pl [-force] [-vbl=vblreleasedir] [-nttree=nttreedir] [-symbols]
+#
+# Function: Populate missing files in nttreedir from vblreleaseddir so
+#   0) Verify that binplacedir and VBL are (compatible?) release directories
+#   1) Find the binplace.log output for both paths
+#   2) Figure out what projects were built in the nttree
+#   3) Generate a list of files that were built on VBL for the projectlist
+#   4) Output a list of files we should have built locally, but didn't
+#   5) If (4) is empty, or -force, populate missing files in nttreedir
+#      from vblreleaseedir forall projects
+#
+#   No files in nttreedir are overwritten from vblreleasedir
+#   The checks for what should be there are not exact, because we rely only on
+#   binplace.log entries -- and the VBL build may not exactly match the nttree build.
+#
+# [-force] -- do copying even if the nttree doesn't contain project files built in VBL
+# [-verbose] -- chatter while working
+# [-fake] -- don't do the actual copies
+# [-checkbinplace] -- note VBL files that are in binplace.log but not build.binlist
+# [-fulltargetok] -- run even if the target machine has built in all projects
+#
+#
+# VBLpath will be computed from BuildMachines.txt if not supplied either
+# on the command line, or in the VBL_RELEASE environment variable.
+#
+# If we are a build lab, we succeed without doing much.
+#

@@ -1,0 +1,34 @@
+#----------------------------------------------------------------//
+# Script: copylang.pl
+#
+# (c) 2000 Microsoft Corporation. All rights reserved.
+#
+# Purpose: This script copy the files between Source Tree and
+#          Loc Tree listed in $ENV{RazzleToolPath}\intlsrc.txt.
+#
+# Version: <1.00> 06/30/2000 : Suemiao Rossognol
+#----------------------------------------------------------------//
+
+Usage:
+    copylang.pl -l:<lang> [-x:<SourcePath>] [-y:<LocPath>] [-i] [-p]
+
+    -l Language.
+    -x Root path of the SourceTree.
+       Defaults to D:\xpsp1.
+    -y Root path of the LocTree.
+       Defaults to D:\xpsp1\usasrc when language is usa.
+       Defaults to D:\xpsp1\loc\res\<lang>\windows\sources otherwise.
+    -i Incremental.  This flag is used for incremental copy.
+    -p Powerless.  Only lists the files that would get copied,
+       in case the script is run without the powerless flag.
+    /? Displays usage.
+
+
+Examples:
+    copylang.pl -l:usa -x:\\ntbld03\sources -y:\\intlnt\2500.x86.src
+       Copies sources from the usa build machines for localization.
+    copylang.pl -l:usa -y:\\intlnt\2500.x86.src
+       Copies sources from local machines for localization.
+    copylang.pl -l:jpn -i -p
+       Queries which localized sources would get copied from the
+       localization tree to the source tree for jpn.

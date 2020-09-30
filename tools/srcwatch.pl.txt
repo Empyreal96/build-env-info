@@ -1,0 +1,23 @@
+### History:
+###  06/17/2000 Jasonsch - Original hacking.
+###  07/21/2000 Jasonsch - Made more general so other groups can use it.
+###
+### Description:
+###  Watches a set of directories for changes and e-mails someone about 'em.
+###
+
+srcwatch.pl [-f file]
+    -s mm/dd/yyyy - The start date of the period you want a listing for.
+    -e mm/dd/yyyy - The end date of the period you want a listing for.
+    -f file  - Use file to read config info. If omitted, srcwatch.txt is assumed.
+
+
+    The config file looks like:
+targets = jasonsch
+from = jasonsch
+paths = core advcore\duser !core\ntgdi !core\cslpk
+groupname = NTUSER
+group = dwaynen gerardob hiroyama jasonsch jeffbog jstall markfi mhamid msadek
+lab = lab06_dev
+branches = ntuser
+premonition = 1

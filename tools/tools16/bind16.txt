@@ -1,0 +1,10 @@
+
+Microsoft (R) Bind Utility   Version 1.30
+Copyright (c) Microsoft Corp 1986-90. All rights reserved.
+
+
+Usage:
+	BIND [/nologo] infile<.exe> [file.lib..] [file.obj..]
+		[/o outfile<.exe>] [/m <mapfile>] [/n name..] [/n @file]
+	BIND /?
+	BIND /help

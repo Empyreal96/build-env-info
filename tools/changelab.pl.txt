@@ -1,0 +1,1 @@
+usage: perl.exe changelab.pl <lab_name>
