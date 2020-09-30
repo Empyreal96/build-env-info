@@ -1,0 +1,5 @@
+CheckTestSig [-l <language>]
+
+Verify that all files listed in fullprslist.txt are signed. CheckTestSign 
+will try once to sign any unsigned files. Returns an error if any files 
+are still unsigned after attempting to resign.

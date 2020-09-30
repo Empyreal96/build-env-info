@@ -1,0 +1,10 @@
+tscwebgen.cmd
+
+-Generate msrdp.cab (TS ActiveX web CAB)
+-Update HTML pages (Tsweb1.htm) with version specific build number for
+ object tag.
+-Update INF file with build #
+-Build CAT file for CAB contents
+-Build CAB file (msrdp.cab)
+ 
+Contact: nadima

@@ -1,0 +1,10 @@
+infsize -i:<inf> [-d:<file>] <path>
+    -i:<inf> update the layout.inf specified
+
+    -d:<file> File containing default sizes (used when file
+              is not found in <path>). Format of the file
+              is one entry per line consisting of
+              <filename>:<default_size>
+     
+    <path>   Find files in specified path
+    

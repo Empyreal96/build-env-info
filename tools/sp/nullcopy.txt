@@ -1,0 +1,5 @@
+nullcopy [-list:<null file list>] <source> <destination>
+
+Files in the destination reported as bad by nullfile.exe will be
+copied from the source. The -list option can be used to specifiy a 
+text file containing the output from a previous run of nullfile.exe.

@@ -1,0 +1,13 @@
+Usage: findinfdata [options] <bin_dir> /f <out_file>
+          
+   /f:   File to output the results to.
+   /c:   Use information from a change file.
+   /w    Include WOW files.
+   /xs   Ignore server skus.
+   /xc   Ignore client skus.
+   /i    Remake infscan.lst using infscan before reading it.
+   /o    Write using original directory structure.
+   /s    Read infs from service pack directory structure.
+   /b    Read infs from the binaries directory.
+   /l    Language to run for.
+   

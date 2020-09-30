@@ -1,0 +1,5 @@
+CopyWow64 [-l <language>]
+
+Generates a list of files on a 64 bit machine to copy and copies them
+from the appropriate 32 bit machine to populate the tsclient install
+directories.

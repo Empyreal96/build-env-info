@@ -1,0 +1,2 @@
+moves cmpnents files to cmpnents directory under slp\pro.
+-n:[Build Number]

@@ -1,0 +1,8 @@
+Moves langusage specific tree under D:\svcpack.x86chk to release or a release tree back to langauge directory under D:\svcpack.x86chk
+
+movebuild [-n:build# | -qfe: qfe#] [-d:direction]
+
+-n:[buildnum] build number to move.
+-qfe:[qfe number]
+-d:[direction] either forward to release or back to binaries.
+

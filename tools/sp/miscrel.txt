@@ -1,0 +1,34 @@
+
+Propogate miscellaneous build components such as symbols and DDKS to release server.
+
+Usage:
+    miscrel.cmd: -l:<language> -n:<BuildNo>[-a:<Architecture>]
+		[-t:<Debug Type>][-d:<Release Server>][-s:<Source Server>][-misc] [-p]
+
+    -l Language. 
+       Default is "usa".
+
+    -n Build Number.
+    
+    -a Build Architecture. x86 or ia64.
+       Default is x86.
+
+    -t Debug Type.fre or chk.
+       Default is x86.
+
+    -d Release Target conglomeration Server.
+       Default is defined in the xpsp1.ini.
+
+    -s Release Source Server.
+       Default is %computername%.
+
+    -misc Propagate Neutral package file only, such as mui.
+
+    -p Powerless.
+       Display key variables only.
+	
+    -? Display Usage.
+
+Example:
+     miscrel.cmd -n:1026 -s:ntrel
+

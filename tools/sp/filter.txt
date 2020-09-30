@@ -1,0 +1,6 @@
+filter.cmd [-v] [-qfe <qfenum>]
+
+Updates the _NTFILTER directory of binaries with files from _NTTREE.
+
+  -v     produce more verbose output and logging
+  -qfe   run filter for a QFE build

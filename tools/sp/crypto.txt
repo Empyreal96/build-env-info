@@ -1,0 +1,3 @@
+crypto [-l <language>]
+
+Applies MAC and signature to a list of crypto components

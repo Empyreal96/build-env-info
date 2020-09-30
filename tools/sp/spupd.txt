@@ -1,0 +1,8 @@
+spupd [-l <language>] [-prs] [-cat] [-qfe <QFE number>]
+
+   -l       Specify a language to do
+   -prs     Package using PRS signed catalogs
+   -cat     Generate catalog, but do not package
+   -qfe     Make a QFE package
+
+Creates the update directory structure.

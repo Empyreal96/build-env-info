@@ -1,0 +1,4 @@
+submit_public
+
+Submits public changes at the end of the build on official build
+machines.

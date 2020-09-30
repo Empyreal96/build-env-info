@@ -1,0 +1,32 @@
+
+Issue the appropriate DFS commands to raise/lower builds to a specific quality.
+
+Usage:
+    raiseall.cmd: -l:<Language> -n:<BuildNo> -q:<RaiseQuality>||-lower  
+                [-r:<Target Server>]
+		[-a:<Architecture>] [-t:DebugType] [-replacelatest] 
+		[-replacenumber] [-d] [-p] [-?]
+
+   
+    -l:lang     	Language. 
+			Default is "usa".
+    -n:# 		Build number.
+    -r:server           Serevr with build to be raised.
+		        Default is %computername%.
+
+    -a:arch     	Architecture. Ex: "x86", "ia64" or "amd64". 
+			Default is applied to all architectures.
+    -t:type     	Debug Type. EX: "fre" or "chk". 
+			Default is applied to all build types.
+    -q:qly		Raise quality. EX: "bvt", "tst", "idw"...
+    -lower		Remove build from dfs mapping.
+    -replacelatest	Force replace latest links with an older build when raise. 		        
+    -replacenumber	Force replace numbered links with an older build when raise.		
+    -d			Debug mode.
+    -p 			Display key variables only.
+    -? 			Display Usage.
+
+Example:
+     raiseall.cmd -l:ger -n:2600 -a:ia64 -lower
+     raiseall.cmd -l:ger -n:2600 -t:chk -q:tst -d  
+

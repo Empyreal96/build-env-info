@@ -1,0 +1,21 @@
+
+Create SLP build in the release server.
+
+Usage:
+    buildslp.cmd -n:<Build Number> [-p] [-mail]
+		[-a:<Build Architecture>] [-t:<Build Debug Type>]
+	        
+    -n: Build Number. 
+
+    -a: Build Architecture. x86 or ia64.
+        Default is x86.
+
+    -t: Build Debug Type. fre or chk.
+        Default is chk.
+
+    -mail Send notification mail.
+    
+    -p: Powerless.
+
+    -? Display Usage.
+

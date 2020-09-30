@@ -1,0 +1,5 @@
+Usage: copyinftable <final_dir> <setupinfs_dir>
+          
+   <final_dir>       Directory to copy from.
+   <setupinfs_dir>   Directory to copy to.
+   

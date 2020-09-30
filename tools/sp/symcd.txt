@@ -1,0 +1,17 @@
+Create Symbol CD.
+
+SymCD [-l lang] [-m | -t]
+  -l lang to specify which language
+  -m      run only munge public
+  -t      run all sections
+
+If you define Official_Build_Machine, the script creates the cabs.
+If not, the default does only munge public symbols.
+
+For example, if you only want to munge public symbols on official
+build machine, you can specify 'symcd.cmd /m'.
+
+PS:
+The 'Official_Build_Machine' is the environment variable to set 
+to as a official build machine.
+

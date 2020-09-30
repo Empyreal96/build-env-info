@@ -1,0 +1,29 @@
+
+List and/or purge the stale DFS link(s) for nt releases.
+
+Usage:
+    staledfs.cmd: -l:<language> [-b:<branch>] [-purge|-mail:<mailto>] [-a]
+
+    -l Language. 
+       Default is "usa".
+
+    -n Build Number.
+
+    -b Branch.
+       Default is "main". 
+
+    -purge Option to purge stale link(s).
+	Default is listing stale link(s) only.
+
+    -a All languages (USA servers)
+    
+    -ae All languages (EU servers)
+
+    -mail Send mails.
+    
+    -? Display Usage.
+
+Example:
+     staledfs.cmd
+     staledfs.cmd -b:idw
+     staledfs.cmd -l:ger 

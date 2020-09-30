@@ -1,0 +1,11 @@
+
+Lower the shares and delete the builds in the release servers.
+
+Usage:
+    delbuild.cmd [-l:<language>] [-k:<Number of builds to keep>] [-p]
+    -l Language. Default is "usa".
+    -k Number of builds to keep.
+       Default is 2.
+    -p Powerless.
+    -? Display Usage.
+

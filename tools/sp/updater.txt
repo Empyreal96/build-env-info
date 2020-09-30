@@ -1,0 +1,8 @@
+updater.cmd -entries:<files> [-trim] [-qfe] [-c <change>]
+
+  files:           file containing list of files to search for
+  trim             minimize size of resultant INF by compressing and removing entries
+  qfe              build an inf for a qfe instead of a service pack
+  change:          make changes listed in a change file
+  dirs:            make a list of dirs of all of the files
+

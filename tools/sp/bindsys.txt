@@ -1,0 +1,3 @@
+bindsys.cmd [-l <language]
+
+Binds the NT binaries. Run during postbuild.

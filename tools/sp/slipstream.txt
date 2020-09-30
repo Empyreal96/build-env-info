@@ -1,0 +1,9 @@
+slipstream [-l <language>] [-init]
+
+Creates slipstream cd images from gold media. You must have a local copy
+of the gold media (per and pro) in
+  %_NTDRIVE%\gold\%LANG%\%_BUILDARCH%%_BUILDTYPE%
+
+The -init option will attempt to create a local copy of the gold media
+for you.
+

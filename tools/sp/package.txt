@@ -1,0 +1,8 @@
+package.cmd [-l lang] [-prs] [-qfe qfe_num] [-plan]
+
+   -l    Specify the language to package.
+   -prs  PRS Sign necessary files during packaging.
+   -qfe  Package a QFE instead of a service pack.
+   -plan Do a dry run to determine dependencies.
+   
+Do final preparations and package a service pack or QFE.

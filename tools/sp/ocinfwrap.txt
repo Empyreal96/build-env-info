@@ -1,0 +1,2 @@
+ocinf.cmd
+	Fills in SizeApproximation field in infs listed in sysoc.inf

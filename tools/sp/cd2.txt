@@ -1,0 +1,3 @@
+cd2 [-l <language>]
+
+Move CD2 files under pro, make procd1 and procd2

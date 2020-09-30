@@ -1,0 +1,12 @@
+mergetables <old_table> <new_table> <diff_table> <out_table> <out_diff_table>
+
+   <old_table>       "Original" table, taken from a main build or from
+                        a previous run of this script.
+   <new_table>       New table, taken from an sp of the build for old_table.
+   <diff_table>      infdiff.tbl that goes with old_table.
+   <out_table>       Location to write the generated table to.
+   <out_diff_table>  Location to write the generated diff table to.
+
+Creates an inf data table by combining data from an old build with
+data from a service pack.
+

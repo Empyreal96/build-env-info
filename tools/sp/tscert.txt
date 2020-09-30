@@ -1,0 +1,3 @@
+tscert [-l <language>]
+
+Applies signature to terminal server files

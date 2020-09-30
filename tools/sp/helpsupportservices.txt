@@ -1,0 +1,3 @@
+helpsupportservices [-l <language>]
+
+Rebuild HelpAndSupportServices\index.dat on localized builds

@@ -1,0 +1,24 @@
+
+Copy symbols from US build to the other language builds.
+
+Usage:
+    copysym.cmd -l:Language -n:<Build Number> [-s:<Source Server>][-d:<Target Server>]
+		[-a:<Build Architecture>] [-t:<Build Debug Type>][-d] [-p]
+    -n: Build Number. 
+
+    -s: Source Server.
+	Default is skifre00.
+
+    -d: Target Server.
+	Default is %computername%.
+
+    -a: Build Architecture. x86 or ia64.
+        Default is x86.
+
+    -t: Build Debug Type. fre or chk.
+        Default is chk.
+    
+    -p: Powerless.
+
+    -? Display Usage.
+

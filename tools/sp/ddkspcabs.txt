@@ -1,0 +1,35 @@
+
+     Usage: ddkspcabs.bat [-n <N>] [-f] [-l <language>] [-s] [-v]
+
+     This tool requires a Razzle window.
+
+     Generates CABs for the Kernelmode Development Kits.  N, which is
+     optional, indicates the number of processes to start per processor.
+     The default value is 2.
+
+     By default, ddkspcabs.bat will exit early if the environment variable
+     OFFICAL_BUILD_MACHINE is not defined.  To override this behavior,
+     and for CAB generation, use -F.
+
+     -L is used, and any language other than 'usa' is passed, CAB
+     generation will not take place.
+
+     -V turns on verbose mode.  See what cabs are being built.
+
+     -S spoofs full postbuild. (DDKCabs.bat otherwise relies upon build_number.cmd)
+
+     Dependencies:
+     o The following environment variables are expected to be defined:
+       %_NTDRIVE%, %_NTROOT%, %_BUILDARCH%, %_BUILDTYPE%, %_NTPOSTBLD%,
+       %RazzleToolPath%, %NUMBER_OF_PROCESSORS%, %TEMP%, and
+       %PROCESSOR_ARCHITECTURE%.
+
+     o The following directory trees are assumed to exist:
+        1) %_NTPOSTBLD%\ddk_cd
+        2) %_NTPOSTBLD%\ddk_flat
+        3) %_NTPOSTBLD%\ifs_cd
+        4) %_NTPOSTBLD%\ifs_flat
+        5) %_NTPOSTBLD%\hal_cd
+        6) %_NTPOSTBLD%\hal_flat
+
+    

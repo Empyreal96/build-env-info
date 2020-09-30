@@ -1,0 +1,3 @@
+nntpsmtp [-l <language>]
+
+Generates cabs, catalogs, and infs for NNTP/SMTP.

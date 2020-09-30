@@ -16,3 +16,5 @@ so far:
         /tools (root files in tools)
               /postbuildscripts
               /x86
+			  /sp
+

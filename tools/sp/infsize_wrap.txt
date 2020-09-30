@@ -1,0 +1,1 @@
+Runs infsize.cmd against %_NTPostBld% using 2600 sizes as default sizes

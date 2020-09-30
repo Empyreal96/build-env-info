@@ -1,0 +1,9 @@
+tswebsetup.cmd - EltonS
+   Make an iexpress exe container (tswebsetup.exe) for all the tsc
+   client setup files. For installation from the support tools
+   section of the CD
+
+IMPORTANT: script must run after tsclient.cmd and msi.cmd complete
+           only runs on X86. On Win64 we cross-copy the x86 files.
+
+Copyright (c) Microsoft Corporation. All rights reserved.

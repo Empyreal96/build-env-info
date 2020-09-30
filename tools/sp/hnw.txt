@@ -1,0 +1,4 @@
+hnw.cmd [-l <language>]
+
+This is for the Home Networking Wizard. It runs iexpress to generate
+a self-extracting CAB and install into support	ools.

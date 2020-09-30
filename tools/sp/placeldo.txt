@@ -1,0 +1,6 @@
+Usage: placeldo.cmd LDO_file_location
+
+     This tool will copy ldo files for Freestyle managed code binaries
+     into the build.
+
+"success."

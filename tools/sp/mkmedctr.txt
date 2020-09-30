@@ -1,0 +1,4 @@
+mkmedctr.cmd [-l <language>]
+
+This sript creates medctr.cab.  This cabinet contains files which
+are only installed on Windows XP TabletPC edition.

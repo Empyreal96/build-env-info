@@ -1,0 +1,10 @@
+Usage: buildinx [options] <root_dir> <build_num>
+          
+   /xs   Ignore server skus.
+   /xc   Ignore client skus.
+   /m    Remerge old and new tables.
+   /r    Rebuild all tables.
+   /i    Remake infscan.lst using infscan before reading it.
+   /o    Use original directory structure.
+   /s    Use a service pack build instead of a full build.
+   

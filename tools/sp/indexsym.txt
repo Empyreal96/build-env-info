@@ -1,0 +1,10 @@
+indexsym.cmd -l:Lang -n:Build_Num -x:Plat [-i:Symbol_Info]
+
+  -l:Lang             language
+  -n:Build_Num        build number
+  -x:Plat             build arch and build type
+  -i:Symbol_Info      the symbol information; default is tools\sp\symbolinfo.txt
+
+Eg.,
+  indexsym.cmd -l usa -n 1045 -x x86fre
+

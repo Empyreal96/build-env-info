@@ -1,0 +1,7 @@
+unicode [-l <language>]
+
+Converts ansi files to unicode with unitext. The codepage to use for 
+the conversion is looked up in tools\codes.txt. The list of files to 
+convert is somewhat hardcoded. This script should be modified to use 
+the data files tools\postbuildscripts\a2u*.txt as this is a 
+replacement for a2u.pm.

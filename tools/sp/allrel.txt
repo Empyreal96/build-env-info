@@ -1,0 +1,22 @@
+allrel [-l: <language> [-n: <build number>] [-b: <branch>] [-a: <arch>]
+          [-t: <type>] [-s: <server>] [-showlogs] 
+        
+
+Check the release servers specified in the .ini file for the state of
+the matching release.
+
+lang          Language for which to examine the release logs. 
+	      Default is 'usa'. Specify 'all' for all langs. Specify
+              a comma-delimited list to look at multiple langs.
+build number  Build number for which to examine the release logs. 
+              Default is latest build for each server / flavor.
+branch        Branch for which to examine the release logs. 
+	      Default is %_BuildBranch%.
+arch          Build architecture for which to examine the release logs.
+              Default is %_BuildArch%.
+type          Build architecture for which to examine the release logs.
+              Default is %_BuildType%.
+showlogs      Show the log file name being examined on each server.
+server        Restrict search to a single server
+
+

@@ -1,0 +1,3 @@
+wmmkdcache [-l <language>]
+
+Calls mkdcache

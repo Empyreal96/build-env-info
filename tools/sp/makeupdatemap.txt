@@ -1,0 +1,3 @@
+makeupdatemap [-l <language>] [-qfe <QFE_number>]
+
+Creates the update directory structure.

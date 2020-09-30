@@ -1,0 +1,24 @@
+
+Send a notification mail to BVT lab when a build is ready for BVT.
+
+Usage:
+    mailbvt.cmd -n:<Build Number>  
+		[-a:<Build Architecture>] [-t:<Build Debug Type>]
+                [-to:<mail receivers>][-cc:<mail correspondents>]
+
+    -n: Build Number. 
+
+    -a: Build Architecture. x86 or ia64.
+        Default is x86.
+
+    -t: Build Debug Type. fre or chk.
+        Default is chk.
+
+    -to: Mail receivers.
+         Use ';' to delimit multiple receivers. 
+
+    -cc: Mail correspondents.
+	 Use ';' to delimit multiple correspondents.
+    
+    -? Display Usage.
+

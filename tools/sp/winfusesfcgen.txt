@@ -1,0 +1,10 @@
+MiniWinFuseSfcGen [-?] [-hashes:yes] [-cdfs:yes] [-verbose:yes] [-asmsroot:{path to asms, like %_nttree%\asms}]
+
+Twiddles Side-by-side assemblies to create .cdf files, add SHA hashes of member files,
+and any other last-second junk that has to happen to make SxS work right.
+
+   -?       this message
+   -hashes  injects hashes into manifests
+   -cdfs    sets the CDF logging depot
+   -verbose turns on verbose operation
+

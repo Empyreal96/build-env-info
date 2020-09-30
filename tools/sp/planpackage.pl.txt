@@ -1,0 +1,10 @@
+perl planpackage.pl [-qfe <QFEnum>] [-prs]
+
+   -qfe           Make a QFE with a given QFE number;
+                  if omitted, make a service pack.
+
+   -prs           Need to prs sign during during package.
+   
+Generate a complete list of files for filter, etc., then
+detemine which package scripts need to be run.
+

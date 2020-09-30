@@ -1,0 +1,8 @@
+sharesp.cmd -n:qfenum -q:quality -a:arch -d:debug [-l:lang] [-?]
+
+  -n:qfenum          Service pack number ie. 1000
+  -q:quality         bvt, tst, del
+  -a:arch            x86, ia64
+  -d:debug           fre, chk
+  -l:lang            Language
+
