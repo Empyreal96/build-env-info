@@ -1,0 +1,40 @@
+  SetBuildStatus.cmd - miker
+     Call SetBuildStatus.vbs with the proper data to record the
+     build status in the status database. Only runs for official
+     builds.
+
+  Copyright (c) Microsoft Corporation. All rights reserved.
+
+SetBuildStatus.cmd -s:stage [-n:buildnumber] [-l:lang]
+
+ Call SetBuildStatus.vbs with the proper data to record the
+  build status in the status database. Only runs for official
+  builds.
+
+ -s:buildstage   Build Stage. Must be one of the ones below. Note
+                 that "done" and "scrub" are mutually exclusive
+                 for a given build of a lang and archtype.
+                     build
+                     postbuild
+                     boot
+                     bvt
+                     release
+                     done
+                     scrub
+ -n:buildnum     Build number. Must be a full build number in the
+                  form "number.archtype.branch.date". If one is not
+                  provided, we will attempt to use the value from
+                  the first one of these that we can find it from:
+                    %SDXROOT%\BuildName.txt
+                    %_NTPOSTBUILD%\build_logsBuildName.txt
+                    %_NTTREE%\build_logsBuildName.txt
+ -l:language     Any valid language from codes.txt. Default is USA.
+
+
+ Note that this tool is designed to be run during automated build
+  processes and any problems it encounters are not output as
+  errors - not reporting build status is not a build blocking
+  issue. This script should never output something that says
+  "ERROR: xxxx", but instead simply output the relevant information
+  about what happened so it will be logged for later use.
+

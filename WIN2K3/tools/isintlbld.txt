@@ -1,0 +1,16 @@
+  isintlbld.cmd - Determines whether the current
+       build environment is international (INTL).
+
+  usage: isintlbld.cmd [Redmond|Dublin]
+
+  If called with no parameters, it checks whether the current environment
+  is an INTL build environment.
+      If the environment is INTL, ERRORLEVEL is set to 0.
+      Otherwise, ERRORLEVEL is set to 1.
+
+  If called with Redmond or Dublin as a parameter, it checks whether the 
+  current environment corresponds to an INTL build environment 
+  from the given site (Redmond or Dublin).
+      If the current site matches the given parameter, ERRORLEVEL is set to 0.
+      Otherwise, ERRORLEVEL is set to 2.
+

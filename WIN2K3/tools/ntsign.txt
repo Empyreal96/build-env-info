@@ -1,0 +1,12 @@
+
+  Signs a given catalog file.
+
+  Copyright (c) Microsoft Corporation. All rights reserved.
+
+
+ntsign -f <filename> [-t]
+
+Signs a given catalog file.
+
+-f  File to be signed
+-t  Use a timestamp.

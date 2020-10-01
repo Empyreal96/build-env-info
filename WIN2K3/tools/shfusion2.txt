@@ -1,0 +1,30 @@
+# This Perl program generates the "IsolationAware" stubs
+# in winbase.inl, winuser.inl, prsht.h, commctrl.h, commdlg.h.
+#
+# It is run by the makefile.inc files in
+#   base\published
+#   windows\published
+#   shell\published\inc
+#
+# The name "shfusion2" comes from these stubs being the public replacement
+# for "shfusion" -- shell\lib\shfusion.
+#
+# Generation of the stubs is driven by declarations in the .w files.
+# The stubs vary in a few ways.
+#   Some are just for delayload purposes -- all the actctx functions.
+#   Some delayload the entire .dll -- comctl32.dll.
+#   Others activate around static links -- kernel32.dll, user32.dll, comdlg32.dll
+#   some do not activate at all -- the actctx functions
+#   winbase.inl gets an extra chunk of "less generated" / "relatively hardcoded"
+#      code, that the stubs in the other files depend on.
+#      winbase.inl exports two symbols to all the stubs, and one extra symbol
+#        to two stubs in prsht.h
+#      The two symbols are ActivateMyActCtx, g_fDownlevel.
+#      The third symbol is g_hActCtx.
+#      All symbols get "mangled".
+#   Each header also gets a small function for calling GetProcAddress with an implied
+#     HMODULE parameter. This function's name is also "mangled".
+#   Besides "mangling", all external symbols are clearly "namespaced" with a relatively
+#     long "namespace" -- IsolationAware or IsolationAwarePrivate.
+#
+# owner=JayKrell

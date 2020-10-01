@@ -1,0 +1,15 @@
+reviewd - Send checkin mail to users in a Source Depot server
+
+reviewd [ -d ] [ -p port ... ] counter sleep
+
+    The 'counter' argument specifies the name of the review counter to
+    track.
+
+    The 'sleep' argument specifies how many minutes to sleep between
+    processing a set of changes and polling for the next set.
+
+    The -p port flag specifies a depot server and port to poll.  Specify
+    multiple depots to poll by specifying multiple -p port flags.
+
+    The -d flag runs the script in debug mode and generates
+    additional debugging output.

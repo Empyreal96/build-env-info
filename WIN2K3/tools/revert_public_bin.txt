@@ -1,0 +1,9 @@
+
+This script will revert all binary files checked into the public tree.
+It's supposed to be used during the integration step from one branch to
+another.
+
+Usage: revert_public_bin {-?}
+   where:
+               -? : prints this message
+

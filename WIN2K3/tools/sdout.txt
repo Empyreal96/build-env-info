@@ -1,0 +1,15 @@
+#   FileName: sdout.cmd
+#
+#   Usage = sdout [-v] [-o] filename...
+#
+#      This script allows for more graceful offline operation of SD. It tries
+#      to run SD EDIT on the supplied filenames. If SD fails, then the file
+#      is made writable and the filename is added to the sd.offline file in the
+#      root of the depot. 
+#
+#      sdout with no arguments provides a list of the files which are currently
+#      marked for offline editing.
+#
+#      Once network connectivity is restored, sdonline.cmd will cleanup the 
+#      sd.offline files and check the files out properly.
+#

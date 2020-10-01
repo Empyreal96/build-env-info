@@ -1,0 +1,11 @@
+
+Usage:  symcatupd <file> [<language>]
+
+file     The binary that is being updated.
+         associated lists and infs
+cabs     Update the out of date cabs
+
+language Language must be one of the languages in codes.txt.
+         If language is not given on the command line,
+         usa is the default.
+

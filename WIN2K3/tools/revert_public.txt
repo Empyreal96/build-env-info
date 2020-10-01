@@ -1,0 +1,10 @@
+
+This script will revert all the files checked out as a result of publishing to public.
+
+ Usually done as the first step of a clean build.
+
+Usage: revert_public {-?} {-ForceSync}
+   where:
+               -? : prints this message
+       -ForceSync : issue a sd sync -f ... cmd after reverting (to ensure all files are correct)
+

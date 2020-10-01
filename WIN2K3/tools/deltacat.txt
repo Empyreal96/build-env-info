@@ -1,0 +1,32 @@
+      Deltacat.cmd [q] [5.0] [/f text file with extra catalog attributes] <path to bins>
+
+      [/q] [-q] Quiet mode
+      [/5.0] [-5.0] Nt 5 version - NT 5.2 is default
+      [/5.1] [-5.1] Nt 5.1 version - NT 5.2 is default
+      <path to bins> FULL PATH to bins. Do not run in bins directory.
+
+
+      Creates a catalog file, "delta.cat" for files in the directory
+      passed as input. For example: If you have ntoskrnl.exe and pci.sys
+      in a directory "d:\BINARIES," running "deltacat d:\BINARIES"
+      will create a delta.cat and place it in the d:\BINARIES directory.
+
+      Then to setup test your binaries use the /m switch with winnt32
+      get your binaries and catalog file from d:\BINARIES. For example,
+      run \\ntubilds\release\usa\latest.tst\x86\fre.wks\winnt32
+      \winnt32.exe /m:d:\BINARIES.
+
+      IF you have either LAYOUT.INF or SYSSETUP.INF
+      in your signing directory. Deltacat will not
+      sign these files which must be signed in nt5inf.cat.
+
+      Let deltacat run then do the following:
+      1. Copy nt5inf.ca_ to your signing directory
+         from wherever your are installing, e.g.
+         \\ntbuilds\release\usa\latest.tst\x86\fre.wks,
+         or, e.g. e:\i386.
+      2. Make sure you have the most recent updcat.exe
+        in your C:\WINDOWS\idw directory
+      3. Run infsign.cmd
+      4. Then run winnt32 with /m:signing directory
+

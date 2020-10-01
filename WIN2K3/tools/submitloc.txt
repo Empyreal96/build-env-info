@@ -1,0 +1,8 @@
+
+Submit the localized files.
+
+Usage:
+    submitloc.cmd [-p]
+    -p Powerless.
+    -? Display Usage.
+

@@ -1,0 +1,16 @@
+ ********************************************************************
+
+ This script creates starts the generation of a catalog  
+ cab file.
+
+ ********************************************************************
+
+
+Params:
+%1 name of the cab (includes .cab) 
+   or the catalog file (does not include .CAT)
+%2 directory where makefile and DDF or CDF files are located
+%3 CAB or CAT to distinguish which is being created
+%4 CAB or CAT destination directory
+%5 Directory for temporary text files
+%6 Log file for CAT files 

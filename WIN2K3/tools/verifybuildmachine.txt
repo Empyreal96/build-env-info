@@ -1,0 +1,3 @@
+We look in BuildMachines.txt for the machine name, branch, architecture,
+and build type. If we find a match, then we set OFFICIAL_BUILD_MACHINE
+to the appropriate value ("primary" or "secondary");

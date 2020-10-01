@@ -1,0 +1,15 @@
+
+Usage: bcauto [-f] [-u] [-t] <config> <enviro>
+
+    -f              : If the machine is busy, terminate the build and restart.
+    -u              : Update: Recombine all the binaries from each of the build
+                      machines after taking incremental fixes so that postbuild
+                      can be run again.
+    -t <timestamp>  : Use timestamp (e.g. 2001/12/15:12:00)
+    -log dir        : Capture log files to specified directory
+    -logman machine identity : Query "machine" with "identity" for list of
+                               build machines instead of template files.
+                               ("machine" must be a build manager)
+    config          : URL or path for the build template.
+    enviro          : URL or path for the environment template.
+

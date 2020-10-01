@@ -1,0 +1,23 @@
+verifysym.cmd - Verify Symbol
+
+verifysym.cmd [-l:<language>] [-b <BinTree>] [-s <SymbolPath>]
+    [-t <SymbolCDList>] [-x <Symbad>]  [-n <FullBuildName>] [-?]
+-----------------------------------------------------------------
+Language	Default is usa.
+
+BinTree         Binaries Tree, default is 
+                <SDXROOT>\loc\bin\<lang>
+
+SymbolPath      Symbol tree, default is 
+                <SymFarm>\usa\<BuildName>\symbols.pri
+                info from ini file and buildname.txt.
+
+SymbolCDList    Symbolcd.txt, default is
+                <_NTTREE>\symbolcd\usa\SymbolCD.txt
+
+Symbad          Symbad.txt, default is
+                <RazzleToolPath>\symbad.txt
+
+FullBuildName   buildname; we use it to create SymbolPath,
+                Default is find the text in
+                <_NTTREE>\build_logs\buildname.txt

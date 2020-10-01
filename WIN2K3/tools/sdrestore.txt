@@ -1,0 +1,13 @@
+#   FileName: sdrestore.cmd
+#
+#   Usage = sdrestore [-v] <backupdir>
+#
+#      This script does the converse of sdbackup by copying the saved files
+#      from <backupdir> into the client's SD enlistments. All the files in 
+#      <backupdir> will be checked out on the local machine and the backups
+#      will be restored.
+#
+#      Currently this script bails out if any of the files in <backupdir> are
+#      either already checked out or a different version than was backed up.
+#      Clever diffing and merging could be done here instead.
+#

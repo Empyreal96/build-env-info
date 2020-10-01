@@ -1,0 +1,19 @@
+Prints the given string to the screen and into a file. Used by command
+scripts to log messages.
+
+usage: errmsg.cmd <message> [logfile]
+
+  message      Specifies the text to be logged, should be quoted
+
+  logfile      Specifies the name of the log file. LOGFILE, if
+               defined, is the default. If this parameter is not
+               specified and LOGFILE is not defined, the message is 
+               displayed on the screen only.
+
+  The output message has the format:
+  [yyyy/mm/dd-hh:mm:ss] (%SCRIPT_NAME%) : message
+
+Example:
+
+call errmsg.cmd "This is the message to display."
+

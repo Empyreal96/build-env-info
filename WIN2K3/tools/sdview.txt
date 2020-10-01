@@ -1,0 +1,6 @@
+# This script manages SD source branches.
+# It knows how to construct client view specs from branch view specs.
+# It knows how to insert them into the client view, and to remove them.
+# It will also check to make sure that the user doesn't have any files open.
+#
+# Written and maintained by Arlie Davis

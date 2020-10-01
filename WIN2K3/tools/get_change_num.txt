@@ -1,0 +1,5 @@
+Usage: get_change_num <dir> <filename> <description string>
+     <dir> is the directory containing the root of the project
+           change number is needed for.  May be "."
+     <filename> is where the sd change output will be written
+     <description string> is optional (script will prompt if not entered)

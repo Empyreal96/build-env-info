@@ -1,0 +1,20 @@
+createcat -f <filelist> -c <catfile> -t <tempdir> -o <outdir> [-a <osattr>] [-l <language>]
+
+Creates a CAT file signed with the test certificate
+given a file with the proper list format for a CDF.
+
+-f <filelist>  Specifies the file listing the files to be put
+               into the CAT file.  Each file needs to be listed
+               on a separate line as follows:
+
+               <hash>path\filename=path\filename
+
+-c <catfile>   Specifies the name of the catalog file, with
+               no extension.
+-t <tempdir>   Specifies the temporary directory to use when
+               creating the CAT and CDF files.
+-o <outdir>    Specifies the directory to place the final
+               CAT and CDF files.
+-a <osattr>    Specifies the OSAttr used in CDF's CATATTR1 entry.
+               2:5.0 is the default value, correct for Win2k files.
+               Use 1:4.0 for Win98 files, and 2:4.x for NT4 SP files.

@@ -1,0 +1,59 @@
+Perform Integrate, reverse integrate or sync for internatioanl builds steps. 
+
+
+Usage:
+    intlsdop.cmd [-l:<lang> | -d:<location>] -o:<op> [-t:<timestamp>][-pf] [-y:<branch>] [-c]
+
+    -l Language. Default is "usa".
+
+       The operation intlsdop.cmd performs is language dependent. 
+       Not all op/lang combinations are allowed.
+
+       If "usa",  sync the source projects under SDXROOT.
+       If <lang>, RI or sync the localization projects for the given <lang>.
+			
+    -d: Location.
+	This could be %sdxroot% or %RazzleToolPath%
+	Perform sd <operation> on <location>.
+        
+    -o: SD operation.
+		if "r", perform loc RI.
+		if "s", perform sync.
+		if "v", perform verification.
+		if "u", perform updates. This option is not yet functional.
+
+    -t Timestamp. Used for Integrate/RI/syncing the SD files.
+       Default is the latest time.
+
+    -f: Force operation
+
+    -i: Interactive mode (prompts for user input) 
+
+    -p Powerless.
+       Do not perform sd operation.
+
+    -y <branch>  the branch parameter which defaults to "locpart". 
+    
+    -c Force sync to current, It only works when used with -d:%RazzleToolPath%
+
+    /? Displays usage.
+
+Examples:
+
+    intlsdop.cmd -d:%sdxroot% -t:2000/10/01:18:00 -o:s
+    	Sync the source tree at the given timestamp.
+
+    intlsdop.cmd -l:ger -t:2000/09/09:12:34 -o:r
+	Reverse integrate German localization projects at the given timestamp.
+
+    intlsdop.cmd -l:JPN -t:2000/09/09:12:34 -o:r -y:dnsrv_dev
+	Reverse integrate Japanese localization projects from dnsrv_dev 
+        to dnsrv at the given timestamp.
+
+    intlsdop.cmd -l:ger -o:s
+        Sync the German localization projects at the latest time.
+
+    intlsdop.cmd -l:ger -o:u
+        Open, edit and submit files from German localization projects to the 
+        destination needed by the build. This option is not yet functional.
+

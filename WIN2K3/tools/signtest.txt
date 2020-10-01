@@ -1,0 +1,6 @@
+   Normal execution time for this script is half a second. If it
+   takes longer than that, go to your \nt\tools\<Arch> directory
+   and run "regsvr32 .\capicom.dll"
+ 
+   Author:   scoyne  
+   Date:     5/16/2002

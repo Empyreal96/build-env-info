@@ -1,0 +1,3 @@
+
+Usage: MergeFiles.cmd file1 file2 outfile
+

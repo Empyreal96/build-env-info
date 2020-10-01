@@ -1,0 +1,15 @@
+#   FileName: sdbackup.cmd
+#
+#   Usage = sdbackup [-v] [-d altdir] <backupdir>
+#
+#    Enumerates all the SD opened files in all depots and copies the
+#    changes out to the specified path. This can be useful simply as
+#    a regular backup of local changes, or as a mechanism for sharing
+#    private changes with another person.
+#
+#    Example:
+#      sdbackup \\scratch\scratch\jvert\sdbackup
+#          copies all opened files to \\scratch\scratch\jvert\sdbackup\<currentdate>
+#      sdbackup -d newchange \\scratch\scratch\jvert
+#          copies all opened files to \\scratch\scratch\jvert\newchange
+#

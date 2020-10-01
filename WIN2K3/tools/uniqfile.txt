@@ -1,0 +1,22 @@
+Returns a unique nonexistent full path file name based on the name passed in.
+
+Usage:  uniqfile <filename>
+
+   ex:  uniqfile filename.ext
+    ->   <cwd>\filename.ext   | 
+    ->   <cwd>\filename.1.ext | ...
+    ->   <cwd>\filename.2.ext | ...
+
+   ex:  uniqfile %tmp%\mylogfile.log
+    ->   c:\tmp\mylogfile.log   | 
+    ->   c:\tmp\mylogfile.1.log | ...
+
+Typical call sequence from a CMD script:
+   set script_name=%~n0
+   ...
+   for /f %%i in ('uniqfile %tmp%\%script_name%.log') do set logfile=%%i
+   call logmsg.cmd /t "Start %cmdline%"
+
+NOTE: We write to the file, so other uniqfile calls will see it. Otherwise,
+      multiple uniqfile calls will return the same unique file name.
+

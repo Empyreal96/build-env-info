@@ -1,0 +1,11 @@
+ *********************************************************************
+ Script: ExecuteCmd.cmd
+ Purpose: Primative script to be used in the cmd environment to
+          execute commands with logging and error checking.
+ Requires: The following vars must be set in the environment:
+           %logfile%, %tmpfile%, %errfile%
+ *********************************************************************
+
+ Do not use setlocal/endlocal:
+ for ex., if the command itself is "pushd",
+ a "popd" will be executed automatically at the end.

@@ -1,0 +1,77 @@
+
+
+SDX 1.03 USAGE
+--------------
+SDX command [command-args] [SD-args] [filespec] [-? -g]
+
+Use SDX to work with Source Depot commands across one or more depots from
+a single client enlistment.
+
+You must set %SDXROOT% to the full path of your enlistment root, ie D:\NT,
+C:\SRC, etc. before using SDX.
+
+
+GENERAL OPTIONS
+---------------
+These command-line arguments are available:
+
+    [command-args]	arguments specific to the SDX command
+    [SD-args]		arguments for the underlying SoureDepot command
+    [filespec]		SD wildcards to restrict the scope of command
+    -?			usage
+    -g [file]		log output to file, where [file] is a fully
+			qualified path
+
+
+COMMANDS
+--------
+These commands help you work with SDX:
+
+    sdx commands	list all cross-depot commands
+    sdx usage		explain SDX commands
+
+These commands change the state of your enlistment:
+
+    sdx defect		defect from one or more projects
+    sdx enlist		enlist projects from multiple depots
+    sdx integrate	integrate changes between branched projects
+    sdx label		create a label in each depot
+    sdx labelsync		sync a label
+    sdx repair		repair SD.MAP/SD.INI's and refresh files
+    sdx resolve		resolve merged files in each depot
+    sdx revert		revert open files to their previous revision
+    sdx submit		submit changelists in each depot
+    sdx sync		sync your enlistment to new files in each depot
+
+These commands report on the state of your enlistment:
+
+    sdx branch	display a branch spec
+    sdx branches	list branches
+    sdx client		display client specification to stdout
+    sdx clients		list all clients
+    sdx change		display the contents of a changelist
+    sdx changes		list submitted changelists
+    sdx counters	list counters
+    sdx files		show file summary info for every file
+    sdx have		show file revisions you have
+    sdx info		show depot information
+    sdx integrated	display branch and merge information
+    sdx labels		list all labels
+    sdx opened		show which files you have opened
+    sdx pending		show pending changes
+    sdx resolved	show files merged but not submitted
+    sdx status		show files opened and out of sync
+    sdx user		show information about a user
+    sdx users		list all users
+    sdx where		show how file names map through the client view
+
+Administrative commands:
+
+    sdx labbranch	create virtual lab branch in each enlisted project
+    sdx protect		set permissions on files and directories
+
+For information on a particular SDX command, run 'sdx [command] /?'.
+
+For information on Source Depot commands, run 'sd help commands'.
+
+

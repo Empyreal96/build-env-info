@@ -1,0 +1,2 @@
+This script is used for emergencies when a build lab
+needs to quickly index a file on the symbol server

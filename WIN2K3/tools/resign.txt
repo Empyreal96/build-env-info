@@ -1,0 +1,2 @@
+Resign all catalog files in the current directory tree
+NOTE: DO NOT RUN THIS IN A SOURCE DEPOT CONTROLLED TREE

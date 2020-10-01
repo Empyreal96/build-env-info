@@ -1,0 +1,24 @@
+Prints the given string to the screen and into a file.
+Used by command scripts to log messages.
+
+usage: logmsg.cmd < message | @filename > [logfile]
+
+  /t           If specified, the message is timestamped.
+
+  message      Specifies the text to be logged, should 
+               be quoted. 
+
+  filename     A filename preceeded by an at-sign (@)
+               may be given instead of a message. The
+               contents will be appened into the log 
+               if the given file exists.
+
+  logfile      Specifies the name of the log file.
+               LOGFILE, if defined, is the default.
+               If this parameter is not specified and 
+               LOGFILE is not defined, the message is 
+               displayed on the screen only.
+
+ex: call logmsg.cmd "This is the message to display."
+    call logmsg.cmd @mylog.txt
+

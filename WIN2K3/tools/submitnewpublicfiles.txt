@@ -1,0 +1,9 @@
+ Name: Submit_new_public_files.cmd
+
+ Usage: Submit_new_public_files.cmd Delete|Add
+
+ Purpose: This is the script that adds new files and deletes old files
+          for the public directories in the build.
+
+ The script is driven off the %RazzleToolPath%\public_changes.txt.
+ See that file for more info.

@@ -1,0 +1,2 @@
+This script will take the checked in sd binaries (sdclient.exe and sdclient_win.exe)
+and create sd.exe and sdwin.exe from them.

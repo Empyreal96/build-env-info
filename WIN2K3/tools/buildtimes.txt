@@ -1,0 +1,5 @@
+HELP
+Usage: buildtimes [-s] [-e] [-p] path\filename*.log
+       -s   Do not merge build time of "root" and "mergedcomponents"
+       -e   Print total elasped build time
+       -p   Print postbuild time

@@ -1,0 +1,13 @@
+         IF you have either LAYOUT.INF or SYSSETUP.INF
+         in your signing directory. Deltacat will not
+         sign these files which must be signed in nt5inf.cat.
+
+         Let deltacat run then do the following:
+         1. Copy nt5inf.ca_ to your signing directory
+            from wherever your are installing, e.g.
+            \\ntbuilds\release\usa\latest.tst\x86\fre.wks,
+            or, e.g. e:\i386.
+         2. Make sure you have the most recent updcat.exe
+         3. Run infsign [directory], e.g. infsign c:\bin
+
+         When complete, run winnt32 /m:[directory]

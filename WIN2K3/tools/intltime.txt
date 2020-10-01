@@ -1,0 +1,5 @@
+Usage intltime.cmd -b:<BuildName> -t:<Timestamp> [-c] [-i]
+    -b:<BuildName> The full build name to snap
+    -t:<Timestamp> The timestamp to sync the source tree
+    -c    Full clean build WILL DELETE %_NTTREE%, %_NTPOSTBLD%, SOURCES!
+    -i    Incremental build

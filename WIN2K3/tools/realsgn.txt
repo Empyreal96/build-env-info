@@ -1,0 +1,39 @@
+
+--------------------------------------------------------------------
+realsgn.cmd  -	This is a utility to sign test binaries
+	     	against a real signed build. It copies
+	     	the correct "testsign" infs, testroot,
+	     	and catalog file from \\ntbuilds\release;
+	     	updates and signs the catalog; and checks
+	     	that the files are signed.
+
+USAGE: realsgn buildnumber architecture dbgtype ostype directory
+
+       E.G. - realsgn 2000 x86 fre wks c:\mydir
+	       
+		buildnumber - must be a build number on DFS
+		architecute - x86 or alpha
+		debugtype   - fre or chk
+		ostype      - wks or per or bla or sbs or srv or ent or dtc
+	        directory   - the absolute path to the directory
+			      containing your test bits.
+
+       THESE PARAMETERS MUST BE IN THE CORRECT ORDER	  
+
+PREREQUISITES -	You must have the following tools in your path:
+			chktrust.exe
+			signcode.exe
+			updcat.exe
+			driver.spc
+			driver.pvk
+ECHO is off.
+
+	      - Installed testroot.cer:
+			To install the testroot, copy
+			testroot.cer from the fre.pub\tools
+			directory of \\ntbuilds\release\usa.
+			Expand it. Run it from a command prompt.
+			A wizard will guide through a very quick
+			installation. Once there, it will remain
+			until you upgrade to a PRS signed build.
+

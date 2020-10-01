@@ -1,0 +1,17 @@
+Creating local share...
+
+Usage: BCDist -u domain\username   
+       [-v] [-d nnnn [-dropsrc path] |  -src path] 
+       [-dst path] [-arch x86] [-debug] machines...
+       -u d\u   = domain\username
+       -f xmlFile   = environment xml template
+       -v        = verbose
+       -d        = drop number
+       -dropsrc  = drop source location ("\\ptt\cftools\test\bcrel")
+       -src      = source directory
+       -dst      = destination directory
+       -arch     = Specifiy x86 or alpha
+       -debug    = copy debug exes instead of retail
+Do NOT enter the password on the command line
+
+Error: Unknown argument: -p

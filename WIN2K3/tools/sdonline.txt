@@ -1,0 +1,7 @@
+#   FileName: sdonline.cmd
+#
+#   Usage = sdonline [-v]
+#
+#      This script cleans up after sdout and does SD ONLINE on all files listed
+#      in the sd.offline file at the root of the depot.
+#

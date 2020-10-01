@@ -1,0 +1,2 @@
+This script will take the checked in perl binaries (*.CheckedInDll/*.CheckedInExe)
+and create executable versions of them.

@@ -1,0 +1,9 @@
+movelatest.cmd [-l:<lang>][-f]
+
+-l:<lang>   language; default is usa.
+-f          issues net stop server, performs move, and restarts service
+
+MoveLatest.cmd moves the latest release directory to a binaries directory.
+This needs to be done before taking an incremental fix after running
+postbuild.cmd. If MoveLatest.cmd fails, try again using the -f switch.
+
