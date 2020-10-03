@@ -1,0 +1,61 @@
+Microsoft (R) Visual Basic .NET Compiler version 7.00.9466
+for Microsoft (R) .NET Framework version 1.00.3705
+Copyright (C) Microsoft Corporation 1987-2001. All rights reserved.
+
+        Visual Basic .NET Compiler Options
+
+                        - OUTPUT FILE -
+/out:<file>             Specifies the output file name.
+/target:exe             Create a console application (default). (Short form: /t)
+/target:winexe          Create a Windows application.
+/target:library         Create a library assembly.
+/target:module          Create a module that can be added to an assembly.
+
+                        - INPUT FILES -
+/addmodule:<file>       Reference metadata from the specified module.
+/recurse:<wildcard>     Include all files in the current directory and subdirectories according to the wildcard specifications.
+/reference:<file_list>  Reference metadata from the specified assembly. (Short form: /r)
+
+                        - RESOURCES -
+/linkresource:<resinfo> Links the specified file as an external assembly resource. resinfo:<file>[,<name>[,public|private]] (Short form: /linkres)
+/resource:<resinfo>     Adds the specified file as an embedded assembly resource. resinfo:<file>[,<name>[,public|private]] (Short form: /res)
+/win32icon:<file>       Specifies a Win32 icon file (.ico) for the default Win32 resources.
+/win32resource:<file>   Specifies a Win32 resource file (.res).
+
+                        - CODE GENERATION -
+/optimize[+|-]          Enable optimizations.
+/removeintchecks[+|-]   Remove integer checks. Default off.
+/debug[+|-]             Emit debugging information.
+/debug:full             Emit full debugging information (default).
+/debug:pdbonly          Emit PDB file only.
+
+                        - ERRORS AND WARNINGS -
+/nowarn                 Disable warnings.
+/warnaserror[+|-]       Treat warnings as errors.
+
+                        - LANGUAGE -
+/define:<symbol_list>   Declare global conditional compilation symbol(s). symbol_list:name=value,... (Short form: /d)
+/imports:<import_list>  Declare global Imports for namespaces in referenced metadata files. import_list:namespace,...
+/optionexplicit[+|-]    Require explicit declaration of variables.
+/optionstrict[+|-]      Enforce strict language semantics.
+/rootnamespace:<string> Specifies the root Namespace for all type declarations.
+/optioncompare:binary   Specifies binary-style string comparisons. This is the default.
+/optioncompare:text     Specifies text-style string comparisons.
+
+                        - MISCELLANEOUS -
+/help                   Display this usage message. (Short form: /?)
+/nologo                 Do not display compiler copyright banner.
+/quiet                  Quiet output mode.
+/verbose                Display verbose messages.
+
+                        - ADVANCED -
+/baseaddress:<number>   The base address for a library or module (hex).
+/bugreport:<file>       Create bug report file.
+/delaysign[+|-]         Delay-sign the assembly using only the public portion of the strong name key.
+/keycontainer:<string>  Specifies a strong name key container.
+/keyfile:<file>         Specifies a strong name key file.
+/libpath:<path_list>    List of directories to search for metadata references. (Semi-colon delimited.)
+/main:<class>           Specifies the Class or Module that contains Sub Main. It can also be a Class that inherits from System.Windows.Forms.Form. (Short form: /m)
+/utf8output[+|-]        Emit compiler output in UTF8 character encoding.
+@<file>                 Insert command-line settings from a text file.
+

@@ -1,0 +1,11 @@
+No input file specified.
+CryptoAPI Display Signature Utility
+   showsig <filename>
+or
+   showsig -s <rsrcfile> <filename>
+or
+   showsig -b <sigfile> <filename>
+Other options:
+   +t - Enable the use of the Enigma key
+        (On by default).
+   -t - Disable the use of the Enigma key

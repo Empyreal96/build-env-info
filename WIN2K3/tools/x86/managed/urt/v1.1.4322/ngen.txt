@@ -1,0 +1,23 @@
+Microsoft (R) CLR Native Image Generator - Version 1.1.4322.12
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+Usage: ngen [options] <assembly path or display name> ...
+
+    Administrative options:
+        /show           Show existing native images (show all if no args)
+        /delete         Delete an existing native image (use * to delete all)
+        /showversion    Displays the version of the runtime that would be used
+                        to generate the image (it does not actually create the
+                        image)
+
+    Developer options:
+        /debug          Generate image which can be used under a debugger
+        /debugopt       Generate image which can be used under
+                        a debugger in optimized debugging mode
+        /prof           Generate image which can be used under a profiler
+
+    Miscellaneous options:
+        /? or /help     Show this message
+        /nologo         Prevents displaying of logo
+        /silent         Prevents displaying of success messages
+

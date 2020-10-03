@@ -1,0 +1,7 @@
+Extracts a file list from an INF file.
+Usage: infflist.exe [-e | -n] [-f] <inf-name>
+-e: Extracts a list of only executable files from an INF file.
+-n: Extracts a list of only non-executable files from an INF file.
+-f: Outputs the list of files to a file. The Output file is located
+    in the same location as the input inf. The file name is the INF
+    name followed by the extension SFP.

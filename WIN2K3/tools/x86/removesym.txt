@@ -1,0 +1,1 @@
+Usage: removesym -d:<pdbdll path> -p:<pdbname> {-s:<symbol to remove> | -f:<file with symbols to remove>}

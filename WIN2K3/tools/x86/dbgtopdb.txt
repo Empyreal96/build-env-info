@@ -1,0 +1,10 @@
+usage: dbgtopdb [/strip] <exe-name> [/f /dbg <dbg-name>] [ <pdb-name> ]
+        Move the debug information for this exe into a vc6 format pdb.
+        /strip  Force the image to be stripped of debug info,
+                even if security data is present.
+        /f      Force reading symbols from the named .dbg and/or .pdb files,
+                even if the timestamps or signatures do not match.
+                If /f is present then the .pdb file name (and .dbg) must appear
+                explicitly on the command line.
+   or: dbgtopdb /match <pdb-name> [/strip] <exe-name>
+        Match the exe to the pdb file's signature and age.

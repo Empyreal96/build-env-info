@@ -1,0 +1,32 @@
+Microsoft (R) Pseudo Localization Tools Version 2.1.0.51.
+Copyright (C) Microsoft Corp. 2001. All Rights reserved.
+
+LC-file scan utility.
+
+LCSCAN -p|-l|-t|-m|-x|-n|-i|-a|-c|s|-z|-e [-r] FileName                        
+     -p returns all placeholders                                               
+     -l returns all locks                                                      
+     -t returns all Adaptation                                                 
+     -m returns all maps                                                       
+     -x returns all maxlength                                                  
+     -n returns all norules                                                    
+     -i returns all NoDelim                                                    
+     -a returns all instructions (not including strings with comments only)    
+     -c returns all comments                                                   
+     -s lists placeholders and map instructions containing spaces              
+     -z removes the comment section from the lc-file                           
+     -e returns the filename if the lc file is empty                           
+     -r work recursively                                                       
+     FileName is the lc file or subdirectory name                              
+                                                                               
+LCSCAN -d|-u ReportFile                                                        
+     -d deletes entries listed in ReportFile from lc-files                     
+     -u updates [Constraints] and [Comment] listed in ReportFile from lc-files 
+     ReportFile is a tab-separated report file created with lcscan             
+                                                                               
+LCSCAN -f [-r] FileName MapFile [AdaptationFile]                               
+     -f creates translation tables for map and adaptation instruction          
+     -r work recursively                                                       
+     FileName is the lc file or subdirectory name                              
+     MapFile is a csv map instructions table (Unicode)                         
+     AdaptationFile is an optional csv adaptation instruction table (Unicode)  

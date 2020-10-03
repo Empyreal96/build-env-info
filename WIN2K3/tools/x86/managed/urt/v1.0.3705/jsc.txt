@@ -1,0 +1,48 @@
+Microsoft (R) JScript .NET Compiler version 7.00.9466
+for Microsoft (R) .NET Framework version 1.00.3705
+Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.
+
+jsc [options] <source files> [[options] <source files>...]
+
+                         JScript .NET Compiler Options
+
+                           - OUTPUT FILES -
+  /out:<file>              Specify name of binary output file
+  /t[arget]:exe            Create a console application (default)
+  /t[arget]:winexe         Create a windows application
+  /t[arget]:library        Create a library assembly
+
+                           - INPUT FILES -
+  /autoref[+|-]            Automatically reference assemblies based on imported namespaces and fully-qualified names (on by default)
+  /lib:<path>              Specify additional directories to search in for references
+  /r[eference]:<file list> Reference metadata from the specified assembly file
+                           <file list>: <assembly name>[;<assembly name>...]
+
+                           - RESOURCES -
+  /win32res:<file>         Specifies Win32 resource file (.res)
+  /res[ource]:<info>       Embeds the specified resource
+                           <info>: <filename>[,<name>[,public|private]]
+  /linkres[ource]:<info>   Links the specified resource to this assembly
+                           <info>: <filename>[,<name>[,public|private]]
+
+                           - CODE GENERATION -
+  /debug[+|-]              Emit debugging information
+  /fast[+|-]               Disable language features to allow better code generation
+  /warnaserror[+|-]        Treat warnings as errors
+  /w[arn]:<level>          Set warning level (0-4)
+
+                           - MISCELLANEOUS -
+  @<filename>              Read response file for more options
+  /?                       Display help
+  /help                    Display help
+  /d[efine]:<symbols>      Define conditional compilation symbol(s)
+  /nologo                  Do not display compiler copyright banner
+  /print[+|-]              Provide print() function
+
+                           - ADVANCED -
+  /codepage:<id>           Use the specified code page ID to open source files
+  /lcid:<id>               Use the specified lcid for messages and default code page
+  /nostdlib[+|-]           Do not import standard library (mscorlib.dll) and change autoref default to off
+  /utf8output[+|-]         Emit compiler output in UTF-8 character encoding
+  /versionsafe[+|-]        Specify default for members not marked 'override' or 'hide'
+

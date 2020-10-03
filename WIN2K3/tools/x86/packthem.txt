@@ -1,0 +1,23 @@
+
+Usage: 
+
+    packthem [-o <output name> ] [-k] [-q] <dirname>
+      -m    specifies the (full path) name of the image file you want to color shift
+      -o    specifies the (full path) name of the output file
+      -k    specifies that temp. files should be kept (not deleted)
+      -d    do not sign the file when building it
+      -q    quite mode (don't print header and progress msgs)
+
+    packthem -u [-a] <packed filename> 
+      -u    unpacks the packed file into its separate files in current dir
+      -a    writes .ini files as ANSI (defaults to UNICODE)
+
+    packthem -p [-q] <packed filename> 
+      -p    Parses the localized packed file and reports errors
+
+    packthem [-c] [-q] <packed filename> 
+      -c    check the signature of the already created file
+
+    packthem [-s] [-q] <packed filename> 
+      -s    sign the already created file
+

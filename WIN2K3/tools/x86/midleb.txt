@@ -1,0 +1,3 @@
+Error Recovery Data Base Generator
+
+Usage : midleb <output file or - > <translation-file-name> <prefix>

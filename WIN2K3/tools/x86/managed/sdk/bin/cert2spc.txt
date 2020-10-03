@@ -1,0 +1,1 @@
+Usage: Cert2Spc {cert1.cer|crl1.crl ... certN.cer|crlN.crl} output.spc

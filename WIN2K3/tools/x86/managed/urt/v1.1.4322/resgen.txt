@@ -1,0 +1,22 @@
+Microsoft (R) .NET Resource Generator 
+[Microsoft .Net Framework, Version 1.0.3705.0]
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+Usage:
+    ResGen inputFile.ext [outputFile.ext]
+    ResGen /compile inputFile1.ext[,outputFile1.resources] [...]
+
+Where .ext is .resX, .txt, or .resources
+
+Converts files from one resource format to another.  If the output 
+filename is not specified, inputFile.resources will be used.
+The /compile option takes a list of .resX or .txt files to convert to 
+.resources files in one bulk operation, replacing .ext with .resources for
+the output file name.
+
+.txt files have this format:
+
+    # Use # at the beginning of a line for a comment character.
+    name=value
+    more elaborate name=value
+

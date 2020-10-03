@@ -1,0 +1,10 @@
+:: This script will create the a list of CLR binaries.
+:: The list is used as
+:: 
+::    1) exclude list by "copyurt /nocor"
+::    2) list of CLR binaries that should be registered by regurt.cmd
+::
+:: %1 - name of the output file
+:: %2 - [full | reg] generate full or reg-only list (default is full)
+::
+:: Created: VladSer, 6/19/2001

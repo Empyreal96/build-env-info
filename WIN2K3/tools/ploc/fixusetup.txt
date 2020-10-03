@@ -1,0 +1,4 @@
+Utility to properly localize FE Usetup keyboard section
+
+Usage
+FixUsetup.exe tokenfile.tok

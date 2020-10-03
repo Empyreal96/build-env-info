@@ -1,0 +1,46 @@
+Microsoft (R) BBT Optimizer 3.30.2364 (Dec 30 2002 17:44:16)
+Microsoft (R) Vulcan 2.33.2364 (Dec 30 2002 17:34:35)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Microsoft Confidential - For Internal Use Only
+
+Usage: BBOPT [options] Executable
+
+Options:
+
+/?                    Display this help
+/alignhotproclink     Align hot code by aligning the proc heads
+/alignsubsec  cb      Change minimum subsection alignment to cb
+                         (applies only to executable sections)
+/asmemit  [filename]  Write disassembly listing for output binary
+/cmd      [filename]  Read BBTCMD filename (BBT/Vulcan command file)
+/forward              Original block order (dead symbols removed)
+/help                 Display this help
+/ia64model model       Target IA64 Processor Model
+                          model may be any of 'Merced', 'McKinley'
+                          or                  'Hybrid', 'PostMcKinley'
+/idf      filepattern Input IDF filename pattern
+/ignoreidf            Ignore all IDF specifications
+/incr     filename    Incremental optimization (not recommended)
+/inline               Do procedure inlining
+/inlinereport         Display callsites inlined ('/inline' is assumed)
+/log      [filename]  Output LOG filename
+/map      [filename]  Output MAP filename (linker symbol file)
+/nodata               Do not optimize non-executable sections
+/noidfok              Do not break if IDF was expected but absent
+/noresource           Do not optimize '.rsrc' section
+/o        filename    Output binary filename
+/pdb      filename    Output PDB filename (debug info file)
+/prf      [filename]  Output PRF filename (linker order file)
+/q                    Do not display input/output filenames
+/random               Random block order
+/randomproc           Random proc order
+/reverse              Reverse block order
+/reverseproc          Reverse proc order
+/specind              Perform speculative indirect call replacement
+/tobsort  [count]     Use one of the TOBSORT algos as default
+                         TOB based optimizer
+                         Optionally, calls pairwise algo 'count' times
+/usebrl               Use BRL for long branches (ia64 only)
+/verbose              Write logfile to console
+

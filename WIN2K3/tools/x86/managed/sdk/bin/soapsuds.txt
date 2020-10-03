@@ -1,0 +1,51 @@
+Microsoft (R) .NET Framework SOAPSUDS Tool Version 0, 1.0.3705.0
+  Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Input Sources (only one can be specified)
+ -urlToSchema(-url):[SchemaUrl] 
+ -types:[type1,assemblyname[,serviceEndpoint]][;type2,assemblyname[,serviceEndpoint]][...] 
+ -inputSchemaFile(-is):schemafile Input Schema File 
+ -inputAssemblyFile(-ia):assemblyfile 
+
+Input Options 
+ -inputDirectory(-id):directory	Location of input dlls.
+ -serviceEndpoint(-se): Url for Service Endpoint placed in Wsdl file 
+
+Output Options 
+ -outputSchemaFile(-os):schemafile
+ -outputDirectory(-od):directory for generated source files
+ -outputAssemblyFile(-oa):assemblyfile 
+
+Generate Options 
+ -GenerateCode(-gc)	 (equivalent to "-od:.") 
+
+Other Options 
+ -WrappedProxy(-wp)	Create wrapped proxy (default) 
+ -NoWrappedProxy(-nowp)   No wrapped proxy
+ -proxyNamespace(-pn)  Namespace on generated proxy (Only used for interop Namespaces)
+ -StrongNameFile(-sn):filename   Use strong name to build assembly 
+
+Connection Information Options 
+ -username(-u):username 
+ -password(-p):password 
+ -domain(-d):domain 
+ -httpProxyName(-hpn):name 
+ -httpProxyPort(-hpp):number 
+
+Examples 
+ SOAPSUDS -url:http://localhost/Trader/StockQuote.soap?wsdl -os:StockQuote.xml 
+ SOAPSUDS -url:http://localhost/Trader/StockQuote.soap?wsdl -gc 
+ SOAPSUDS -url:http://localhost/Trader/StockQuote.soap?wsdl -os:StockQuote.xml -gc
+ SOAPSUDS -url:http://localhost/Trader/StockQuote.soap?wsdl -oa:StockQuote.dll
+
+ SOAPSUDS -types:StockNet.StockQuote,StockNet -os:StockQuote.xml
+ SOAPSUDS -types:StockNet.StockQuote,StockNet -gc 
+ SOAPSUDS -types:StockNet.StockQuote,StockNet -os:StockQuote.xml -gc 
+ SOAPSUDS -types:StockNet.StockQuote,StockNet -oa:StockQuote.dll 
+
+ SOAPSUDS -is:StockQuote.xml -gc 
+ SOAPSUDS -is:StockQuote.xml -oa:StockQuote.dll
+ 
+ SOAPSUDS -ia:test1 -os:wsdl\test1.wsdl -se:http://local/serverEndpoint -od:wsdl -oa:wsdl\test1.dll
+           Note: When specifying an input assembly name (e.g. 'test1' or 'StockNet'), 
+                 the .dll or .exe extension is not included.

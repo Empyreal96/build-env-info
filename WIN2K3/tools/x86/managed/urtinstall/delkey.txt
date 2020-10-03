@@ -1,0 +1,3 @@
+Delete a registry key and any subkeys.  The key must include the HKEY_* root.
+
+usage : delkey <key>

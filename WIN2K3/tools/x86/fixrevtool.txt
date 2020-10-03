@@ -1,0 +1,5 @@
+Usage of fixrevtool.exe:
+	 /v <vbl name> </n build number> [/b mmddyy /e /mmddyy] 
+	    /v         vbl name such as lab01, lab05.
+	    /n         main build number for the vbl reverse integration
+	    /b /d      give the date range to update bugs in raid.

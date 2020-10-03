@@ -1,0 +1,21 @@
+generate list of wow files. Usage:
+wowlist <options> <inf file> -c <control inf> -l <ole inf> -o <output file> -a{c
+os} -h <header file> -g <section> -d <output layout> -f <file prefix>
+
+  -i <inf file>      - input inf containing list of dependencies
+  -c <control inf>   - contains directives for creating list.
+  -l <OLE inf>       - contains ole registration directives.
+  -o <output file>   - output list
+  -g <section>       - SetupAPI INF filtering decoration for per-inf filtering
+  -h <header file>   - append this to top of the output list
+  -s <section name>  - specifies section in OLE Inf to process
+  -d <output layout> - output layout.inf information for SetupAPI INF filtering
+  -f <file prefix>   - specifies the decoration to be prepended to filtered file
+s.
+  -a <c|o|s>         - specifies filter action
+  -u                 - create UNICODE output list (only with /o)
+  -n <file>          - create layout file for SourceDisksFiles within the INF (t
+o be appended to INF itself)
+        c - Create copy list.
+        o - Create OLE list.
+        s - Create SetupINF list.

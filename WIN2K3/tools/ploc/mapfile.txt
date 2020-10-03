@@ -1,0 +1,4 @@
+MapFile InputFile OutputFile DupOutputFile
+   InputFile is map table created with LCSCAN
+   OutputFile is INF to be localized in LocStudio
+   DupOutputFile is a text file with inconsistent comments

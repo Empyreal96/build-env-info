@@ -1,0 +1,5 @@
+Usage: bldhives.exe [/?] input-config-file
+
+Config.inf contains the input parameters for Bldhives.exe.
+For a sample input file, see Config.inf in the WinPE folder of the WinPE CD.
+

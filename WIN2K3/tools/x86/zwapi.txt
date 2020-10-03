@@ -1,0 +1,2 @@
+usage: ZWAPI [-?] display this message
+             [-o filename ]

@@ -1,0 +1,4 @@
+usage: CHECKFIX [-?] [-v] [-q] image-names...
+              [-?] display this message
+              [-v] verbose output
+              [-q] quiet on failure

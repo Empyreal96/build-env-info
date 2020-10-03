@@ -1,0 +1,30 @@
+Microsoft (R) Pseudo Localization Tools Version 2.1.0.51 (Registered Ver. 051)
+Copyright (C) Microsoft Corp. 2002. All Rights reserved.
+
+Pseudo localization token replacement utility.
+
+LCBUILD [options] -t InputFile [OutputTokenFile]
+  -t                     Create Token File
+      InputFile          Input File
+      OutputTokenFile    Output Token File
+
+LCBUILD [options] -r InputFile InputTokenFile [OutputFile]
+  -r                     Replace old resources with tokens
+      InputFile          Input File
+      InputTokenFile     Input Token File used for replacement
+      OutputFile         Output File
+
+OPTIONS:
+  -i  {PID SID}|LangID   Input language, Primary- and Sub-Lang IDs, dec/hex
+  -o  {PID SID}|LangID   Output language, Primary- and Sub-Lang IDs, dec/hex
+  -s  POpt               Parser options name
+  -e  ParserID           Parser ID
+  -d                     Don't process strings with developer lock flags
+  -w                     Display the status of the operation
+
+LCBUILD -reg [regfile]
+  -reg                   Register LCBUILD
+
+LCBUILD [-h|?]
+  -h|?                   Display help message
+

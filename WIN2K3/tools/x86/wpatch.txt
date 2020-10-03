@@ -1,0 +1,4 @@
+WPATCH 5.1.3582.0 Patch Application Utility
+Copyright (c) Microsoft Corporation. All Rights Reserved
+
+USAGE: WPATCH PatchFile OldFile TargetNewFile

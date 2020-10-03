@@ -1,0 +1,43 @@
+usage: munge scriptFile [-q [-e] [-o]] [-v] [-i] [-k] [-r] [-c [-m] [-z] [-@]]
+                        [-n] [-l | -L] [-a | -s [-f]] [-u undoFileName]
+                        filesToMunge...
+Where...
+    -q  Query only - don't actually make changes.
+    -e  Query only - display entire line for each match
+    -o  Query only - just display filename once on first match
+    -v  Verbose - show files being scanned
+    -i  Just output summary of files changed at end
+    -k  Case - Case sensitive scriptFile
+    -r  Recurse.
+    -c  If no munge of file, then check for cleanlyness
+    -m  Collapse multiple carriage returns into one
+    -z  Ctrl-Z will truncate file
+    -@  Remove null characters
+    -n  Neuter - Surround all strings with TEXT()
+    -l  Literals - process any quoted text (includes comments too)
+    -L  Literals - process any quoted text (excludes comments)
+    -s  Use OUT command command for files that are readonly
+    -a  Use ATTRIB -r command for files that are readonly
+    -f  Use -z flag for SLM OUT command
+    -t  Trust me and dont create .bak files
+    -u  Generate an undo script file for any SLM OUT commands invoked.
+    -?  Gets you this message
+
+and scriptFile lines take any of the following forms:
+
+    oldName newName
+    "oldString" "newString"
+    -F .Ext  Name.  Name.Ext
+
+Where...
+    oldName and newName following C Identifier rules
+    oldString and newString are arbitrary text strings
+    -F limits the munge to files that match:
+        a particular extension (.Ext)
+        a particular name (Name.)
+        a particular name and extension (Name.Ext)
+    If no -F line is seen in the scriptFile, then
+    the following is the default:
+    -F .asm .bat .c .cli .cpp .cxx .def .dlg .h .htm .hpj .hxx .idl .inc
+    -F .inf .lic .mak .mc .odl .rc .rcv .reg .s .src .srv .tk .w .x
+    -F makefil0 makefile sources

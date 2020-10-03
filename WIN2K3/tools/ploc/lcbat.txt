@@ -1,0 +1,64 @@
+Purpose:
+	    BAT token verification for LC File.
+	
+Functions:
+		
+    Configuration:
+        -c <ConfigFile>
+            User-specified configuration in XML format that contains 
+	the following information:
+	    1. OuputDir = The location where the output of the process will go.
+	                  This field can be overridden by "-d" option.
+	    2. LogFile = Target log file.
+	By default, the program will look for Config.xml in the current
+	directory, then the directory where this binary resides.  If the
+	file is not found, all output file will be created in the current
+	working directory.
+	                  
+
+        -log            Enable debug logging.
+				    
+
+        -f <OutputFile>
+            Specified the output file of the given operation.  If not 
+	specified, the output is sent to the OutputDir specifed in the config 
+	file.
+				    
+
+        -d <OutputDir>
+            override OutpuDir in the config file
+
+    LC Tokens Verification:
+        -r <BaseLCRuleFile>
+            The name of the LC rule file.
+				    
+
+        -m <BaseLCRuleMapFile>            The name of the LC rule Map file
+				        
+
+
+        -b <LanguageForBaseFile>
+            The Language ID (in HEX) for the base LC token File.
+				    
+
+        -l <LanguageForLocalizedFile>
+            The Language ID (in HEX) for the localized LC token File.
+				    
+
+        -v <BaseLCFile> <LocLCFile>
+            Perform token verification on given LC token files.
+				    
+
+    Transform output File:
+        -t <XMLOutput>
+            The name of the output file in XML format.
+				    
+
+Examples:
+    - Compare JPN LC token file with US counterpart without the rule file 
+    and output the result to f:\test.xml.
+    LCBAT.exe -f f:\test.xml -l 0x411 -v usa.tok jpn.tok
+	    
+    - Compare JPN LC token file with US counterpart with the rule file.  
+    LCBAT.exe -f f:\test.xml -r rule.lc -l 0x411 -v usa.tok jpn.tok
+	    

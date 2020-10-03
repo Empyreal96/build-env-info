@@ -1,0 +1,4 @@
+WCSHDR v1.20 1994-11-11:
+usage: WCSHDR [-?] display this message
+              [-d] debug (to stderr)
+              reads stdin, writes to stdout

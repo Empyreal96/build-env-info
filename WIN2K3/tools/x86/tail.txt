@@ -1,0 +1,4 @@
+usage: TAIL [switches] [filename]*
+   switches: [-?] display this message
+             [-n] display last n lines of each file (default 10)
+             [-f filename] keep checking filename for new lines

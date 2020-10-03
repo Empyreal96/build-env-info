@@ -1,0 +1,42 @@
+Microsoft (R) Web Services Discovery Utility
+[Microsoft (R) .NET Framework, Version 1.0.3705.0]
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+
+disco.exe -
+    Utility to discover the URLs of xml web services located on a web server
+    and to save documents related to that xml web service on the local disk.
+    The results.discomap, .wsdl and .xsd files produced by this tool can be
+    used with wsdl.exe to produce web service clients and abstract web service
+    servers using ASP.NET.
+
+disco.exe <options> <url to discover>
+
+     - OPTIONS -
+
+/nologo
+    Suppresses the banner.
+
+/nosave
+    Do not save the discovered documents or results to disk (for example
+    wsdl, xsd and disco files). The default is to save the documents.
+
+/out:<directoryName>
+    The output directory to save the discovered documents in. The default
+    is the current directory. Short form is '/o:'.
+
+/username:<username>
+/password:<password>
+/domain:<domain>
+    The credentials to use when the connecting to a server that
+    requires authentication. Short forms are '/u:', '/p:' and '/d:'.
+
+/proxy:<url>
+    The url of the proxy server to use for http requests.
+    The default is to use the system proxy setting.
+
+/proxyusername:<username>
+/proxypassword:<password>
+/proxydomain:<domain>
+    The credentials to use when the connecting to a proxy server that
+    requires authentication. Short forms are '/pu:', '/pp:' and '/pd:'.

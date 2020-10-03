@@ -1,0 +1,12 @@
+
+Validates Fusion Win32 Manifest files using a schema.
+Usage:    FusionManifestValidator /S:[drive:][path]schema_filename /M:[drive:][path]xml_manifest_filename [/Q]
+
+    /S:   Specify schema filename used to validate manifest
+    /M:   Specify manifest filename to validate
+    /Q    Quiet mode - suppresses output to console
+     
+          The tool without /Q displays details of first encountered error
+          (if errors are present in manifest), and displays Pass or Fail
+          of the validation result. The application returns 0 for Pass,
+          1 for Fail, and returns 2 for bad command line argument.

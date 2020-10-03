@@ -1,0 +1,101 @@
+
+MPATCH 5.1.3582.0 Patch Creation Utility
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage:  MPATCH [options] OldFile[;OldFile2[;OldFile3]] NewFile TargetPatchFile
+
+        Options:
+
+          -NOBINDFIX   Turn off automatic compensation for bound imports in
+                       the the old file.  The default is to ignore binding
+                       data in the old file during patch creation which will
+                       cause the application of the patch to succeed whether
+                       or not the old file on the target machine is bound, not
+                       bound, or even bound to different import addresses.
+                       If the files are not Win32 binaries, this option is
+                       ignored and has no effect.
+
+          -NOLOCKFIX   Turn off automatic compensation for smashed lock prefix
+                       instructions.  If the files are not Win32 binaries,
+                       this option is ignored and has no effect.
+
+          -NOREBASE    Turn off automatic internal rebasing of old file to new
+                       file's image base address.  If the files are not Win32
+                       binaries, this option is ignored and has no effect.
+
+          -NORESTIME   Turn off automatic fixup of resource section timestamps
+                       (ignored if not Win32 binaries).
+
+          -NOSTORETIME Don't store the timestamp of the new file in the patch
+                       file.  Instead, set the timestamp of the patch file to
+                       the timestamp of the new file.
+
+          -IGNORE:Offset,Length[,FileNumber]
+
+                       Ignore a range of bytes in the OldFile because those
+                       bytes might be different in the old file being patched
+                       on the target machine.
+
+          -RETAIN:Offset,Length[,OffsetInNewFile[,FileNumber]]
+
+                       When applying the patch, preserve the range of bytes in
+                       the old file and copy them to the new file at the given
+                       OffsetInNewFile.
+
+          -FAILBIGGER  If patch file is bigger than simple compressed file,
+                       don't create the patch file (takes longer).
+
+          -FAILIFSAME  If old and new files are the same (ignoring binding
+                       differences, etc), don't create the patch file.
+
+          -NOCOMPARE   Don't compare patch compression against ordinary non-
+                       patch compression (saves time).
+
+          -NOPROGRESS  Don't display percent complete while building patch.
+
+          -NEWSYMPATH:PathName[;PathName]
+
+                       For NewFile, search for symbol file(s) in these path
+                       locations (recursive search each path until found).
+                       The default is to search for symbol files(s) starting
+                       in the same directory as the NewFile.
+
+          -OLDSYMPATH:PathName[;PathName][,FileNumber]
+
+                       For OldFile, search for symbol file(s) in these path
+                       locations (recursive search each path until found).
+                       The default is to search for symbol files(s) starting
+                       in the same directory as the OldFile.
+
+          -UNDECORATED After matching decorated symbol names, match remaining
+                       symbols using undecorated names.
+
+          -NOSYMS      Don't use debug symbol files when creating the patch.
+
+          -NOSYMFAIL   Don't fail to create patch if symbols cannot be loaded.
+
+          -NOSYMWARN   Don't warn if symbols can't be found or don't match the
+                       corresponding file (symbol checksum mismatch).
+
+          -USEBADSYMS  Rather than ignoring symbols if the checksums don't
+                       match the corresponding files, use the bad symbols.
+
+          -E8          Force E8 call translation for x86 binaries.
+
+          -NOE8        Force no E8 call translation for x86 binaries.
+
+                       If neither -E8 or -NOE8 are specified, and the files
+                       are x86 binaries, the patch will be built internally
+                       twice and the smaller will be chosen for output.
+
+          -MSPATCH194COMPAT  Assure the patch file can be used with version
+                       1.94 of MSPATCH*.DLL.  May increase size of patch
+                       file if old or new file is larger than 4Mb.
+
+          MPATCH will also look for environment variables named "MPATCH"
+          followed by an underscore and the name of the option.  Command line
+          specified options override environment variable options.  Examples:
+
+              MPATCH_NOCOMPARE=1
+              MPATCH_NEWSYMPATH=c:\winnt\symbols;\\server\share\symbols
+

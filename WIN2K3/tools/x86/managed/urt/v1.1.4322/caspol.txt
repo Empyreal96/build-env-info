@@ -1,0 +1,149 @@
+Microsoft (R) .NET Framework CasPol 1.1.4322.12
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+Help screen requested
+
+Usage: caspol <option> <args> ...
+
+caspol -m[achine]
+    Modifier that makes additional commands act on the machine level
+
+caspol -u[ser]
+    Modifier that makes additional commands act on the user level
+
+caspol -en[terprise]
+    Modifier that makes additional commands act on the enterprise level
+
+caspol -cu
+caspol -customuser <path>
+    Modifier that makes additional commands act on the custom user level
+
+caspol -a[ll]
+    Set all policy levels as the active levels
+
+caspol -ca
+caspol -customall <path>
+    Modifier that makes additional commands act on all levels as a custom user
+
+caspol -l[ist]
+    List code groups & permission sets
+
+caspol -lg
+caspol -listgroups
+    List code groups
+
+caspol -lp
+caspol -listpset
+    List permission sets
+
+caspol -lf
+caspol -listfulltrust
+    List full trust assemblies
+
+caspol -ld
+caspol -listdescription
+    List code group names and descriptions
+
+caspol -ap
+caspol -addpset { <named_xml_file> | <xml_file> <name> } 
+    Add named permission set to policy level
+
+caspol -cp
+caspol -chgpset <xml_file> <pset_name>
+    Change named permission set in active level
+
+caspol -rp
+caspol -rempset <pset_name>
+    Remove a named permission set from the policy level
+
+caspol -af
+caspol -addfulltrust <assembly_name>
+    Add full trust assembly to policy level
+
+caspol -rf
+caspol -remfulltrust <assembly_name>
+    Remove a full trust assembly from the policy level
+
+caspol -rg
+caspol -remgroup <label|name>
+    Remove code group at <label|name>
+
+caspol -cg
+caspol -chggroup <label|name> {<mship>|<pset_name>|<flag>}+
+    Change code group at <label|name> to given membership,
+    permission set, or flags
+
+caspol -ag
+caspol -addgroup <parent_label|name> <mship> <pset_name> <flag>
+    Add code group to <parent_label|name> with given membership,
+    permission set, and flags
+
+caspol -rsg
+caspol -resolvegroup <assembly_name>
+    List code groups this file belongs to
+
+caspol -rsp
+caspol -resolveperm <assembly_name>
+    List permissions granted to this file
+
+caspol -s[ecurity] { on | off }
+    Turn security on or off
+
+caspol -e[xecution] { on | off }
+    Enable/Disable checking for "right-to-run" on code execution start-up
+
+caspol -pp
+caspol -polchgprompt { on | off }
+    Enable/Disable policy change prompt
+
+caspol -q[uiet]
+    Disable policy change prompt for this command
+
+caspol -r[ecover]
+    Recover the most recently saved version of a level
+
+caspol -rs
+caspol -reset
+    Reset a level to its default state
+
+caspol -f[orce]
+    Enable forcing save that will disable caspol functionality
+
+caspol -b[uildcache]
+    Build the security policy cache file.
+
+caspol -?
+caspol /?
+caspol -h[elp]
+    Displays this screen
+
+
+where "<mship>" can be:
+  -allcode                 All code
+  -appdir                  Application directory
+  -custom <xml_file>       Custom membership condition
+  -hash <hashAlg> {-hex <hashValue>|-file <assembly_name>}
+                           Assembly hash
+  -pub {-cert <cert_file_name> | -file <signed_file_name> | -hex <hex_string>}
+                           Software publisher
+  -site <website>          Site
+  -strong -file <assemblyfile_name> {<name> | -noname}
+          {<version> | -noversion}
+                           Strong name
+  -url <url>               URL
+  -zone <zone_name>        Zone, where zone can be:
+                                 MyComputer
+                                 Intranet
+                                 Trusted
+                                 Internet
+                                 Untrusted
+
+where "<flag>" can be any combination of:
+  -exclusive {on|off}
+                           Set the policy statement Exclusive flag
+  -levelfinal {on|off}
+                           Set the policy statement LevelFinal flag
+  -n[ame] <name>
+                           Code group name
+  -d[escription] <desc>
+                           Code group description

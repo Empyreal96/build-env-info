@@ -1,0 +1,26 @@
+
+Usage: unitext [-m|-u] [-o|-a|-<nnn>] [-z] <src_file> <dst_file>
+
+    -m     multibyte->unicode translation.
+    -u     unicode->multibyte translation.
+
+    -o     multibyte text file uses current OEM codepage [default].
+    -a     multibyte text file uses current ANSI codepage.
+    -<nnn> multibyte character set uses given codepage.
+    -z     Doesn't convert MB->UC if file is already Unicode (or)
+	   Doesn't convert UC->MB if file is not Unicode
+
+
+Examples:
+
+    unitext -m -o c:\src.txt c:\dst.uni
+
+        Converts OEM text file c:\src.txt to Unicode text file c:\dst.uni.
+
+    unitext -u -a c:\src.uni c:\dst.txt
+
+        Converts Unicode text file c:\src.uni to ANSI text file c:\dst.txt
+
+    unitext -m -437 c:\src.txt c:\dst.uni
+
+        Converts OEM text file in codepage 437 to Unicode text file.

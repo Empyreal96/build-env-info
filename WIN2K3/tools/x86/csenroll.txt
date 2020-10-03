@@ -1,0 +1,18 @@
+Usage: csenroll -ca CAName [-ca CAName] [-d Days] [-h] [-roothash Hash]
+ Enroll for a Windows build signing certificate
+
+ Options:
+ -ca <CAName>       Name of CA from where to get a certificate
+                    For backup purposes you can specify multiple names.
+
+ -d <days>          Number of days before expiration of current certificate
+                    when an attempt is made to renew current certificate.
+
+ -h                 Show this help.
+
+ -roothash <Hash>   Specifiy the hash of the root certificate that the current
+                    Windows build signing certficate has to chain up to.
+                    Use this option to ensure that your Windows build signing
+                    certificate chains up to the correct root certificate
+
+

@@ -1,0 +1,32 @@
+SYNTAx: MsiDB {option}{option}  {table}{table}
+
+{option} Specifies a command option from the list below:
+	 Options are Case Sensitive and may use '/' or '-'
+	 Options not supplied will be prompted for
+
+-e			Export database tables to text files
+-i			Import text files into database tables
+-c			Create new database file and import text files
+-d{database name}	Name of database file
+-f{folder path}		Folder containing text form of table files
+-m{merge database}	Name of database source to merge
+-a{add file}		Name of file to add to database
+-r{add storage}		Name of storage to add to database
+-t{transform}		Name of transform to apply
+-j{junk storage}	Name of storage to remove from database
+-k{kill stream}		Name of stream to remove from database
+-x{extract stream}	Name of stream to extract from database
+-w{withdraw storage}	Name of storage to extract from database
+
+{table} Is the name if a database table or text file archive (*.idt)
+	wildcards (?,*) are permitted in file names in import
+	use * to specify all tables on export
+-s to truncate export names to 8 chars
+
+Runs as a Command-line tool if -d, -f and one of (-e,-i,-c) specified
+(-m,-a,-r,-t,-j,-k,-w,-x) requires the above, but multiple (-m's,-a's,-r's,-t's,-j's,-k's,-w's,-x's) can be listed
+
+NOTE: (-m,-a,-r,-t,-j,-k,-w,-x) only run in Command-Line mode
+
+1999 Microsoft Corporation. All Rights Reserved
+

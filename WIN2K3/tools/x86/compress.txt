@@ -1,0 +1,20 @@
+Microsoft (R) File Compression Utility  Version 5.1.2417.1
+Copyright (C) Microsoft Corp. 1990-1999.  All rights reserved.
+
+Compresses one or more files.
+
+COMPRESS [-r] [-d] [-s] [-z] Source Destination
+COMPRESS -r [-d] [-s] [-z] Source [Destination]
+
+  -r		Rename compressed files.
+  -d		Update compressed files only if out of date.
+  -s		Suppress copyright information.
+  -zx		LZX compression.
+  -z		MS-ZIP compression.
+  -zq[n]	Quantum compression and optional level
+		(in range 1-7, default is 4).
+  Source	Source file specification.  Wildcards may be used.
+  Destination	Destination file | path specification.
+		Destination may be a directory.
+		If Source is multiple files and -r is not specified,
+		Destination must be a directory.

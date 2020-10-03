@@ -1,0 +1,67 @@
+
+Microsoft (R) .NET Global Assembly Cache Utility.  Version 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Usage: Gacutil <option> [<parameters>]
+ Options:
+  /i
+    Installs an assembly to the global assembly cache.  Include the
+    name of the file containing the manifest as a parameter.
+    Example:  /i myDll.dll 
+
+  /if
+    Installs an assembly to the global assembly cache and forces
+    overwrite if assembly already exists in cache.  Include the
+    name of the file containing the manifest as a parameter.
+    Example:  /if myDll.dll 
+
+  /ir
+    Installs an assembly to the global assembly cache with traced
+    reference. Include the name of file containing manifest, 
+    reference scheme, ID and description as parameters 
+    Example:  /ir myDll.dll FILEPATH c:\apps\myapp.exe MyApp 
+
+  /u[ngen]
+    Uninstalls an assembly. Include the name of the assembly to
+    remove as a parameter. If ngen is specified, the assembly is
+    removed from the cache of ngen'd files, otherwise the assembly
+    is removed from the global assembly cache
+    Examples:.
+      /ungen myDll
+      /u myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
+
+  /ur
+    Uninstalls an assembly reference. Include the name of the 
+    assembly, type of reference, ID and data as parameters. 
+    Example:  /ur myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab 
+                       FILEPATH c:\apps\myapp.exe MyApp
+
+  /uf
+    Forces uninstall of an assembly by removing all install references 
+    Include the full name of the assembly to remove as a parameter.. 
+    Assembly will be removed unless referenced by Windows Installer. 
+    Example:  /uf myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab 
+
+  /l
+    Lists the contents of the global assembly cache. Allows optional
+    assembly name parameter to list matching assemblies only
+
+  /lr
+    Lists the contents of the global assembly cache with traced 
+    reference information. Allows optional assembly name parameter 
+    to list matching assemblies only 
+
+  /cdl
+    Deletes the contents of the download cache
+
+  /ldl
+    Lists the contents of the downloaded files cache
+
+  /nologo
+    Suppresses display of the logo banner
+
+  /silent
+    Suppresses display of all output
+
+  /?
+    Displays this help screen

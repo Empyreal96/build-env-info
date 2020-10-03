@@ -1,0 +1,11 @@
+Prints file version information.
+
+filever [/S] [/V] [/E] [/X] [/B] [/A] [/D] [[drive:][path][filename]]
+
+/S	Displays files in specified directory and all subdirectories.
+/V	List verbose version information if available.
+/E	List executables only.
+/X	Displays short names generated for non-8dot3 file names.
+/B	Uses bare format (no dir listing).
+/A	Don't display file attributes.
+/D	Don't display file date and time.

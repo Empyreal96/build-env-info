@@ -1,0 +1,25 @@
+Usage : MODKEY <KeyValue> [options] [SearchValue] [New/ReplaceKeyValue]
+
+    <KeyValue>: <RootKey>\KeyPathName\Value
+           <RootKey> is: HKEY_CLASSES_ROOT, HKEY_LOCAL_MACHINE, etc.
+    [options]
+      -q    - Quiet.  Don't print out results status
+      -pre  - Prepend value to key.   Ignored if -s used
+      -post - Postpend value to key.  Ignored if -s used
+      -d    - Delete the key value.  Overrides all other options
+      -dw   - Delete the key value.  Overrides all other options
+      -r    - Replace value with new value.  Default option.  Ignored if -s used
+      -s    - Search for SearchValue and replace with ReplaceValue
+              Value comparison is case insensitive, doesn't work with dw
+      -?    - Show summary command help
+     [SearchValue]      - Key value to search for.  Use with -s.
+     [New/ReplaceValue] - New or replacement key value.
+       if -pre is used, the new value is prepended to the current value
+       if -post is used, the new value is postpended to the current value
+       if -r is used, the current value is replaced by the new value
+       if -s is used, the SearchValue is replaced by this value
+       if -r is used with -pre or -post, the value is only added
+          if it is not found in the string
+
+Example: (Prepend c:\myclass.zip to the classpath if it doesn't already exist
+		ModKey "HKEY_LOCAL_MACHINE\Software\Microsoft\Java VM\classpath" -pre -r c:\MyClass.Zip;

@@ -1,0 +1,7 @@
+Generate .msm for an assembly
+
+sxs_msmgen.exe manfile manifest_file.manifest [-compid {guid}] [-msmid {guid}] [-msm file.msm] [-template templatefile.msm]
+
+sxs_msmgen.exe manlist manifest_list.txt [-msmid {guid}] [-msm file.msm] [-template templatefile.msm]
+
+sxs_msmgen.exe mangroup manifest_group.txt [-template templatefile.msm]

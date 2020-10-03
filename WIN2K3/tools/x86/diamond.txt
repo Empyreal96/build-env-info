@@ -1,0 +1,16 @@
+Microsoft (R) Diamond Disk Layout Tool - Version 5.1.2245.1
+Copyright (C) Microsoft Corp. 1981-2000.
+
+MICROSOFT INTERNAL USE ONLY
+
+DIAMOND [/V[n]] [/D var=value ...] [/L dir] source [destination]
+DIAMOND [/V[n]] [/D var=value ...] /F directive_file [...]
+
+  source         File to compress.
+  destination    File name to give compressed file.  If omitted, the
+                 last character of the source file name is replaced
+                 with an underscore (_) and used as the destination.
+  /F directives  A file with Diamond directives (may be repeated).
+  /D var=value   Defines variable with specified value.
+  /L dir         Location to place destination (default is current directory).
+  /V[n]          Verbosity level (1..3).

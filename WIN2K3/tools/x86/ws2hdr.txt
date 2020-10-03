@@ -1,0 +1,2 @@
+WS2HDR v1.01 Jul 24 1999
+use: ws2hdr < file1 > file2

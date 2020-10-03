@@ -1,0 +1,21 @@
+Program to validate/verify the given layout inf file
+
+Usage: inftest <Inf Filename> [options]
+<Inf Filename> - Layout File to examine
+Options for layout.inf and txtsetup.sif (automatically checks loader and textmode syntax):-
+/W - Enable warnings too
+
+Checking of Platform specific SourceDisksFiles section
+/F - Display only filenames
+/I - Process for Intel i386
+/A - Process for AMD AMD64
+/M - Process for Intel IA64
+By default the parser will check for compliance with the textmode setup parser
+
+The below checks only perform a syntax check and don't check semantics.
+/D - Checks for compliance with winnt32 parser - use with dosnet.inf,mblclean.inf etc.
+/L - Checks for compliance with the loader - use for infs used by loader - biosinfo.inf, migrate.inf etc.
+/T - Checks for compliance with the textmode setup - use for hive*.inf etc.
+
+/B - Does the layout information checks for setup infs and uses build.exe compliant error reporting
+

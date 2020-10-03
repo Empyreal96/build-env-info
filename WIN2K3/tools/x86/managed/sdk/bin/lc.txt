@@ -1,0 +1,17 @@
+Microsoft (R) .NET License Compiler 
+[Microsoft .Net Framework, Version 1.0.3705.0]
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+
+Generates a .NET Licenses file and adds it to the manifest of the given assembly
+Usage:
+    lc /target:TargetAssembly /complist:filename [/outdir:path] [/i:modules] [/v] [/nologo]
+
+Options:
+    /target:<str>              Target assembly for the generated licenses file
+    /complist:<str>            Licensed component list file
+    /outdir:<str>              Output directory for the generated licenses file
+    /i:<str>                   Specify modules to load
+    /v                         Verbose output
+    /nologo                    Suppress the display of the startup banner
+

@@ -1,0 +1,3 @@
+USAGE:
+	set SDFORMEDITOR=sdforms.exe [-c "comment"]
+	sd [submit|change|client]

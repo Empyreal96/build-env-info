@@ -1,0 +1,37 @@
+Rsrc - Manage Win32 executable resources.
+
+Usage: rsrc -h
+   or: rsrc  executable [-l LangId] [-i include-opts] [-q]
+             [   [-t|-d] [text-output] [-c unloc]
+               | [-a|-r] [text-input]  [-s symbols] ]
+
+Arguments
+
+   -h         Help
+   -q         Quiet (default is to show resource stats)
+   -t tokens  Write resources in checkin format to token file
+   -c unloc   Unlocalised executable for comparison
+   -d tokens  Write resources in hex dump format to token file
+   -a tokens  Append resources from token file to executable (multi-language update)
+   -r tokens  Replace executable resources from token file (single language update)
+   -s symbol  Symbol file whose checksum is to track the executable checksum
+   -l lang    Restrict processing to language specified in hex
+   -u unlocl  Unlocalised langauge, default 409
+   -i opts    Include only resource types specified:
+
+                 c - Cursors               t - Fonts
+                 b - Bitmaps               a - Accelerators
+                 i - Icons                 r - RCDATAs
+                 m - Menus                 g - Message tables
+                 d - Dialogs               v - Versions info
+                 s - Strings               x - Binary data
+                 f - Font directories      n - INFs
+                 o - all others            a - All (default)
+
+   Examples
+
+       rsrc notepad.exe               - Show resource stats for notepad.exe
+       rsrc notepad.exe -t            - Extract tokens to notepad.exe.rsrc
+       rsrc notepad.exe -r -l 401     - Translate from US using Arabic tokens in notepad.exe.rsrc
+       rsrc notepad.exe -d dmp -i im  - Hexdump of Icons and Menus to dmp
+

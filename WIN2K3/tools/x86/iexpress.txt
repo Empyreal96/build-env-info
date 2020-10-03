@@ -1,0 +1,5 @@
+Options: [/N [/Q][/M]] <SED filename> [/O:overide SEDfilename,OverideSectionName]
+
+/N: Build package now [SED Filename must be specified]
+/Q: Quiet mode when using /N
+/M: Use Minimized Windows when using /N

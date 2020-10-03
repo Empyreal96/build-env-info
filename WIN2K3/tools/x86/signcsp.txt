@@ -1,0 +1,2 @@
+CryptoAPI Internal CSP Signing Utility
+signcsp <filename>

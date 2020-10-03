@@ -1,0 +1,36 @@
+usage: REBASE [switches]
+              [-R image-root [-G filename] [-O filename] [-N filename]]
+              image-names...
+
+              One of -b and -i switches are mandatory.
+
+              [-a] Does nothing
+              [-b InitialBase] specify initial base address
+              [-c coffbase_filename] generate coffbase.txt
+                  -C includes filename extensions, -c does not
+              [-d] top down rebase
+              [-e SizeAdjustment] specify extra size to allow for image growth
+              [-f] Strip relocs after rebasing the image
+              [-i coffbase_filename] get base addresses from coffbase_filename
+              [-l logFilePath] write image bases to log file.
+              [-p] Does nothing
+              [-q] minimal output
+              [-s] just sum image range
+              [-u symbol_dir] Update debug info in .DBG along this path
+              [-v] verbose output
+              [-x symbol_dir] Same as -u
+              [-z] allow system file rebasing
+              [-?] display this message
+
+              [-R image_root] set image root for use by -G, -O, -N
+              [-G filename] group images together in address space
+              [-O filename] overlay images in address space
+              [-N filename] leave images at their origional address
+                  -G, -O, -N, may occur multiple times.  File "filename"
+                  contains a list of files (relative to "image-root")
+
+              'image-names' can be either a file (foo.dll) or files (*.dll)
+                            or a file that lists other files (@files.txt).
+                            If you want to rebase to a fixed address (ala QFE)
+                            use the @@files.txt format where files.txt contains
+                            address/size combos in addition to the filename

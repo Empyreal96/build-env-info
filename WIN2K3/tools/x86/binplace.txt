@@ -1,0 +1,48 @@
+usage: binplace [switches] image-names...
+where: [-?] display this message
+       [-a] Used with -s, extract all symbols
+       [-b subdir] put file in subdirectory of normal place
+       [-c] digitally sign image with IDW key
+       [-d dump-override]
+       [-:DBG] Don't binplace DBG files.  If -j is present, don't binplace
+               binaries that point to DBG files.
+       [-:DEST <class>] Don't bother with placefil.txt - just put the
+               file(s) in the destination specified
+       [-e] don't exit if a file in list could not be binplaced
+       [-f] force placement by disregarding file timestamps
+       [-g lc-file] verify image with localization constraint file
+       [-h] modifies behavior to use hard links instead of CopyFile.
+            (ignored if -s is present)
+       [-j] verify proper symbols exist before copying
+       [-k] keep attributes (don't turn off archive)
+       [-:LOGPDB] include PDB paths in binplace.log
+       [-m] binplace files to dump (generates an error also)
+       [-n <Path>] Used with -x - Private pdb symbol path
+       [-o place-root-subdir] alternate project subdirectory
+       [-p place-file]
+       [-q] suppress writing to log file %BINPLACE_LOG%
+       [-r place-root]
+       [-s Symbol file path] split symbols from image files
+       [-:SRC] Process the PDB for source indexing
+       [-t] test mode
+       [-:TMF] Process the PDB for Trace Format files
+       [-u] UP driver
+       [-v] verbose output
+       [-w] copy the Win95 Sym file to the symbols tree
+       [-x] Used with -s, delete private symbolic when splitting
+       [-y] Used with -s, don't create class subdirs in the symbols tree
+       [-z] ignore -x if present
+       [-ci <rc,app,-arg0,-argv1,-argn>]
+            rc=application error return code,
+            app=application used to check images,
+            -arg0..-argn=application options
+       [-dl <modulename,delay-load handler>] (run dlcheck on this file)
+
+BINPLACE looks for the following environment variable names:
+   BINPLACE_EXCLUDE_FILE - full path name to symbad.txt
+   BINPLACE_OVERRIDE_FLAGS - may contain additional switches
+   BINPLACE_PLACEFILE - default value for -p flag
+   _NT386TREE - default value for -r flag on x86 platform
+   _NTAMD64TREE - default value for -r flag on AMD64 platform
+   _NTIA64TREE - default value for -r flag on IA64 platform
+   TRACE_FORMAT_PATH - set the path for Trace Format Files

@@ -1,0 +1,38 @@
+Microsoft (R) 32-bit RLTools Version 3.5 (Build 2420)
+Copyright (C) Microsoft Corp. 1991-1998. All Rights reserved.
+
+Binary file generator utility.
+
+BINGEN [-w|n] [-h|?] [-b|s|f] [-p cp] [-{i|o} Pri Sub] [-d char]              
+       [-{t|u|r|a|x} files]                                                   
+                                                                              
+  -w                  (Show warning messages)                                 
+  -? or -h            (Show more complete help using winhelp)                 
+  -b                  (Extract bitmaps and icons)                             
+  -c                  (Extract embedded gifs, htmls, infs and other binaries) 
+  -y                  (Extract Static Control alignment style)                
+  -l                  (Lean mode and do not append redundant resources)       
+  -s                  (Split Message table messages at \n\r)                
+  -f                  (Add/Use font information field for dialogs)            
+  -n                  (Nologo)                                                
+  -v                  (Ignore selected version stamp information)             
+  -p  CodePage        (Default code page of text in project token file)       
+  -d  Character       (Default for unmappable characters)                     
+                                                                              
+<<The commands -{t|r|a} are mutually exlusive>>                               
+  -t  InputExeFile  OutputTokenFile                                           
+                      (Extract token file)                                    
+  -u  InputExeFile  InputUSTokFile  InputLOCTokFile  OutputExeFile            
+                      (Replace old lang resources with localized tokens)      
+  -r  InputExeFile  InputLOCTokFile  OutputExeFile                            
+                      (Replace old lang resources with localized tokens)      
+                      (Doesn't perform any consistency check)                 
+  -a  InputExeFile  InputLOCTokFile  OutputExeFile                            
+                      (Append resources in localized tokens)                  
+                                                                              
+<<Default language is always NEUTRAL>>                                        
+  -i  PriLangId SecLangId (Primary- and Sub-Lang IDs, dec/hex, Input file)    
+  -o  PriLangId SecLangId (Primary- and Sub-Lang IDs, dec/hex, Output file)   
+                                                                              
+  -x  InputRuleFile   (Pseudo translation options)                            
+  -m  InputSymbolPath OutputSymbolPath                                                               (Update symbol checksum if neccesory)                   

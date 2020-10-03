@@ -1,0 +1,11 @@
+Usage: webchange <URL with query string> <temp filename>
+
+If the temp file is a "pending" or "new" Source Depot changelist:
+	WebChange opens the specified web page and fills in the hash of the
+	file to complete the query string. The web page should host the
+	WebChangelistEditor ActiveX control, which can be initialized with the
+	given hash to edit the changelist.
+If the temp file is anything else:
+	WebChange calls %SDALTFORMEDITOR% with the name of the temp file.
+
+Example: webchange http://ntserver/submit.asp?key= d:\temp\t3104t1.tmp

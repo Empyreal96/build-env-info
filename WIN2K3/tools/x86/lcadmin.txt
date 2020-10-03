@@ -1,0 +1,6 @@
+LCAdmin Usage:
+
+LCAdmin FileName InstructionFileName
+
+For Example,
+LCAdmin Sample.exe Sample.exe.lc

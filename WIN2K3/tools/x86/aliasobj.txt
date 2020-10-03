@@ -1,0 +1,2 @@
+AliasObj v7.01.2067
+Usage: AliasObj from-name to-name output-filename

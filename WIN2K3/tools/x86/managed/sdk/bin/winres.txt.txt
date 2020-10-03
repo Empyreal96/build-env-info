@@ -1,0 +1,8 @@
+Microsoft (R) .NET Framework Windows Resource Localization Editor. Version 1.0.3705.0
+Copyright (c) MICROSOFT CORPORATION 1998-2001. ALL RIGHTS RESERVED
+
+USAGE: winres [resource file]
+	Winres supports resource files with the following extentions:
+		.resx and .resources
+
+The command switch -? shows this dialog

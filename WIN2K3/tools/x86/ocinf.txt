@@ -1,0 +1,12 @@
+Compute disk space requirements for files listed in an inf
+
+
+    -inf:<path>   This is the path to the inf (including the
+                  inf file name).  E.g. -inf:c:\dosnet.inf
+
+    -layout:<path> This is the path to layout.inf (including the
+                  inf file name).  E.g. -inf:c:\layout.inf
+
+    -v            Run in verbose mode.
+
+

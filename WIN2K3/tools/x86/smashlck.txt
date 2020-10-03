@@ -1,0 +1,5 @@
+usage: SMASHLOCK [switches] image-names...
+              [-?] display this message
+              [-u] update image
+              [-v] verbose output
+              [-s] path to symbol files

@@ -1,0 +1,9 @@
+usage: SPLITSYM [-?] [-v] [-p] [-a] [-s symbol directory] [-r directory] image-names...
+              [-?] display this message
+              [-v] verbose output
+              [-p] remove private debug info when creating .dbg file
+              [-a] extract all debug info into .dbg file
+              [-m] RSDS dll to load, default is mspdb70.dll
+              [-r directory] - recursively process all image files.
+              [-s symbol directory] - where to put .DBG files.
+                                      Default is same place as image file.

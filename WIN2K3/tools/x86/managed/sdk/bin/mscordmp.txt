@@ -1,0 +1,17 @@
+
+Microsoft (R) Common Language Runtime Minidump Utility.   Version 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+mscordmp [options] /pid <process id> /out <output file>
+
+Options:
+    /nologo : do not display logo.
+
+Arguments:
+    /pid  : the ID of the process on which to perfrom the minidump.
+    /out  : the full path and name of the file to write the minidump to.
+    /h /? : this help message.
+
+This utility creates a file containing information supplemental to the
+standard minidump.  The additional information includes memory ranges
+useful in deciphering errors within the Common Language Runtime.

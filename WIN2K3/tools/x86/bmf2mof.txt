@@ -1,0 +1,6 @@
+bmf2mof <image name> <resource name> <mof file>
+    Convert binary mof resource to a text mof
+
+****** WARNING: if <image name> is a system dll (like advapi32.dll)  ******
+****** then the system dll will be used and not the file on disk *****
+

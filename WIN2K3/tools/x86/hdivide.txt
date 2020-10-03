@@ -1,0 +1,2 @@
+hdivide: version 1.0
+usage: hdivide [-v] input-filename (no path name please)

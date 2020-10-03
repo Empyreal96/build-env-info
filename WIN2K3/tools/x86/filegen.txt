@@ -1,0 +1,27 @@
+Command line syntax:
+
+filegen [-i:<infdir>] [-o:<outputfile>] [-t:<tempdir>] [-w[:<warningfile>]]
+        [-h:<headerfile>] [-a:<additional_file>] [-p:<platform>]
+        [-d:<product>] [-s:<struct_name>] [-b:<INF database>] [-f] [-l]
+
+Optional Arguments:
+  [-i:<infdir>]        - Specifies directory containing INF files.
+                         Default: %_NTTREE%
+  [-o:<outputfile>]    - Specifies path and file name of DAT file.
+                         Default: %_NTTREE%\filelist.dat
+  [-t:<tempdir>]       - Specifies path for temporary files.
+                         Default: %TEMP%
+  [-w[:<warningfile>]] - Specifies if warning file is generated and it's
+                         location. Default: %_NTTREE%\dump\filegen.wrn
+  [-h:<headerfile>]    - Specifies if header file is generated and it's
+                         location. Default: %_NTTREE%\dump\filegen.hdr
+  [-a:<addnl_file>]    - Specifies full path name for FILEGEN.INF file
+  [-p:<platform>]      - Specifies platform (such as x86 or ia64)
+                         Default: x86
+  [-d:<product>]       - Specifies product type (WKS, DTC, ENT, SRV)
+                         Default: WKS
+  [-s:<struct_name>]   - Specifies the structure name (for header file)
+                         Default: Tier2Files
+  [-b:<INF database>]  - Specifies INF database file from the last run
+  [-f]                 - Force rescanning all INFs
+  [-l]                 - List content of existing output file

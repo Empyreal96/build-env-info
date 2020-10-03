@@ -1,0 +1,31 @@
+Microsoft (R) .NET Framework Type Library to Assembly Converter 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001.  All rights reserved.
+
+Syntax: TlbImp TypeLibName [Options]
+Options:
+    /out:FileName            File name of assembly to be produced
+    /namespace:Namespace     Namespace of the assembly to be produced
+    /asmversion:Version      Version number of the assembly to be produced
+    /reference:FileName      File name of assembly to use to resolve references
+    /publickey:FileName      File containing strong name public key
+    /keyfile:FileName        File containing strong name key pair
+    /keycontainer:FileName   Key container holding strong name key pair
+    /delaysign               Force strong name delay signing
+    /unsafe                  Produce interfaces without runtime security checks
+    /nologo                  Prevents TlbImp from displaying logo
+    /silent                  Suppresses all output except for errors
+    /verbose                 Displays extra information
+    /primary                 Produce a primary interop assembly
+    /sysarray                Import SAFEARRAY as System.Array
+    /strictref               Only use assemblies specified using /reference
+    /? or /help              Display this usage message
+
+The assembly version must be specified as: Major.Minor.Build.Revision.
+
+Multiple reference assemblies can be specified by using the /reference option
+multiple times.
+
+A resource ID can optionally be appended to the TypeLibName when importing a
+type library from a module containing multiple type libraries.
+
+For example: TlbImp MyModule.dll\1

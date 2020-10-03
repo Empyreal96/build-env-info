@@ -1,0 +1,67 @@
+Microsoft (R) Incremental Linker Version 7.00.9396
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/tmp 
+ usage: LINK [options] [files] [@commandfile]
+
+   options:
+
+      /ALIGN:#
+      /ALLOWBIND[:NO]
+      /ASSEMBLYMODULE:filename
+      /ASSEMBLYRESOURCE:filename
+      /BASE:{address|@filename,key}
+      /DEBUG
+      /DEF:filename
+      /DEFAULTLIB:library
+      /DELAY:{NOBIND|UNLOAD}
+      /DELAYLOAD:dll
+      /DLL
+      /DRIVER[:{UPONLY|WDM}]
+      /ENTRY:symbol
+      /EXETYPE:DYNAMIC
+      /EXPORT:symbol
+      /FIXED[:NO]
+      /FORCE[:{MULTIPLE|UNRESOLVED}]
+      /HEAP:reserve[,commit]
+      /IDLOUT:filename
+      /IGNOREIDL
+      /IMPLIB:filename
+      /INCLUDE:symbol
+      /INCREMENTAL[:NO]
+      /LARGEADDRESSAWARE[:NO]
+      /LIBPATH:dir
+      /LTCG[:{NOSTATUS|PGINSTRUMENT|PGOPTIMIZE|STATUS}]
+             (PGINSTRUMENT and PGOPTIMIZE are only available for IA64)
+      /MACHINE:{AM33|ARM|IA64|M32R|MIPS|MIPS16|MIPSFPU|MIPSFPU16|MIPSR41XX|
+                PPC|PPCFP|SH3|SH3DSP|SH4|SH5|THUMB|TRICORE|X86}
+      /MAP[:filename]
+      /MAPINFO:{EXPORTS|LINES}
+      /MERGE:from=to
+      /MIDL:@commandfile
+      /NOASSEMBLY
+      /NODEFAULTLIB[:library]
+      /NOENTRY
+      /NOLOGO
+      /OPT:{ICF[=iterations]|NOICF|NOREF|NOWIN98|REF|WIN98}
+      /ORDER:@filename
+      /OUT:filename
+      /PDB:filename
+      /PDBSTRIPPED:filename
+      /PGD:filename
+      /RELEASE
+      /SECTION:name,[E][R][W][S][D][K][L][P][X][,ALIGN=#]
+      /STACK:reserve[,commit]
+      /STUB:filename
+      /SUBSYSTEM:{CONSOLE|EFI_APPLICATION|EFI_BOOT_SERVICE_DRIVER|
+                  EFI_ROM|EFI_RUNTIME_DRIVER|NATIVE|POSIX|WINDOWS|
+                  WINDOWSCE}[,#[.##]]
+      /SWAPRUN:{CD|NET}
+      /TLBOUT:filename
+      /TSAWARE[:NO]
+      /TLBID:#
+      /VERBOSE[:LIB]
+      /VERSION:#[.#]
+      /VXD
+      /WINDOWSCE:{CONVERT|EMULATION}
+      /WS:AGGRESSIVE

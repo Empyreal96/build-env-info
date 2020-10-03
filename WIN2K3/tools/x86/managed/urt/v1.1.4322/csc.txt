@@ -1,0 +1,58 @@
+Microsoft (R) Visual C# .NET Compiler version 7.10.2215.1
+for Microsoft (R) .NET Framework version 1.1.4322
+Copyright (C) Microsoft Corporation 2001-2002. All rights reserved.
+
+                      Visual C# .NET Compiler Options
+
+                        - OUTPUT FILES -
+/out:<file>             Output file name (default: base name of file with main class or first file)
+/target:exe             Build a console executable (default) (Short form: /t:exe)
+/target:winexe          Build a Windows executable (Short form: /t:winexe)
+/target:library         Build a library (Short form: /t:library)
+/target:module          Build a module that can be added to another assembly (Short form: /t:module)
+/define:<symbol list>   Define conditional compilation symbol(s) (Short form: /d)
+/doc:<file>             XML Documentation file to generate
+
+                        - INPUT FILES -
+/recurse:<wildcard>     Include all files in the current directory and subdirectories according to the wildcard specifications
+/reference:<file list>  Reference metadata from the specified assembly files (Short form: /r)
+/addmodule:<file list>  Link the specified modules into this assembly
+
+                        - RESOURCES -
+/win32res:<file>        Specifies Win32 resource file (.res)
+/win32icon:<file>       Use this icon for the output
+/resource:<resinfo>     Embeds the specified resource (Short form: /res)
+/linkresource:<resinfo> Links the specified resource to this assembly (Short form: /linkres)
+
+                        - CODE GENERATION -
+/debug[+|-]             Emit debugging information
+/debug:{full|pdbonly}   Specify debugging type ('full' is default, and enables attaching a debugger to a running program)
+/optimize[+|-]          Enable optimizations (Short form: /o)
+/incremental[+|-]       Enable incremental compilation (Short form: /incr)
+
+                        - ERRORS AND WARNINGS -
+/warnaserror[+|-]       Treat warnings as errors
+/warn:<n>               Set warning level (0-4) (Short form: /w)
+/nowarn:<warning list>  Disable specific warning messages
+
+                        - LANGUAGE -
+/checked[+|-]           Generate overflow checks
+/unsafe[+|-]            Allow 'unsafe' code
+
+                        - MISCELLANEOUS -
+@<file>                 Read response file for more options
+/help                   Display this usage message (Short form: /?)
+/nologo                 Suppress compiler copyright message
+/noconfig               Do not auto include CSC.RSP file
+
+                        - ADVANCED -
+/baseaddress:<address>  Base address for the library to be built
+/bugreport:<file>       Create a 'Bug Report' file
+/codepage:<n>           Specifies the codepage to use when opening source files
+/utf8output             Output compiler messages in UTF-8 encoding
+/main:<type>            Specifies the type that contains the entry point (ignore all other possible entry points) (Short form: /m)
+/fullpaths              Compiler generates fully qualified paths
+/filealign:<n>          Specify the alignment used for output file sections
+/nostdlib[+|-]          Do not reference standard library (mscorlib.dll)
+/lib:<file list>        Specify additional directories to search in for references
+

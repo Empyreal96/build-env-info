@@ -1,0 +1,11 @@
+
+Microsoft (R) .NET Framework Permission Request Viewer.  Version 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Usage: PermView [Options] <manifest file>
+
+Options:
+  /OUTPUT <filename>  Dump output to a file.
+  /DECL               Display declarative security on classes/methods.
+  /HELP               Display this help text.
+

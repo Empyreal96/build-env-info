@@ -1,0 +1,9 @@
+Microsoft (R) .NET TypeLib Registration Tool
+Copyright (C) Microsoft Corp. 1998-2001. All rights reserved.
+
+REGTLB [-u] [-n] filename [filename...]
+
+  filname - Name of the typelib file to register.
+  -u	  - If specified, unregister typelibs.
+  -n	  - If specified, suppress copyright notice.
+

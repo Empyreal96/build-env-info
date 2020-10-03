@@ -1,0 +1,12 @@
+Microsoft (R) .NET Framework Assembly to Type Library Converter 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001.  All rights reserved.
+
+Syntax: TlbExp AssemblyName [Options]
+Options:
+    /out:FileName            File name of type library to be produced
+    /nologo                  Prevents TlbExp from displaying logo
+    /silent                  Prevents TlbExp from displaying success message
+    /verbose                 Displays extra information
+    /names:FileName          A file in which each line specifies the
+                             captialization of a name in the type library.
+    /? or /help              Display this usage message

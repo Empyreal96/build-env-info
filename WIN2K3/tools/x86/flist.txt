@@ -1,0 +1,12 @@
+Usage: flist [-a] [-b] [-c] [-d] [-e] FileName1 [FileName2] 
+
+flist -a FileList1.txt FileList2.Txt
+    [Prints out common entries between FileList1.txt and FileList2.txt]
+flist -b FileList1.txt FileList2.Txt
+    [Prints out entry differences between FileList1.txt and FileList2.txt]
+flist -c FileList.txt
+    [Removes the path portion of the file entries in FileList.txt]
+flist -d FileList.txt
+    [Removes the filename portion of the file entries in FileList.txt]
+flist -e FileList.txt
+    [Removes spaces/tabs before and after entires in FileList.txt]

@@ -1,0 +1,23 @@
+Copyright (C) Microsoft Corporation, 1998 - 2001.  All rights reserved.
+MSIZAP - Zaps (almost) all traces of Windows Installer data from your machine.
+
+Usage: msizap T[A!] {product code}
+       msizap T[A!] {msi package}
+       msizap *[A!] ALLPRODUCTS
+       msizap PSA?!
+
+       * = remove all Windows Installer folders and regkeys;
+           adjust shared DLL counts; stop Windows Installer service
+       T = remove all info for given product code
+       P = remove In-Progress key
+       S = remove Rollback Information
+       A = for any specified removal, just change ACLs to Admin Full Control
+       W = for all users (by default, only for the current user)
+       G = remove orphaned cached Windows Installer data files (for all users)
+       ? = verbose help
+       ! = force 'yes' response to any prompt
+
+CAUTION: Products installed by the Windows Installer may fail to
+         function after using msizap
+
+NOTE: MsiZap requires admin privileges to run correctly. The W option requires that the profiles for all of the users be loaded.

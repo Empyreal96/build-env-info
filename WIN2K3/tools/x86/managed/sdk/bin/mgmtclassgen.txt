@@ -1,0 +1,20 @@
+Microsoft (R) Management Strongly Typed Class Generator Version 1.0.3705.0
+Copyright (C) Microsoft Corporation 1995-2001. All rights reserved.
+
+MgmtClassGen <WMIClass> [options]
+
+	 /N <WMINamespace> 	 	 WMI namespace containing the class. Defaults to root\cimv2
+	 /O <ClassNamespace> 	 	 .NET namespace in which the class is generated
+	 /L <Generated Language> 	 One of the following. Defaulted to CS
+						 CS - CSharp(C#)
+						 VB - Visual Basic
+						 JS - JScript
+
+	 /P <FilePath> 	 	 	 Output file path
+	 /M <Machine> 	 	 	 Remote computer to connect. Defaults to the local machine
+	 /U <User> 	 	 	 User name
+	 /?		 	 	 Displays this help screen
+
+	 /PW <Password> 	 	 Password
+Example :
+	MgmtclassGen Win32_Logicaldisk /L VB /N root\cimv2 /P c:\temp\logicaldisk.vb

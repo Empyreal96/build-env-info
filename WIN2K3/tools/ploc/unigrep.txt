@@ -1,0 +1,17 @@
+Grep utility to search Unicode files                                      
+                                                                          
+Usage: unigrep.exe [-s][-r][-h][-i] String FileName ReportFile        
+       unigrep.exe [-s][-r][-h][-i] -f FileName FileName ReportFile   
+                                                                          
+ -s              works in silent mode                                     
+ -r              folder recursion                                         
+ -h              ignore '&' character when searching strings              
+ -i              case-insensitive                                         
+ FileName        file(s) to search                                        
+ -f FileName     Unicode text file with strings to search for             
+                 (one string per line)                                    
+ String          string to search for                                     
+ ReportFile      result file                                              
+                                                                          
+ Example: unigrep -r -h -i "Save File As" c:\mytok\*.* c:\report.txt 
+          unigrep -r -h -i -f strings.txt c:\mytok\*.* c:\report.txt   

@@ -1,0 +1,68 @@
+Microsoft (R) Common Language Runtime Test Debugger Shell Version 1.1.4322.12
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+Usage:  CORDBG [<program name> [<program args>]] [<CorDbg optional args>]
+ The optional arguments are !prefixed command that you'd use while in cordbg
+ You can escape the ! character by prefixing it with \
+ E.g: cordbg foo.exe a 2 !b FooType.Foo::Main !g !x Foo.exe\!Something
+
+The following commands are available:
+
+ap[pdomainenum]     Display appdomains/assemblies/modules in the current process
+a[ttach]            Attach to a running process
+as[sociatesource]   Associate a source file with a breakpoint or stack frame
+b[reak]             Set or display breakpoints
+conn[ect]           Connect to a remote device
+cont                Continue the current process
+ca[tch]             Stop on exception, thread, and/or load events
+dis[assemble]       Display native or IL disassembled instructions
+del[ete]            Remove one or more breakpoints
+du[mp]              Dump the contents of memory
+d[own]              Navigate down from the current stack frame pointer
+de[tach]            Detach from the current process
+ex[it]              Kill the current process and exit the debugger
+f[unceval]          Function evaluation
+g[o]                Continue the current process
+h[elp]              Display debugger command descriptions
+i[n]                Step into the next source line
+ig[nore]            Ignore exception, thread, and/or load events
+k[ill]              Kill the current process
+l[ist]              Display loaded modules, classes, or global functions
+m[ode]              Display/modify various debugger modes
+ns[ingle]           Step over the next native or IL instruction
+n[ext]              Step over the next source line
+news[tr]            Create a new string via function evaluation
+newobjnc            Create a new object via function evaluation, no constructor
+newo[bj]            Create a new object via function evaluation
+o[ut]               Step out of the current function
+pro[cessenum]       Display all managed processes running on the system
+p[rint]             Print variables (locals, args, statics, etc.)
+pa[th]              Set or display the source file search path
+q[uit]              Kill the current process and exit the debugger
+regd[efault]        Change the JIT debugger
+r[un]               Start a process for debugging
+re[sume]            Resume a thread
+rem[ove]            Remove one or more breakpoints
+reg[isters]         Display CPU registers for current thread
+ref[reshsource]     Reload a source file for display
+<                   Read and execute commands from a file
+su[spend]           Suspend a thread
+ss[ingle]           Step into the next native or IL instruction
+so                  Step over the next source line
+si                  Step into the next source line
+s[tep]              Step into the next source line
+sh[ow]              Display source code lines
+set                 Modify the value of a variable (locals, statics, etc.)
+setip               Set the next statement to a new line
+stop                Set or display breakpoints
+t[hreads]           Set or display current threads
+>                   Write commands to a file
+uw[here]            Display an unmanaged stack trace (Win32 mode only)
+ut[hreads]          Set or display unmanaged threads (Win32 mode only)
+uc[lear]            Clear the current unmanaged exception (Win32 mode only)
+u[p]                Navigate up from the current stack frame pointer
+?                   Display debugger command descriptions
+wt                  Track native instruction count and display call tree
+wr[itememory]       Write memory to target process
+w[here]             Display a stack trace for the current thread
+x                   Display symbols matching a given pattern

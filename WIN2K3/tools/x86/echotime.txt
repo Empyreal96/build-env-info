@@ -1,0 +1,12 @@
+Usage: ECHOTIME [/t] [/WODHMSCYb] [/v] [/n] [/N] [;] text
+ /t  current day, time and year
+ /WODHMSCYb
+     Weekday, mOnth, Day, Hour, Min, Sec, Century, Yr, blank
+     other char are themselves
+     e.g. echotime /O-D-Y this becomes Jan-02-86
+     e.g. echotime /ObDbY this becomes Jan 02 86
+ /v  volume id of C:
+ /n  no newline after outputting text
+ /N  no trailing blank at end of lines
+ a semicolon surrounded by white space is replaced by a newline
+

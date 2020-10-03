@@ -1,0 +1,14 @@
+Command line syntax:
+
+hwdatgen [-i:<infdir>] [-o:<outputfile>] [-c] [-v]
+
+Optional Arguments:
+  -i:<infdir>     - Specifies input directory containing INF files.
+                    If -i is not specified, the default is _NTTREE
+  -o:<outputfile> - Specifies path and file name of DAT file.  By
+                    default, this file is _NTTREE\hwcomp.dat
+  -c              - Clean build (deletes <outputfile>)
+  -v              - Verbose output
+
+A maximum of 10 input directories can be specified.
+

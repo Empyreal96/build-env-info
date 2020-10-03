@@ -1,0 +1,16 @@
+Microsoft (R) Symbol File Generator NTGroup Version 6.02
+Copyright (C) Microsoft Corp 1984 - 1996.  All rights reserved.
+
+
+usage: mapsym [-nologo] [-almnst] [[-c pefile] -o outfile] infile
+  -a         include alphabetic sort arrays
+  -l         list map file information
+  -e         edit symbols for NTSD parser
+  -m         use module name from infile
+  -n         omit line number information
+  -nologo    omit signon logo
+  -o outfile symbol output file
+  -s         enable line number support [default]
+  -t         include static symbols
+infile is a map file
+outfile is a sym file.

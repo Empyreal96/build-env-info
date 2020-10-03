@@ -1,0 +1,6 @@
+Usage: ALIAS [-v] [-p programName] [-f filespec] [<source> <target>]
+             [-v] means verbose output.
+             [-d] means delete aliases.
+             [-p programName] specifies which image file name these alias
+                              definitions are for.  Default is CMD.EXE
+             [-f filespec] specifies a file which contains the aliases.

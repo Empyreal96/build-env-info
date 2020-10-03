@@ -1,0 +1,33 @@
+
+Microsoft (R) .NET Framework IL Assembler.  Version 1.1.4322.12
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+
+
+Usage: ilasm [Options] <sourcefile> [Options]
+
+Options:
+/LISTING		Type a formatted list file
+/NOLOGO			Don't type the logo
+/QUIET			Don't report assembly progress
+/DLL			Compile to .dll
+/EXE			Compile to .exe (default)
+/DEBUG			Include debug information
+/CLOCK			Measure and report compilation times
+/RESOURCE=<res_file>	Link the specified resource file (*.res) 
+			into resulting .exe or .dll
+/OUTPUT=<targetfile>	Compile to file with specified name 
+			(user must provide extension, if any)
+/KEY=<keyfile>		Compile with strong signature 
+			(<keyfile> contains private key)
+/KEY=@<keysource>	Compile with strong signature 
+			(<keysource> is the private key source name)
+/SUBSYSTEM=<int>	Set Subsystem value in the NT Optional header
+/FLAGS=<int>		Set CLR ImageFlags value in the CLR header
+/ALIGNMENT=<int>	Set FileAlignment value in the NT Optional header
+/BASE=<int>		Set ImageBase value in the NT Optional header
+
+Key may be '-' or '/'
+Options are recognized by first 3 characters
+Default source file extension is .IL
+

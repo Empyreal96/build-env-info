@@ -1,0 +1,12 @@
+Usage: HssSetupTool <options> <command> <parameters>
+
+Available commands:
+
+  BINPLACE <sku file> <setup image file> <root directory> <object directory>
+  COMPILE  <root directory> <sku>
+  LIST     <input cabinet>
+  EXTRACT  <input cabinet> <file>
+  INSTALL  <input cabinet>
+
+  UNPACK   <input cabinet> <directory>
+  PACK     <directory> <output cabinet>

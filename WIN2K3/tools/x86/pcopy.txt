@@ -1,0 +1,5 @@
+pcopy <source file> <dest file>
+Returns: -1 if no copy necessary (no material change to the files)
+          0 if a successful copy was made
+          otherwise the error code for why the copy was unsuccessful
+

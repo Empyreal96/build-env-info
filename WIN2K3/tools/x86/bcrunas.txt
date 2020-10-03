@@ -1,0 +1,1 @@
+Usage: BCRunAs UserName Domain Password Cmdline

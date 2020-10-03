@@ -1,0 +1,11 @@
+
+UnitoHex.exe:
+Converts UNICODE TXT files into ASCII format w/HEX values for NON_ASCII chars
+
+Usage:
+UnitoHex.exe [-u | -a] InputFile OutputFilele [LogFile]
+
+  -u: Converts UNICODE files to Hex/ANSI text output files
+  -a: Converts ANSI/HEX files to UNICODE binary output files
+  InputFile\OutputFile: Text files for conversion
+  [LogFile]: Optional error log file

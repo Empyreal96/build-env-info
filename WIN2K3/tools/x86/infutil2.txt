@@ -1,0 +1,37 @@
+InfUtil2 - prints out file date/time,
+           or print out watch list from <input file> list,
+           or creates .ddf and .inf files from <input file> list
+----------------------------------------------------------------
+  Usage:
+       infutil2 /? /F [/1 /2 /3] [/4:<filename>] [/A /B] /D /N /S? /T??? /X <input file> <section name>
+
+  Params:
+       /? show this stuff
+       /F show <input file> format help
+      Flags for Date/Time use:
+       /1 print out <input file>'s date as number
+       /2 print out <input file>'s time as number
+       /3 print out <input file>'s date and time as big number
+      Flags for compare file list timestamp use:
+       /4: compare dir in <filename> with <input file>'s timestamp.  if dir has newer files, then set ERRORLEVEL=1
+      Flags for change list use:
+       /A produce a list of files to watch for changes (if files in list change then re-build cabs) from <input file> list
+       /B produce a list of files to watch for changes (includes files which aren't in cabs) from <input file> list
+      Flags for .ddf .inf use:
+       /D don't show details
+       /I ignore /T tag (there'll be no prefix)
+       /SslipstreamSourceDisksNames file id -- used for SP1 slipstream to point loose files to file specified in /S
+         used in sync with <input file> change.  look in .ddf file.
+       /Ttag Appends tag_ to the beginning of all filenames
+       /N Produce INF File which will not require .ddf file (meaning no cabs).(untested) 
+       /X Display output for debug
+       <input file> is a file name.
+       <section name> is either nts_x86,ntw_x86,win95,win98,nts_alpha,ntw_alpha,other_os.
+
+Example:
+       infutil2.exe /3 myfile.txt
+           Will print out myfile.txt's date/time as yymmddhhmmss.
+       infutil2.exe /Tcore inifile.ini nts_x86
+           Will produce a infutil2.ddf,inf,cng files. the .ddf and .inf files will create cabs with files beginning with 'core_'
+       infutil2.exe /C inifile.ini nts_x86
+           Will only produce a infutil2.cng file with a list of files to watch for changes in.

@@ -1,0 +1,35 @@
+Administration utility (1.0.3705.0) that manages the installation and uninstallation of multiple versions of ASP.NET on a single machine
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Usage:
+	aspnet_regiis.exe [-i | -u[a] | -r | -s[n] <path> | -k[n] <path> | -lv | -lk | -c | -e[a] | -?]
+
+ -i         - Install current version of ASP.NET. Same as running
+              regsvr32.exe <dll>
+ -s <path>  - Install current version in the specified path recursively
+              E.g. aspnet_regiis.exe -s W3SVC/1/ROOT/SampleApp1
+ -sn <path> - Same as -s, except it is non-recursive
+ -r         - Install current version in all the Scriptmaps in IIS metabase.
+              It will replace any version of ASP.NET in all IIS Scriptmaps.
+              However, the replaced versions will remain installed
+              on the machine
+ -u         - Uninstall current version of ASP.NET. Same as running
+              regsvr32.exe -u <dll>
+ -ua        - Uninstall all versions of ASP.NET
+ -k <path>  - Remove all versions of ASP.NET from the scriptmap of the 
+              specified path recursively
+              E.g. aspnet_regiis.exe -k W3SVC/1/ROOT/SampleApp1
+ -kn <path> - Same as -kn, except it is non-recursive
+ -lv        - List all the versions that are installed, together with status
+              and path. Status: Valid[ (Root)]|Invalid
+ -lk        - List all the path of all IIS keys where ASP.NET is installed,
+              together with the version. Please note that keys that inherit
+              ASP.NET from its parent will not be displayed
+ -c         - Copy the client side script files of the current version to the
+              aspnet_client subdirectory of each existing website
+ -e         - Remove the client side script files of the current version from
+              the aspnet_client subdirectory of each existing website
+ -ea        - Remove the client side script files of all versions from the
+              aspnet_client subdirectory of each existing website
+ -?         - Print this help
+

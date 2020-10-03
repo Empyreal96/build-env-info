@@ -1,0 +1,15 @@
+Program to process a sorted list of drivers and cross-check their existance in layout.inf
+This is to be used in the build process to cross-check the driver cab's contents against layout.inf
+
+Usage: Cabcheck <Inf Filename> <Sorted driver list> <Output Index File> [arguments]  
+<Inf Filename> - Path to Layout File to examine (ex.layout.inf)
+<Sorted driver file> - File containing sorted list of drivers
+<Output Index File> - Output index filename
+
+Process Platform specific SourceDisksFiles section. Defaults to the [SourceDisksFiles] section only
+/i - Process for Intel i386
+/a - Process for AMD AMD64
+/m - Process for Intel IA64
+
+
+

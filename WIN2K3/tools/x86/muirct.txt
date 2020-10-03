@@ -1,0 +1,72 @@
+
+
+MUIRCT [-h|?] -l langid [-c checksum_file ] [-i removing_resource_types]  
+    [ -k keeping_resource_types] [ -y keeping_resource_types] [-v level] source_file 
+    [langue_neutral_filename] [MUI_filename]
+
+-h(elp) or -?    :  Show help screen.
+
+-l(anguage)langid:  Extract only resource in this language.
+                    The language resource must be specified. The value is in decimal.
+
+-c(hecksum file) :  Calculate the checksum on the based of this file,and put this data 
+                    into language_neutral_file and mui_file.
+
+-i(clude removed):  Include certain resource types,
+resource_type          e.g. -i 2 3 4 or -i reginst avi 3 4 .
+                    -i (to inlcude all resources). 
+                    Multiple inclusion is possible. If this
+                    flag is not used, all types are included like -i 
+                    Standard resource types must be specified
+                    by number. See below for list.
+                    Types 1 and 12 are always included in pairs,
+                    even if only one is specified. Types 3 and 14
+                    are always included in pairs, too.
+
+
+-k(eep resource) :  Keep specified resources in langue_neutral_file and 
+                    also included in mui file.
+                    Its usage is same with -i argument. 
+
+-y               :  This is same with -k argument except it does not check 
+                    if the values are in the -i values.
+
+-o               :  This is same with -i argument except it does not check 
+                    if the types are exist in the source file.
+
+-z               :  Calculate and insert only checksum data to specific file 
+                    eg. muirct -c notepad.exe -i[-o] 3 4 5 6 8 -z notepad2.exe .
+
+-p               :  Delete types from source file, but does not want to add into mui file 
+
+-x               :  Add all resource types into MUI file as specified language id 
+                     regardless of language ID  
+
+-v(erbose) level :  Print all affected resource type, name, langID when level is 2.
+
+source_filename  :  The localized source file (no wildcard support)
+
+language_neutral_:  Optional. If no filename is specified,
+_filename           a second extension .new is added to the
+                    source_filename.
+
+mui_filename     :  Optional. If no target_filename is specified,
+                    a second extension .mui is added to the 
+                    source_filename.
+
+-m               :  CMF, enumerate compacted mui files 
+                eg. muirct -m notepad.exe.mui foo.dll.mui bar.dll.mui .
+
+-e               :  CMF, the directory of matching execute file of compacted mui files 
+
+-f               :  CMF, newly created CMF file name 
+                 eg, muirct -m foo.dll.mui bar.dll.mui -f far.cmf -d c:\file\exe  
+
+-d               :  CMF, dump CMF headers information 
+
+
+Standard Resource Types: CURSOR(1) BITMAP(2) ICON(3) MENU(4) DIALOG(5)
+STRING(6) FONTDIR(7) FONT(8) ACCELERATORS(9) RCDATA(10) MESSAGETABLE(11)
+GROUP_CURSOR(12) GROUP_ICON(14) VERSION(16)
+
+

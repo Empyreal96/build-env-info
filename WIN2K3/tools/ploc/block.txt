@@ -1,0 +1,19 @@
+                                                                             
+BLOCK diff_file								                              
+  Utility to update text files with the differences in a diff_file,          
+  the utility replaces a block of lines with another block of lines          
+                                                                             
+   The format of the diff_file:                                              
+                                                                             
+     <block> file1.ext                                                     
+     <Line1 old block                                                        
+     <Line2 old block                                                        
+     <...                                                                    
+     <Line<n> old block                                                      
+     >Line1 new block                                                        
+     >Line2 new block                                                        
+     >...                                                                    
+     <Line<n> new block                                                      
+                                                                             
+     <plocinf> file2.ext                                                     
+      ...                                                                    

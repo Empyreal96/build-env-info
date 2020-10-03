@@ -1,0 +1,15 @@
+
+Usage:  symmake [/m] /c CabName /d DDFHeader /i InfFile /o OutDir 
+                /s CabSize /t SymbolPath
+    /c cabname      Name to give the cabs
+    /d DDFHeader    File with common DDF header formatting
+    /i InfFile      File with list of symbol files to copy
+    /m Merge        Merge the cabs into one cab
+    /o OutDir       Directory to place DDF files and makefile
+    /s CabSize      Number of files per cab
+    /t SymPath      Root of the symbol tree (i.e., d:\binaries)
+                    SymPath is ignored if the symbol path in InfFile
+                    is already fully qualified.
+    /x CabDest      Full destination path for the cabs
+    /y InfDest      Full destination for the infs
+

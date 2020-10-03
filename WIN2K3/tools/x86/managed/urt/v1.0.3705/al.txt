@@ -1,0 +1,46 @@
+Microsoft (R) Assembly Linker version 7.00.9466
+for Microsoft (R) .NET Framework version 1.0.3705
+Copyright (C) Microsoft Corporation 2001. All rights reserved.
+
+Usage: al [options] [sources]
+Options: ('/out' must be specified)
+
+  /? or /help               Display this usage message
+  @<filename>               Read response file for more options
+  /algid:<id>               Algorithm used to hash files (in hexadecimal)
+  /base[address]:<addr>     Base address for the library
+  /bugreport:<filename>     Create a 'Bug Report' file
+  /comp[any]:<text>         Company name
+  /config[uration]:<text>   Configuration string
+  /copy[right]:<text>       Copyright message
+  /c[ulture]:<text>         Supported culture
+  /delay[sign][+|-]         Delay sign this assembly
+  /descr[iption]:<text>     Description
+  /e[vidence]:<filename>    Security evidence file to embed
+  /fileversion:<version>    Optional Win32 version (overrides assembly version)
+  /flags:<flags>            Assembly flags  (in hexadecimal)
+  /fullpaths                Display files using fully-qualified filenames
+  /keyf[ile]:<filename>     File containing key to sign the assembly
+  /keyn[ame]:<text>         Key container name of key to sign assembly
+  /main:<method>            Specifies the method name of the entry point
+  /nologo                   Suppress the startup banner and copyright message
+  /out:<filename>           Output file name for the assembly manifest
+  /prod[uct]:<text>         Product name
+  /productv[ersion]:<text>  Product version
+  /t[arget]:lib[rary]       Create a library
+  /t[arget]:exe             Create a console executable
+  /t[arget]:win[exe]        Create a Windows executable
+  /template:<filename>      Specifies an assembly to get default options from
+  /title:<text>             Title
+  /trade[mark]:<text>       Trademark message
+  /v[ersion]:<version>      Version (use * to auto-generate remaining numbers)
+  /win32icon:<filename>     Use this icon for the output
+  /win32res:<filename>      Specifies the Win32 resource file
+
+Sources: (at least one source input is required)
+  <filename>[,<targetfile>] add file to assembly
+  /embed[resource]:<filename>[,<name>[,Private]]
+                            embed the file as a resource in the assembly
+  /link[resource]:<filename>[,<name>[,<targetfile>[,Private]]]
+                            link the file as a resource to the assembly
+

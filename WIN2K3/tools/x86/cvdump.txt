@@ -1,0 +1,27 @@
+Microsoft (R) Debugging Information Dumper  Version 8.00.2151
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+Usage: cvdump [-?] [-l[x]] [-m] [-p] [-s] [-t] [-g] [-u] [-M] [-S] [-x] [-h]
+        [-fixup] [-fpo] [-headers] [-omapf] [-omapt] [-pdata] [-sf] [-tmw] file
+
+        -fixup          Debug fixups stored in PDB
+        -fpo            FPO data stored in PDB
+        -g              Global Symbols
+        -h              Header (section table)
+        -headers        Image Headers stored in PDB
+        -l              Source lines
+        -lx             Extended line info (incl. columns)
+        -m              Modules
+        -MXXX           XXX = Module number to dump
+        -omapf          OmapFromSrc data stored in PDB
+        -omapt          OmapToSrc data stored in PDB
+        -p              Publics
+        -pdata          Function Table Entries stored in PDB
+        -pdbpath        PDB search details
+        -s              Symbols
+        -sf             Sorted source file list (pdb files only)
+        -S              Dump static symbols only
+        -t              Types
+        -tmw            Type UDT Mismatches
+        -x              Segment Map
+        file            Executable file to dump

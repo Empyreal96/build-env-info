@@ -1,0 +1,22 @@
+Microsoft (R) .NET ActiveX Control to Windows Forms Assembly Generator 
+[Microsoft .Net Framework, Version 1.0.3705.0]
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+
+Generates a Windows Forms Control that wraps ActiveX controls defined in the given OcxName.
+
+Usage:
+    AxImp OcxName [Options]
+Options:
+    /out:FileName            File name of assembly to be produced
+    /publickey:FileName      File containing strong name public key
+    /keyfile:FileName        File containing strong name key pair
+    /keycontainer:FileName   Key container holding strong name key pair
+    /delaysign               Force strong name delay signing
+                             Used with /keyfile or /keycontainer
+    /source                  Generate C# source code for Windows Forms wrapper
+    /nologo                  Prevents AxImp from displaying logo
+    /silent                  Prevents AxImp from displaying success message
+    /verbose                 Displays extra information
+    /? or /help              Display this usage message
+

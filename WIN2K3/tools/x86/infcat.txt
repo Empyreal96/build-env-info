@@ -1,0 +1,10 @@
+infcat : localization tool for International team.
+
+infcat.exe -t[Dst] -s[Src|,Loc] -a[Src1|,Loc] -a[Src|,Loc] ...
+
+    -t - specify target file
+    -s - specify source file
+    -a - specify appended files
+   Dst - destination file name
+   Src - source file name
+   Loc - locale ID

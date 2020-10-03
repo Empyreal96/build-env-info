@@ -1,0 +1,53 @@
+Catalog Utility - Version 1.00.3117 Build(0)
+Copyright (C) Microsoft Corp. 1995-2001. All rights reserved.
+
+This program has two purposes surrounding XML and the Catalog:                 
+        1)  Validating XML File - This is useful for any XML file whether      
+            related to Catalog or not.                                         
+        2)  Compiling - This refers to the Compiling of Catalog Meta and Wiring
+            into the following files: An Unmanaged C++ Header, The Catalog XML 
+            Schema (xms) file and The Catalog Dynamic Link Library.            
+                                                                               
+CatUtil [/?] [Validate] [/Compile] [/meta=[CatMeta.xml]] [/wire=[CatWire.xml]] 
+        [/header=[CatMeta.h]] [/schema=[Catalog.xms]] [/dll=[Catalog.dll]]     
+        [/mbmeta=[MBMeta.xml]] [xmlfilename]                                   
+                                                                               
+? - Brings up this help screen.                                                
+                                                                               
+validate - Will indicate whether the given file is 'Valid' according to its DTD
+        or XML Schema.  This requires an 'xmlfilename'.                        
+                                                                               
+xmlfilename - If specified with no other options, the XML file will be checked 
+        for 'Well-Formity'.                                                    
+                                                                               
+product - Associates the dll with the given product name.  The Product Name    
+        must be supplied.  This association MUST be done before the Catalog may
+        be used with the given product.                                        
+                                                                               
+compile - Compile of Catalog Meta and Wiring as described above, using deaults 
+        where no values are supplied.  To do a partial compile (ie only        
+        generate the Unmanaged C++ Header) do NOT specify the 'Compile' option 
+        and only specify the 'meta' and 'header' options.  'Compile' is the    
+        same as '/meta /wire /header /schema /dll' where any of those flags    
+        explicitly specified may override the defaults.                        
+                                                                               
+mbmeta - Specifies the Metabase Meta XML file.  The default is MBMeta.xml.     
+             This is an input only file and will not be modified               
+meta   - Specifies the Catalog Meta XML file.  The default is CatMeta.xml.     
+             This is an input only file and will not be modified               
+wire   - Specifies the Catalog Wiring XML file.  The default is CatWire.xml.   
+             This is an input only file and will not be modified               
+header - Specifies the Unmanaged C++ Header file.  The default is CatMeta.h.   
+             This is an input/output file and will be updated only if changed. 
+schema - Specifies the Catalog XML Schema file.  The default is Catalog.xms.   
+             This is an output file and will overwrite a previous version.     
+dll    - Specifies the Catalog DLL file.  The default is Catalog.dll.          
+             This is an input/output file and will update the previous version.
+             Either the 'compile' or 'product' option must be specified along  
+             with the 'dll' option.                                            
+config - Specifies the Machine Config Directory.                               
+             The 'product' option must be specified along with the 'config'    
+             option.                                                           
+verbose - This generates detailed output about the compilation                 
+                                                                               
+

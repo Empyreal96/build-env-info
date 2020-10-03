@@ -1,0 +1,2 @@
+RemoveVS                                       
+ Removes version stamping from LCCMD token file

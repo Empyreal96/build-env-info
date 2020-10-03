@@ -1,0 +1,31 @@
+
+
+MUIBLD [-h|?] [-v] [-c checksum_file] -l langid [-i resource_type] source_filename
+    [target_filename]
+
+-h(elp) or -?:      Show help screen.
+
+-i(nclude)      Use to include certain resource types,
+resource_type:      e.g. -i 2 to include bitmaps.
+            Multiple inclusion is possible. If this
+            flag is not used, all types are included
+            Standard resource types must be specified
+            by number. See below for list.
+            Types 1 and 12 are always included in pairs,
+            even if only one is specified. Types 3 and 14
+            are always included in pairs, too.
+
+-v(erbose):     Display source filename and target filename.
+
+-l(anguage) langid: Extract only resource in this language.
+            The language resource must be specified. The value is in decimal.
+
+source_filename:    The localized source file (no wildcard support)
+
+target_filename:    Optional. If no target_filename is specified,
+            a second extension.RES is added to the
+            source_filename.
+
+Standard Resource Types: CURSOR(1) BITMAP(2) ICON(3) MENU(4) DIALOG(5)
+STRING(6) FONTDIR(7) FONT(8) ACCELERATORS(9) RCDATA(10) MESSAGETABLE(11)
+GROUP_CURSOR(12) GROUP_ICON(14) VERSION(16)

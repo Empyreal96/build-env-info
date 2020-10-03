@@ -1,0 +1,18 @@
+Offline installer postbuild tool - mail WinFuse with problems
+Version: Jun 19 2002 14:16:01 Win32 chk
+-source <path> : specifies where to pick up files, like _nttree\asms
+    You may specify it multiple times to pick up several asms trees,
+    which is useful in the case of Wow/Win64
+
+-windir <path> : specifies the target WinSxS pseudo-root to be installed to.
+    This directory should exist before running the tool.
+
+-registryoutput <file> : Specifies what file should contain the INF that
+    contains all the registry manipulation done.
+
+-DefaultInstall : add a [DefaultInstall] section so that
+    right clicking the .inf works in Explorer.
+
+-CodebaseUrl <url>
+
+-NoncanonicalData <text>

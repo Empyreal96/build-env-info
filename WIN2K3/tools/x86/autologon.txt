@@ -1,0 +1,34 @@
+
+AUTOLOGON v1.00 : (c) 2001, Microsoft Corporation
+
+DESCRIPTION:
+   Used to configure encrypted autologon functionality
+
+USAGE:
+   AUTOLOGON [/?] [/Quiet] [/Migrate] [/Delete] [/Set]
+             [/Username:username] [/Count:count]
+    Options:
+      /?         Display complete help documentation
+      /Quiet     Enable quiet mode, which supresses all output
+      /Migrate   Migrate cleartext password from registry to LSASecret
+      /Delete    Deletes the default password and disable AutoAdminLogon 
+      /Set       Set the DefaultPassword LSASecret and enable AutoAdminLogon
+      /Username  The username to set in Default UserName.
+      /Count     Set the logoncount
+
+NOTES:
+    1.The /Migrate /Delete /Set commands are exclusive.
+      You will always be prompted for a password.
+      If a username is not specified the currently logged on user is assumed.
+      If no count is specified a count of 0 is implicitely assumed.
+
+    2.You need to be running as a member of the local administrators group for
+      this utility to work properly.
+
+    3.When setting a password that has special characters in it, such as "|>&
+      make sure that you escape these characters. Also, passwords with spaces 
+      should be enclosed in double quotes.
+
+    4.Setting the logoncount to 0 means an autologon will be performed until
+      the secret is deleted.
+

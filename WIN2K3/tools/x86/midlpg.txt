@@ -1,0 +1,3 @@
+Grammar (.cxx) munge utility
+
+Usage : pg <filename>

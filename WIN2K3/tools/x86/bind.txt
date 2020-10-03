@@ -1,0 +1,10 @@
+usage: BIND [switches] image-names...
+            [-?] display this message
+            [-c] no caching of import dlls
+            [-o] disable new import descriptors
+            [-p dll search path]
+            [-s Symbol directory] update any associated .DBG file
+            [-u] update the image
+            [-v] verbose output
+            [-x image name] exclude this image from binding
+            [-y] allow binding on images located above 2G

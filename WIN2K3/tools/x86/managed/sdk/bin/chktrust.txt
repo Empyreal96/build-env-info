@@ -1,0 +1,4 @@
+usage: chktrust.exe [options]  filename
+     -?:              this screen
+     -v:              verbose output
+     -q:              do not display any UI

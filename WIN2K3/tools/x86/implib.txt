@@ -1,0 +1,11 @@
+
+Microsoft (R) Import Library Manager NtGroup Version 1.50.220
+Copyright (C) Microsoft Corp 1984-1996.  All rights reserved.
+
+Usage: IMPLIB [options] <output library> <.DEF/.DLL file list>
+Options: /?
+                 /help
+                 /nowep
+                 /noignorecase
+                 /nologo
+                 /ntdll

@@ -1,0 +1,13 @@
+Microsoft (R) .NET Framework Windows Forms Class Viewer. Version 1.0.3705.0
+Copyright (C) MICROSOFT CORPORATION 1998-2001. ALL RIGHTS RESERVED.
+
+USAGE:
+wincv [options]
+	/h		Show help
+	/r:<file>	Browse assembly
+	/show:<option>	Shows a type of member. valid options are:
+		protected,private,internal,inherited
+	/hide:<option>	Hides a type of member. Valid options are:
+		protected,private,internal,inherited
+	/nostdlib[+|-]	Do not load default assemblies
+	@<file> 	Read response file for more options	

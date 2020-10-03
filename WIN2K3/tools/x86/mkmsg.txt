@@ -1,0 +1,7 @@
+
+Microsoft (R) Message Creation Utility         Version 1.00.0011
+Copyright (c) Microsoft Corp 1986-1996. All rights reserved.
+
+usage: MKMSG [-h cfile] [-rc rcfile] [-x xcfile] [-msg cfile]
+        [-c cfile] [-err errfile] [-inc afile]
+        [-asm srcfile [-def str] [-min|-max]] [-386] [-hex] txtfile

@@ -1,0 +1,6 @@
+This script makes changes to dosnet.inf, intl.inf, and layout.inf
+to setup Japanese system locale with US keyboard
+As intl.inf is a Unicode file, all instances of this file are
+temporarily converted to ANSI
+
+buildmode can be: mirror, or 1251, 1252 - mapping table numbers

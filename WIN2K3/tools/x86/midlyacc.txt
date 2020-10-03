@@ -1,0 +1,14 @@
+UNIX YACC (CSD Variant):
+   yacc -hist tag infile
+
+Switches:
+   -h     Create definitions header file
+   -i     Create parser description file
+   -t tag Prepends tag to tables
+   -s     Generates extended tables (MIDL specific)
+
+Default input file extension is ".Y"
+Defs file same name, ".H" extension.
+Info file same name, ".I" extension.
+Extended Tables in file "extable.[h1/h2/h3]".
+Specifying -s switch also enables the -i switch

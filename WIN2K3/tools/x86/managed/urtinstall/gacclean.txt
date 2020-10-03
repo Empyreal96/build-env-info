@@ -1,0 +1,2 @@
+This batch file nukes everything from the GAC that urtinstall.cmd
+puts in there.

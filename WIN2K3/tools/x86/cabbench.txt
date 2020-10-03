@@ -1,0 +1,36 @@
+
+CabBench version 5.1.2470.0
+Copyright (c) Microsoft Corporation. All rights reserved..
+
+MICROSOFT INTERNAL USE ONLY
+
+CabBench performs high-level operations on CAB files, such as merging
+two or more existing cabinets into one.
+
+Usage: CabBench {script}
+
+Script commands may be completely supplied on the command line, or an
+inline @file may be used.  The inline file may include semicolon-prefixed
+comments.
+
+CabBench scripts operate somewhat like an RPN calculator:
+
+  load {filename.cab}  ;add filename.cab to top of stack.
+  save {filename.cab}  ;write top-most cabinet to filename.cab.
+  merge                ;merge top-most cabinet into next top-most.
+  mergefile <filename> ;add filename to last cabinet in stack.
+  unload               ;pop one cabinet from the stack.
+  swap                 ;exchange top two cabinets on stack.
+  set {attribute}      ;set an attribute of the top cabinet.
+
+Example:
+
+  C> CabBench load cab1.cab load cab2.cab merge save cab3.cab
+
+Merges all entries in cab2.cab into cab1.cab.  cab2.cab files replace
+any cab1.cab files by the same name.  Save merged results to cab3.cab.
+
+Attributes:
+
+  preserve_file_order  ;for Darwin 1.x only (use just after load)
+  setid=####           ;set this cabinet's internal ID

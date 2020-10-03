@@ -1,0 +1,17 @@
+Microsoft (R) .NET Framework Assembly Registration Utility 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001.  All rights reserved.
+
+Syntax: RegAsm AssemblyPath [Options]
+Options:
+    /unregister          Unregister types
+    /tlb[:FileName]      Export the assembly to the specified type library
+                         and register it
+    /regfile[:FileName]  Generate a reg file with the specified name
+                         instead of registering the types. This option
+                         cannot be used with the /u or /tlb options
+    /codebase            Set the code base in the registry
+    /registered          Only refer to already registered type libraries
+    /nologo              Prevents RegAsm from displaying logo
+    /silent              Silent mode. Prevents displaying of success messages
+    /verbose             Displays extra information
+    /? or /help          Display this usage message

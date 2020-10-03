@@ -1,0 +1,37 @@
+Microsoft (R) .NET Framework SecUtil 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Help screen requested
+
+Usage: secutil <option> <args> ...
+
+secutil -s
+secutil -strongname <assembly_name|assembly_path>
+    Display the strongname info for <assembly_name|assembly_path>
+
+secutil -x
+secutil -x509certificate <assembly_name|assembly_path>
+    Display the X509 info for <assembly_name|assembly_path>
+
+secutil -hex
+    Set display to hex string mode
+
+secutil -a
+secutil -array
+    Set display to array string mode (default)
+
+secutil -v
+secutil -vbmode
+    Set display to VB string mode
+
+secutil -c
+secutil -cmode
+    Set display to VC/C# string mode (default)
+
+secutil -h
+secutil -?
+secutil /?
+secutil -help
+    Displays this screen
+
+Success

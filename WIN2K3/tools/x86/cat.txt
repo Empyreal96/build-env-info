@@ -1,0 +1,10 @@
+cat [-aenotuvV] [filename ...]
+-a      same as -u if input begins with BOM
+-e      add '$' at the end of line
+-n      add line number
+-o      suppress buffering for output
+-t      show tab character as '^I'
+-u      unicode text processing
+-v      show control characters as '^' + alphabet, except tab and newline.
+-V      show version
+--      declare end of options

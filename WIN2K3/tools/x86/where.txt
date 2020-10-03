@@ -1,0 +1,13 @@
+Usage: WHERE [/r dir] [/qte] pattern ...
+    /r - recurse starting with directory dir
+    /q - quiet, use exit code
+    /t - times, display size and time
+    /e - .EXE, display .EXE type
+    /Q - double quote the output
+    WHERE bar                 Find ALL bar along path
+    WHERE $foo:bar            Find ALL bar along foo
+    WHERE /r \ bar            Find ALL bar on current drive
+    WHERE /r . bar            Find ALL bar recursing on current directory
+    WHERE /r d:\foo\foo bar   Find ALL bar recursing on d:\foo\foo
+        Wildcards, * ?, allowed in bar in all of above.
+

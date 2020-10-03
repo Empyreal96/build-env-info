@@ -1,0 +1,490 @@
+sdv
+Version 2.2.3.0
+
+A GUI front-end to some Source Depot commands. 
+
+Command line syntax 
+sdv changes 
+sdv describe 
+sdv filelog 
+sdv opened 
+sdv follow 
+sdv explore 
+Shortcuts 
+Icons 
+Troubleshooting 
+sdv branch syntax 
+sdv special powers 
+Limitations 
+Variables 
+Appendices 
+Windows NT branch model 
+How sdv finds SDAPI 
+Frequently Asked Questions 
+History 
+Command line syntax
+sdv [ options ] command [ arg ... ]
+
+Some options are common to all sdv commands. Note that all common options begin with a double-dash and they come before the command name. 
+
+--s "sdoptions" 
+Pass sdoptions directly to sd. See "sd help usage" for details on sd options. If you need to pass quotation marks to sd, use double quotation marks. 
+
+Examples: 
+
+sdv --s "-p server:4001"
+sdv --s "-P ""my password"""
+
+Note: sdv does not parse these options. It passes them blindly to sd. The intent of this flag is to allow you to provide access/authentication information. Passing an option that alters sd's behavior in a more substantial way (such as the -V option) will result in sdv getting extremely confused. 
+
+
+--# 
+Enables computation of "code churn" statistics. If enabled, reports will include churn information in the form "deleted/added". For example, a churn value of "5/3" means that five lines were deleted and three lines were added. Requires sd 1.5. 
+
+Note: Computing churn is expensive, so it's off by default. 
+
+
+--d 
+Sets sdv's current directory. Thus, 
+
+sdv --d \\server\share\root opened
+
+is equivalent to 
+pushd \\server\share\root & sdv opened & popd
+
+This command line switch provides a slightly more convenient method for performing a remote code review. 
+sdv changes
+sdv [ options ] changes [-i] [-m [skip,]count] [-u domain\alias] [ pattern ... ]
+
+Display the results of an "sd changes" command. 
+
+options 
+Common sdv options are supported. 
+
+-i 
+Has the same effect as the "sd changes -i" option. 
+
+-mskip,count 
+Has the same effect as the "sd changes -m" option. If no "-m" flag is provided, sdv defaults to "-m50". 
+
+-u domain\alias 
+Has the same effect as the "sd changes -u" option. Requires sd 1.6; is emulated on previous versions of sd. 
+
+-x userid 
+Exclude checkins from the specified userid. Multiple userids can be provided, either by passing the -x flag multiple times or by separating them with a semicolon. The domain part of the userid is optional. For example, passing "-x buildlab;REDMOND\raymondc -x gkostal" will filter out checkins from buildlab or gkostal in any domain, or from REDMOND\raymondc. Checkins from NTDEV\raymondc will pass the filter. 
+
+pattern 
+Zero or more patterns. 
+
+sdv supports the same patterns as sd, with the following differences: 
+
+The default pattern is "*" (all files in current directory) rather than "all files in the depot". To query against all files in the depot, use 
+
+    sdv changes ""
+
+to force a null query string to be passed to sd. 
+
+sdv branch syntax is supported. 
+
+To view the details of a particular changelist, double-click it. This will open a changelist view. 
+
+Hovering over a change number displays the full change description as an infotip. 
+
+The "Comment" field is the first line of the checkin description. So make it a good one! 
+
+To see what else you can do, right-click a change number or browse the menus. 
+
+sdv describe
+sdv [ options ] describe changeno [ pattern ... ]
+
+Display the results of an "sd describe" command. 
+
+options 
+Common sdv options are supported. 
+
+changeno 
+The change list to display. 
+
+pattern ... 
+Optional list of patterns for files that should be moved to the top of the file list. This is provided for scripting; you are not expected to pass patterns manually. 
+
+From the changelist description, you can double-click the first line (the one that begins "Change 1234") to view the entire changelist in windiff. Alternatively, you can double-click a specific file to view the diff for only that file. 
+
+You can type Ctrl+C (or for old-timers, Ctrl+Insert) to copy a line from the changelist view to the clipboard. If you copy a line from the file list, then the full depot specification and the revision number are copied. All other lines are copied verbatim. 
+
+If churn is enabled, each text file that was edited will have the churn values appended. 
+
+Files which match the pattern (or which are connected to files matching the pattern via a chain of branch integrations) are placed at the top of the file list. Note: Assumes Windows NT branch model. 
+
+If the describe window was opened from another sdv window, the donor sdv window will set a pattern that causes the files it thinks you are interested in to go to the top of the file list. 
+
+If churn is enabled, then files with a churn of (0/0) are dropped to the bottom of the list, since they are rarely interesting. 
+
+To see what else you can do, right-click a line of the changelist description or browse the menus. 
+
+sdv filelog
+sdv [ options ] filelog [-# revision] [-m [skip,]count] file[revRange]
+
+Display the results of an "sd filelog" command. 
+
+options 
+Common sdv options are supported. 
+
+-# revision 
+Optional revision number to autoselect in the results window. If no "-m" flag is provided, sdv autoselects the most recent revision. This is provided for scripting; you are not expected to specify an autoselect revision when running sdv manually. 
+
+-mskip,count 
+Has the same effect as the "sd filelog -m" option. If no "-m" flag is provided, sdv shows all revisions. 
+
+file[revRange] 
+The file whose log is to be viewed, optionally restricted with a revision range. sdv branch syntax is supported for this parameter. Wildcards are not permitted here; you can view the filelog for only one file at a time. 
+
+From the filelog, you can double-click a specific revision to view the diff for that change. 
+
+If churn is enabled, each text file that was edited will have the churn values appended. 
+
+If a file revision was obtained via an integration, a "+" sign allows you to view the revisions that contributed to the integration. 
+
+If a file revision was the source of integration, an outward-pointing arrow is superimposed. Use Ctrl+O to follow the outward integration. 
+
+At the top-level expansion, the revision you currently have is marked with "#have". 
+
+To see what else you can do, right-click a line of the filelog or browse the menus. 
+
+sdv opened
+sdv [ options ] opened [ -u domain\user ] [ file ... ]
+
+Display the opened files on the client, grouped by changelist. 
+
+options 
+Common sdv options are supported. 
+
+-u domain\user 
+Optional user whose opened files on the client are to be viewed. Default is to show files opened by all users on this client. 
+
+file ... 
+Optional list of files to display. Default is to show all opened files. 
+
+To see what you can do, right-click a line of the list or browse the menus. 
+
+sdv follow
+sdv [ options ] follow file#rev
+
+Displays the chain of integrations starting from the indicated file revision. 
+
+options 
+Common sdv options are supported. 
+
+file#rev 
+File and revision to view. You must specify a revision, either with the "#" suffix or the "@" suffix. 
+
+To see what you can do, right-click a line of the list or browse the menus. 
+
+This command is most commonly used if you fixed a bug in the specified revision of the file and you want to see which other branches have integrated the fix. 
+
+sdv explore
+sdv [ options ] explore [-d#] [directory]
+
+Displays an Explorer-style viewer on the depot. 
+
+options 
+Common sdv options are supported. 
+
+-d0 
+Hide deleted files as well as directories consisting entirely of deleted files. 
+
+-d1 
+Show deleted files but hide directories consisting entirely of deleted files. 
+
+-d2 
+Show deleted files and all directories, even if they consist entirely of deleted files. 
+
+directory 
+Initial directory to display. If this directory doesn't exist, sdv will act as if it did (and contains no files). 
+
+If no "-d" option is specified on the command line, "-d1" is assumed. 
+
+To see what you can do, right-click a line of the list or browse the menus. 
+
+Shortcuts
+If the command line to sdv does not match one of the pattern described above, then sdv attempts to guess which command you are trying to execute. 
+
+You type  Implied command  Equivalent to 
+sdv 1234  describe  sdv describe 1234 
+sdv file  filelog  sdv filelog file 
+sdv pattern*.c*  changes  sdv changes pattern*.c* 
+sdv -i .../pattern  changes  sdv changes -i .../pattern 
+sdv  changes  sdv changes 
+
+Note that these heuristics are not robust. For example, if you have a file called "1234", then "sdv 1234" will be interpreted as "sdv describe 1234" and not "sdv filelog 1234". Or if you have a file called "changes", then "sdv changes" will be interpreted as "sdv changes" with no arguments rather than as "sdv filelog changes". 
+
+To avoid these problems, just give the command explicitly instead of relying on a shortcut. 
+
+Icons
+What the icons mean: 
+
+  Edit.  
+  Delete.  
+  Add.  
+  Merge.  
+  Branch.  
+  Copy.  
+  Ignored.  
+  In "sdv filelog", indicate that the file is a source for an integration. (Use Ctrl+O to follow.)  
+
+Troubleshooting
+If you get an error from windiff saying that it doesn't support depot paths on the command line, then you need a newer version of windiff. 
+sdv branch syntax
+sdv supports an enhancement to the standard sd file specifications to allow easy navigation of branches. Note: Assumes your depot follows the Windows NT branch model. If not, you might be able to survive by setting the SDVBRANCHPREFIX variable. 
+
+If you prefix a pattern with a branch name and a colon, the file is reinterpreted to come from the specified branch rather than from the current directory. If the branch name begins with a slash, then the branch name is a private branch. Otherwise, it is a top-level (official) branch. 
+
+(Branch names must be at least two characters long to prevent the branch syntax from being misinterpreted as a drive letter.) 
+
+The following examples assume that the current directory corresponds to //depot/exp/sdv. 
+
+Pattern  Expands to 
+sdv.h  //depot/exp/sdv/sdv.h 
+main:sdv.h  //depot/main/sdv/sdv.h 
+/office:sdv.h  //depot/private/office/sdv/sdv.h 
+  
+...  //depot/exp/sdv/... 
+main:...  //depot/main/sdv/... 
+/office:...  //depot/private/office/sdv/... 
+  
+../bbpack/*.cmd  //depot/exp/bbpack/*.cmd 
+main:../bbpack/*.cmd  //depot/main/bbpack/*.cmd 
+/office:../bbpack/*.cmd  //depot/private/office/bbpack/*.cmd 
+
+sdv special powers
+sdv was bitten by a radioactive spider and has as a consequence been imbued with special powers that sometimes come in handy. 
+
+Net use'd to another enlistment
+sdv detects that the current directly belongs to somebody else's enlistment and fiddles the parameters that it sends to sd so the "right" thing happens. Normally, sd bails with an error message like 
+Path 'Z:\' is not under client's root 'C:\src'.
+
+Gauntlet
+sdv has special knowledge of the Gauntlet checkin process and displays Gauntlet checkins as if they had been checked in by the submitting developer (rather than by the Gauntlet machine). 
+
+proxy checkins
+sdv recognizes the following patterns at the start of a checkin description and treats them as proxy checkins. 
+
+123456 (developer) comment
+123456 [developer] comment
+(developer) comment
+[developer] comment
+
+Note, however, that this is recognized only for final display. Command line filtering switches such as "changes -u" apply to the official submitter. 
+RAID bugs
+sdv sniffs around the checkin comment looking for things which might be bug numbers. When it finds one, it will offer to view the RAID bug as a web page. By default, the bug is interpreted as a bug in the Windows NT database. You can override this by setting the SDVRAID variable. 
+
+For those who really care about such things, a bug number is... 
+
+a string of digits (first digit cannot be zero), 
+preceded by the letter "B" or "G" (B25 is okay, as is BUG25) or preceded by a space or punctuation mark, 
+and not in the form yyyy/m/d, d/m/yyyy, or hh:mm:ss. 
+Limitations
+The branch resolver will get confused if you try to apply it to something that doesn't have a branch name. So if you type crazy strings like 
+
+main://depot/.../i386/...
+main:#have
+
+then you deserve what you get. 
+
+The branch resolver and the code that tries to figure out borrowed enlistments can get faked out by complicated client views which move directories around or edit filenames. 
+
+The code that tries to figure out borrowed enlistments assumes that the sd.ini file is at the client root. This means that enlistments which play games with the client root will confuse the borrowed enlistment logic. 
+
+The "View all bugs" command will view all the bug numbers sniffed out of the checkin comment. Build numbers are frequently mistaken for bug numbers. 
+
+Variables
+SDVRAID 
+The value is a command line to execute, with a "#" where the bug number should go. (Typically a program with arguments or an URL.) 
+For example, you might use 
+
+set SDVRAID=http://www.imdb.com/Title?#
+
+to cause bugs to link to random movies from the Internet Movie Database. (Well, except that if your database has more bugs than the IMDb has movies, you'll end up with a bunch of broken links, but this was just a joke suggestion anyway.) 
+As a more serious suggestion, the easiest way to hook up your Raid database is to get it web-enabled if it isn't already (there are multiple implementations up on http://toolbox/ to choose from), and then set SDVRAID to the appropriate URL with a "#" where the bug number should go. 
+
+Note that some characters (<, > & for example) have special meaning to the command line processor, so you will need to escape them if you set them via the SET command. 
+
+SDVDIFF 
+The value is a command line to execute when sdv wants to display the differences between two files. The value defaults to "windiff.exe". 
+Appended to the command line will be the two files to compare, each of which can be one of the following. 
+
+The word "nul", indicating a blank file. 
+The full path to a local file, possibly enclosed in quotation marks to protect embedded spaces. 
+A fully-qualified depot path and revision number, possibly enclosed in quotation marks to protect embedded spaces. 
+For example, you might use 
+
+set SDVDIFF=mydiff.exe -D
+
+in which case typical command lines would be 
+
+mydiff.exe -D //depot/main/sdv/parse.cpp#5 //depot/main/sdv/parse.cpp#6
+mydiff.exe -D //depot/main/sdv/parse.cpp#6 C:\root\sdv\parse.cpp
+mydiff.exe -D nul //depot/main/sdv/parse.cpp#1
+
+If your diff application doesn't support full depot paths, you can use this wrapper batch file. 
+
+@echo off
+setlocal
+set TMP1=%TEMP%\sdv%RANDOM%
+set TMP2=%TEMP%\sdv%RANDOM%
+set DIFF1=%1
+set DIFF2=%2
+if "%DIFF1:~0,2%"=="//" (
+    set DIFF1=%TMP1%
+    sd print -o "%TMP1%" "%1"
+)
+if "%DIFF2:~0,2%"=="//" (
+    set DIFF2=%TMP2%
+    sd print -o "%TMP2%" "%2"
+)
+mydiff.exe -D "%DIFF1%" "%DIFF2%"
+if "%TMP1%"=="%DIFF1%" del "%TMP1%"
+if "%TMP2%"=="%DIFF2%" del "%TMP2%"
+endlocal
+
+SDVCDIFF 
+The value is a command line to execute when sdv wants to display diffs for all changes in a particular changelist. The value defaults to "windiff.exe -ld". 
+Appended to the command line will be the changelist number. 
+
+For example, you might use 
+
+set SDVCDIFF=mydiff.exe -c
+
+in which case a typical command line would be 
+
+mydiff.exe -c 295
+
+SDVEXECHOOK 
+The value is a command line to execute when the user chooses the "View.External" menu. It will be given the checkin comment as the command line parameter. You can use this to hook a custom checkin comment parser. For example, if your team manages bugs from multiple databases but you have a consistent checkin comment policy, you might write a program called, say, "sdvbughook.exe" and 
+set SDVEXECHOOK=sdvbughook.exe
+
+Then when you are viewing a bug, you can highlight the line 
+DDRaid:513 close race window
+
+and select View.External. The command 
+sdvbughook.exe DDRaid:513 close race window
+
+will be executed. The "sdvbughook.exe" program can parse its command line and determine that this particular bug should be looked up in the DDRaid database and open bug 513 in a new window. 
+As another example, your team might use a secondary database to track all checkins. If the secondary database record number is added in a consistent manner, you can write a hook program that parses for the record number and displays the tracking record. 
+
+SDVBRANCHPREFIX 
+The value is the prefix used to label private branches. The value defaults to "private". Set this variable if your team places private branches under a location other than "//depot/private/". 
+For example, if your team places private branches under "//depot/alt/", you can use 
+
+set SDVBRANCHPREFIX=alt
+
+in which case "/fusion://depot/main/sdv/sdv.h" would resolve to "//depot/alt/fusion/sdv/sdv.h" instead of "//depot/private/fusion/sdv/sdv.h". 
+
+SDVSDAPI 
+This variable controls how sdv locates SDAPI. See detailed discussion below. 
+
+SD 
+The value is the name of (and optional full path to) the sd.exe binary. The value defaults to "sd.exe". Set this variable if you do not keep your sd.exe binary on your PATH, or if you want sdv to use some Other Program in place of sd.exe. 
+
+Setting Variables
+sdv looks for variables in the following order: 
+
+In the environment. 
+In the [sdv] section of the tools.ini file in the directory specified by the %INIT% environment variable, if the file exists. 
+In the [sdv] section of the tools.ini file in the same directory as the sdv.exe file, if the file exists. 
+For example, you might create a tools.ini file that looks like this: 
+
+[sdv]
+SDVRAID=http://myproject/viewbug/#
+
+Appendices
+Windows NT branch model
+//depot/branchname/... are official, or "top-level" branches. The main branch is called "main". 
+
+//depot/private/branchname/... are private branches. 
+
+The file hierarchies under each branch are identical. In other words, the branch specifications are always of the form 
+
+    //depot/donor/aaaa/...      //depot/recipient/aaaa/...
+    //depot/donor/bbbb/cccc/... //depot/recipient/bbbb/cccc/...
+
+where "donor" and "recipient" are either a top-level branch name or a private branch name in the form "private/name". 
+These rules make it relatively easy to track the relationships between files because you can determine whether two files are connected via branch integrations just by looking at their full depot paths: 
+
+//depot/W/aaa/bbb/ccc/ddd
+//depot/X/aaa/bbb/ccc/ddd
+//depot/private/Y/aaa/bbb/ccc/ddd
+//depot/private/Z/aaa/bbb/ccc/ddd
+
+are all related to each other by chains of integrations. 
+The SDVBRANCHPREFIX variable can be used if your team uses a word other than "private" to indicate private branches. 
+
+How sdv finds SDAPI
+If the SDVSDAPI variable is set to 0 (zero) or if the SD variable points to a program whose name is not "sd.exe", then sdv will not use SDAPI at all and will run the program specified by the SD variable as a background process each time it needs information from the server. 
+
+If SDVSDAPI is set to something other than 0, it is treated as the path to SDAPI.DLL. Use this method if sdv cannot find SDAPI.DLL by the normal means listed below. 
+
+If SDVSDAPI is not set, then sdv searches for SDAPI.DLL in the following places: 
+
+in the registry, as registered via "regsvr32 sdapi.dll", 
+in the same directory as the sdv.exe file, 
+in the Windows system directory, 
+in the Windows directory, 
+on the PATH. 
+If SDAPI cannot be found, sdv will fall back to running the program specified by the SD variable as a background process. 
+Frequently Asked Questions
+How do I customize the Raid database? 
+How do I use my own diff program? 
+How do I query against all files in the depot instead of just the files in the current directory? 
+
+History
+Version 2.2.3.0 (SP3)
+Remove workaround for SDAPI bug (where it underreported the srev in filelog) if we detect SD version 2.1 or higher (on which it is fixed). 
+Version 2.2.2.0 (SP2)
+Fix an even more embarrassing bug where opening a menu crashes if the window produces no results. 
+"sdv explore" now supports branch notation. 
+Version 2.2.1.0 (SP1)
+Fix embarrassing bug where "sdv explore" failed to show all users who had files open because Raymond forgot how to write code. 
+Version 2.2.0.0
+New "sdv explore" command. 
+Version 2.1.2.0
+New "View all bugs" command (Ctrl+Shift+B). 
+Version 2.1.1.0 (SP1 hotfix)
+Doubleclicking files from sdv opened was busted, sorry. Fixed. 
+Version 2.1.0.0
+New "sdv follow" command. 
+New SDAPI support. 
+"sdv opened" now supports branch notation. 
+Psychic powers repaired: Ctrl+F from "sdv opened" tried to put focus on the version you #have but got confused and failed. Now it works. 
+Psychic powers repaired: //CLIENTNAME/... paths were being misdetected as depot paths, causing the wrong files to be highlighted in "sdv describe". Now it works. 
+The optional "sdv describe" pattern list now supports branch notation (though it is meaningless since branches are ignored anyway) and ignores revision specifiers (since # was meaningless once you tracked into other branches and @ was just plain meaningless entirely). You are not expected to understand this. The upshot is that psychic powers work slightly better now. 
+Version 2.0.3.3 (SP3)
+Displays all donor revision when multiple integrations are performed with a single submit. (sdv used to display only the most recent one.) If you don't know what this means, don't worry. 
+New "--d" option. 
+From "sdv opened", double-clicking the changelist node windiffs the entire changelist. (Note: As of this writing, there is a bug in windiff that prevents this from working on the default changelist.) 
+Default -u option for "sdv opened" is now to show opened files from all users. This, combined with --d, simplifies remote code reviews. 
+Internal logic of "sdv opened" rewritten for significantly better perf. 
+Version 2.0.2.0 (SP2)
+New -x option to "sd changes". 
+Version 2.0.1.0 (SP1)
+New SDVBRANCHPREFIX variable. 
+Version 2.0.0.0
+New SDVEXECHOOK variable. 
+View | Refresh menu option added. 
+Stable enough to merit official status as a 2.x release. 
+Version 1.99.0.2 (SP2)
+New SDVDIFF and SDVCDIFF variables. 
+Help | Usage didn't work. Now it does. 
+Include version number in usage screen. 
+In filelist, mark the #have revision. 
+Branch names must be at least two characters to avoid misinterpreting "C:\foo" as "file \foo in branch C". 
+Support Picture It! team checkin comment convention. 
+Search tools.ini files if variables are not found in the environment. 
+Version 1.99.0.1 (SP1)
+Don't mistake ":" in timestamp as branch specification. 
+Now with dorky icon so it's easier to pick out of an Alt+Tab list. 
+Better support for downlevel servers (1.5 or lower). 
+Version 1.99
+Merged with sdflog to form the new, improved sdv. 
+Version 1.0
+Thrown together in an afternoon. 

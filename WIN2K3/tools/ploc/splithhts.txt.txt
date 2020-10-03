@@ -1,0 +1,11 @@
+Version 1.0.0
+--------------------------------------------------------------------------------
+Usage: 
+
+splithhts /c <CAB File> /r <Reference Folder> /o <Output Folder> /l <Log File> /qw /qa
+
+The /l, /qw, and /qa arguments are optional.
+/qw makes the window go away even if there are Warnings.
+/qa makes the window go away even if there are Errors and/or Warnings.
+"splithhts /?" displays this message.
+--------------------------------------------------------------------------------

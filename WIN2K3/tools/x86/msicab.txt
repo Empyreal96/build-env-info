@@ -1,0 +1,11 @@
+msicab -x[flt] <msi|msm> <dir>
+  extract files from cabinet to directory
+  -f  flat, no subdirectories
+  -l  use long names
+  -t  use file tokens instead of filenames
+msicab -r[m] <msi|msm> [<file|dir>]+
+  replace files in cabinet
+  -m  update ModuleSignature.Version
+msicab -c[u] <msi|msm>
+  check file versions, error if incorrect
+  -u  update MSI versions to match files

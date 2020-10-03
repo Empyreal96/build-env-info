@@ -1,0 +1,10 @@
+Microsoft (R) .NET Framework Store Admin 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+
+Usage    : StoreAdm [options]
+options  : [/LIST] [/REMOVE] [/ROAMING] [/QUIET]
+/LIST    : Displays the existing isolated storage for the current user.
+/REMOVE  : Removes all existing isolated storage for the current user.
+/ROAMING : Select the roaming store.
+/QUIET   : Only error messages will be output.

@@ -1,0 +1,1 @@
+Usage: bldrthnk.exe <32-bit obj> <64-bit obj>

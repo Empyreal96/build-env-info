@@ -1,0 +1,20 @@
+
+Microsoft (R) .NET Framework PE Verifier.  Version 1.0.3705.0
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+Usage: PEverify <image file> [Options]
+
+
+Options:
+/IL           Verify only the PE structure and IL
+/MD           Verify only the PE structure and MetaData
+/UNIQUE       Disregard repeating error codes
+/HRESULT      Display error codes in hex format
+/CLOCK        Measure and report verification times
+/IGNORE=<hex.code>[,<hex.code>...]  Ignore specified error codes
+/IGNORE=@<file name>                Ignore error codes specified in <file name>
+/BREAK=<maxErrorCount>              Abort verification after <maxErrorCount> errors
+                                    (unspecified or <=0 <maxErrorCount> means 1 error)
+/QUIET        Display only file and Status. Do not display all errors.
+Note: By default, MD is verified and then if there were no errors - IL is verified.
+      if /MD /IL options are specified, IL is verified even if there were MD verification errors.

@@ -1,0 +1,12 @@
+
+ExplodeMSI.exe [-mcibar] [-t] <.msi|.msm filename> [target path]
+
+  [-m]                   Extract MergeModule.CABinet stream as <.msi|.msm Filename base>.cab.
+  [-c]                   Extract cabinet streams referenced in the Media table.
+  [-i]                   Extract files from the Icon table.
+  [-b]                   Extract files from the Binary table.
+  [-a]                   Extract all embedded files that can possibly be extracted.
+  [-r]                   Recursively expand embedded .msi|.msm files (with the same options).
+  [-t]                   Extract files from CABinets and build psuedo-install tree in [target path].
+  <.msi|.msm filename>   Windows Installer file (.msi|.msm) to extract files from.
+  [target path]          Target path for extracted files, else uses current directory.

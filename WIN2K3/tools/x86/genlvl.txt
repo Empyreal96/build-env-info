@@ -1,0 +1,2 @@
+GENLVL: Debug Print Filter Generator. Version 1.0
+ Usage: genlvl [-t target directory] [componentid.tab directory]

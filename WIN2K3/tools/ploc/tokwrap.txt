@@ -1,0 +1,8 @@
+
+PLOCWRAP LogFile BinStructure PlocTree FileScript Language
+  LogFile: full path to logfile to create
+  BinStructure: full path to structure to ploc
+  PlocTree: full path to SourceDepot tree (nt\plocbranch\ploc)
+  FileScript: File list script to run (whistler.bat, whistler1.bat, etc)
+  Language: Language ID from codes.txt (ex: ara, jpn, ger, etc)
+

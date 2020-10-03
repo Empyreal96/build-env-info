@@ -1,0 +1,9 @@
+
+VERTOOL file.inf [file.inf]+ /out:file.ver /files:srcpath
+
+   file.inf    name of one or more INFs with [SourceDisksFiles] sections.
+   /out:file   name of information file to create.
+   /files:src  path where each of the (uncompressed) files can be found.
+   /alt:src    path where any missing (uncompressed) files can be found.
+
+Ex:  vertool update.inf update.url /out:update.ver /files:\bld\i386

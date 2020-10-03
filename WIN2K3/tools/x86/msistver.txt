@@ -1,0 +1,1 @@
+MSI Set Version. Syntax: m {module} | p {package}

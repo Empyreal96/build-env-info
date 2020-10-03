@@ -1,0 +1,6 @@
+usage: TOUCH [/f] [/t year month day hour min sec] files
+where: /f - force file touch if read only
+       /t - specifies a specific time other than the current time.
+       /c - specifies to create the file if it does not exist.
+
+TOUCH: invalid number of parameters

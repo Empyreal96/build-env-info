@@ -1,0 +1,48 @@
+Microsoft (R) WDM Extensions To WMI MOF Checking Utility  Version 1.50.0000
+Copyright (c) Microsoft Corp. 1997-2000. All rights reserved.
+
+WMI Mof Check Tool - Revision 25
+
+WmiMofCk validates that the classes, properties, methods and events specified 
+in a binary mof file (.bmf) are valid for use with WMI. It also generates 
+useful output files needed to build and test the WMI data provider.
+
+If the -h parameter is specified then a C language header file is created
+that defines the guids, data structures and method indicies specified in the
+MOF file.
+
+If the -t parameter is specified then a VBScript applet is created that will
+query all data blocks and properties specified in the MOF file. This can be
+useful for testing WMI data providers.
+
+If the -x parameter is specified then a text file is created that contains
+the text representation of the binary mof data. This can be included in 
+the source of the driver if the driver supports reporting the binary mof 
+via a WMI query rather than a resource on the driver image file.
+
+If the -c parameter is specified then a C language source file is
+generated that contains a template for implementing WMI code in
+a device driver
+
+if the -w parameter is specified then a set of HTML files are
+generated that create a rudimentary UI that can be used to access
+the wmi data blocks
+
+if the -m parameter is specified then structure definitions for
+method parameter lists are generated in the generated header file.
+
+if the -u parameter is specified then structure definitions for all
+data blocks are generated unconditionally
+
+
+Usage:
+    wmimofck -h<C Source Language Header output file>
+             -c<C Source Language Code output file>
+             -x<Hexdump output file>
+             -t<Command line VBScript test output file>
+             -w<HTML UI output file directory>
+             -y<MofFile> -z<MflFile>
+             -m
+             -u
+             <binary mof input file>
+

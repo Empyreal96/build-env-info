@@ -1,0 +1,9 @@
+
+freedisk.exe [##]
+
+        ##      Number of bytes to subtract from free space.
+
+        This utility will return the free space on
+        current volume, in bytes. If a number is given,
+        the difference (or zero if difference is negative)
+        is given.

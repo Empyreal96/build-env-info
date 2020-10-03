@@ -1,0 +1,18 @@
+Usage: m4 [-?] [-Dvar[=value]] [filename(s)]
+
+Win32 implementation of the m4 preprocessor.
+
+-?
+    Displays this usage string.
+
+-Dvar[=value]
+    Defines an M4 preprocessor symbol with optional initial value.
+    If no initial value is supplied, then the symbol is define with
+    a null value.
+
+[filename(s)]
+    Optional list of files to process.  If no files are given, then
+    preprocesses from stdin.  The result is sent to stdout.
+
+See m4.man for language description.
+See m4.txt for implementation description.

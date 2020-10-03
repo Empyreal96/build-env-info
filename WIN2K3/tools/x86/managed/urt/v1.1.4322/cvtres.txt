@@ -1,0 +1,15 @@
+Microsoft (R) Windows Resource To Object Converter Version 7.10.2215.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+usage: CVTRES [options] [files]
+
+   options:
+
+      /DEFINE:symbol
+      /MACHINE:{AM33|ARM|CEF|IA64|M32R|MIPS|MIPS16|MIPSFPU|MIPSFPU16|
+                MIPSR41XX|PPC|PPCFP|SH3|SH3DSP|SH4|SH5|THUMB|X86}
+      /NOLOGO
+      /OUT:filename
+      /READONLY
+      /VERBOSE
+      /WINDOWSCE[:{CONVERT|EMULATION}]

@@ -1,0 +1,17 @@
+usage: idfinfo [options] <idf_file_pattern> ...
+options: -?             print help
+         -b             dump Block and Edge counts
+         -c             check mode only
+         -e             continue processing file on errors
+         -i             dump Indirect Branch counts
+         -k <keyfile_path> Add to search path for .KEY files
+                           Option may be repeated for more than one path
+                           If option is given, every IDF must be matched to
+                              a .Key file or that IDF is failed
+         -n             no automatic opening of key file
+         -o <filename>  output file
+         -p             dump interval phase names
+         -r <decimal>   signed offset between original and rebased address
+         -t             dump TOB summary
+         -x             dump TOB summary XBOX style
+         -s             first Sequence number for each interval

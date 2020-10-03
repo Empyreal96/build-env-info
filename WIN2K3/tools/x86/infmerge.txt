@@ -1,0 +1,1 @@
+Usage: infmerge.exe InputFile1 InputFile2 OutputFile.

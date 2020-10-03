@@ -1,0 +1,7 @@
+usage: makecat.exe [options] [@commandfile] CDF_filename
+     -?:         this screen
+     -v:         verbose output
+     -r:         return fail even on recoverable errors
+     -n:         don't stop on error
+     -s <param>: fail if any files are smaller than (param) bytes
+     -o <param>: output filename/hash pairs to specified file

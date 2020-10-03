@@ -1,0 +1,64 @@
+
+   To Start the SERVER end of REMOTE
+   ---------------------------------
+   Syntax : REMOTE /S <"Cmd">     <Unique Id> [Param]
+   Example1: REMOTE /S "i386kd -v" imbroglio
+            To interact with this "Cmd" from some other machine,
+            start the client end using:  REMOTE /C EMPYREAL-D2AB60 imbroglio
+
+   Example2: REMOTE /S "i386kd -v" "name with spaces"
+            start the client end using:  REMOTE /C EMPYREAL-D2AB60 "name with spaces"
+
+   To Exit: @K 
+   [Param]: /F  <Foreground color eg yellow, black..>
+   [Param]: /B  <Background color eg lblue, white..>
+   [Param]: /U  username or groupname
+                specifies which users or groups may connect
+                may be specified more than once, e.g
+                /U user1 /U group2 /U user2
+   [Param]: /UD username or groupname
+                specifically denies access to that user or group
+   [Param]: /V  Makes this session visible to remote /Q
+   [Param]: /-V Hides this session from remote /q (invisible)
+                By default, if "Cmd" looks like a debugger,
+                the session is visible, otherwise not
+
+
+   To Start the CLIENT end of REMOTE
+   ---------------------------------
+   Syntax : REMOTE /C <ServerName> "<Unique Id>" [Param]
+   Example1: REMOTE /C EMPYREAL-D2AB60 imbroglio
+            This would connect to a server session on EMPYREAL-D2AB60 with Id
+            "imbroglio" if there is a REMOTE /S <"Cmd"> imbroglio
+            running on EMPYREAL-D2AB60.
+
+   Example2: REMOTE /C EMPYREAL-D2AB60 "name with spaces"
+            This would connect to a server session on EMPYREAL-D2AB60 with Id
+            "name with spaces" if there is a REMOTE /S <"Cmd"> "name with spaces"
+            running on EMPYREAL-D2AB60.
+
+   To Exit: @Q (Leaves the Remote Server Running)
+   [Param]: /L <# of Lines to Get>
+   [Param]: /F <Foreground color eg blue, lred..>
+   [Param]: /K <Set keywords and colors from file>
+   [Param]: /B <Background color eg cyan, lwhite..>
+
+   Keywords And Colors File Format
+   -------------------------------
+   <KEYWORDs - CASE INSENSITIVE>
+   <FOREGROUND>[, <BACKGROUND>]
+   ...
+   EX:
+       ERROR
+       black, lred
+       WARNING
+       lblue
+       COLOR THIS LINE
+       lgreen
+
+   To Query the visible sessions on a server
+   -----------------------------------------
+   Syntax:  REMOTE /Q EMPYREAL-D2AB60
+            This would retrieve the available <Unique Id>s
+            visible connections on the computer named EMPYREAL-D2AB60.
+

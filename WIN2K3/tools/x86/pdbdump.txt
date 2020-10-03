@@ -1,0 +1,9 @@
+pdbdump.exe: usage: pdbdump.exe <pdb> item
+where:
+        item: dbi <exe> <dbi-items> | hdr | msf | src | streams [stream-list]
+                | strnames | types [type-list | last]
+
+        dbi-items: check | files | fixup | fpo | hdr | headers
+                | globals [sym-list] | lines [mod-list] | mods | omapt | omapf
+                | pdata | publics [sym-list] | seccontribs | secmap
+                | syms [mod-list] | symtypes | typeservers

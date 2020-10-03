@@ -1,0 +1,69 @@
+Microsoft (R) Web Services Description Language Utility
+[Microsoft (R) .NET Framework, Version 1.0.3705.0]
+Copyright (C) Microsoft Corporation 1998-2001. All rights reserved.
+
+
+wsdl.exe -
+    Utility to generate code for xml web service clients and xml web services
+    using ASP.NET from WSDL contract files, XSD schemas and .discomap discovery
+    documents.  This tool can be used in conjunction with disco.exe.
+
+wsdl.exe <options> <url or path> <url or path> ...
+
+     - OPTIONS -
+
+<url or path> -
+    A url or path to a WSDL contract, an XSD schema or .discomap document.
+
+/nologo
+    Suppresses the banner.
+
+/language:<language>
+    The language to use for the generated proxy class.  Choose from 'CS',
+    'VB', 'JS' or provide a fully-qualified name for a class implementing
+    System.CodeDom.Compiler.CodeDomProvider.  The default is 'CS' (CSharp).
+    Short form is '/l:'.
+
+/server
+    Generate an abstract class for an xml web service implementation using
+    ASP.NET based on the contracts. The default is to generate client proxy
+    classes.
+
+/namespace:<namespace>
+    The namespace for the generated proxy or template.  The default namespace
+    is the global namespace. Short form is '/n:'.
+
+/out:<fileName>
+    The filename for the generated proxy code. The default name is derived from
+    the service name. Short form is '/o:'.
+
+/protocol:<protocol>
+    Override the default protocol to implement.  Choose from 'SOAP', 'HttpGet',
+    'HttpPost', or custom protocol as specifiied in the configuration file.
+
+/username:<username>
+/password:<password>
+/domain:<domain>
+    The credentials to use when the connecting to a server that
+    requires authentication. Short forms are '/u:', '/p:' and '/d:'.
+
+/proxy:<url>
+    The url of the proxy server to use for http requests.
+    The default is to use the system proxy setting.
+
+/proxyusername:<username>
+/proxypassword:<password>
+/proxydomain:<domain>
+    The credentials to use when the connecting to a proxy server that
+    requires authentication. Short forms are '/pu:', '/pp:' and '/pd:'.
+
+/appsettingurlkey:<key>
+    The configuration key to use in the code generation to read the default
+    value for the Url property. The default is to not read from the config
+    file. Short form is '/urlkey:'.
+
+/appsettingbaseurl:<baseurl>
+    The base url to use when calculating the url fragment. The
+    appsettingurlkey option must also be specified. The url fragment is
+    the result of calculating the relative url from the appsettingbaseurl
+    to the url in the WSDL document. Short form is '/baseurl:'.

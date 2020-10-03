@@ -1,0 +1,1 @@
+usage: wc [-lwc] [files]

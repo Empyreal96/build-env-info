@@ -1,0 +1,7 @@
+ARM Macro Assembler, Version 2.50.8684
+error A0050: Missing input source file
+
+ Usage:      asm [<options>] sourcefile objectfile
+             asm [<options>] -o objectfile sourcefile
+             asm -h				for help
+

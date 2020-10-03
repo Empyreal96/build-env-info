@@ -1,0 +1,8 @@
+STRUCTO: Structure Field Name-Offset Table Generator
+Usage: structo [options] <-o OutputFile> InputFile1 ...
+	InputFile - Preprocessed C header file
+	[-i ext] #include input file name using extension ext
+	[-l] Build structure list only
+	<-o OutputFile> required
+	[-p] #include "precomp.h" and #pragma hdrstop  in output file
+	[-s StructFile] Struct names text file.

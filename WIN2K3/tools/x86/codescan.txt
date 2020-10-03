@@ -1,0 +1,28 @@
+
+CodeScan Version 1.0
+
+Usage :
+	CodeScan [Target] [Scan Type] [Output] [Severity]
+
+	Target: Specify the Target files to be scanned. (Mutually Exclusive)
+	  -c Scans the opened files in the current Source Depot. (default)
+	  -p [directory/file path] Scans the file(s) as specified by the path.
+	     If path is not specified, files in the current directory are scanned.
+	     Note: The files in the subdirectories are also scaned.
+
+	Scan Type: Specify the type of scan to be done. (Mutually Exclusive)
+	  -g Scans for incorrect Geopolitical words. (default)
+	  -o Scans for Offensive words.
+	  -b Scans for incorrect Branding words.
+
+	Output: Specify the type of output. (Mutually Exclusive)
+	  -u Displays the results in the UI. (default)
+	  -l List the results in the cmd window.
+	  -r <filename> Stores the output to the file (.xls or .txt or .xml).
+
+	Severity: Can be used with -u or -l only. (Mutually Exclusive)
+	  -1 Displays only the Sev 1 Issues. (default)
+	  -a Displays all issues.
+
+	Help: Displays the Help screen. 
+	  -? Displays this info.

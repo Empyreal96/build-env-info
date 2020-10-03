@@ -1,0 +1,32 @@
+
+VSP Version 1, 0, 0, 34
+Copyright (C) 2000-2001 Microsoft Corporation
+
+USE:
+   VSPBBT InFile <Switches> 
+
+WHERE:
+  Infile  - Required to specify the input file (pre-BBT)
+  Switches:
+  /A=#    - Specify max number of AutoMACs generated
+  /A=#,#  - Specify ratio of MACs to segments. 1,2 = 1 MAC for 2 segments
+  /B+     - Specifies injection of random checksum compares
+  /C      - Place verify calls only at placement labels
+  /D=#    - Sets debugging level for logging
+  /F=file - Specifies a configuration file to parse
+  /L=file - Specifies log file for profiling information
+  /O=file - Specify the output file
+  /P=file - Specify a pre-BBT file
+  /R      - Disable redundant segment creation
+  /S=file - Specify a different source file list
+  /U      - Unconditional support code ininjection
+  /X      - Disable verify/compare call insertions
+  /I[=...]- instrument for profiling before doing anything else
+            (using offinst.dll);
+            you may specify a command line that will be passed to the
+            instrumentation tool
+  /Z=#    - Initial seed for randon number generator
+  /K      - Enable calling verify function multiple times
+  /Y=0x## - Set debugging levels in target binary
+  /T=file - Specifies PDB output path where PDB will be written
+  /N=file - Specifies PDB path stamped into header of binary

@@ -1,0 +1,13 @@
+Usage: MakeCert [ basic|extended options] [outputCertificateFile]
+Basic Options
+ -sk  <keyName>      Subject's key container name; To be created if not present
+ -ss  <store>        Subject's certificate store name that stores the output 
+                     certificate
+ -sr  <location>     Subject's certificate store location.
+                        <CurrentUser|LocalMachine>.  Default to 'CurrentUser'
+ -#   <number>       Serial Number from 1 to 2^31-1.  Default to be unique
+ -$   <authority>    The signing authority of the certificate
+                        <individual|commercial>
+ -n   <X509name>     Certificate subject X500 name (eg: CN=Fred Dews)
+ -?                  Return a list of basic options
+ -!                  Return a list of extended options

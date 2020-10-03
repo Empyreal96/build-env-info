@@ -1,0 +1,3 @@
+Usage:
+MkDCache DRMListFileName DriverDirectory OutputCacheFileName AllowTestCert
+e.g. MkDCache DRMList.txt .\Drivers.bin\ dcache.bin FALSE

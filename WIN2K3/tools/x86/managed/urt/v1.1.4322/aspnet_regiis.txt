@@ -1,0 +1,46 @@
+Administration utility (1.1.4322.0) that manages the installation and uninstallation of multiple versions of ASP.NET on a single machine
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+Usage:
+    aspnet_regiis.exe [-i[r] [-enable] | -u[a] | -r | -s[n] <path> | -k[n] <path> | -lv | -lk | -c | -e[a] | -?]
+
+ -i         - Install this version of ASP.NET and update scriptmaps
+              at the IIS metabase root and for all scriptmaps below
+              the root. Existing scriptmaps of lower version are
+              upgraded to this version.
+ -ir        - Install this version of ASP.NET, register only.  Do
+              not update scriptmaps in IIS.
+ -enable    - When -enable is specified with -i or -ir, ASP.NET will also 
+              be enabled in the IIS security console (IIS 6.0 or later).
+ -s <path>  - Install scriptmaps for this version at the specified path,
+              recursively. Existing scriptmaps of lower version are
+              upgraded to this version.
+              E.g. aspnet_regiis.exe -s W3SVC/1/ROOT/SampleApp1
+ -sn <path> - Install scriptmaps for this version at the specified path,
+              non-recursively. Existing scriptmaps of lower version are
+              upgraded to this version.
+ -r         - Install scriptmaps for this version at the IIS metabase
+              root and for all scriptmaps below the root. All existing
+              scriptmaps are changed to this version, regardless of
+              current version.
+ -u         - Uninstall this version of ASP.NET.  Existing scriptmaps
+              to this version are remapped to highest remaining
+              version of ASP.NET installed on the machine.
+ -ua        - Uninstall all versions of ASP.NET on the machine
+ -k <path>  - Remove all scriptmaps to any version of ASP.NET from the
+              specified path, recursively.
+              E.g. aspnet_regiis.exe -k W3SVC/1/ROOT/SampleApp1
+ -kn <path> - Remove all scriptmaps to any version ASP.NET from the
+              specified path, non-recursively.
+ -lv        - List all versions of ASP.NET that are installed on the
+              machine, with status and installation path.
+              Status: Valid[ (Root)]|Invalid
+ -lk        - List all the path of all IIS metabase keys where ASP.NET is
+              scriptmapped, together with the version.  Keys that inherit
+              ASP.NET scriptmaps from a parent key will not be displayed.
+ -c         - Install the client side scripts for this version to the
+              aspnet_client subdirectory of each IIS site directory.
+ -e         - Remove the client side scripts for this version from the
+              aspnet_client subdirectory of each IIS site directory.
+ -ea        - Remove the client side scripts for all versions from the
+              aspnet_client subdirectory of each IIS site directory.
+ -?         - Print this help text.

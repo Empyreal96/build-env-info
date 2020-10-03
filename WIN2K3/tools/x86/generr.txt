@@ -1,0 +1,2 @@
+Usage: GENERR <input_obj> <output_h>
+GENERR: No error

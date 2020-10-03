@@ -1,0 +1,24 @@
+Microsoft (R) BBT Incremental Optimizer 3.30.1486 (May  1 2002 13:52:43) (VULCANBLD)
+Microsoft (R) Vulcan 2.31.1486 (May  1 2002 13:27:31) (VULCANBLD)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Microsoft Confidential - For Internal Use Only
+
+Usage: BBINCR [options] Executable
+
+Options:
+
+/?                           Display this help
+/asmemit         [filename]  AsmEmit filename
+/cmd             filename    Read BBTCMD filename (BBT/Vulcan command file)
+/erratum42                   Do erratum42 check
+/from            filename    Old BBT image to optimze from
+/help                        Display this help
+/map             [filename]  Map filename
+/o               filename    Output Filename
+/padnoreturncall             Padding No Return Call w/ Int3
+/pdb             filename    Output Pdb Filename
+/pdbaltpath      pdbpath     Alternate pdb name
+/stats                       Print out statistics
+/q                           Do not display input/output filenames
+

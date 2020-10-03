@@ -1,0 +1,10 @@
+ESCAPE Inf file pre-processor, version 1.6
+        For Microsoft internal use only. Contact Sandy Coyne with questions.
+Usage: escpeinf.exe <U|C> <codepage> <input file> <output file> <layout.inf>
+        U = Upgrade
+        C = Clean Install
+        <codepage> specifies the codepage to use when accessing input and
+                output files. Translation of layout.inf is not affected by
+                this option. You may specify "none" to open the input
+                and output files as Unicode files with no codepage translation.
+        All fields are required.

@@ -1,0 +1,100 @@
+
+Microsoft (R) .NET Global Assembly Cache Utility.  Version 1.1.4322.12
+Copyright (C) Microsoft Corporation 1998-2002. All rights reserved.
+
+Usage: Gacutil <command> [ <options> ]
+Commands:
+  /i <assembly_path> [ /r <...> ] [ /f ]
+    Installs an assembly to the global assembly cache. <assembly_path> is the
+    name of the file that contains the assembly manifest.
+    Example: /i myDll.dll /r FILEPATH c:\projects\myapp.exe "My App"
+
+  /il <assembly_list_file> [ /r <...> ] [ /f ]
+    Installs one or more assemblies to the global assembly cache.  
+    <assembly_list_file> is the path to a text file that contains a list of 
+    assembly manifest file paths. Individual paths in the text file must be 
+    separated by CR/LF.
+    Example: /il MyAssemblyList.txt /r FILEPATH c:\projects\myapp.exe "My App"
+      myAssemblyList.txt content:
+      myAsm1.dll
+      myAsm2.dll
+
+  /u <assembly_name> [ /r <...> ]
+    Uninstalls an assembly. <assembly_name> is the name of the assembly
+    (partial or fully qualified) to remove from the Global Assembly Cache.
+    If a partial name is specified all matching assemblies will be uninstalled.
+    Example:
+      /u myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab 
+      /r FILEPATH c:\projects\myapp.exe "My App"
+
+  /uf <assembly_name>
+    Forces uninstall of an assembly by removing all traced references.
+    <assembly_name> is the full name of the assembly to remove. Assembly will
+    be removed unless referenced by Windows Installer.
+    ! Warning: use the /uf command with care as applications may fail to run !
+    Example: /uf myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
+
+  /ul <assembly_list_file> [ /r <...> ]
+    Uninstalls one or more assemblies from the global assembly cache.  
+    <assembly_list_file> is the path to a text file that contains a list of 
+    assembly names. Individual names in the text file must be 
+    separated by CR/LF.
+    Example: /ul myAssemblyList.txt /r FILEPATH c:\projects\myapp.exe "My App"
+      myAssemblyList.txt content:
+      myDll,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
+      myDll2,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
+
+  /ungen <assembly_name>
+    Uninstalls a native image installed via the NGEN utility. <assembly_name>
+    is the name of the assembly for which native images are to be uninstalled.
+    The assembly itself will remain in the global assembly cache.
+    Example: /ungen myDll
+
+  /l [ <assembly_name> ]
+    Lists the contents of the global assembly cache. When the optional 
+    <assembly_name> parameter is specified only matching assemblies are listed.
+
+  /lr [ <assembly_name> ]
+    Lists the contents of the global assembly cache including traced reference 
+    information. When the optional <assembly_name> parameter is specified only 
+    matching assemblies are listed.
+
+  /cdl
+    Deletes the contents of the download cache
+
+  /ldl
+    Lists the contents of the download cache
+
+  /? 
+    Displays a detailed help screen
+
+Old command syntax:
+  /if <assembly_path>
+    equivalent to /i <assembly_path> /f
+
+  /ir <assembly_path> <reference_scheme> <reference_id> <description>
+    equivalent to /i <assembly_path> /r <...>
+
+  /ur <assembly_name> <reference_scheme> <reference_id> <description>
+    equivalent to /u <assembly_path> /r <...>
+
+Options:
+  /r <reference_scheme> <reference_id> <description>
+    Specifies a traced reference to install (/i, /il) or uninstall (/u, /ul).
+      <reference_scheme> is the type of the reference being added 
+        (UNINSTALL_KEY, FILEPATH or OPAQUE). 
+      <reference_id> is the identifier of the referencing application, 
+        depending on the <reference_scheme>
+      <description> is a friendly description of the referencing application.
+    Example: /r FILEPATH c:\projects\myapp.exe "My App"
+
+  /f 
+    Forces reinstall of an assembly regardless of any existing assembly with 
+    the same assembly name.
+
+  /nologo
+    Suppresses display of the logo banner
+
+  /silent
+    Suppresses display of all output
+

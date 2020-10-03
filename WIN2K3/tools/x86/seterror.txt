@@ -1,0 +1,3 @@
+Set errorlevel to user-specified integer value.
+Usage: seterror.exe <errorlevel>
+   ex: seterror.exe 1

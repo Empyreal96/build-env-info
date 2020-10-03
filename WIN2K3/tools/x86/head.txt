@@ -1,0 +1,4 @@
+HEAD v1.1 1991-06-20:
+usage: HEAD [switches] [filename]*
+   switches: [-?] display this message
+             [-n] display top n lines of each file (default 10)

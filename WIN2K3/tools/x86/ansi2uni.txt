@@ -1,0 +1,7 @@
+Saves an ANSI file in Unicode format.
+
+ANSI2UNI codepage [[drive:][path]filename [[drive:][path]targetfile
+
+       codepage		Specifies the codepage of the source file.
+       [drive:][path]filename  Specifies the source file.
+       [drive:][path]filename  Specifies the target file.
