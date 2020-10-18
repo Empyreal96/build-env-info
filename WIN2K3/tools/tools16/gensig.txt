@@ -1,0 +1,2 @@
+app patch signature generator, version 1.01
+Usage: gensig filename [[<hex_seg> ]*] 

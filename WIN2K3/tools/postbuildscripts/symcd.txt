@@ -1,0 +1,4 @@
+SYMCD.cmd
+    Create Symbol CD.
+
+Copyright (c) Microsoft Corporation. All rights reserved.

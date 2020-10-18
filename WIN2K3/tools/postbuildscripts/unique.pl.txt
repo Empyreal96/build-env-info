@@ -1,0 +1,10 @@
+unique.pl [-i:<input file>] [-o:<output file>]
+
+-i:<input file> name of file to uniqify
+-o:<output file> name of output file
+
+unique.pl will parse the given input file and generate output
+which contains only unique lines. if no output file is
+given, the output is written to stdout. if no input file
+is given, input is read from stdin.
+

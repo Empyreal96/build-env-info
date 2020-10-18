@@ -1,0 +1,4 @@
+snsignfiles <file 1> <file 2> ... <file n>
+
+Submits files to PRS for strong name signing. The original files will be
+updated in place with the signed file.

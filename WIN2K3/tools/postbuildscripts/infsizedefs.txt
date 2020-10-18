@@ -1,0 +1,7 @@
+infsizedefs.cmd <bin_dir> <outfile>
+
+   <bin_dir>     A binaries directory to get copies of layout.inf from.
+                 Should be from a completed build.
+
+   <outfile>     A filename to output the results to.
+

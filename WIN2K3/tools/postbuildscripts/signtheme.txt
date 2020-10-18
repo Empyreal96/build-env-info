@@ -1,0 +1,2 @@
+usage: signtheme.cmd [-l:lang]
+    Signs theme files

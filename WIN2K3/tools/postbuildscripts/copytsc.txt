@@ -1,0 +1,5 @@
+ copytsc.cmd - NadimA
+     This script copies the x86 tsclient files to a 64 bit machine
+     to populate the tsclient install directories.
+
+Copyright (c) Microsoft Corporation. All rights reserved.

@@ -1,0 +1,9 @@
+makeProCD2 [-d <release] [-c <comp|uncomp>] [-l lang]
+ -d Release   Running on Archive server, compute CD image and make it
+              but do not perform compression.
+ -c Comp      Force compression regardless of number of procs.
+ -c Uncomp    Force no compression regardless of number of procs.
+ -l lang
+Creates Second CD for PRO containg TabletPC and Ehome specific files
+
+

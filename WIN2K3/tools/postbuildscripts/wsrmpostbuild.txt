@@ -1,0 +1,3 @@
+wsrmpostbuild.cmd 
+
+Make MSI files for WSRM distribution (wsrm.msi)

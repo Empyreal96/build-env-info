@@ -1,0 +1,4 @@
+tswebsetup.cmd (no params)
+contact: nadima
+
+Make tswebsetup.exe (Terminal Services Client setup file for CD install)

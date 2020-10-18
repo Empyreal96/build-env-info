@@ -1,0 +1,14 @@
+Forced source depot sync utility v1.0
+
+Diffs and forced syncs all enlited or the secified depot(s) on this machine
+
+fsds.cmd [-s:depotname | -b:depotname]
+
+  -s:depotname    Runs only for the specified (single) depot.
+                  The 'depotname' depot must be enlisted on this machine.
+  -r:depotname    Run restarts at the specified depot. Use this command to
+                  resume the execution if the command previously was stopped.
+                  The 'depotname' depot must be enlisted on this machine.
+
+Running the command without parameters will force sync all enlisted depots.
+

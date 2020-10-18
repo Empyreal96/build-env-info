@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# Script: assignbvt.pl
+#
+#   (c) 2000 Microsoft Corporation. All rights reserved.
+#
+# Purpose: This script is an example of a perl script in the NT postbuild
+# environment.
+#
+# Version: 1.00 (10/05/2000) : (bensont) Assign BVT JOb
+
+Usage: assignbvt.pl [-l lang] [-m BVTMachine] [-i RemoteId] [-a BVTAccount] 
+           [-n Noticed] [-o OneNotice] [-z administrator] [-p platform]
+           [-c frechk] [-s BVTEntry] [-t BVTResult]
+	-l Language
+	-m BVTMachine - BVT Machine Name; default is reference from
+           <branch>.<lang>.ini file and add "1" after the safe boottest
+           machine name.  Specified BVTMachine name as 
+           "foomachine;boomachine".  Such as i32bt0011.
+	-i RemoteId
+           Currently the remote ID name on BVTMachine; default is
+           "Booted".
+	-a BVTAccount
+           The UserName/Domain/Password Account for re-login BVT machine.
+           The format is "foo_user:boo_domain:goo_password"
+	-n Noticed.  The process will notice the domain/user each step.
+           This script always notice the BVTMachine/Administrator.  If
+           you need add more, use the format as 
+           "foo_user:foo_domain;boo_user:boo_domain;"
+	-o OneNotice.  After the BVT process assigned to the BVT Machine,
+           Send message to this domain/user.  It will net send message to
+           the domain/user.  The format is the same as <Noticed>.
+	-z administrator.  Defined the localized term for administrator.
+           The format is "<administratorgroupname>:<administratorname>".
+           Such as "administratoren:Administrator" in German.
+        -p platforms; such as "x86:amd64:ia64".  Default is "x86".
+        -c frechks; such as "fre:chk".  Default is "fre".
+	-s BVTEntry; the script for starting run BVT.  Default is 
+           "\\intlntsetup\bvtsrc\runbvt".
+        -t BVTResult; the path for store BVT result.  We launch the BVT
+           process as <BVTEntry> <SystemDrive>\BVT <BVTResult>.
+	-? Displays usage
+Example:
+assignbvt.pl -l jpn

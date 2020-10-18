@@ -1,0 +1,4 @@
+ntprintcat [-l <language>]
+
+Creates the ntprint.cat printer catalog. NT5P needs to be set to the 
+name of the catalog (ntprint).

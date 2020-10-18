@@ -1,0 +1,9 @@
+Usage: pdbsrcstream.cmd [-l <language>] [<directory>]
+
+-l <language> - Optional. Default is USA.  If a language other than USA
+is provided, the script exits because this process should only be done
+once per build.
+
+<directory> - Optional.  The directory to recurse for processing symbols.
+Default is %_NTPOSTBLD%\symbols.pri
+

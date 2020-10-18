@@ -1,0 +1,11 @@
+CmdIniSetting -f:fieldname [-l:lang] [-b:branch]
+
+	-f:fieldname	Name of field to read
+	-l:lang	Read from lang's ini file
+	-b:branch	Branch to read .ini file of
+
+CmdIniSetting will read from the appropriate lab and language
+ini file, and return the value for that field to stdout. If the field
+is found and returned to stdout, exit code is zero. Exit code 1
+implies the field was not found. Exit code 2 implies the ini file
+was not found. Exit code 3 is for all other errors.

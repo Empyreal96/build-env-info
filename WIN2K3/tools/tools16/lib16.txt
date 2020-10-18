@@ -1,0 +1,20 @@
+
+Microsoft (R) Library Manager  Version 3.40
+Copyright (C) Microsoft Corp 1983-1993.  All rights reserved.
+
+Usage: LIB library [options] [commands] [,listfile [,newlibrary]]
+Options:
+    /?			: display LIB options
+    /BATCH              : run in batch mode
+    /HELP		: display help on LIB
+    /IGNORECASE 	: ignore case on names
+    /NOEXTDICTIONARY	: do not build extended dictionary
+    /NOIGNORECASE	: do not ignore case on names
+    /NOLOGO		: do not display signon banner
+    /PAGESIZE:n 	: set library page size to n
+Commands:
+    +name		: add object file
+    -name		: delete object file
+    -+name		: replace object file
+    *name		: copy (extract) object file
+    -*name		: move (delete and extract) object file

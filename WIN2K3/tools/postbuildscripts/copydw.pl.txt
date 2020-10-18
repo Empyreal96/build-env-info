@@ -1,0 +1,2 @@
+Perl CopyDw.pl <Input_Uncomrpessed_directory> <CD_image_share_directory> <Final_Directory>
+

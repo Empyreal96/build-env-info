@@ -1,0 +1,6 @@
+octopus.cmd
+
+intended to run on the machine which is
+creating the build.inc file. this script
+is called via remote when the x86fre build
+finished postbuild.cmd

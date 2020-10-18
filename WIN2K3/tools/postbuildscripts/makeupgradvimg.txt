@@ -1,0 +1,3 @@
+makeupgadvimg [-l <language>]
+
+Create the upgrade advisor directory.

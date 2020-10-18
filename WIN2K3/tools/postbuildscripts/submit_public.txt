@@ -1,0 +1,3 @@
+submit_public
+
+Submit public files on official builds.

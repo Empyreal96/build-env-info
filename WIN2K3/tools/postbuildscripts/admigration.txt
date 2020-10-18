@@ -1,0 +1,3 @@
+ADMigration [-l <language>]
+
+Generates a new ADMigration.msi and PwdMig.msi based on the compiled binaries

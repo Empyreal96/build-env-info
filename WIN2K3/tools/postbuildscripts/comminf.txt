@@ -1,0 +1,10 @@
+MUIcommINF  
+                -m:Path_of_INF
+                -d:Mofified_INF_Path
+                -s:Default Install Section  
+                -p:Bin Path                  
+                -o:yes          (overwrite file)
+              
+
+Parse MUI component INF and cooment out those lines contain files don't exist  
+     

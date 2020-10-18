@@ -1,0 +1,5 @@
+deletewrapper.cmd
+     Calls deletebuild.cmd as the last step on pbuild.dat
+ 	This replaces the call to deletebuild.cmd in localrel.cmd
+
+  Copyright (c) Microsoft Corporation. All rights reserved.

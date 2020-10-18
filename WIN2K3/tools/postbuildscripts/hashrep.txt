@@ -1,0 +1,20 @@
+  -----------------------------------------------------------------
+
+  hashrep.cmd - WadeLa
+     update a filename to hash mapping with new hashes
+
+  Copyright (c) Microsoft Corporation. All rights reserved.
+
+  -----------------------------------------------------------------
+
+
+hashrep <new_hash_file> <hash_file>
+
+new_hash_file  a file with the filenames and new hashes to be stored 
+               in hash_file
+hash_file      a file with filenames and hashes to be updated
+
+The format for both files is:
+
+filename1 - hash1
+filename2 - hash2

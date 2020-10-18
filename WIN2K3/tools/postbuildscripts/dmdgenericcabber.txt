@@ -1,0 +1,8 @@
+(dmdgenericcabber.cmd) BEGIN Execution
+
+Usage:
+DMDGenericCabber.cmd CabDirectory OutputCab DeltaOutputName
+Example:
+DMDGenericCabber.cmd %_NTTREE%WMS %_NTTREE%WMS.cab %_NTTREE%WMSOCM.*
+		
+(dmdgenericcabber.cmd) END Execution

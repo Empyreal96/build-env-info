@@ -1,0 +1,20 @@
+ -----------------------------------------------------------------------------------
+ tagmsi - Script written by VijeshS
+ -----------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
+ 
+ tagmsi.cmd <MSI package> <script dir> <Destination> <infofile> <language> 
+
+ Note : All paths are relative
+ 
+ <MSI package> - winnt32 MSI mackage that is checked in (relative path)
+ 
+ <script dir> - Path to the location of the Package Update script (relative path)
+ 
+ <Destination> - Destination MSI package
+
+ <Infofile> - File that contains product-specific information 
+ 
+ <Language> - Language being used
+ 

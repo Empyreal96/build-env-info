@@ -1,0 +1,4 @@
+Microsoft (R) Debugging Information Compactor  Version 4.26
+Copyright (c) Microsoft Corp 1987-1993. All rights reserved.
+
+Usage: cvpack [/help] [/minimum] [/nologo] [/pcode] [/strip] [dbgfile] [/verbose] exefile

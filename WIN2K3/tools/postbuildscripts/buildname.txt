@@ -1,0 +1,4 @@
+buildname.cmd - JeremyD
+     Parses and return build name components
+
+Copyright (c) Microsoft Corporation. All rights reserved.

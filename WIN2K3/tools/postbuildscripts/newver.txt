@@ -1,0 +1,11 @@
+newver.cmd
+This script is for a special case when the build lab wants to
+create daily incremental builds without doing a clean build.
+This will keep the same build number, but generate a new build date,
+and relink the kernels so that the new build date shows up.
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Run this before starting an incremental IDX build.
+It updates the build date.
+

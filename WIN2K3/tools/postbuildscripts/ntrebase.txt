@@ -1,0 +1,3 @@
+ntrebase [-l <language>]
+
+Rebase NT binaries

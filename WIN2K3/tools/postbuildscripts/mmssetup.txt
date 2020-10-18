@@ -1,0 +1,4 @@
+Mmssetup.cmd
+
+Runs iexpress to generate a self-extracting setup (mmssetup.cab) for MSN-messenger.
+

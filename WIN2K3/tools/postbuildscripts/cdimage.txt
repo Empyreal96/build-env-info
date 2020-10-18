@@ -1,0 +1,14 @@
+CdImage [-d <release|full>] [-c <comp|uncomp>] [-l <language>]
+
+Creates cd images for each sku from the binaries tree.
+
+Default is to get data, perform compression on 4 proc or greater 
+machines, and make CD image.
+
+ -d Release   Running on Archive server, compute CD image and make it
+              but do not perform compression.
+ -d Full      Run as a standalone program. Perform list creation and 
+              compression (if appropriate), and linking from scratch.
+ -c Comp      Force compression regardless of number of procs.
+ -c Uncomp    Force no compression regardless of number of procs.
+

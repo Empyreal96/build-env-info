@@ -1,0 +1,19 @@
+raiseall.pl
+
+raiseall.pl -n:# -q:qly [-lower] [-a:arc] [-l:lng] [-d] [-?]
+   
+  -n:#                Raise build number #
+  -q:qly              Raise to 'qly' quality
+  -lower              Lower a build and remove from dfs
+  -a:arc              Act on architecture 'arc' (e.g. ??????)
+  -t:typ              Act on debug type 'typ' (e.g. fre or chk)
+  -time:yymmdd-hhmm   Use time-stamp criteria
+  -l:lng              Raise for language 'lng' (from codes.txt)
+  -safe               Used to raise an old build to TST/IDx (RAISE only)
+  -replace            Will replace "newer" builds at a numbered link
+  -f                  Force an action that would not normally be taken
+  -d                  Debug mode
+  -?                  Display usage (this screen)
+  raiseall.pl will issue the appropriate DFS commands to raise
+  a build to a specific quality.
+   

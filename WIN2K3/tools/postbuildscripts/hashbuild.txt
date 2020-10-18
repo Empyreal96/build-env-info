@@ -1,0 +1,4 @@
+hashbuild.cmd -- Hash a build
+Usage:
+	-? Displays usage
+

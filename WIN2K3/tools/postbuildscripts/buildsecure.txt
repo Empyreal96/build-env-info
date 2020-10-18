@@ -1,0 +1,1 @@
+Apply permisions to sources shares for all main build lab machines

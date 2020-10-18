@@ -1,0 +1,3 @@
+makewinpeimg [-l <language>]
+
+Create the images for the WinPE CD

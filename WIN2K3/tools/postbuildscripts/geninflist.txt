@@ -1,0 +1,4 @@
+genInfList.cmd
+ USAGE: genInfList.cmd
+          It generates %SKU%_inf.txt in _NTPostBld\build_logs dir 
+          containing the names of all the inf files valid for that SKU

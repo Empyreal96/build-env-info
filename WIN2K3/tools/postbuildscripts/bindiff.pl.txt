@@ -1,0 +1,7 @@
+Purpose of program
+Usage: bindiff.pl [-a -l lang]
+	-a Append mode
+	-l Language
+	-? Displays usage
+Example:
+bindiff.pl -l jpn

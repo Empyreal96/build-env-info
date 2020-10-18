@@ -1,0 +1,8 @@
+updater.cmd -db:<database> -entries:<files> -inf:<inf_file> -out:<output_inf_file> [-trim]
+
+  database:        database file
+  files:           file containing list of files to search for
+  inf_file:        use as starting template
+  output_inf_file  resultant INF file to output
+  trim             minimize size of resultant INF by compressing and removing entries
+

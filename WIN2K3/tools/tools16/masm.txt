@@ -1,0 +1,20 @@
+Usage: masm /options source(.asm),[out(.obj)],[list(.lst)],[cref(.crf)][;]
+
+/a		Alphabetize segments
+/c		Generate cross-reference
+/d		Generate pass 1 listing
+/D<sym>[=<val>] Define symbol
+/e		Emulate floating point instructions and IEEE format
+/I<path>	Search directory for include files
+/l[a]		Generate listing, a-list all
+/M{lxu}		Preserve case of labels: l-All, x-Globals, u-Uppercase Globals
+/n		Suppress symbol tables in listing
+/p		Check for pure code
+/s		Order segments sequentially
+/t		Suppress messages for successful assembly
+/v		Display extra source statistics
+/w{012}		Set warning level: 0-None, 1-Serious, 2-Advisory
+/X		List false conditionals
+/z		Display source line for each error message
+/Zi		Generate symbolic information for CodeView
+/Zd		Generate line-number information

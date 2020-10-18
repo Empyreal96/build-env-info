@@ -1,0 +1,17 @@
+
+Microsoft (R) EXE File Header Utility  Version 2.01    
+Copyright (C) Microsoft Corp 1985-1990.  All rights reserved.
+
+Usage: EXEHDR [options] <file-list>
+Valid options are:
+	/?
+	/HEAP:(0H - ffffH)
+	/HELP
+	/MAX:(0H - ffffH)
+	/MIN:(0H - ffffH)
+	/NEWFILES
+	/NOLOGO
+	/PMTYPE:(PM | VIO | NOVIO | WINDOWAPI | WINDOWCOMPAT | NOTWINDOWCOMPAT)
+	/RESETERROR
+	/STACK:(0H - ffffH)
+	/VERBOSE

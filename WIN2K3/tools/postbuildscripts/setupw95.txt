@@ -1,0 +1,7 @@
+setupw95
+
+Win95 project post-build file and PNP ID list generation
+
+Build hwcomp.dat, a file containing all NT-supported
+PNP devices used by w95upg.dll. Also generate a list
+of destination directories for setup INF files.

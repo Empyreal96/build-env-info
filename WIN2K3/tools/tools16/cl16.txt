@@ -1,0 +1,6 @@
+
+
+Microsoft (R) C/C++ Optimizing Compiler Version 8.00c
+Copyright (c) Microsoft Corp 1984-1993. All rights reserved.
+
+usage: cl [ option... ] filename... [ -link linkoption... ]

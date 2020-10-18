@@ -1,0 +1,16 @@
+Purpose of program
+Usage:  <-l lang> [-c] [-b] [-s] [-f targets]
+	-l Language (required)
+	-c for clean build
+        -s restrict sysgen to syntax checks: 
+           no makefiles required, none produced
+	-b refer to bbt's sysfile
+	-f targets; separate by comma
+        -a accelerate sysgen 
+	-? Displays usage
+Example:
+1. Clean build
+perl  locag.pl.pl -c
+
+Example:
+locag.pl -l jpn

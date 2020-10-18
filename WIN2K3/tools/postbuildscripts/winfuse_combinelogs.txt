@@ -1,0 +1,7 @@
+winfuse_combinelogs
+
+Combines logs produced during the build and consumed in postbuild.
+They need to be combined to account for distributed builds.
+
+   -?       this message
+

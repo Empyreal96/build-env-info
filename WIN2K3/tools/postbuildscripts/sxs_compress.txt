@@ -1,0 +1,4 @@
+sxs_compress [-?]
+
+compress the binary files of Fusion Win32 Assembly during the postbuild
+   -?       this message

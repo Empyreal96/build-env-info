@@ -1,0 +1,6 @@
+Munge public symbols
+
+SymCD [-l lang] [-f filescope]
+  -l lang to specify which language
+  -f filescope to specify the filelist under pp directory
+

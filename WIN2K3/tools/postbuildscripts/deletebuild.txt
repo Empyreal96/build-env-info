@@ -1,0 +1,41 @@
+
+Usage: 
+    deletebuild.cmd /b <Bld> /a <ArchType> [/r <RelDir>] [PARTIAL [Compress]] [/l <lang>] 
+                    [/e <Bld>] 
+
+    deletebuild.cmd AUTO /a <ArchType> [/r <RelDir>] [Compress] [/f <FreeReq>] 
+                    [/k <BuildsToKeep>] [/l <lang>] [/e <Bld>]
+
+       Arch:  x86fre | x86chk | ia64fre | ia64chk | amd64fre | amd64chk
+
+    AUTO         "AUTO" delete builds based on the following priorities:
+                    1.  Always delete from oldest to newest
+                    2.  Never delete the newest <BuildsToKeep> builds
+                    3.  Delete until <FreeReq> bytes are free, or until
+                        no more builds can be deleted.      
+                    4.  Perform partial deletes first.
+                    4.  Perform full deletes only if all eligible builds are
+                        partially deleted.
+
+    /r           Release directory that has the individual builds as
+                 subdirectories.  Default is to use the release directory
+                 that is shared on the current computer.
+
+    /b           Name of build.
+
+    Compress     Enables NTFS compression on the remaining files.  Normally not
+                 necessary.
+
+    PARTIAL      Only delete files not indexed on the symbol server.
+                 Indexed files will remain.  Default is to do a full delete.
+
+    /f           Number of free Gigabytes required. Default is 10.
+
+    /a           Architecture type for the build(s) to be deleted.
+
+    /k           Number of builds to keep no matter what. Default is 3.
+
+    /l           language.  Default is USA.
+
+    /e           Build to exclude from deleting
+

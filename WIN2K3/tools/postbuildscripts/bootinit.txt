@@ -1,0 +1,5 @@
+
+BootInit.cmd - Used for initializing a boot test machine the very first time.
+Installs remote.exe and calls it from the startup menu 
+and removes the test volume label.
+ 

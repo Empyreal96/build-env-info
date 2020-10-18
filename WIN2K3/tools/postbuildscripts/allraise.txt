@@ -1,0 +1,19 @@
+
+Display DFS shares by given language, build number, architecture and debug type.
+
+Usage:
+    allraise.cmd [-l:<language>][-n:<BuildNo>][-a:<Architecture>][-t:DebugType]
+
+    -n:# 		Raise Build number.
+    -l:lang     	Language. Default is "usa".
+    -a:arch     	Ex: "x86" or "ia64".
+    -t:type     	EX: "fre" or "chk".
+    -d			Debug mode.
+    -? 			Display Usage.
+
+Example:
+     allraise.cmd
+     allraise.cmd -l:ger
+     allraise.cmd -n:2600 -d
+     allraise.cmd -n:2600 -l:ger -a:x86 -t:fre 
+

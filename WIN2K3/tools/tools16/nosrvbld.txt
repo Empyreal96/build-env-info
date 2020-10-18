@@ -1,0 +1,5 @@
+
+Usage:  NOSRVBLD <SKL File> [MSG file]
+        <SKL File> = Skeleton file (contains message #'s & Label names)
+        [MSG file] = (optional) message file;
+                     if omitted G:\MESSAGES\USA.MSG  will be used.

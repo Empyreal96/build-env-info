@@ -1,0 +1,7 @@
+# Create the copywowlist file given the result of wowlist filtering.
+# To be called from copywow64.cmd.
+#
+# sergueik - 03/07/01
+#
+# Perl CopyWowlist.pl <Input_DirectoryMappingFile> <Input_Filelist> <Output_Copywowlist>
+#

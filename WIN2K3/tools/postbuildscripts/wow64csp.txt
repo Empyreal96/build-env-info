@@ -1,0 +1,3 @@
+wow64csp
+
+Copy PRS signed Cryptographic Service Provider dll's into the 64-bit build.

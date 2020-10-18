@@ -1,0 +1,3 @@
+cghsfcinf [-p Path_of_SFCGEN.INF ]
+
+

@@ -1,0 +1,1 @@
+this script will kick off a parallel sync in all projects

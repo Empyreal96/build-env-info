@@ -1,0 +1,6 @@
+Microsoft (R) 32-bit RLTools Version 3.5 (Build 2420)
+Copyright (C) Microsoft Corp. 1991-1998. All Rights reserved.
+
+Binary file generator utility. Convert netmsg.dll
+
+USAGE: -t InputExeFile OutputTokenFile

@@ -1,0 +1,20 @@
+catsign [-l <language>]
+
+Creates nt5.cat, nt5inf.cat, ntprint.cat
+
+Directory for all of the output
+    %_NTPostBld%
+Binaries directory (where ntprint.inf, dosnet.inf exist)
+    %_NTPostBld%
+Directory for binplacing the CAT files
+    %_NTPostBld%
+
+Note: If none of these are set (catsign is run w/o args), these will
+      all default to %bindir%%binroot% (just like bindsys.cmd)
+
+[NoList]       Don't recreate the lists
+[NoCDF]        Don't recreate the CDFs
+[NoCAT]        Don't create the CATS
+[NoSign]       Don't sign with the test signature
+[NoTime]       Don't timestamp the test signature
+[NoBin]        Don't binplace the CAT files

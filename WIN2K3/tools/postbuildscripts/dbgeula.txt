@@ -1,0 +1,8 @@
+dbgeula -m <MsiFile> -e <EulaFile> -b <Lg>
+
+    -m <MsiFile>    MSI File
+    -e <EulaFile>   Eula to insert in RTF format
+    -b <Lg>         Language - necessary for BiDi
+
+Updates the msi file with the localized eula
+    

@@ -1,0 +1,25 @@
+
+Propogate miscellaneous build components such as symbols and DDKS to conglomeration servers.
+
+Usage:
+    miscrel.cmd: -l:<language> [-b:<BuildName>][-misc] [-p]
+
+    -l Language. 
+       Default is "usa".
+
+    -b Build Name.
+       Default is defined in 
+       <ReleaseShare>\build_logs\buildname.txt for language usa.
+       <ReleaseShare>\<lang>\build_logs\buildname.txt for language none usa.
+    
+    -misc Propagate Neutral package file only, such as mui.
+
+    -p Powerless.
+       Display key variables only.
+	
+    -? Display Usage.
+
+Example:
+     miscrel.cmd -b:2415.x86fre.main.001222-1745
+     miscrel.cmd -l:ger -p
+

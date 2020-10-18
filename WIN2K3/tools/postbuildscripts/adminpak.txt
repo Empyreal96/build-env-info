@@ -1,0 +1,5 @@
+Adminpak.cmd [-p] [-a]
+  -p => called from PRS signing
+  -a => always rebuild, skip file change check
+
+Make CAB files for Adminpak distribution (adminpak.msi)

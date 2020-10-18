@@ -1,0 +1,32 @@
+snapbin.cmd - Snap Tree from US to INTL
+============================================================================
+Usage: snapbin.cmd -n buildnum [-s SourceTree] [-t TargetTree] [-f SnapList]  
+                  [-y BuildBranch] [-B bldinfo] [-L] [-i] [-d]
+	-n Build Number : The Build Number you snapshot
+	-s Source Tree : Source Tree
+	-t Target Tree : Target Tree
+	-f SnapList : A snaplist file contain which files or dirs excluded
+	-y BuildBrahcn : Branch to snap the build from. Default %_BuildBranch% 
+	-B bldinfo : A bldinfo file should be create after snapshot
+	-L : Include robocopy log into logfile
+	-i : Incremental 
+        -d : Debug. Display the robocopy command without running it. Useful
+             when you  encountered the error and willing debug it.   
+        -N : use NET access to release server(s) to determine the snap location.
+             Default behavior is rely on DFS. 
+        -B : specify the release server to form the snap location. Only used when -N
+             flag set 
+
+
+	-? Displays usage
+
+Example:
+1. Snapshot US 2121
+C:\Win2K3\NT\tools\postbuildscripts\snapbin.cmd -n 2121
+2. Snapshot US 2222 with userlst.txt incrementally
+C:\Win2K3\NT\tools\postbuildscripts\snapbin.cmd -n 2222 -f userlst.txt -i
+3. Snapshot US 2233 from d:\nt8.binaries.x86fre to f:\nt9.binaries.x86fre 
+   with userlst.txt and store buildnumber and time stamp to mynote.txt.
+C:\Win2K3\NT\tools\postbuildscripts\snapbin.cmd -n 2233 -s d:\nt8.binaries.x86fre -t f:\nt9.binaries.x86fre -f userlst.txt -B mynote.txt
+4. Dummy snap the idx02 build in the Razzle enlisted in main branch.
+C:\Win2K3\NT\tools\postbuildscripts\snapbin.cmd -n 3505 -b idx02 -d

@@ -1,0 +1,11 @@
+genInfList.cmd
+genInfList.cmd
+          It generates %SKU%_inf.txt in _NTPostBld\build_logs dir 
+          containing the names of all the inf files valid for that SKU
+
+Generate ssi file from the .pri, .pub or .bin
+
+----------------------------------------------------------
+USAGE: 
+genssifile.cmd -i inputfile -o outputfile -t targetpath -b binarypath
+

@@ -1,0 +1,3 @@
+drvcabck [-l <language>]
+
+Generates drvindex.inf files for each sku

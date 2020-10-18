@@ -1,0 +1,6 @@
+Purpose of program
+Usage: startsymcopy.pl [-l lang]
+	-l Language
+	-? Displays usage
+Example:
+startsymcopy.pl -l jpn

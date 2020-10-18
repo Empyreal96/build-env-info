@@ -1,0 +1,4 @@
+syncone.cmd
+
+  this program will spawn a window to sync a single project after waiting
+  for an event named "syncwait.admin" for the admin project, for instance

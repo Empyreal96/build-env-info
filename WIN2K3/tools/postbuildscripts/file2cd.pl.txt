@@ -1,0 +1,14 @@
+
+file2cd.pl [-b:BinplaceFile] [-c:CDDataFile] [-o:OutputFile] [-m:TempDirectory]
+    -b:BinplaceFile	binplace log to parse
+        (default %_NTTREE%\build_logs\binplace.log)
+    -c:CDDataFile	cddata.txt file to parse
+");
+        (default %_NTTREE%\build_logs\cddata.txt.full)
+    -o:OutputFile	file to print to, otherwise stdout.
+    -m:TempDirectory	Move the input files to this directory before processing.
+
+This tool will look at the combination of cddata.txt and binplace.log and
+output the source location built from, the binplace location under %_NTTREE%,
+and what products of CDs the file ends up on.
+

@@ -1,0 +1,20 @@
+cddata [-f] [-c] [-d] [-x] [-g <search>] [-o <filename>] [-l <language>]
+
+    -f            Force list generation -- don't read old list
+    -c            Create CDFs
+    -d            Create CD lists (compression lists, link lists)
+    -t            Create exTension lists
+    -x            Don't truncate against bindiff file
+    -g <search>   Print to STDOUT or <Filename> the results
+                  of a search on the given input (see below)
+    -o <filename> Send search output to the given filename
+    -n            Compare files found during the last full cddata creation
+                  with files expected from the dosnet.inf for each sku
+
+    For the search command, valid expressions are:
+    Field=xxx     Return entries whose "Field" is exactly xxx
+    Field?yyy     Return entries whose "Field" contains yyy
+    Field!zzz     Return entries whose "Field" does not contain zzz
+    Field1=xxx:Field2=yyy logically 'and's results
+
+Field names can be found in the keylist file

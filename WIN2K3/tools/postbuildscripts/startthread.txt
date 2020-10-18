@@ -1,0 +1,2 @@
+startthread -e <event prefix> -c <complist> [-l <language>]
+

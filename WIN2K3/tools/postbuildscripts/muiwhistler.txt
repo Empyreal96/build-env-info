@@ -1,0 +1,7 @@
+Purpose of program
+Usage: muiwhistler.pl [-f][-l lang]
+	-f Force
+	-l Language
+	-? Displays usage
+Example:
+muiwhistler.pl -l jpn

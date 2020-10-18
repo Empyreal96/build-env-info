@@ -1,0 +1,18 @@
+  Usage : perl fixprn.pl <Path to Windows 2000 binary directory
+            (where files are placed after being built (and localized)>
+                       <Path to the compressed binaries share>
+                        [<Path to NT4 files>]
+
+  Script populates %binaries%\printers\fixprnsv with the Windows 2000 drivers.
+  NT4 files updated if NT4 parameter is specified.
+  Parameter 1 (Mandatory) - Path to the Windows 2000 driver.cab
+               e.g. \\ntbuilds\release\usa\2180\x86\fre.wks
+  Parameter 2 (Mandatory) - Path to the compressed binaries share
+              e.g. inaries.comp
+  Parameter 3 (Optional) - Give NT4 as second parameter
+               if refresh of NT4 binaries is required.
+  Parameter 4 (Mandatory if Paraneter 2 is NT4)
+              Path to NT Service Pack till the place where unidrv5.4
+               driver files are present.
+              e.g. \\ntbuilds\release\usa\svcpack\sp6\1.058\support\printersEOM
+

@@ -1,0 +1,3 @@
+MkNetfxCab.cmd
+
+This sript creates netfx.cab.  This cabinet contains files for netfx component.

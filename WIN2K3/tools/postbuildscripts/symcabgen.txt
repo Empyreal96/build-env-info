@@ -1,0 +1,7 @@
+symcabgen -f:filename -s:DDFdir -t:<cab|cat> -d:destdir [-l <language>]
+
+ -f filename of the cab (includes .cab)
+    or the catalog file (does not include .CAT)
+ -s DDF directoyr - this is where the makefile and the CDF files are located
+ -t CAB or CAT to distinguish which is being created
+ -d CAB or CAT destination directory

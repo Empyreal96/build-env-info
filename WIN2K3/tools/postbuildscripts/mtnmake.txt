@@ -1,0 +1,22 @@
+mtnmake.cmd - Multi-Taskly NMake makefile with process<total><id>
+
+Syntax:
+	mtnmake.cmd [SYSGEN] -n <sessions> [-d] [-w <makefile>] [-v]
+
+Argument : 
+SYSGEN         : by default it will define sysgen.err and sysgen.log for 
+                 it's standard input / output file
+
+sessions       : number of session you want to run at the same time.
+-d             : do not make target directory tree (SYSGEN specific)
+-v             : run verbosely, echo executed commands
+makefile       : specify full path to makefile in order to run mtnmake.cmd
+                 in arbitrary directory (probably %TEMP%)
+                 default is to look in current directory
+Example:
+1. run nmake at 4 sessions
+=> mtnmake.cmd -n 4
+2. run nmake for sysgen with 8 sessions, 
+   makefile sitting in %TEMP%\%LANG%:
+=> mtnmake.cmd SYSGEN -n 8 -d -w %TEMP%\%LANG%\SYSGEN.MAK
+

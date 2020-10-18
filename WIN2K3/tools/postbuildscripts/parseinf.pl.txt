@@ -1,0 +1,20 @@
+Usage
+    perl parseinf.pl <filename> [<section_name>]
+
+Returns the contents of a given section of an inf file.
+
+ARGUMENTS
+
+    filename:  Name of the inf file.
+
+    section_name:  Name of the section you want.  Default: whole file will
+        be printed.
+
+EXAMPLES
+
+    To see the contents of the [Files] section of foo.inf, type:
+        perl parseinf.pl foo.inf Files
+
+    To see the entire contents of foo.inf, type:
+        perl parseinf.pl foo.inf
+

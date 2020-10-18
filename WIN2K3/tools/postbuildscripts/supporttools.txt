@@ -1,0 +1,3 @@
+supporttools [-l <language>]
+
+Create the support tools cab.

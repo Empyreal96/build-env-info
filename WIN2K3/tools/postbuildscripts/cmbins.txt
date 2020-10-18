@@ -1,0 +1,4 @@
+Cmbins.cmd
+contact: Quintinb or CmDev
+
+Make Cmbins.exe (Binary cabinet used by Connection Manager Administration Kit)

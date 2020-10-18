@@ -1,0 +1,22 @@
+Polls the temporary error files in the %TEMP% directory, piping them 
+through mail to designated user list and/or printing when they appear.
+
+Usage:
+
+tapeline.cmd  [-l:<lang>|-p|-d] [-s|-m:alias]
+   -l:<LANG>  Default is "usa".
+   -m:<ALIAS> Use alias to pipe to mail to. Default alias found 
+              by "TapeLineErrReceiver" keyword in .ini files.
+   -s         (Silent) No mail.
+   -u:<LIST>  To check distributed build logs, provide the list os shares to monitor, e.g 
+              C:\Win2K3\NT\tools\postbuildscripts\tapeline.cmd -u:\\x86fre00\bc_build_logs\usa;\\x86fre01\bc_build_logs\usa;...;\\x86fre04\bc_build_logs\usa
+              using just -u will lead to standard US distributed build machines
+              to be polled.
+   -p         Print to screen.
+   -d         Include debugging information.
+   -b:<DIR>   Specify the base directory to poll (defaults to %TEMP%)
+
+Examples:
+
+tapeline.cmd -l:GER -p -d:%TEMP% -s
+tapeline.cmd -p -d -b:p.temp.ia64h

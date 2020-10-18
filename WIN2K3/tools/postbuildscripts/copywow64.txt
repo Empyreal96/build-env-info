@@ -1,0 +1,6 @@
+copywow64 [-l <language>]
+
+Copy appropriate 32bit files from a release into a 64bit build.
+
+If _NTWOWBINSTREE is set that is the location 32bit files will be 
+copied from.

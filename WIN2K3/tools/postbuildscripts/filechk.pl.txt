@@ -1,0 +1,19 @@
+# Script: filechk.pl
+#
+#   (c) 2000 Microsoft Corporation. All rights reserved.
+#
+# Purpose: this program will search through dosnet.inf for each product and
+# make sure all the files exist on the CDImage shares on the local
+# machine.
+#
+# Version: 1.00 (06/13/2000) : (dmiura) Make international complient
+
+Find missing files via dosnet.inf, log them to stdout
+%TMP%\misswks.txt for wks, for instance.
+Usage: filechk.pl [-d -l lang]
+	-d Show debug info
+	-l Language
+	-? Displays usage
+Example:
+filechk.pl -l jpn
+

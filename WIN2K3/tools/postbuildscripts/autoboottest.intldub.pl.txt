@@ -1,0 +1,8 @@
+
+Performs AutoBoot and AutoChecks on the build from d:\release\<lang>
+
+Note:  This is Ireland only autoboot process, interacting with buildnet
+       Results are logged into http://buildnet -> 'AutoBootTest and BVT' link
+
+Syntax:	perl autoboottest.pl -l:<lang>
+

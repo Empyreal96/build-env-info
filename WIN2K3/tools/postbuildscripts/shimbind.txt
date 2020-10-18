@@ -1,0 +1,3 @@
+shimbind [-l <language>]
+
+Binds the appcompat shims

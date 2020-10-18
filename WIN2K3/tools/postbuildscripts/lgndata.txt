@@ -1,0 +1,8 @@
+lgndata [ -?] [-0] [-g] [-i] [-s] [-c]
+         -0 generate lgnlist.txt which contains qualified binaries to be processed
+         -g generate lgntobuildlist.txt which contains binaries to be processed
+         -i  generate lgnbuildlist.txt which contains list of LGN resource binaries
+         -s do a snap shot from Ntreee\ , for those files listed in PostBuildScripts\ lgnlist.txt
+         -c copy Modified bin and RC bin from nttree\build_logs\LgNeutra to nttree
+         -v Verify if last build terminated correctly. If it's not the case, recover it.
+         

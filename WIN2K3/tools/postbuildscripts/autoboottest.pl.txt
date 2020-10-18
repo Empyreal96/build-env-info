@@ -1,0 +1,10 @@
+Purpose of program
+Usage: autoboottest.pl [-l lang] [-y [pro|ads|ser|dtd]]
+	-l Language
+        -y sku select
+	-? Displays usage
+        As of 02/13/01, the sku choice of [srv, pro] is available 
+        for GER x86, and JPN x86 only.
+Example:
+autoboottest.pl -l jpn
+autoboottest.pl -l:ger -y:pro

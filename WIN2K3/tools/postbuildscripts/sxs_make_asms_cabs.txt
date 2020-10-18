@@ -1,0 +1,4 @@
+make_asms_cabs.cmd [-?]
+
+Create _ntpostbldhivesxs.inf, _ntpostbldwinsxs, _ntpostbldsms01.cab
+   -?       this message

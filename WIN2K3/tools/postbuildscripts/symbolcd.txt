@@ -1,0 +1,6 @@
+Usage: symbolcd.cmd [-l lang][-c][-m][-t][-?]
+-l lang 2-3 letter language identifier
+-c do a clean build
+-m munge the public symbol files and then quit
+-t test even though this isn't an official build machine
+-? Displays usage

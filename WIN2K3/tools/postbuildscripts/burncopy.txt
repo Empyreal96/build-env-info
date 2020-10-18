@@ -1,0 +1,4 @@
+assumptions:
+
+1) BuildName is first command line arg
+2) lang is an optional second arg

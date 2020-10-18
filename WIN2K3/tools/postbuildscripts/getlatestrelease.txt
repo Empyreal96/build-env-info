@@ -1,0 +1,13 @@
+getlatestrelease.cmd [-n:#] [-m:<machine name> | -f:<release path>] [-l:<language>] [-r]
+   -n:# only consider builds numbered #
+   -m:<machine name> look at given machine's release share.
+   -f:<release path> used to specify the exact location to look for builds
+   -p:<build architecture> specify a platform <x86,ia64,amd64>
+      Debug type will be the same as the calling razzle
+   -l:language specified; default is usa
+   -r treat "usa" language the way international builds do
+  
+getlatestrelease.cmd will examine all builds on a machine and return the name
+of the latest build according to the _BuildArch and _BuildType
+environment variables.
+

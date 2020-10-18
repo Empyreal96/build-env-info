@@ -1,0 +1,4 @@
+samsibuild [-l <language>] [-p]
+  -p => called from PRS signing
+
+Build server appliance msi.

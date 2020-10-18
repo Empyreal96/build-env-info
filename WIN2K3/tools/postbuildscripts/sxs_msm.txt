@@ -1,0 +1,3 @@
+sxs_generate_msm
+
+Generate Msi Merge Module for Side-By-Side win32 assemblies

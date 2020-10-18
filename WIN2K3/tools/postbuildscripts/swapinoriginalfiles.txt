@@ -1,0 +1,4 @@
+SwapInOriginalFiles [-l <language>]
+
+Swap in original, unprocessed files before rebasing. Allows incremental
+postbuild to work.

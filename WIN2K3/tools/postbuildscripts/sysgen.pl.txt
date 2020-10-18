@@ -1,0 +1,832 @@
+SYSGEN v.5.5: Whistler aggregation tool for international builds.
+
+
+Usage
+    perl sysgen.pl [<options>] [<macros>] [<targets>]
+where
+    Options:
+
+    /c        generate the makefile from scratch, overwriting existing one.
+              By running nmake, all the targets will be generated.
+    /s        limit sysgen to syntax check - makefile not (re)generated.
+    /f <name> takes <name> as the sysfile.
+              If this option is omitted, sysgen searches the current
+              directory for a file called sysfile and uses it as a
+              description (mapping) file.
+    /w <name> takes <name> as the PATH for reading/writing
+              makefile and err/log files. Note that the default
+              aggregation 'makefile' name is sysgen.mak
+    /v        display version
+    /y        verify LOC drop coverage. Use in conjunction with -c flag
+    /z        generate LS 5.0 tokens from existing LOC drop (bingen/rsrc).
+              Use in conjunction with -c flag
+    /l:<LANG> specify language
+    /?
+    /h        display this message
+
+    Macros:
+          list the command line macro definitions in the format
+          "<macroname>=<macrovalue>". Seldomly used
+
+    Targets:
+          specify files (without path) to localize/aggregate.
+
+    For a full documentation please run perldoc.exe sysgen.pl (attached below)
+
+
+NAME
+    SYSGEN - Aggregation driver
+
+    Aggregation (also termed sysgen) is the important postbuild step for the
+    international Whistler builds. In fact, it is the very first step
+    executed by the postbuild and is specific to the international Whistler
+    builds. International build is recognized by the %LANG% environment
+    being defined and different from the "USA" (the default).
+
+    Sysgen consists of creating the file structure in the %_NTPOSTBLD%
+    environment which is to be in some way identical to the %_NTTREE% one
+    but which content represents the blend of US and localized files. The
+    identity between the US and %LANG% file structure guarantees the
+    subsequent build steps do not differ between the languages.
+
+    This equivalence is achieved by applying appropriate file operations to
+    certain files. From the sysgen point of view, there is few choices to
+    take when producing the desired bits:
+
+            * use the (copy of) US and %LANG% pre-build ones
+            * create an appropriate merge between US files and %LANG% resources
+
+    In most typical run, which is the full rebuild, sysgen starts with the
+    empty %_NTPOSTBLD% and ends with the makefile appropriate to build the
+    full file tree. The originals of the US tree are never destroyed for the
+    sake of reusability. In the incremental run, the task solved by sysgen
+    is rather complicated: none but certain (changed) files are touched,to
+    preserve the build's timestamps. Also, for a reasonably small number of
+    files changed the incremental run was thought to consume far less time,
+    than the full run, and for some time it was, indeed, true.
+
+    Lately, the investigation for advanced aggregation strategy has been
+    taken. This was mainly due to poor aggregation timings, but also due to
+    possible future transition to the build scenario, in which some or even
+    all the assumptions the aggregation relies upon, may change.
+
+    Let's take the bird eye view on the task aggregation solves.
+
+    Sure, most of the files in the %LANG% build would eventually be
+    identical to the US ones. Some, noticeably the text files will be
+    totally different from the US but just identical to the ones found in
+    localizer's drop.
+
+    Some (noticeably executable) bits are specific: most resources are
+    language specific and thus, not interchangeable. These files never
+    existed before the aggregation took place.
+
+    So the main and only task of aggregation is to decide, how to build the
+    file tree.
+
+    It is also becoming important, the procedure must be as efficient and
+    easily configurable as possible. The least important, even seldomly
+    stated clearly, goal is to make the internals of the sysgen script
+    simple to maintain and modify, template compliant etc. etc.
+
+    This document describes certain features the sysgen is capable, along
+    with certain file specifications, focusing on the recent features. For
+    the introduction to sysgen and aggregation principles, see
+    http://ntbld/whistler/intl/sysgen.htm and other documents on NT Whistler
+    International build web site http://ntbld/intl
+
+SYNOPSIS
+        perl sysgen.pl [<options>] [<macros>] [<targets>] 
+
+    where
+
+        Options:
+
+        /c        generate the makefile from scratch, overwriting existing one.
+                  By running nmake, all the targets will be generated.
+        /s        limit sysgen to syntax check - makefile not (re)generated. 
+        /f <name> takes <name> as the sysfile.
+                  If this option is omitted, sysgen searches the current
+                  directory for a file called sysfile and uses it as a
+                  description (mapping) file.
+        /w <name> takes <name> as the PATH for reading/writing
+                  makefile and err/log files. Note that the default 
+                  aggregation 'makefile' name is sysgen.mak 
+        /v        display version
+        /l:<LANG> specify language
+        /?
+        /h        display this message
+         
+        Macros:
+              list the command line macro definitions in the format
+              "<macroname>=<macrovalue>". Seldomly used
+
+        Targets: 
+              specify files (without path) to localize/aggregate.
+
+    You may use the TEMPLATE COMPLIANT
+
+            -<flag>:<value> 
+
+    syntax or OLD sysgen
+
+            -<flag> <value> 
+
+    syntax or both. There is little need to specify any option but the
+    language on command line. The only one case you may need it is when you
+    verify the mappings. In this case you will have to type
+
+            perl sysgen.pl -l:<LANG> -c [-a] [-s]
+
+    The working directory of sysgen.pl is now arbitrary, and one is able to
+    specify
+
+            * mappings file
+            * output folder 
+            * language
+
+    via command line switches. In the past, it was crucial to change to the
+    directory
+
+            %RAZZLETOOLPATH%\POSTBUILDSCRIPTS\SYSGEN\RELBINS\%LANG%
+
+    in order to have sysgen running. Not anymore! Once again, this means one
+    can execute multiple language and architecture aggregations on the same
+    box at once.
+
+DESCRIPTION
+    Historically, there are four different ways the sysgen.pl can execute.
+
+    One of these is totally obsolete now, and one is not of practical use by
+    the time of this writing. So only two modes you are to learn although
+    all four are still available.
+
+    Below is the list.
+
+            * acceletared aggregation
+            * full aggregation 
+            * powerless syntax check (no aggregation) 
+            * old incremental aggregation  
+
+    The command line flags specify the desired mode, the default is (still!)
+    being full aggregation, without acceletarion. That corresponds to the
+    incremental postbuild.
+
+    The accelerated aggregation is the fastest mode and corresponds to full
+    postbuild. It may seem strange but it is not the default mode yet.
+
+    The syntax check sysgen provides the quickest way to test the validity
+    of the mappings and produces no output, garbages no screen, but detects
+    all errors that would hurt the real aggregation, but cannot be used for
+    anything else. You may never encounter any need in powerless syntax
+    check. The sysgen is never executed in this way by the real postbuild.
+
+    Last, the old incremental aggregation is totally obsolete by now, though
+    still accessible. As a matter of fact, it does not give any time
+    savings, neither is it more reliable that the rest of the modes.
+
+    Alas, have you dropped the command line arguments completely, the
+    incremental aggregation would be fired. It will end up almost
+    immediately, though, since it relies on the presence of the makefile
+    (filename is sysgen.mak) in the current working directory, which hardly
+    will be the case.
+
+    Admittedly, accelerated aggregation is approximately three times quicker
+    than the non-accel one. It may become the default by the time of your
+    reading this. The accelerated aggregation is a part of a full postbuild.
+
+MAKEFILE
+    Generation of the files in the %_NTPOSTBLD% is accomplished through
+    executing the nmake.exe with the Makefile, described below. The default
+    location of the Makefile is %TEMP%\%LANG% and the default name is
+    sysgen.mak. After the successful aggregation the makefile is copied to
+    the %_NTPOSTBLD%\%LANG%\BUILD_LOGS folder.
+
+    Sure the sysgen.mak represents a syntaxically correct makefile. However,
+    the aggregation makefiles are seldom used more than once by the current
+    design. It is more important to have is a useful for a post-break
+    post-mortem study.
+
+    The Makefile shown below corresponds to version 3.0x and later of
+    SYSGEN. [change #52 in
+    //depot/private/intlred/tools/PostBuildScripts/sysgen.pl] It is not
+    syntaxically different from the older versions, though certain effort
+    has been applied to make it a little bit slick and e.g. easy to browse.
+
+    For example, the total size of the makefile (adding all the COMPDIR
+    listing files, to be honest) is around 1 Megabyte by now. Compare it
+    with the typical makefile of the early versions of the sysgen (i.e.
+    before the COMPDIR was first used, let's use the term version 3.0x).
+
+    The makefile for the same build weighted up to and over 10 Megabytes.
+
+    It was virtually impossible to diff the makefiles between the consequent
+    builds, or languages. This made the typical investigation for the origin
+    of certain files more difficult.
+
+    The sysgen.mak file:
+
+            -------- top of the file -----------------------------------
+            sysgen:
+                    @nmake /A /K /F d:\lp.temp.x86fre\GER\sysgen.mak /NOLOGO all
+        
+            ------- Definition of the target to build ------------------
+        
+            !IFNDEF LANG
+            !    ERROR You must define macro LANG
+            !ENDIF
+
+            !IF "$(LANG)" != "GER" && "$(LANG)" != "ger"
+            !    ERROR This file is for GER
+            !ENDIF
+
+            !IF "$(_BUILDARCH)" != "x86"
+            !    ERROR This file is for x86
+            !ENDIF
+
+            ------ header: lagguage and arch definitions ---------------
+
+            # Directory name aliases
+            _NTLOCDIR=$(_NTBINDIR)\loc\res\$(LANG)
+
+            # Binary file operation aliases
+            COMPDIR=compdir.exe /ukerlntsd
+            BINGEN=bingen -n -w -v -f
+            # Note: one must omit the extension here
+            # to enable the logerr 'magic'
+            COPY=copy
+
+            ------- varialbes definitions ------------------------------
+            .SILENT:
+        
+            all: \
+                    _DIRS _COMPDIR PROCESS1601 PROCESS1602 PROCESS1603 .... PROCESS1616 
+
+            ------- pseudotarget expansion definitions -----------------
+
+            PROCESS1601:  \
+                    $(_NTPOSTBLD)\192.dns \
+                    $(_NTPOSTBLD)\31x5hc01.cnt \
+                    $(_NTPOSTBLD)\31x5hs01.cnt \
+        
+            ------- target make rules ----------------------------------
+
+            _DIRS: 
+                    md $(_NTPOSTBLD)\dtcinf 2>NUL
+                    ...
+            _COMPDIR: \
+                    $(TEMP)\COMPDIR\compdir.001.mak \
+                    ...
+                    $(TEMP)\COMPDIR\compdir.735.mak
+                    logerr "$(COMPDIR) /m:$(TEMP)\COMPDIR\compdir.001.mak $(_NTTREE) $(_NTPOSTBLD)"
+            ...
+
+            $(_NTPOSTBLD)\192.dns: $(_NTLOCDIR)\windows\misc\192.dns
+                    logerr "$(COPY) $(_NTLOCDIR)\windows\misc\192.dns $(_NTPOSTBLD)\"
+            ...
+            $(_NTPOSTBLD)\wow6432\wowreg32.exe: $(_NTTREE)\wow6432\wowreg32.exe \
+                                                $(_NTLOCDIR)\windows\tokens\wow6432\wowreg32.ex_ 
+                    logerr "$(BINGEN)  -p 1252 -o 0x07 0x01   -r $(_NTTREE)\wow6432\wowreg32.exe..."
+        
+            ------- end of Makefile -----------------------------------
+
+MAKING LINKS
+    The distinctive feature of version 3.0x of aggregation is using the
+    compdir.exe to arrange hard links for the aggregation rather then
+    perform file-by-file copy.
+
+    It has not been investigated too rigorously, whether the speedup was
+    achieved because of
+
+            * reducing the number of steps executed due to 
+              grouping the files by directory (~10000 file ops versus ~100 lists ops) 
+            * generation of links instead of copying the files 
+
+    Basically, it is possible to investigate: compdir's rich set of flags
+    allows one.
+
+    In fact, no explicit command name is used by current makefile, but only
+    macros. The COPY, COMPDIR, BINGEN macros definitiond are found in
+    sysfile.inc:
+
+            SET COMPDIR=compdir.exe /ukerlntsd
+            SET COPY=copy
+            SET BINGEN=bingen -n -w -v -f
+
+    Now, getting actual command changed is a matter of macro definition. No
+    need to edit a letter in the aggregation script.
+
+    Now, the COPY and COMPDIR macros operations are both present. Why not
+    removing the COPY completely? The next section explains, why.
+
+OPTIMIZATION
+    Where are the time savings coming from? The statistics shows that there
+    are as many as
+
+            35350 files in  
+            750 directories.  
+
+    handled now by compdir.exe and this saves up to 60% of former execution
+    time.
+
+    At present there are ~250 'explicit' copy operations left for GER
+    aggregation, and almost ~1500 copy operations for ARA aggregation.
+
+    The reason for such a difference is that rsrc compiler was discovered to
+    be sensitive to whether the resource it operates is a link or separate
+    copy. The generic rsrc build instruction involves both %_NTTREE% and
+    %_NTPOSTBLD% libraries. Too bad if they are links to each other: rsrc
+    will simply fail to do the job.
+
+    The problem is, sysgen does not really seem to trace the inter-file
+    relations well enough. This may be re-designed in the future versions.
+    To put is short, there is no easy way to identify the rsrc files from
+    the rest when looking 'from inside' of the sysgen.
+
+    The approach chosen was based on a minimal tradeoff between the
+    execution acceleration and complexities introduced.
+
+    The default policy of sysgen is always to take COPY, not COMPDIR
+    approach. By the way, the COMPDIR approach means here not just applying
+    the compdir.exe with certain flags (as we have seen this task is trivial
+    and may be achieved by re-defining the COPY macro in the sysfile.inc)
+    but rather complex: generating some file hash info for subsequent
+    grouping the files by source/destination directories etc. etc.
+
+    First, sysgen does a clever guess about what is the file copying serve
+    for. This means, it is able to factor out files going alone
+    %_NTTREE%->%_NTPOSTBLD% trails, and lets compdir.exe do that. This gives
+    the major contribution:
+
+            28002 files
+            650 directories.  
+
+    which is almost 80% counted in file numers, not times.
+
+    However, files which propagate between %_NTLOCDIR% and %_NTPOSTBLD% do
+    not provide the possibility for file name, path based clever guess. This
+    corresponds to the whole localizer tree and leaves the problem open.
+
+    To teach sysgen to select files, that are safe passing to COMPDIR, is a
+    complex task. The solution is rely upon the simplest test to enforce
+    COMPDIR handling for some files and allow COPY the rest. The more bulk
+    of files get handled the better. Thus file operation may be determined
+    by the file EXTENSION.
+
+    Sysgen simply reads extension hints in the mapping files to know the
+    file is safe to pass to COMPDIR. No hints - no risky optimization. Old
+    behavior restored.
+
+    In future design, the logic of the sysgen may be refined. However, at
+    present state of the optimization, there is already 10 to 1 reduction of
+    the file ops and 3 to 1 reduction in time. It is clearly hard to beleive
+    the next factor 3 acceleration possible.
+
+MAPPING FILES
+    Sysgen reads mapping files for variable and build tree directory
+    structure definitions. Here we concentrate on mapping file paths.
+
+    For the versions of sysgen prior and including 3.0x, the directory
+    occupued by mapping file 'sysfile' was in fact unique for each %LANG%
+    and fixed. This introduced redundancy between the mapping files and
+    leaded to maintenance complexity.
+
+    For compatibility reasons, this structure is still present in the SD,
+    the parses able to work with it, etc.
+
+    Starting with version 4.0x of sysgen, the layout of mapping files has
+    been simplified to make the aggregation more flexible and robust and to
+    enable more changes without the need to fix the Perl code.
+
+    Of course, necessary functionality has been implemented to help
+    factoring out apparently redundant definitions.
+
+    In particular, mapping file paths and names are no longer hardcoded,
+    e.g. sysfile location may be specified to the sysgen via a command line
+    'f' argument, while makefile location via the 'w' argument. No arguments
+    are mandatory and default to current directory. Also, this leads to
+    ability of running multiple language and architecture aggregations on
+    the same box at once.
+
+    The include tree of the mapping files is schematically displayed below.
+
+    sysgen.pl
+
+     * sysfile.inc
+
+        *  hotfix.inc
+        *  scp.inc
+        *  mapfix.inc
+        *  iis.inc
+        *  con.inc
+        *  msmq.inc
+        *  smtpnntp.inc
+        *  netmeeting.inc
+        *  indexsrv.inc
+        *  fax.inc
+        *  exch_se.inc
+        *  bldbins.inc      
+        *  ntloc.inc
+
+    The number of mapping files exists is determined by the the number of
+    projects. See the %_NTDRIVE%\LOC\RES\%LANG% directory structure.
+
+    The bldbins.inc and ntloc.inc map %_NTTREE% and
+    %_NTDRIVE%\LOC\RES\%LANG%\WINDOWS directories and their subdirectories,
+    respectively.
+
+    The hotfix.inc file contains rules that are to be applied 'as is' and
+    otherwise confuse the sysgen [see HOTFIX FILE SYNTAX below].
+
+    The mapfix.inc file is reserved to the unapproved mapping fixes required
+    e.g. to fix bugs but less essential for the build to succeed. It may
+    disappear in the future versions of the sysgen.
+
+    Also, external drop mappings are planned to move in one mapping file.
+
+    In a more distant future, it is planned to have some convenient tool to
+    wirk with mapping files.
+
+MAPPING FILE SYNTAX
+    The syntax of the mapping files did not change too much, to provide
+    backward compatibility with versions 3.0x abd below. The descriprion may
+    be found in http://ntbld/whistler/intl/Sysgen.htm In fact, much effort
+    has been applied to make the parser features stable.
+
+HOTFIX FILE SYNTAX
+    The hotfix.inc file contains rules that are to be applied 'as is' and
+    would otherwise confuse the sysgen.
+
+    Sure, the syntax of the hotfix.inc is specific. The reason for
+    introducing the hotfix.inc file comes from the fact that the assumption
+    the aggregation is based upon: the existence of one-to-one
+    correspondence between the token and its binary file, can sometimes be
+    not true.
+
+    Rules written in the hotfix file apply exactly to such situations and
+    are to be considered patches to makefile, but applied before passing the
+    makefile to nmake.
+
+    Below you see the part of the hotfix.inc file
+
+            IF "$(LANG)" == "KOR"
+        
+            BEGIN_RULES
+        
+            SET MULTITOKDIR=$(_ntbindir)\loc\res\$(lang)\windows\tokens\multi
+            SET HOTFIXDIR=$(_ntbindir)\loc\res\tools\twisttok
+            SET DST=$(_ntpostbld)\$(lang) 
+            # version 3.x
+            SET DST=$(_ntpostbld)
+            # version 4.x
+            SET SRC=$(_nttree)
+            SET ACP0=1252
+            SET ACP1=949
+            SET PriLangID0=0x09
+            set SubLangID0=0X01
+            SET PriLangID1=0x12
+            set SubLangID1=0X01
+            SET OVERWRITE_DEFAULT_RULE=1
+        
+            $(dst)\netmsg.dll : $(src)\netmsg.dll $(multitokdir)\netmsg.dl_
+                    logerr "echo bug 423602"
+                    logerr "bingen -n -w -v -f  -p $(ACP0) -o $(PriLangID0) ..."
+                    logerr "bingen -n -w -v -f  -p $(ACP1) -o $(PriLangID1) ..."
+        
+            END_RULES
+
+            ENDIF
+
+    It is evident that the dependency block has a typical Makefile, rather
+    then sysgen mapping syntax.
+
+    Notice also the new BEGIN_RULES/END_RULES tags. These separate the
+    hotfix section from the rest of the file.
+
+    In fact, the contents of the mapping enclosed by these targs are not
+    parsed at all.
+
+OUTLOOK OF VERSION 4.0x VALUABLE FEATURES
+            1. Produce well-formed good-looking Makefile. 
+               E.g. use of dotted and preprocessing nmake directives. 
+
+            2. Fix the mapping file structure to ensure that keeping the mapping files 
+               in the folders %RAZZLETOOLPATH%\postbuildscripts\sysgen\relbins\%LANG% 
+               is no longer required to execute the aggregation.
+               E.g. provide language setting on command line   
+
+            3. Extend the parser e.g. to recognize constructs:   
+   
+                    IF "$(LANGUAGE)" == "INTL" || "$(LANGUAGE)" == "intl"
+
+               This is to mimic the makefile syntax (nmake):
+
+                    !IF "$(LANGUAGE)" == "INTL" || "$(LANGUAGE)" == "intl"
+
+    Thus one can verify that given $LANGUAGE = CHT
+
+            &testCompoundIF("IF $(LANG) == CHT");                        TRUE
+            &testCompoundIF("IF $(LANG) == CHS || ($(LANG) == CHT)");    TRUE
+            &testCompoundIF("IF $(LANG) == CHS");                        FALSE
+            &testCompoundIF("IF ($(LANG) == CHT) && ($(LANG) == CHS) "); FALSE
+            &testCompoundIF("IF $(LANG) == chs");                        FALSE
+            &testCompoundIF("IF \"\" == \"\" ");                         TRUE
+
+    This ability could be useful to factor out the repeated blocks in the
+    mapping files (currently underway)
+
+    4. Work on the aggregation code timings.
+
+    Profiling the script(full accelerated aggregation).
+
+            Total Elapsed Time = -10.7283 Seconds
+              User+System Time = 146.7325 Seconds
+            Exclusive Times
+            %Time ExclSec CumulS #Calls sec/call Csec/c  Name
+             31.6   46.49 57.020 148164   0.0003 0.0004  main::MakeXcopyCmd
+             13.1   19.22 19.114  37423   0.0005 0.0005  main::NewImageToSymbol
+             12.5   18.43 32.083      1   18.435 32.083  main::AddFiles
+             9.52   13.97 12.928 348653   0.0000 0.0000  main::SetField
+             8.91   13.07 12.923  51459   0.0003 0.0003  main::RevEnvVars 
+             5.89   8.642 95.413  35868   0.0002 0.0027  main::GenXcopy   
+             4.47   6.554  6.120 145184   0.0000 0.0000  main::PushFieldVal
+             4.40   6.463  5.000 488408   0.0000 0.0000  main::GetMacro
+             4.21   6.174 19.067   1688   0.0037 0.0113  main::AddRecord
+             3.07   4.506  4.506      1   4.5060 4.5060  main::Find_UnMapping
+             2.40   3.516 10.984  47581   0.0001 0.0002  main::AddFileInfo
+             2.03   2.985  2.874  37423   0.0001 0.0001  main::GetDynData
+             1.64   2.412 13.357  47581   0.0001 0.0003  main::AddEntry
+             1.17   1.720 106.19  37423   0.0000 0.0028  main::RecordToCmd
+             1.08   1.581  1.317  88136   0.0000 0.0000  main::IsRepositKey
+
+    Profiling the script(syntax check).
+
+            Total Elapsed Time = -5.11500 Seconds
+              User+System Time = 42.05962 Seconds
+            Exclusive Times
+            %Time ExclSec CumulS #Calls sec/call Csec/c  Name
+             44.5   18.73 31.126      1   18.730 31.126  main::AddFiles
+             19.5   8.220  7.372 243189   0.0000 0.0000  main::SetField
+             15.0   6.345 19.905   1688   0.0038 0.0118  main::AddRecord
+             11.1   4.706  4.706      1   4.7060 4.7060  main::Find_UnMapping
+             7.93   3.335 10.111  47581   0.0001 0.0002  main::AddFileInfo
+             5.14   2.161 12.138  47581   0.0000 0.0003  main::AddEntry
+             3.21   1.351  1.042  88136   0.0000 0.0000  main::IsRepositKey
+             2.49   1.048  1.914  37423   0.0000 0.0001  main::RecordToCmd
+             2.31   0.971  0.834  39011   0.0000 0.0000  main::GetFieldVal
+             1.57   0.660  0.398  74846   0.0000 0.0000  main::IsHashKey
+             1.31   0.550  0.378  49147   0.0000 0.0000  main::IsEmptyHash
+             1.14   0.480  2.394      1   0.4800 2.3940  main::FillCmd
+             1.11   0.468  1.410      1   0.4678 1.4103  main::FillTokens
+             0.78   0.330  0.193  39274   0.0000 0.0000  main::GetMacro
+             0.65   0.272  0.146  35868   0.0000 0.0000  main::GenXcopy
+        
+    Clearly, the time consuming operations involve various file tests which
+    cannot be skipped.
+
+LIMITATIONS
+            * the currently unused sysgen run modes are not being tested 
+              too thoroughfully and may happen to fail or produce weird results
+              support for the obsolete modes of might terminate 
+
+            * the syntax of the mapping files is archaic. 
+              the parser cannot dynamically bias the expected to the actual 
+              mapping file syntax (not all fields are used)
+
+            * aggregation toolset (sysgen.pl/locag.pl/mtnmake.cmd/sysfile etc.)
+              backward compatibility is slim
+
+AUTHOR
+    Contact Serguei Kouzmine sergueik@microsoft.com
+
+  Notes
+
+    cmd.exe can live with forward slashed instead of bachward slashes
+    However, it needs to quote the filenames to have this working
+
+          dir  /ad "c:/program files" 
+          Volume in drive C has no label.
+          Volume Serial Number is 58F7-C69D
+     
+          Directory of c:\program files
+     
+          04/16/2002  11:10 AM    <DIR>          .
+          04/16/2002  11:10 AM    <DIR>          ..
+          ...
+
+    1. hotfix: make use of the "env" variables inherited from codes.txt
+
+    2. get meaningful names! LANGUAGE => SRC_LANG ALT_LANG => LANG
+
+    !IFNDEF LANG ! ERROR You must define macro LANG !ENDIF
+    DEST=$(_NTPOSTBLD)\$(LANG) !ERROR $(DEST)
+
+    D:\test\tools\PostBuildScripts\sysgen.pl :
+    D:\test\tools\PostBuildScripts\sysgen.dep
+    D:\test\tools\PostBuildScripts\sysgen.dep2 echo $@ " " $?
+
+    BEGIN_MESSAGES_MAP
+
+       #Code  Description                                        LANG
+       #--------------------------------------------------------------- 
+        1001  sysfile not found      @EU;@CS;@FE
+        1002  file not found         @EU;@CS;@FE
+        1003  file not found: unable to run sysgen incrementally   @EU;@CS;@FE
+        1004  target file not found  @EU;@CS;@FE
+        1005  filter file not found  @EU;@CS;@FE
+        1006  unable to open file for reading      @EU;@CS;@FE
+        1007  unable to open file for writing      @EU;@CS;@FE
+        1008  /f option requires a filename        @EU;@CS;@FE
+        1009  target not found in filter file      @EU;@CS;@FE
+        1010  /w option requires a directory name  @EU;@CS;@FE
+        1011  /n option requires number of sections@EU;@CS;@FE
+        1101       @EU;@CS;@FE
+
+        1110  syntax error @EU;@CS;@FE
+        1111  syntax error: ENDIF unexpected       @EU;@CS;@FE
+        1112  syntax error: IF unexpected  @EU;@CS;@FE
+        1113  syntax error: END_MAP unexpected     @EU;@CS;@FE
+        1114  syntax error: BEGIN_*_MAP unexpected @EU;@CS;@FE
+        1115  syntax error: INCLUDE unexpected     @EU;@CS;@FE
+        1116  syntax error: unknown operator in expression @EU;@CS;@FE
+        1117  syntax error: \")\" missing in macro invocation      @EU;@CS;@FE
+        1118  syntax error: incomplete description line    @EU;@CS;@FE
+        1119  syntax error: unknown mapping type   @EU;@CS;@FE
+        1120  syntax error: unmatched IF   @EU;@CS;@FE
+        1121  syntax error: unmatched BEGIN_*_MAP  @EU;@CS;@FE
+
+        1210  file format error: target not found  @EU;@CS;@FE
+        1211  file format error: target not listed in \"all\"      @EU;@CS;@FE
+        1212  file format error: no description blocks for files   @EU;@CS;@FE
+        1213  file format error: \"sysgen\" target not found       @EU;@CS;@FE
+        1214  file format error: filename with special characters  @EU;@CS;@FE
+        1215  file format error: Similar target found      @EU;@CS;@FE
+
+        1910  unknown language     @EU;@CS;@FE
+        1911  missing or duplicated entry for language     @EU;@CS;@FE
+        1912  incomplete entry for language @EU;@CS;@FE
+        1913  unknown class for language    @EU;@CS;@FE
+
+        2011  no binary found for token    @EU;@CS;@FE
+        2012  duplicated tokens    @EU;@CS;@FE
+        2013  unknown token type (bingen or rsrc)  @EU;@CS;@FE
+        2014  unexpected token for already localized binary @EU;@CS;@FE
+        2015  input bingen token not found for multi        @EU;@CS;@FE
+        2016  no bingen token found for custom resource     @EU;@CS;@FE
+        2017  unknown bingen token extension in token filename     @EU;@CS;@FE
+        2018  both bingen and rsrc tokens found    @EU;@CS;@FE
+        2019  custom resource found for rsrc token @EU;@CS;@FE
+        2020  custom resource with no token @EU;@CS;@FE
+
+        2051  sysfile error: undefined source path to verify       @EU;@CS;@FE
+        2052  folder not covered in sysfiles       @EU;@CS;@FE
+        2053  not mapped   @EU;@CS;@FE
+        2054  not mapped   @EU;@CS;@FE
+
+        2101  binary not found     @EU;@CS;@FE
+        2102  token not found      @EU;@CS;@FE
+
+        3011  internal error: unknown operation type       @EU;@CS;@FE
+
+        4001  filename with whitespace badly handled       @EU;@CS;@FE
+
+        5001  _COMPDIR currently only supported in clean build     @EU;@CS;@FE
+        5002  Incremental run with COMPDIR @EU;@CS;@FE
+
+    END_MAP
+
+    my $d = " 5002 Incremental run with COMPDIR \@EU;\@CS;\@FE"; ($a, $b,
+    $c) = $d =~ m/\s*([^ ]+)\s{4,}([^ ].+[^ ])\s{4,}([^ ]+)/; print STDERR
+    $a, "\n", $b, "\n", $c, "\n\n";
+
+     getting rid of 
+
+    ;[Lang] [ACP] [LCID] [PriLangID] [SubLangID] [Class] [Flavor] [Site]
+    [LangISO] [PerfID] [Readme] [GUID] [Read1st] [Home] [Comments]
+    ;-----------------------------------------------------------------------
+    -------------------------------------------------------------------- ;
+
+    ARA 1256 0x0401 0x01 0x01 @CS WKS REDMOND AR 001 readme
+    AF202818-350E-11d2-B167-0060B03C1CA5 read1st home Arabic
+
+LOCSTUDIO BUILD HANDLING
+  OBSOLETE INSTRUCTIONS
+
+    Different ~classes~ of bingen/rsrc command must be appropriately mapped
+    to LSBUILD.EXE Sample INTL build commands (represent different execution
+    flag sets for BINGEN and RSRC.):
+
+    1. BINGEN 1.1 replace resources (85%). Pseudorule:
+
+                  $(BINGEN) -p $(ACP) -o $(PriLangID) $(SubLangID)   -r $** $@
+
+    expands into:
+
+                  bingen -n -w -v -f -p 932 -o 0x11 0x01 -r $(_NTTREE)\user32.dll  $(_NTLOCDIR)\windows\tokens\user32.dl_ $(_NTPOSTBLD)\user32.dll 
+ 
+    1.2. add the LANG resources and leave the US ones alone so that the
+    target binary has both (~10%). Pseudorule:
+
+                  $(BINGEN)  -p $(ACP) -o $(PriLangID) $(SubLangID)   -i $(PriLangUSA) $(SubLangUSA) -a $(_NTTREE)\aciniupd.exe  $(_NTLOCDIR)\windows\tokens\multi\aciniupd.ex_ $@
+
+    expands into:
+
+                  bingen -n -w -v -f -p 932 -o 0x11 0x01  -i 0x09 0x01 -a $(_NTTREE)\aciniupd.exe  $(_NTLOCDIR)\windows\tokens\multi\aciniupd.ex_ $(_NTPOSTBLD)\aciniupd.exe  
+ 
+    1.3. Multiple resources for a single binary, e.g. embedded resources
+    such as INF files and XML files (1%)
+
+        $(_NTPOSTBLD)\photowiz.dll: $(_NTTREE)\photowiz.dll $(_NTLOCDIR)\windows\tokens\photowiz.dl_  \
+                                    $(_NTLOCDIR)\windows\tokens\photowiz_dll_reginst.inf \
+                                    $(_NTLOCDIR)\windows\tokens\photowiz_dll_tmpldata.xml
+                 $(BINGEN)  -p $(ACP) -o $(PriLangID) $(SubLangID)    -r $(_NTTREE)\photowiz.dll  $(_NTLOCDIR)\windows\tokens\photowiz.dl_ $@
+
+    2. BIDI specific resource manipulation command (RSRC)
+
+    2.1 Replace
+
+                rsrc $(_NTPOSTBLD)\w3isapi.dll -r $(_NTLOCDIR)\windows\tokens\w3isapi.dll.rsrc -l 411 (~4% - ALL LANGS)
+ 
+    2.2 Append
+
+                rsrc $(_NTPOSTBLD)\winnt32\winnt32.exe -a $(_NTLOCDIR)\windows\tokens\winnt32\multi\winnt32.exe.rsrc -l 40D (@CS specific)
+ 
+    2.3 Merge several LANG
+
+        $(_NTPOSTBLD)\comdlg32.dll: $(_NTTREE)\comdlg32.dll $(_NTLOCDIR)\windows\tokens\multi\comdlg32.dll.40d.rsrc $(_NTLOCDIR)\windows\tokens\multi\comdlg32.dll.80d.rsrc
+                rsrc $(_NTPOSTBLD)\comdlg32.dll -a $(_NTLOCDIR)\windows\tokens\multi\comdlg32.dll.40d.rsrc -l 0x040d (@CS  specific exception )
+
+MODIFICATIONS to aggregation logic and MAPPING files.
+    Add coverage to make sysgen aware of the .lcx files
+
+Building the LSBUILD.EXE rules
+  1. When the lcx file is supplied, the .dl_ or .ex_ file must be deleted. 
+If it is not the aggregation is greately confused. 
+If both .dl_ token and .lcx tonken are found, the .dl_ one wins.
+This is because of possible multiple resources for the binary case, discussed above.
+
+  2. Errors generated from missing .dl_ files:
+
+       SYSGEN: error 2102: d:\ls\loc\res\JPN\windows\tokens\dpcdll.dl_: token not found
+
+    This fix is delete the explicitt mapping line (scp.inc)
+
+      $(dst)  dpcdll.dll $(tok) dpcdll.dl_  - -r - @EU;@FE
+
+  1. Errors from discovered .lcx files:
+
+       SYSGEN: error 2013: d:\ls\loc\res\JPN\netmeeting\tokens\nmevtmsg.dll.lcx: unknown  token type (bingen or rsrc)
+
+    Verify the extensions are mapped in sysfile.inc:
+
+    Provide the dummy rule for .dll <= .dll.lcx .exe <= .exe.lcx
+
+    BEGIN_EXTENSIONS_MAP
+
+     # TokExt BinExt  Langs
+     #----------------------
+     .a_      .ax      @EU;@FE;@CS
+     .ac_     .acm     @EU;@FE;@CS
+     .ax_     .ax      @EU;@FE;@CS
+     .bi_     .bin     @EU;@FE;@CS
+     .cn_     .cnv     @EU;@FE;@CS
+     .co_     .com     @EU;@FE;@CS
+     .cp_     .cpl     @EU;@FE;@CS
+     .dl_     .dll     @EU;@FE;@CS
+     .dr_     .drv     @EU;@FE;@CS
+     .ds_     .ds      @EU;@FE;@CS
+     .ef_     .efi     @EU;@FE;@CS
+     .ex_     .exe     @EU;@FE;@CS
+     .fl_     .flt     @EU;@FE;@CS
+     .im_     .ime     @EU;@FE;@CS
+     .mo_     .mod     @EU;@FE;@CS
+     .ms_     .mst     @EU;@FE;@CS
+     .oc_     .ocx     @EU;@FE;@CS
+     .rs_     .rsc     @EU;@FE;@CS
+     .sc_     .scr     @EU;@FE;@CS
+     .sy_     .sys     @EU;@FE;@CS
+     .tl_     .tlb     @EU;@FE;@CS
+     .ts_     .tsp     @EU;@FE;@CS
+     .wp_     .wpc     @EU;@FE;@CS
+
+     .sys.rsrc .sys    @EU;@CS;@FE
+     .dll.rsrc .dll    @EU;@CS;@FE 
+     .exe.rsrc .exe    @EU;@CS;@FE
+     .drv.rsrc .drv    @EU;@CS;@FE
+     .acm.rsrc .acm    @EU;@CS;@FE
+     .cpl.rsrc .cpl    @EU;@CS;@FE
+     .scr.rsrc .scr    @EU;@CS;@FE
+
+     .dll.lcx .dll     @EU;@FE;@CS
+     .exe.lcx .exe     @EU;@FE;@CS
+
+    END_MAP
+
+    print "reducing reduntant LCX mapping patterns:\n";
+    $a="(\\.\\w+)\\.lcx"; $b="\$1"; $p = "file.foo.lcx"; print $p,"\n";
+    print "$a $b\n"; print qq("$a $b"), "\n"; $b =~ s|\$(\d)|$1|g;
+
+    $p =~ s|$a|${$b}|egi; print $p,"\n"; $p = "file.BAR.lcx"; print $p,"\n";
+    $p =~ s|(\.\w+)\.lcx$|$1|eg; print $p,"\n";
+
+

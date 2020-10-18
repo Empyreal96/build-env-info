@@ -1,0 +1,8 @@
+SCP_WPAFiles.CMD - CaglarG (script), MariuszJ (VSP.exe)
+
+SCP (Secure Code Processor) Windows Product Activation bits
+every build. Obfuscates WPA code on system binaries (x86 only)
+
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+

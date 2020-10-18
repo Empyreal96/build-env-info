@@ -1,0 +1,12 @@
+migwiz.cmd [-l <language>]
+
+This is for the Files and Settings Transfer Wizard (aka Migration
+Wizard, or migwiz). It will do:
+1. run iexpress to generate a self-extracting CAB and install
+   into support	ools.
+2. copy shfolder.dll into valueadd\msft\usmt for distribution
+   with the command line tool.
+3. prepare a valueadd\msft\usmt\ansi directory (ANSI version of
+   the tool) with binaries from valueadd\msft\usmt
+Currently (for .NET Server) #1 is disabled
+

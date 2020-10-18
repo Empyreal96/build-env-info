@@ -1,0 +1,3 @@
+tsclient [-l <language>]
+
+Build terminal server client bits.

@@ -1,0 +1,26 @@
+C:\Win2K3\NT\tools\postbuildscripts\capturesourcefilelist.cmd - Capture Source File List from Source Depot
+=============================================================
+Syntax:
+C:\Win2K3\NT\tools\postbuildscripts\capturesourcefilelist.cmd [-f <SourceFileList>] [-d <SoureFileDir>]
+   [-g <Group>] [-p <Project>] [-s <ServerPort>]
+   [-n <DepotName>] [-r <ProjectRoot>] [-v]
+
+Parameter:
+SourceFileList : The filename for stored sdx have result
+SourceFileDir  : The root for stored .offset file
+Group          : Source depot group
+Project        : Source depot project
+ServerPort     : Source depot server port
+DepotName      : Source depot name
+ProjectRoot    : Source depot project root
+Validate       : Validate SourceFileList
+
+Default:
+SourceFileList : %_NTPOSTBLD%\build_logs\SourceFileLists.txt
+SourceFileDir  : %_NTPOSTBLD%\build_logs\SourceFileLists
+Projects.net   : %RazzleToolPath%\projects.nt
+
+Example:
+1. Create NTDEV build's SourceFileList
+C:\Win2K3\NT\tools\postbuildscripts\capturesourcefilelist.cmd -g ntdev
+

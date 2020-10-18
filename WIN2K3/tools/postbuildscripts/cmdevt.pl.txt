@@ -1,0 +1,22 @@
+
+cmdevt.pl [-w] [-a] [-s] [-h] [-q] [-?] name1 name2 ...
+
+	-w	Wait for all objects from name list
+	-a	Wait for any objects from name list
+	-s	Send all objects in name list
+	-h	Hold until someone is waiting for all objects
+		in name list
+	-q	Query to see if listed events exist, exit code
+		is the number of uncreated events.
+	-?	Display usage
+
+	cmdevt.pl is a general process synchronization tool.
+	Example use: let's say we want to start four threads
+	and we want to make sure they don't finish before we
+	begin listening for their exit. Then we just make sure
+	that each thread begins with a call to cmdevt.pl -h EventN
+	and finishes with a call to cmdevt.pl -s EventN.
+	Meanwhile, our master thread can call cmdevt.pl -w Event1
+	Event2 Event3 Event4. As soon as the master issues this,
+	the slave threads will resume normal execution.
+

@@ -1,0 +1,9 @@
+this file is intended to be called ONLY from drivercab.cmd
+
+
+
+ the syntax is:
+
+   a txt list of files to cab up
+   the name of the cab to generate
+   the name of the event to signal when finished

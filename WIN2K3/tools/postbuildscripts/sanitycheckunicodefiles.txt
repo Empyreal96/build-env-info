@@ -1,0 +1,12 @@
+
+SanityCheckUnicodeFiles.cmd
+
+ Ensure that commonly messed up Unicode files have the proper "FFFE"
+  Unicode signature on the front of the file.
+
+ We read the list of files to sanity check from
+  "C:\Win2K3\NT\tools\PostBuildScripts\SanityCheckList.txt".
+
+  All paths we obtain are appended to "C:\Win2K3\NT\"
+  to produce the final path to the file to be checked.
+

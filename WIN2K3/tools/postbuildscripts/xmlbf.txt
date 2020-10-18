@@ -1,0 +1,6 @@
+xmlbf.cmd Validator FOR the XML files before submission.
+Usage: 	xmlbf.cmd -d:<DIR> -g:<GLOB> -w -v [-?]
+		w	use the wscript (default is to use cscript)
+		v	be verbose (verbose same as debug).
+           <GLOB> use file name mask (semi obsolete, since 
+		xmlbf.cmd can filter xml files from the rest

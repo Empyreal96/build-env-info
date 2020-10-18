@@ -1,0 +1,3 @@
+timebomb [-l <language>]
+
+Swap in the appropriate timebombed hive
